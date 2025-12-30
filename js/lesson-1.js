@@ -110,8 +110,10 @@ switch (numerNew) {
     break;
    default:
     result = `Вибачте, але ви маєте ввести значення від 1 до 4 включно`;
+ 
   }
 
 console.log(result);
 
+   alert(result);
 
