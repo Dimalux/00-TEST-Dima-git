@@ -87,33 +87,77 @@
 
 
 
-let number = prompt("Введіть число:");
-let numerNew = Number(number);
+// let number = prompt("Введіть число:");
+// let numerNew = Number(number);
 
-let result;
+// let result;
 
-switch (numerNew) {
-  case 1:
-   result = `зима`;
-    break;
+// switch (numerNew) {
+//   case 1:
+//    result = `зима`;
+//     break;
 
-   case 2:
-   result = `весна`;
-    break;
+//    case 2:
+//    result = `весна`;
+//     break;
   
-   case 3:
-   result = `літо`;
-    break;
+//    case 3:
+//    result = `літо`;
+//     break;
   
-     case 4:
-   result = `зима`;
-    break;
-   default:
-    result = `Вибачте, але ви маєте ввести значення від 1 до 4 включно`;
+//      case 4:
+//    result = `зима`;
+//     break;
+//    default:
+//     result = `Вибачте, але ви маєте ввести значення від 1 до 4 включно`;
  
-  }
+//   }
 
+// console.log(result);
+
+//    alert(result);
+
+
+
+   
+// Завдання 4:
+
+// // Отримуйте від користувача число (кількість хвилин) через prompt
+// // і виводьте у консоль рядок у форматі годин та хвилин.
+// // Приклад: користувач вводить в prompt '70' -> в консолі відобразиться '01:10'.
+// // Корисне посилання для відображення годин та хвилин у потрібному форматі ('01' замість '1'):
+// // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart#examples
+
+
+
+// 1. Отримуємо кількість хвилин від користувача
+const data = prompt("Введіть кількість хвилин:");
+
+// 2. Перетворюємо введене значення в число
+const number = Number(data);
+console.log(number);
+
+// 3. Обчислюємо години (ціла частина від ділення на 60)
+const hours = Math.floor(number / 60);
+console.log(hours);
+
+// 4. Обчислюємо хвилини (залишок від ділення на 60)
+const minutes = number - hours * 60;
+console.log(minutes);
+
+const minutes2 = (number % 60);
+console.log(minutes2);
+
+// 5. Форматуємо години та хвилини у двоцифровий формат
+// padStart(2, '0') додає '0' на початок, якщо число менше 2 цифр
+const formattedHours = String(hours).padStart(2, '0');
+console.log(formattedHours);
+
+const formattedMinutes = String(minutes).padStart(2, '0');
+console.log(formattedMinutes);
+
+
+const result = `${formattedHours}:${formattedMinutes}`
 console.log(result);
-
-   alert(result);
+alert(result);
 
