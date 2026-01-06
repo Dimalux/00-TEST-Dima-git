@@ -87,6 +87,44 @@
 
 
 
+// 1-й ВАРІАНТ
+
+// const num = prompt("Введіть число:");
+
+// let result;
+// // Якщо написати "const result" буде помилка треба обов'язково ініциалізувати
+
+// switch (num) {
+
+//   case "1" : 
+// result = "зима";
+// alert(result);
+// break;
+
+//   case "2" : 
+// result = "весна";
+// alert(result);
+// break;
+
+//   case "3" : 
+// result = "літо";
+// alert(result);
+// break;
+
+//   case "4" : 
+// result = "осінь";
+// alert(result);
+// break;
+
+//   default:
+// result = "Вибачте, але ви маєте ввести значення від 1 до 4 включно";
+// alert(result);
+// }
+
+
+
+// 2-й ВАРІАНТ
+
 // let number = prompt("Введіть число:");
 // let numerNew = Number(number);
 
@@ -180,20 +218,20 @@
 // // в іншому випадку вивести в alert рядок "Невірний пароль!"
 
 
-const user = prompt ("Введіть логін:");
-console.log(user);
+// const user = prompt ("Введіть логін:");
+// console.log(user);
 
-// prompt()  повертає null тільки при Cancel або Esc
-if (user === null) {
-  alert("Скасовано");
-} else {
-  // Потім обробляємо текст і ПРОБІЛИ
-  const userTrimmed = user.trim();
-if (userTrimmed === "") {
-  alert("Ви нічого не ввели!");
-} else if (userTrimmed === "Адмін") {
-const password = prompt("Введіть пароль:");
-alert (password === "111111" ? "Добрий день!" : "Невірний пароль!");
+// // prompt()  повертає null тільки при Cancel або Esc
+// if (user === null) {
+//   alert("Скасовано");
+// } else {
+//   // Потім обробляємо текст і ПРОБІЛИ
+//   const userTrimmed = user.trim();
+// if (userTrimmed === "") {
+//   alert("Ви нічого не ввели!");
+// } else if (userTrimmed === "Адмін") {
+// const password = prompt("Введіть пароль:");
+// alert (password === "111111" ? "Добрий день!" : "Невірний пароль!");
 
 // Можливі покращення: Cancel при вводі пароля
 // if (password === null) {
@@ -204,11 +242,11 @@ alert (password === "111111" ? "Добрий день!" : "Невірний па
 //   alert("Невірний пароль!");
 // }
 
-}
-else {
-  alert("Я вас не знаю");
-}
-}
+// }
+// else {
+//   alert("Я вас не знаю");
+// }
+// }
 
 
 
