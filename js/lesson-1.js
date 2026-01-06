@@ -164,8 +164,6 @@
 
 
 
-
-
 // Завдання 5:
 
 // // Напишіть код, який запитуватиме у користувача
@@ -182,19 +180,35 @@
 // // в іншому випадку вивести в alert рядок "Невірний пароль!"
 
 
-const user = prompt("Введіть логін:");
+const user = prompt ("Введіть логін:");
 console.log(user);
 
-// if (!user) {} або:
-if (user === null || user === "") {
+// prompt()  повертає null тільки при Cancel або Esc
+if (user === null) {
   alert("Скасовано");
-} else if (user === "Адмін") {
-  const password = prompt("Введіть пароль:");
-  alert(password === "Я головний" ? "Добрий день!" : "Невірний пароль!");
 } else {
+  // Потім обробляємо текст і ПРОБІЛИ
+  const userTrimmed = user.trim();
+if (userTrimmed === "") {
+  alert("Ви нічого не ввели!");
+} else if (userTrimmed === "Адмін") {
+const password = prompt("Введіть пароль:");
+alert (password === "111111" ? "Добрий день!" : "Невірний пароль!");
+
+// Можливі покращення: Cancel при вводі пароля
+// if (password === null) {
+//   alert("Скасовано");
+// } else if (password === "111111") {
+//   alert("Добрий день!");
+// } else {
+//   alert("Невірний пароль!");
+// }
+
+}
+else {
   alert("Я вас не знаю");
 }
-
+}
 
 
 
