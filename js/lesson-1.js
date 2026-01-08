@@ -1,5 +1,3 @@
-// файл js/lesson-1.js
-
 'use strict';
 
 

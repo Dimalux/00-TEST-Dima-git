@@ -221,54 +221,27 @@
 
 
 
-class Animal {
-  constructor(name, type) {
-    this.name = name;
-    this.type = type;
-  }
+// class Animal {
+//   constructor(name, type) {
+//     this.name = name;
+//     this.type = type;
+//   }
 
-  getInfo() {
-    return `Name animal: ${this.name}, Type animal: ${this.type}`;
-  }
+//   getInfo() {
+//     return `Name animal: ${this.name}, Type animal: ${this.type}`;
+//   }
 
-  feed() {
-    console.log(`Feeding ${this.name}....`);
-  }
-}
+//   feed() {
+//     console.log(`Feeding ${this.name}....`);
+//   }
+// }
 
-console.log(Animal);
+// console.log(Animal);
 
 
 // Mammal - хижак
 // Bird - птах
 
-
-
-class Mammal extends Animal {
-  constructor(name, type, food) {
-super(name, type);
-this.food = food;
- }
-  live() {
-    console.log(`Lives in ${this.name}....`);
-  }
- }
-
-
-
-
-
-class Bird extends Animal {
-  constructor(name, type, food) {
-super(name, type);
-this.food = food;
-  }
-
-  live() {
-    console.log(`Lives in ${this.name}....`);
-  }
-
- }
 
 
 
