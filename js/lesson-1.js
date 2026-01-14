@@ -317,6 +317,21 @@
 // // В іншому випадку вона запитує підтвердження через confirm 
 // // і повертає його результат (true/false).
 
+
+// function isAdult(age) {
+//     if (age >= 18) {
+//         return true;
+//     }
+// // const result = confirm("Ви ще не маєте 18 років! Продовжити?");
+// return  confirm(`Вам тільки ${age} років! Продовжити?`);
+// };
+
+// const testAge = isAdult(10);
+// console.log(testAge);
+
+
+
+
 // Завдання 10:
 
 // // Напишіть функцію fizzBuzz(num), яка приймає число і перевіряє кожне число від 1 до num:
