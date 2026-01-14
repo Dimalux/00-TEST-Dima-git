@@ -298,6 +298,17 @@
 // // повертати з функції рядок - 'Not a number!'.
 
 
+// function min(a, b) {  
+//  if (typeof a === "number" && typeof b === "number") {
+//    return Math.min(a, b);
+// } 
+// return "Not a number";
+// }
+
+// const result =  min(22, 10);
+// console.log(result);
+
+
 
 // Завдання 9:
 
