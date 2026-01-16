@@ -340,21 +340,64 @@
 // // якщо ділиться  без остачі і на 3, і на 5 - виводить в консоль 'fizzbuzz'.
 
 
-function fizzBuzz(num) {
+// function fizzBuzz(num) {
 
-       for (let i = 1; i <= num; i++) {
+//        for (let i = 1; i <= num; i++) {
 
-       if (i % 3 === 0 && i % 5 === 0) {
-            console.log('fizzbuzz');             
-             } else if (i % 3 === 0) {
-             console.log('fizz');  
-        } else if (i % 5 === 0) {
-             console.log('buzz');                
-        } else {
-            console.log(i); // Вивід числа, якщо воно не ділиться
-        };            
-    };
-};
+//        if (i % 3 === 0 && i % 5 === 0) {
+//             console.log('fizzbuzz');             
+//              } else if (i % 3 === 0) {
+//              console.log('fizz');  
+//         } else if (i % 5 === 0) {
+//              console.log('buzz');                
+//         } else {
+//             console.log(i); // Вивід числа, якщо воно не ділиться
+//         };            
+//     };
+// };
 
 
-fizzBuzz(15);
+// fizzBuzz(15);
+
+
+// Завдання 101:
+// Напиши скрипт, який підраховує суму всіх парних чисел,
+// які входять в діапазон чисел у змінних від min до max.
+// Наприклад, якщо min=0 та max=5, то діапазон 0–5, і в
+// ньому два парних числа — 2 і 4, їх сума 6.
+
+
+// Варіант 1 :
+
+// const min = 0;
+// const max = 5;
+// let sum = 0;
+
+// for (let i = min; i <= max; i++) {
+//     // console.log(i);    
+    
+//     if (!(i % 2)) {
+//         console.log(i);
+        
+//         sum += i;
+//     }    
+// };
+//     console.log("sum =", sum);
+
+
+
+// Варіант 2 :
+
+// const min = 0;
+// const max = 5;
+// let sum = 0;
+
+// for (let i = min; i <= max; i++) {
+//    if (i % 2 !==0) {
+//     //  console.log(i);
+//      continue;     
+//    }
+//     console.log(i);
+//     sum += i;
+// };
+//     console.log("SUM:",sum);
