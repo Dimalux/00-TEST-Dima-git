@@ -65,11 +65,14 @@
 // Якщо ім'я відсутнє – виводить повідомлення: "User not found".
 // const logins = ["Peter", "John", "Igor", "Sasha"];
 
-// const logins = ["Peter", "John", "Igor", "Sasha"];
 
+// Варіант 1 :
+
+// const logins = ["Peter", "John", "Igor", "Sasha"];
 // function checkLogin(logins) {
 //     const name = prompt("Ім'я користувача:");
-//     logins.includes(name);
+
+//     // У JavaScript з ES6 масиви мають метод includes() !!!
 
 //     if (logins.includes(name)) {
 //         alert(`Welcome, ${name}!`);
@@ -77,8 +80,20 @@
 //             alert("User not found");
 //           }
 //         }
-
 //         checkLogin(logins);
+
+
+// // Варіант 2 :
+
+// const logins = ["Peter", "John", "Igor", "Sasha"];
+// function checkLogin(array) {
+//     const userName = prompt("Назвіть Ваше ім'я :")
+// array.indexOf(userName) !== -1 ? alert(`Welcome, ${userName}`) : alert("User not found");
+// }
+// checkLogin(logins);
+
+
+
 
 // Завдання 3:
 
