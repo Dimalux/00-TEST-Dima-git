@@ -13,6 +13,9 @@
 // Використайте цикл for для перебору елементів масиву.
 // Нумерація елементів повинна починатися з 1 (а не з 0).
 
+
+// Варіант 1 :
+
 // let styles = ['jazz', 'blues'];
 // styles.push('rock-n-roll');
 // styles[styles.indexOf('blues')] = 'classic';
@@ -27,6 +30,30 @@
 // }
 
 // logItems(styles);
+
+
+// Варіант 2 :
+
+// const styles = ["jazz", "blues"];
+// console.log(styles);
+// styles.push("rock-n-roll");
+// console.log(styles);
+// styles[styles.indexOf("blues")] = "classic";
+// console.log(styles);
+
+
+// function logItems(array) {
+// for (let i = 0; i < array.length; i++) {
+//     let element = array[i];
+//     const numElement = i + 1;
+// console.log(`${numElement} ${element}`);
+// }
+// }
+
+// logItems([2, 5, 5, 12, 22, 455, 2, 3, 7, 455]);
+
+
+
 
 // Завдання 2:
 
