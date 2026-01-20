@@ -298,17 +298,6 @@
 // // повертати з функції рядок - 'Not a number!'.
 
 
-// function min(a, b) {  
-//  if (typeof a === "number" && typeof b === "number") {
-//    return Math.min(a, b);
-// } 
-// return "Not a number";
-// }
-
-// const result =  min(22, 10);
-// console.log(result);
-
-
 
 // Завдання 9:
 
@@ -317,87 +306,9 @@
 // // В іншому випадку вона запитує підтвердження через confirm 
 // // і повертає його результат (true/false).
 
-
-// function isAdult(age) {
-//     if (age >= 18) {
-//         return true;
-//     }
-// // const result = confirm("Ви ще не маєте 18 років! Продовжити?");
-// return  confirm(`Вам тільки ${age} років! Продовжити?`);
-// };
-
-// const testAge = isAdult(10);
-// console.log(testAge);
-
-
-
-
 // Завдання 10:
 
 // // Напишіть функцію fizzBuzz(num), яка приймає число і перевіряє кожне число від 1 до num:
 // // Якщо число ділитися  без остачі на 3 - виводить в консоль 'fizz',
 // // якщо ділиться  без остачі на 5 - виводить в консоль 'buzz',
 // // якщо ділиться  без остачі і на 3, і на 5 - виводить в консоль 'fizzbuzz'.
-
-
-// function fizzBuzz(num) {
-
-//        for (let i = 1; i <= num; i++) {
-
-//        if (i % 3 === 0 && i % 5 === 0) {
-//             console.log('fizzbuzz');             
-//              } else if (i % 3 === 0) {
-//              console.log('fizz');  
-//         } else if (i % 5 === 0) {
-//              console.log('buzz');                
-//         } else {
-//             console.log(i); // Вивід числа, якщо воно не ділиться
-//         };            
-//     };
-// };
-
-
-// fizzBuzz(15);
-
-
-// Завдання 101:
-// Напиши скрипт, який підраховує суму всіх парних чисел,
-// які входять в діапазон чисел у змінних від min до max.
-// Наприклад, якщо min=0 та max=5, то діапазон 0–5, і в
-// ньому два парних числа — 2 і 4, їх сума 6.
-
-
-// Варіант 1 :
-
-// const min = 0;
-// const max = 5;
-// let sum = 0;
-
-// for (let i = min; i <= max; i++) {
-//     // console.log(i);    
-    
-//     if (!(i % 2)) {
-//         console.log(i);
-        
-//         sum += i;
-//     }    
-// };
-//     console.log("sum =", sum);
-
-
-
-// Варіант 2 :
-
-// const min = 0;
-// const max = 5;
-// let sum = 0;
-
-// for (let i = min; i <= max; i++) {
-//    if (i % 2 !==0) {
-//     //  console.log(i);
-//      continue;     
-//    }
-//     console.log(i);
-//     sum += i;
-// };
-//     console.log("SUM:",sum);
