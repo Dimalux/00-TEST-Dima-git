@@ -72,7 +72,13 @@
 // function checkLogin(logins) {
 //     const name = prompt("Ім'я користувача:");
 
-//     // У JavaScript з ES6 масиви мають метод includes() !!!
+//     // У JavaScript з ES6 є метод includes() для МАСИВУ !!!
+// Він повертає логічне значення true, якщо елемент знайдено в масиві, і false, якщо елемент відсутній.
+
+// В порівнянні з методом includes() для РЯДКІВ : використовується для пошуку першого входження підрядка в рядок. 
+// Він повертає:
+// індекс першого входження (індекс першого символу) підрядка, якщо він знайдений або
+// -1, якщо підрядок не виявлено
 
 //     if (logins.includes(name)) {
 //         alert(`Welcome, ${name}!`);
@@ -92,6 +98,14 @@
 // }
 // checkLogin(logins);
 
+
+// const logins = ["Peter", "John", "Igor", "Sasha"];
+
+// logins.push("Kat");
+// console.log(logins);
+
+// logins.pop();
+// console.log(logins);
 
 
 
@@ -114,6 +128,9 @@
 //   }
 
 //   console.log(calculateAverage(4, 8, 6, 10));
+
+
+
 
 // Завдання 4:
 
