@@ -195,31 +195,61 @@
     // у неї НЕмає методів для роботи з масивом.
 
 
-function foo() {
+// function foo() {
 
 // для порівняння створимо звичайний масив:
 
-const arr = [1, 2, 3];
-console.log(typeof arr);
-console.log(typeof arguments);
+// const arr = [1, 2, 3];
+// console.log(typeof arr);
+// console.log(typeof arguments);
 
-// Перевірка на "МАСИВ"
-console.log(Array.isArray(arr));
-console.log(Array.isArray(arguments));
+// // Перевірка на "МАСИВ"
+// console.log(Array.isArray(arr));
+// console.log(Array.isArray(arguments));
 
-// Для перетворення Псевдомасиву arguments в звичайний массив:
+// // Для перетворення Псевдомасиву arguments в звичайний массив:
 
-const arg = Array.from(arguments);
-console.log(arg);
-console.log(Array.isArray(arg));
+// const arg = Array.from(arguments);
+// console.log(arg);
+// console.log(Array.isArray(arg));
 
 
-let sum = 0;
-for(const argument of arguments) {
-sum += argument;
-}
-return sum;
-}
+// let sum = 0;
+// for(const argument of arguments) {
+// sum += argument;
+// }
+// return sum;
+// }
 
-console.log(foo(0, 2, 4, 3));
+// console.log(foo(0, 2, 4, 3));
+
+
+// ................................
+
+
+
+// ЗАДАЧА-8
+// Функція createReversedArray() може приймати довільну кількість аргументів. Доповни код функції так, щоб вона повертала масив усіх аргументів, але в масиві вони повинні йти у зворотному порядку. Тобто, при виклику createReversedArray(1, 2, 3), функція має повернути масив [3, 2, 1]. Використовуй цикл або метод масиву toReversed(), який застосовується до масиву і результатом роботи повертає новий масив з елементами у зворотньому порядку.
+
+
+
+// Варіант-1
+// function createReversedArray() {
+// const args = Array.from(arguments);
+// return args.toReversed();  
+// }
+
+// Варіант-2
+// function createReversedArray() {
+// const args = Array.from(arguments);
+// let result = [];
+//   for (let i = args.length - 1; i >= 0; i--) {
+//     result.push(args[i]);    
+//   }
+// return result;  
+// }
+
+// console.log(createReversedArray(12, 85, 37, 4));
+
+
 
