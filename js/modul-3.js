@@ -234,10 +234,26 @@
 
 
 // Варіант-1
+// метод масиву  toReversed()  повертає новий масив зі зворотним порядком, не чіпаючи оригінальний !!!
+
 // function createReversedArray() {
 // const args = Array.from(arguments);
 // return args.toReversed();  
 // }
+// console.log(createReversedArray(12, 85, 37, 4));
+
+
+
+// Варіант-2
+// метод масиву  reverse()  змінює оригінальний масив !!!
+
+// function createReversedArray() {
+//   const args = Array.from(arguments);
+//   return args.reverse(); 
+// }
+// console.log(createReversedArray(12, 85, 37, 4));
+
+
 
 // Варіант-2
 // function createReversedArray() {
