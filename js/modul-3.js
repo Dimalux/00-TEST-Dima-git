@@ -182,3 +182,44 @@
 // }
 
 // console.log(min);
+
+
+
+// ...............................
+
+
+// ЗАДАЧА-7    Псевдомасив arguments - це колекція схожа на масив, але насправді є псевдомасивом, тобто:
+    // у неї є деякі властивості масивів, наприклад length;
+    // у неї є можливість звернутися до елемента за індексом;    
+    // її можна перебирати за допомогою циклів;
+    // у неї НЕмає методів для роботи з масивом.
+
+
+function foo() {
+
+// для порівняння створимо звичайний масив:
+
+const arr = [1, 2, 3];
+console.log(typeof arr);
+console.log(typeof arguments);
+
+// Перевірка на "МАСИВ"
+console.log(Array.isArray(arr));
+console.log(Array.isArray(arguments));
+
+// Для перетворення Псевдомасиву arguments в звичайний массив:
+
+const arg = Array.from(arguments);
+console.log(arg);
+console.log(Array.isArray(arg));
+
+
+let sum = 0;
+for(const argument of arguments) {
+sum += argument;
+}
+return sum;
+}
+
+console.log(foo(0, 2, 4, 3));
+
