@@ -304,4 +304,37 @@
 // ....................
 
 // ЗАДАЧА-9
+// Напиши функцію calAverage() яка приймає довільну кількість аргументів і повертає їхнє середнє значення. Усі аргументи будуть лише числами.
 
+// Варіант-Мій
+// function calAverage() {
+// const args = Array.from(arguments);
+// let result = 0;
+// for(const arg of args) {
+// result += arg;
+// }
+// return result / args.length;
+// }
+
+// console.log(calAverage(1, 2));
+// console.log(calAverage(1, 2, 3));
+// console.log(calAverage(1, 2, 3, 4));    
+
+
+// Варіант-Ментор: без перетворення псевдомасиву arguments до звичайного масиву.
+// function calAverage() {    
+//     let result = 0;
+//     for(let i = 0; i < arguments.length; i++) {
+//     result += arguments[i];
+//     }
+//     return result / arguments.length;
+//     }
+    
+//     console.log(calAverage(1, 2));
+//     console.log(calAverage(1, 2, 3));
+//     console.log(calAverage(1, 2, 3, 4));  
+
+
+// ....................
+
+// ЗАДАЧА-10
