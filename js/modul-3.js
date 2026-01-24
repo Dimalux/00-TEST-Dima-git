@@ -401,7 +401,7 @@
 // const hours = Math.floor(totalMinutes / 60);
 // const minutes = totalMinutes % 60;
 
-//    // Варіант МЕНТОР Форматуємо до двох цифр з ведучими нулями
+// Варіант МЕНТОР Форматуємо до двох цифр з ведучими нулями
 //     const Hours = String(hours).padStart(2, '0');
 //     const Minutes = String(minutes).padStart(2, '0');
 
@@ -428,6 +428,14 @@
 //  2 - потрібну кількість елементів в масиві
 //  Функція повертає масив масивів
 
+
+
+
+
+
+
+// Варіант МЕНТОР
+
 // function foo(arr, num) {
 //     let result = [];
 // for(let i = 0; i < arr.length; i += num) {      
@@ -438,6 +446,30 @@
 
 // const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 // console.log(foo(data, 4));
+
+
+// Варіант МІЙ + чат GPT
+
+// function foo(arr, num) {
+//     let arrResult = [];
+//     let arrAdd = [];
+
+//     for (let i = 0; i < arr.length; i += 1) {
+//         arrAdd.push(arr[i]); // Завжди додаємо поточний елемент
+        
+//         if (arrAdd.length === num || i === arr.length - 1) {
+//             arrResult.push(arrAdd);
+//             arrAdd = []; // Створюємо новий підмасив
+//         }
+//     }
+    
+//     return arrResult;
+// }
+
+
+// const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+// console.log(foo(data, 4));
+
 
 
 // ....................
