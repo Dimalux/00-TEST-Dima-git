@@ -2,21 +2,33 @@
 
 
 // ЗАДАЧА 1
-// Напиши скрипт для обчислення площі прямокутника зі сторонами, значення яких зберігаються у змінній values у вигляді рядка.
-// Значення гарантовано розділені пробілом.
 
-// const value = "10 10";
+// Напиши скрипт, який для об'єкта user, послідовно:
+// - додає поле mood зі значенням 'happy'
+// - замінює значення hobby на 'skydiving'
+// - замінює значення premium на false
+// - виводить вміст об'єкта user у форматі ключ:значення використовуючі Object.keys() та for...of
 
-// const arrs = value.split(" ");
-// console.log(arrs);
+const user = {
+    name: "Alice",
+    age: 25,
+    hobby: "html",
+    premium: true,
+};
 
-// let arrNew = [];
+user.mood = "happy";
+user.hobby = "skydiving";
+user.premium = false;
 
-// for (const arr of arrs) {
-//     arrNew.push(Number(arr));        
-//     }
-//     console.log(arrNew);
+const userNew = Object.keys(user);
 
-//     console.log(arrNew[0] * arrNew[1]);
-    
-    
+for(const item of userNew) {
+console.log(`${item}: ${user[item]}`);
+}
+
+
+// .............................
+
+
+
+
