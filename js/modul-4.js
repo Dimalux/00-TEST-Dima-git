@@ -33,14 +33,14 @@
 
 
 
-function foo(storage, item) {
+// function foo(storage, item) {
    
-if(storage.includes(item.toLowerCase()))
+// if(storage.includes(item.toLowerCase()))
 
 
-}
+// }
 
-console.log(["apple", "plum", "pear"], "pEar");
+// console.log(["apple", "plum", "pear"], "pEar");
 
 
 
