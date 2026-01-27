@@ -81,5 +81,59 @@
 
 // .............................
 
-// ЗАДАЧА 3
+// ЗАДАЧА 3   Варіанти отримання значення властивості з об'єкта 
 
+// const item = "title";
+
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   rating: 8.38,
+// };
+
+
+// console.log(book.title); 
+// console.log(book["title"]); 
+// console.log(book[item]);
+
+
+
+// .............................
+
+// ЗАДАЧА 4    Функція calculateTotalPrice(productName) приймає один параметр productName- назва товару. Функція містить масив об'єктів products з такими властивостями, як name — ім'я товару, price — ціна і quantity — кількість.
+// Доповни код функції так, щоб вона повертала загальну вартість (ціна * кількість) товару з таким ім'ям з масиву products.
+// Якщо продукту з такою назвою немає, то функція повинна повертати рядок "Product <productName> not found!" , де <productName> — це ім'я товару.
+
+
+// function calculateTotalPrice(productName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+
+
+// for (const product of products) {
+
+// if(product.name === productName) {
+//  return product.price * product.quantity;
+// } 
+// }
+// return `Product ${productName} not found!`;
+// } 
+   
+
+// console.log(calculateTotalPrice("Droid"));  // 2800
+
+// console.log(calculateTotalPrice("Grip"));  // 10800
+
+// console.log(calculateTotalPrice("Scanner"));  // 8100
+
+// console.log(calculateTotalPrice("Blaster"));  // "Product Blaster not found!"
+
+
+// .............................
+
+// ЗАДАЧА 5
