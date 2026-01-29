@@ -136,4 +136,69 @@
 
 // .............................
 
-// ЗАДАЧА 5
+// ЗАДАЧА 5  Додамо метод getAverageRating(), який повертатиме середній рейтинг книг.
+
+
+// const bookShelf = {
+//   books: [
+// 		{ title: "The Last Kingdom", rating: 8 }, 
+// 		{ title: "The Mist", rating: 6 }
+// 	],
+//   getBooks() {
+//     return this.books;
+//   },
+//   addBook(newBook) {
+//     this.books.push(newBook);
+//   },
+//   getAverageRating() {
+// let result = 0;
+//     for(const book of this.books) {
+// result += book.rating;
+//     }
+//     // return result / this.books.length;
+
+//     // return Math.round(result / this.books.length);
+
+//     return (result / this.books.length).toFixed(2);
+
+//   },
+// };
+
+// bookShelf.addBook({ title: "Dream Guardian", rating: 8});
+
+// console.log(bookShelf.getAverageRating());
+
+
+
+// .............................
+
+// ЗАДАЧА 6  Додай метод getTotalPrice(), який має повертати загальну вартість усіх зілль з властивості potions.
+
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotion(newPotion) {
+//     this.potions.push(newPotion);
+//   },
+//   getTotalPrice() {
+
+// let sum = 0;
+// for(const potion of this.potions) {
+// sum += potion.price;
+// }
+// return sum
+//     },    
+
+// };
+
+// console.log(atTheOldToad.getTotalPrice());
+
+
+// .............................
+
+// ЗАДАЧА 7
