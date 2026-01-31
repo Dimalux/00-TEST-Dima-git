@@ -199,9 +199,12 @@
 // console.log(atTheOldToad.getTotalPrice());
 
 
+
 // .............................
 
+
 // ЗАДАЧА 7   Функція addOverNum() приймає довільну кількість аргументів чисел.
+
 
 // Доповни код функції таким чином, щоб вона обчислювала суму тільки тих аргументів, які більші за задане число. Це число завжди буде передано першим аргументом.
 
@@ -215,5 +218,40 @@
 //       return sum;
 //     }
 
-//     console.log(addOverNum(15, 32, 6, 13, 19, 8));
-    
+//     console.log(addOverNum(15, 32, 6, 13, 19, 8));    
+
+
+
+// .............................
+
+
+// ЗАДАЧА 8   Метод об'єкта + "THIS"
+
+const playList1 = {
+name: "Music 01",
+rating: 8,
+track: ["track 01", "track 02", "track 03"],
+nameNew(change) {
+    this.name = change;
+},
+};
+
+console.log(playList1.name);
+playList1.nameNew("Music 01 - NEW !!!");
+console.log(playList1.name);
+
+const playList2 = {
+name: "Music 02",
+rating: 8,
+track: ["track 04", "track 05", "track 06"],
+};
+
+playList2.nameNew = playList1.nameNew;
+
+console.log(""); // для розділення логів - пустий рядок в консолі
+
+console.log(playList2.name);
+playList2.nameNew("Music 02 - NEW HELp!!!");
+console.log(playList2.name);
+
+
