@@ -117,23 +117,51 @@
 // Доповни виклик метода forEach, передавши йому колбек-функцію, яка на кожній ітерації додає до totalPrice значення поточного елемента масива orderedItems.
 
 
-function calculateTotalPrice(orderedItems) {
+// function calculateTotalPrice(orderedItems) {
 
-let totalPrice = 0;
+// let totalPrice = 0;
 
-  orderedItems.forEach(function callback(item) {
-totalPrice += item  
-  });
+//   orderedItems.forEach(function callback(item) {
+// totalPrice += item  
+//   });
 
-  return totalPrice;
-}
+//   return totalPrice;
+// }
 
-console.log(calculateTotalPrice([12, 85, 37, 4]));  // 138
-console.log(calculateTotalPrice([164, 48, 291]));   // 503
-console.log(calculateTotalPrice([412, 371, 94, 63, 176]));  // 1116
+// console.log(calculateTotalPrice([12, 85, 37, 4]));  // 138
+// console.log(calculateTotalPrice([164, 48, 291]));   // 503
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176]));  // 1116
 
 
 // .............................
 // .............................
 
 
+// ЗАДАЧА 2
+
+// Функція filterArray(numbers, value) приймає першим параметром масив чисел numbers і повертає новий масив, в якому будуть тільки ті елементи оригінального масиву, які більші за значення другого параметра числа value. Якщо таких значень не буде знайдено, функція повертає порожній масив.
+
+// Виконай рефакторинг функції таким чином, щоб замість циклу for, вона використовувала метод forEach.      
+
+
+
+// function filterArray(numbers, value) {
+
+// const arr = [];
+
+// numbers.forEach(function (item) {
+//   if(item > value) {arr.push(item)} 
+// })  
+// return arr;
+// }
+
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3) );  //  [4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4));   //  [5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5));   //  []
+// console.log(filterArray([12, 24, 8, 41, 76], 38) );  // [41, 76]
+// console.log(filterArray([12, 24, 8, 41, 76], 20));   // [24, 41, 76]
+
+
+// .............................
+// .............................
