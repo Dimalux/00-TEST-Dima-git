@@ -63,10 +63,10 @@
 
 // ПОЯСНЕННЯ-3  Метод forEach(callback) . ПЕРЕБОР МАСИВУ.
 
-// const numbers = [5, 10, 15, 20, 25];
-
 // 1) спосіб перебору масиву з використанням циклу " for" :
 
+
+// const numbers = [5, 10, 15, 20, 25];
 // for(let i = 0; i < numbers.length; i += 1) {
 // console.log(`Value ${i + 1}: ${numbers[i]}`);
 // }
@@ -77,6 +77,7 @@
 
 // 2) спосіб перебору масиву з використанням циклу " for...of" :
 
+// const numbers = [5, 10, 15, 20, 25];
 // for(const number of numbers) {
 // console.log(`Value ${number}`);
 // }
@@ -85,15 +86,51 @@
 
 // ...............
 
-// 3) спосіб перебору масиву методом  "forEach(callback)" :
+// 3) спосіб перебору масиву методом  "forEach(callback)" (Метод forEach(callback) — це метод перебирання масиву, який використовується для заміни циклів "for" і "for...of". Єдиний випадок, коли варто використовувати цикли "for" або "for...of" для перебирання масиву, — це задачі з перериванням виконання циклу. Перервати виконання методу forEach не можна, він завжди перебирає масив до кінця. Метод forEach(callback) повертає "undefined", навіть якщо явно задати вираз після return):
 // можна оголошувати такі параметри (імена параметрів "element, index, array" може бути довільна):
 // або  -  callback(element),
 // або  -  callback(element, index),
 // або  -  callback(element, index, array)
 
+
+// const numbers = [5, 10, 15, 20, 25];
 // numbers.forEach(function callback(element, index, array) {
 // console.log(`Value ${index + 1}: ${element} - ${array}`);
+// return `${element}`;
 // })
+
+
+// Метод forEach(callback) повертає "undefined"
+// const text = numbers.forEach(function callback(element, index, array) {
+// console.log(`Value ${index + 1}: ${element} - ${array}`);
+// })
+
+// console.log(text);
+
+
+// .............................
+// .............................
+
+// ЗАДАЧА 1      
+// Функція calculateTotalPrice(orderedItems) приймає один параметр orderedItems - масив чисел, і розраховує загальну суму його елементів, яка зберігається у змінній totalPrice і повертається як результат роботи функції.
+
+// Доповни виклик метода forEach, передавши йому колбек-функцію, яка на кожній ітерації додає до totalPrice значення поточного елемента масива orderedItems.
+
+
+function calculateTotalPrice(orderedItems) {
+
+let totalPrice = 0;
+
+  orderedItems.forEach(function callback(item) {
+totalPrice += item  
+  });
+
+  return totalPrice;
+}
+
+console.log(calculateTotalPrice([12, 85, 37, 4]));  // 138
+console.log(calculateTotalPrice([164, 48, 291]));   // 503
+console.log(calculateTotalPrice([412, 371, 94, 63, 176]));  // 1116
 
 
 // .............................
