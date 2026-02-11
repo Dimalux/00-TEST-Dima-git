@@ -195,7 +195,7 @@
 
 // const filterArray = (numbers, value) =>
 // {
-// let result = [];
+// const result = [];
 // numbers.forEach(element => {
 
 //  if(element > value) {
@@ -209,6 +209,33 @@
 // console.log(filterArray([1, 2, 3, 4, 5], 4) );  //  [5]
 // console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
 // console.log(filterArray([12, 24, 8, 41, 76], 38) ); // [41, 76]
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА 4    Функція changeEven(numbers, value) приймає масив чисел numbers і оновлює кожен елемент, значення якого - це парне число, ДОДАЮЧИ до нього значення параметра "value", який точно є числом.
+// Виконай рефакторинг функції таким чином, щоб вона стала чистою - не змінювала масив чисел numbers, а створювала, наповнювала і повертала новий масив з оновленими значеннями.
+// Оголошена функція changeEven(numbers, value)
+// Функція changeEven не змінює значення параметра numbers
+
+
+// function changeEven(numbers, value) {
+
+//   const newNumbers = [];
+
+// numbers.forEach(number => {
+// number % 2 !== 0 ? newNumbers.push(number) : newNumbers.push(number + value);
+// }
+// )
+//   return newNumbers;
+// }
+
+// console.log(changeEven([1, 2, 3, 4, 5], 10));  //  [1, 12, 3, 14, 5]
+// console.log(changeEven([2, 8, 3, 7, 4, 6], 10));  //  [12, 18, 3, 7, 14, 16]
+// console.log(changeEven([17, 24, 68, 31, 42], 100) );  //  [17, 124, 168, 31, 142]
+// console.log( changeEven([44, 13, 81, 92, 36, 54], 100));  //  [144, 13, 81, 192, 136, 154]
 
 
 // .............................
