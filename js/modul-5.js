@@ -165,3 +165,54 @@
 
 // .............................
 // .............................
+
+// ЗАДАЧА 3-1  Оголошена змінна filterArray. Змінній filterArray присвоєна стрілочна функція з параметрами (numbers, value). Для перебирання масиву numbers використаний метод forEach. Колбек для методу forEach - це стрілочна функція. 
+// Умова функція має повернути новий масив з елементами, індекс якіх починається з "value" :
+
+
+// const filterArray = (numbers, value) =>
+// {
+// let result = [];
+// numbers.forEach((element, index) => {
+
+//  if(index >= value) {
+// result.push(element)   
+// } 
+// })
+// return result;
+// }
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3) );  // [4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4) );  //  [5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+// console.log(filterArray([12, 24, 8, 41, 76], 3) ); // [41, 76]
+
+// ..................
+
+// ЗАДАЧА 3-2  
+// Умова функція має повернути новий масив з елементами, білших за число "value" :
+
+
+// const filterArray = (numbers, value) =>
+// {
+// let result = [];
+// numbers.forEach(element => {
+
+//  if(element > value) {
+// result.push(element)   
+// } 
+// })
+// return result;
+// }
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3) );  // [4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4) );  //  [5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+// console.log(filterArray([12, 24, 8, 41, 76], 38) ); // [41, 76]
+
+
+// .............................
+// .............................
+
+
+
