@@ -390,8 +390,41 @@
 // .............................
 
 
-// ЗАДАЧА 8
+// ЗАДАЧА 8   Метод filter() 
+
+// const values = [51, -3, 27, 21, -68, 42, -37];
+// console.log(values);
+// console.log("");
+
+// //  всі елементи масиву values, які задовольнили умову колбека, тобто були >= 0 :
+// console.log(values.filter(value => value >= 0));
+// console.log("");
+
+// //  всі елементи масиву values, які задовольнили умову колбека, тобто були < 0 :
+// console.log(values.filter(value => value < 0));
+// console.log("");
+
+// //  всі елементи масиву values, які задовольнили умову колбека, тобто були > 1000 :
+// console.log(values.filter(value => value > 1000));
+// console.log("");
+
+// //  масив парних чисел :
+// console.log(values.filter(value => value % 2 === 0));
+// console.log("");
+
+// //  масив НЕпарних чисел :
+// console.log(values.filter(value => value % 2 !== 0));
+// console.log("");
 
 
+// //  Оригінальний масив values не змінився НЕ ЗМІНИВСЯ :
+// console.log(values);
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА 9   Метод filter()
 
 
