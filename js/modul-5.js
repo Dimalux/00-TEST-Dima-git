@@ -425,6 +425,36 @@
 // .............................
 
 
-// ЗАДАЧА 9   Метод filter()
+// ЗАДАЧА 9   Метод filter() на масиві об'єктів
+// Є масив студентів з балами за тест. Необхідно відфільтрувати студентів, які мають:
+// високі бали (від 80 (включно)),
+// низькі бали (нижче 50),
+// середні бали (від 50 (включно) до 80).
+
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+//   { name: "Houston", score: 64 },
+// ];
+
+// console.log(students.map(student => student.name));
+
+// // високі бали (від 80 (включно)) :
+// console.log(students.filter(student => student.score >= 80));
+
+// // низькі бали (нижче 50) :
+// console.log(students.filter(student => student.score < 50));
+
+// // середні бали (від 50 (включно) до 80) :
+// console.log(students.filter(student => student.score >= 50 && student.score < 80));
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА 10 
 
 
