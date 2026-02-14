@@ -796,4 +796,26 @@
 // .............................
 
 
-// ЗАДАЧА 16
+// ЗАДАЧА 16   Метод toSorted()
+// Метод toSorted() сортує елементи масиву.
+// Сортує вихідний масив
+// Повертає новий масив
+// За замовчуванням сортує за зростанням
+// Змінна releaseDates - це масив чисел, років видання книг.
+// Онлайн бібліотеці необхідно відображати книги, відсортовані за датою видання, за їх зростанням або спаданням. Доповни код таким чином, щоб у змінній ascendingReleaseDates вийшла копія масиву releaseDates, відсортована за зростанням, а у змінній descendingReleaseDates - копія, відсортована за спаданням.
+
+// const releaseDates = [2016, 1967, 7, 2008, 1984, 1973, 23, 2012, 1997];
+
+
+// const ascendingReleaseDates = releaseDates.toSorted((a, b) => a - b);
+// console.log(ascendingReleaseDates);
+
+// const descendingReleaseDates = releaseDates.toSorted((a, b) => b - a);
+// console.log(descendingReleaseDates);
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА 17
