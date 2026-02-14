@@ -641,9 +641,49 @@
 // .............................
 
 
-// ЗАДАЧА 13
+// ЗАДАЧА 13   Метод reduce() і масив об'єктів
+// Під час роботи з масивом об'єктів виконується редукування за значенням певної властивості. Наприклад, у нас є масив студентів з балами за тест. Необхідно отримати середній бал.
 
 
+// ВАРІАНТ з reduce() :
+
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+//   { name: "Houston", score: 64 },
+// ];
+
+// const total = students.reduce((prev, student) => 
+// prev + student.score, 0);
+// console.log(total);
+
+// const result = total / students.length;
+// console.log(result);
+
+// ....................
+
+// ВАРІАНТ з forEach() :
+
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+//   { name: "Houston", score: 64 },
+// ];
+
+// let sum = 0;
+// students.forEach(item => sum += item.score);
+// console.log(sum / students.length);
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА 14
 
 
 
