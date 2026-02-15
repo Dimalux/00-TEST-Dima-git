@@ -796,7 +796,7 @@
 // .............................
 
 
-// ЗАДАЧА 16   Метод toSorted() для масиву ЧИСЕЛ
+// ЗАДАЧА 16   Метод toSorted() -  для масиву ЧИСЕЛ
 // Метод toSorted() сортує елементи масиву.
 // Сортує вихідний масив
 // Повертає новий масив
@@ -819,7 +819,7 @@
 
 
 
-// ЗАДАЧА 17   Метод toSorted() для масиву РЯДКІВ. Використовується метод рядків "localeCompare()" :
+// ЗАДАЧА 17   Метод toSorted() -  для масиву РЯДКІВ. Використовується метод рядків "localeCompare()" :
 
 // const students = ["Jacob", "Artemis", "Solomon", "Adrian", "Kai", "Ganymede"];
 // console.log(students);
@@ -841,6 +841,142 @@
 // .............................
 
 
-// ЗАДАЧА 18
+// ЗАДАЧА 18   Метод toSorted() -  Сортування ОБ'ЄКТІВ
+// Під час роботи з масивом об'єктів сортування виконується за числовим або рядковим значенням певної властивості. Наприклад, у нас є група студентів з балами за тест. Необхідно відсортувати МАСИВ ОБ'ЄКТІВ за трьома різними сценаріями:
+// за зростанням кількості балів
+// за спаданням кількості балів
+// за ім'ям студента в алфавітному порядку
 
 
+// За ЗРОСТАННЯМ для ЧИСЕЛ кількості балів :
+
+//   Варіант 1: Сортувати сам МАСИВ ОБ'ЄКТІВ :
+
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+// ];
+
+// const upArr = students.toSorted((a, b) => a.score - b.score);
+// console.log(upArr);
+
+
+// .................
+
+//   Варіант 2: Отримати масив тільки балів і сортувати їх :
+
+// Спочатку створити масив балів, потім його сортувати
+
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+// ];
+
+// const scores = students.map(student => student.score);   //  [83, 59, 37, 94]
+// console.log(scores);
+
+// const upArr = scores.toSorted((a, b) => a - b);
+// console.log(upArr);    //  Результат: [37, 59, 83, 94]
+
+
+// .................
+
+
+//   Варіант 3: Ланцюжок методів (найкоротший)
+
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+// ];
+
+// const result = students.map(student => student.score).toSorted((a, b) => a - b);
+// console.log(result);    // Результат: [37, 59, 83, 94]
+
+
+// .................
+
+
+// За СПАДАННЯМ для ЧИСЕЛ кількості балів :
+
+//   Сортувати сам МАСИВ ОБ'ЄКТІВ :
+
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+// ];
+
+//  const downArr = students.toSorted((a, b) => b.score - a.score);
+//  console.log(downArr);
+ 
+
+//  За ім'ям студента в АЛФАВІТНОМУ порядку :
+//  Сортувати сам МАСИВ ОБ'ЄКТІВ :
+
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+// ];
+
+//  const textArr = students.toSorted((a, b) => a.name.localeCompare(b.name));
+//  console.log(textArr);
+
+
+// .............................
+// .............................
+
+
+
+// ЗАДАЧА 19    Ланцюжки методів :
+// У нас є масив об'єктів з іменами, балами й відвідуваними предметами кожного студента.
+// Необхідно отримати МАСИВ ІМЕН, відсортованих за зростанням балів за тест.
+// Для цього:
+// Відсортуємо масив методом toSorted(),
+// Після чого методом map() створимо масив значень властивості name з відсортованого масиву.
+
+
+// const students = [
+//   { name: "Mango", score: 83, courses: ["mathematics", "physics"] },
+//   { name: "Poly", score: 59, courses: ["science", "mathematics"] },
+//   { name: "Ajax", score: 37, courses: ["physics", "biology"] },
+//   { name: "Kiwi", score: 94, courses: ["literature", "science"] },
+// ];
+
+// отримати масив їхніх імен, відсортованих за зростанням балів за тест.
+
+// const names = students.toSorted((a, b) => a.score - b.score).map(student => student.name);
+// console.log(names);
+
+// МІЙ ВАРІАНТ - Отримаємо масив унікальних відвідуваних предметів, відсортований за алфавітом (filter МІЙ ВАРІАНТ) :
+// const cours = students
+// .flatMap(student => student.courses)
+// .toSorted((a, b) => a.localeCompare(b))
+// .filter((item, index, arr) => item !== arr[index - 1]);
+
+// console.log(cours);
+
+// ВАРІАНТ конспект :
+// const uniqueSortedCourses = students
+//   .flatMap(student => student.courses)
+//   .filter((course, index, array) => array.indexOf(course) === index)
+//   .toSorted((a, b) => a.localeCompare(b));
+
+//   console.log(uniqueSortedCourses);
+
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА 20
+  
