@@ -1024,7 +1024,8 @@
 
 // const MIN_BOOK_RATING = 8;
 
-// const names = books.toSorted((a, b) => a.rating - b.rating)
+// const names = books
+// .toSorted((a, b) => a.author.localeCompare(b.author))
 // .filter(item => item.rating > MIN_BOOK_RATING)
 // .map(item => item.author);
 
@@ -1039,7 +1040,7 @@
 
 // const MIN_BOOK_RATING = 8;
 
-// const names = books.toSorted((a, b) => a.rating - b.rating);
+// const names = books.toSorted((a, b) => a.author.localeCompare(b.author));
 // console.log(names);
 
 // const filterRating = names.filter(item => item.rating > MIN_BOOK_RATING);
