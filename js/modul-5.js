@@ -978,5 +978,90 @@
 // .............................
 
 
-// ЗАДАЧА 20
+// ЗАДАЧА 20   Масив books містить масив об'єктів книг, кожен з яких містить властивості title, author, rating.
+// Доповни код таким чином, щоб у змінній names вийшов масив імен авторів в алфавітному порядку, рейтинг книг яких більший за значення змінної MIN_BOOK_RATING. Значення змінної MIN_BOOK_RATING - це число 8. Використовуй ланцюжок методів.
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   {
+//     title: "The Dreams in the Witch House",
+//     author: "Howard Lovecraft",
+//     rating: 8.67,
+//   },
+// ];
+
+
+// Варіант 1 (правильний):
+// filter → map → toSorted
+
+// const MIN_BOOK_RATING = 8;
+
+// const names = books
+//   .filter(item => item.rating > MIN_BOOK_RATING)
+//   .map(book => book.author)  
+// .toSorted();
+
+
+// ............
+
+//  Варіант 2 (неефективний - Спочатку сортуємо ВСІ книги за рейтингом (навіть ті, що не підходять!)):
+// toSorted → filter → map
+
+// const MIN_BOOK_RATING = 8;
+
+// const names = books.toSorted((a, b) => a.rating - b.rating)
+// .filter(item => item.rating > MIN_BOOK_RATING)
+// .map(item => item.author);
+
+// console.log(names);
+
+
+// ............
+
+
+//  Варіант  БЕЗ ЛАНЦЮЖКА МЕТОДІВ :
+// (неефективний - Спочатку сортуємо ВСІ книги за рейтингом (навіть ті, що не підходять!)):
+
+// const MIN_BOOK_RATING = 8;
+
+// const names = books.toSorted((a, b) => a.rating - b.rating);
+// console.log(names);
+
+// const filterRating = names.filter(item => item.rating > MIN_BOOK_RATING);
+// console.log(filterRating);
+
+// const namesResult = filterRating.map(item => item.author);
+// console.log(namesResult);
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА 21 
+
+
+
+
+
+
+
+
+
+
   
