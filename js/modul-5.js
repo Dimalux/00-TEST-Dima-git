@@ -796,7 +796,7 @@
 // .............................
 
 
-// ЗАДАЧА 16   Метод toSorted()
+// ЗАДАЧА 16   Метод toSorted() для масиву ЧИСЕЛ
 // Метод toSorted() сортує елементи масиву.
 // Сортує вихідний масив
 // Повертає новий масив
@@ -818,4 +818,29 @@
 // .............................
 
 
-// ЗАДАЧА 17
+
+// ЗАДАЧА 17   Метод toSorted() для масиву РЯДКІВ. Використовується метод рядків "localeCompare()" :
+
+// const students = ["Jacob", "Artemis", "Solomon", "Adrian", "Kai", "Ganymede"];
+// console.log(students);
+
+// //   Послідовність не змінюється (a - a) або (b - b) :
+// console.log(1, students.toSorted((a, b) => a.localeCompare(a)));
+
+// //   Сортування за зростанням (a - b) :
+// const inAlphabetOrder = students.toSorted((a, b) => a.localeCompare(b));
+// console.log(inAlphabetOrder); // [ "Adrian", "Artemis", "Ganymede", "Jacob", "Kai", "Solomon" ]
+// console.log("");
+
+// //   Сортування за спаданням (b - a) :
+// const inReversedOrder = students.toSorted((a, b) => b.localeCompare(a));
+// console.log(inReversedOrder); // [ "Solomon", "Kai", "Jacob", "Ganymede", "Artemis", "Adrian" ]
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА 18
+
+
