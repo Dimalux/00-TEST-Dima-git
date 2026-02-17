@@ -1054,7 +1054,7 @@
 // .............................
 
 
-// ЗАДАЧА U -1   Стрілочна функція
+// ЗАДАЧА U-1   Стрілочна функція
 // явне / неявне повернення об'єкта:
 
 
@@ -1087,4 +1087,44 @@
 // .............................
 
 
-// ЗАДАЧА U -2
+// ЗАДАЧА U-2  Виконайте рефакторинг коду за допомогою методу forEach та стрілочної функції
+
+// СТАРИЙ КОД :
+// function logItems(items) {
+//    console.log(items);
+//    for (let i = 0; i < items.length; i += 1) {
+//    console.log(`${i + 1} - ${items[i]}`);
+//    }
+// }
+
+// console.log(logItems(["Mango", "Poly", "Ajax"]));
+// console.log(logItems(["🟢", "🟡", "🟠", "🟣", "🟤"]));
+
+
+// ..........
+
+// РЕФАКТОРИНГ КОДУ :
+
+// варіант 1 :
+// const logItems = items => {
+//    console.log(items);  
+// items.forEach((item, index) => console.log(`${index + 1}: ${item}`));
+// }
+
+// або варіант 2 :
+// function logItems(items) {
+//    console.log(items);  
+
+// items.forEach((item, index) => console.log(`${index + 1}: ${item}`));
+
+// }
+
+// console.log(logItems(["Mango", "Poly", "Ajax"]));
+// console.log(logItems(["🟢", "🟡", "🟠", "🟣", "🟤"]));
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА U-3
