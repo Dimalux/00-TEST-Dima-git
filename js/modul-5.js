@@ -1127,4 +1127,41 @@
 // .............................
 
 
-// ЗАДАЧА U-3
+// ЗАДАЧА U-3   Виконайте рефакторинг коду за допомогою методу forEach та стрілочної функції
+ 
+// СТАРИЙ КОД :
+// function printContactsInfo({ names, phones }) {
+//     const namesArr = names.split(",");
+//     const phonesArr = phones.split(",");
+
+//     for (let i = 0; i < namesArr.length; i += 1) {
+//     console.log(`${namesArr[i]}: ${phonesArr[i]}`);
+//     }
+// }
+
+// printContactsInfo({
+//     names: "Jacob,William,Solomon,Artemis",
+//     phones: "89001234567,89001112233,890055566377,890055556300",
+// });
+
+// ..........
+
+// РЕФАКТОРИНГ КОДУ :
+// const  printContactsInfo = ({ names, phones }) => {
+//     const namesArr = names.split(",");
+//     const phonesArr = phones.split(",");
+
+// namesArr.forEach((name, ind)=> console.log(`${name}:  ${phonesArr[ind]}`));
+// }
+
+// printContactsInfo({
+//     names: "Jacob,William,Solomon,Artemis",
+//     phones: "89001234567,89001112233,890055566377,890055556300",
+// });
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА U-4
