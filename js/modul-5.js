@@ -1147,6 +1147,24 @@
 // ..........
 
 // РЕФАКТОРИНГ КОДУ :
+
+// варіант 1  передача ОБ'єкта, як параметра функції :
+// const  printContactsInfo = (obj) => {
+//     const namesArr = obj.names.split(",");
+//     const phonesArr = obj.phones.split(",");
+
+// namesArr.forEach((name, ind)=> console.log(`${name}:  ${phonesArr[ind]}`));
+// }
+
+// printContactsInfo({
+//     names: "Jacob,William,Solomon,Artemis",
+//     phones: "89001234567,89001112233,890055566377,890055556300",
+// });
+
+// .........
+
+// варіант 2  передача ОБ'єкта :
+
 // const  printContactsInfo = ({ names, phones }) => {
 //     const namesArr = names.split(",");
 //     const phonesArr = phones.split(",");
@@ -1164,4 +1182,39 @@
 // .............................
 
 
-// ЗАДАЧА U-4
+// ЗАДАЧА U-4   Виконайте рефакторинг коду за допомогою методу forEach та стрілочної функції
+
+// СТАРИЙ КОД :
+// function calculateAverage(...args) {
+//     let total = 0;
+//     for (let i = 0; i < args.length; i++) {
+//     total += args[i];
+//     }
+//     return total / args.length;
+// }
+
+// console.log(calculateAverage(1, 2, 3, 4));         // 2.5
+// console.log(calculateAverage(14, 8, 2));           // 8
+// console.log(calculateAverage(27, 43, 2, 8, 36));   // 23.2
+
+
+// ..........
+
+// РЕФАКТОРИНГ КОДУ :
+
+// const calculateAverage = (...args) => {
+
+//     let total = 0;
+// args.forEach(item => total += item);
+// return total / args.length;
+// }
+
+// console.log(calculateAverage(1, 2, 3, 4));         // 2.5
+// console.log(calculateAverage(14, 8, 2));           // 8
+// console.log(calculateAverage(27, 43, 2, 8, 36));   // 23.2
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА U-5
