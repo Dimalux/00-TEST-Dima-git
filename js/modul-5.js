@@ -1313,11 +1313,10 @@
 // console.log(allCars);
 
 
-// ............................
-
-// Варіант 2  (чат GPT) :
+// ...............
 
 
+// Варіант 2  (МІЙ + чат GPT) :
 // const allCars = [
 //     { make: "Honda", model: "CR-V", amount: 14, price: 24045 },
 //     { make: "Honda", model: "Accord", amount: 2, price: 22455 },
@@ -1331,10 +1330,21 @@
 //     { make: "Ford", model: "Explorer", amount: 6, price: 31660 }
 // ];
 
-// const makeCarsWithDiscount = (...arr) => console.log(arr);
+// const makeCarsWithDiscount = (arr, discount) => arr.map(item => {
+
+// const itemNew = {...item};
+// const priceNew = itemNew.price * (1 - discount);    
+// itemNew.price = priceNew;
+// return itemNew;
+//     }
+//     );  
+
+// console.log(makeCarsWithDiscount(allCars, 0.2));
+// console.log(allCars);
 
 
-// console.log(makeCarsWithDiscount(allCars));
+// .............................
+// .............................
 
 
-
+// ЗАДАЧА U-6
