@@ -1372,4 +1372,58 @@
 // .............................
 
 
-// ЗАДАЧА U-6
+// ЗАДАЧА U-7   Збільшуємо кількість годин "timePlayed" гравця за "id"
+
+// Варіант 1  (Мій) :
+// const playerId = "player-3";
+// const num = 50;
+
+// const players = [
+//     { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: true },
+//     { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: false },
+//     { id: "player-3", name: "Kiwi", timePlayed: 230, points: 48, online: true },
+//     { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
+//     { id: "player-5", name: "Chelsy", timePlayed: 80, points: 48, online: true }
+// ];
+
+// console.log(players);
+
+// const playersNew = players.map(player => ({...player, timePlayed: player.id === playerId ? player.timePlayed + num : player.timePlayed}));
+    
+//     console.log(playersNew);
+
+
+// ...............
+
+
+// Варіант 2  (Ментор урок на 2:08:08) :
+
+// const playerId = "player-3";
+
+// const players = [
+//     { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: true },
+//     { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: false },
+//     { id: "player-3", name: "Kiwi", timePlayed: 230, points: 48, online: true },
+//     { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
+//     { id: "player-5", name: "Chelsy", timePlayed: 80, points: 48, online: true }
+// ];
+
+//     const newArr = players.map((item) => {
+//     if(item.id === playerId) {
+//     return {
+//     ...item,
+//     timePlayed: item.timePlayed + 50
+//     }
+//     }
+//     return item;
+// })
+
+// console.log(newArr);
+
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА U-8 
