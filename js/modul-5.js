@@ -1431,15 +1431,15 @@
 // якій "розглажує" тільки один рівень) :
 // 2)  Метод flat(num)  -  "розглажує" на різну глибину, наприклад на "2" рівня буде "arr.flat(2)"
 
-const arr = [1, 2, [3, [4, [5]]]];
+// const arr = [1, 2, [3, [4, [5]]]];
 
-// Метод flat(Infinity) :
-console.log(arr.flat(Infinity));   //   [1, 2, 3, 4, 5]
+// // Метод flat(Infinity) :
+// console.log(arr.flat(Infinity));   //   [1, 2, 3, 4, 5]
 
-// Метод flat(num) :
-console.log(arr.flat(1));  //  [1, 2, 3, Array(2)]
-console.log(arr.flat(2));  //  [1, 2, 3, 4, Array(1)]
-console.log(arr.flat(3));  //  [1, 2, 3, 4, 5]
+// // Метод flat(num) :
+// console.log(arr.flat(1));  //  [1, 2, 3, Array(2)]
+// console.log(arr.flat(2));  //  [1, 2, 3, 4, Array(1)]
+// console.log(arr.flat(3));  //  [1, 2, 3, 4, 5]
 
 
 
@@ -1447,4 +1447,35 @@ console.log(arr.flat(3));  //  [1, 2, 3, 4, 5]
 // .............................
 
 
-// ЗАДАЧА U-9 
+// ЗАДАЧА U-9   Метод filter(callback)
+// Нехай функція "filterByPrice" повертає масив автомобілів ціна яких
+// менше за значення параметра "threshold".
+
+
+// const allCars = [
+//     { make: "Honda", model: "CR-V", amount: 14, price: 24045 },
+//     { make: "Honda", model: "Accord", amount: 2, price: 22455 },
+//     { make: "Mazda", model: "Mazda 6", amount: 8, price: 24195 },
+//     { make: "Mazda", model: "CX-9", amount: 7, price: 31520 },
+//     { make: "Toyota", model: "4Runner", amount: 19, price: 34210 },
+//     { make: "Toyota", model: "Sequoia", amount: 16, price: 45560 },
+//     { make: "Toyota", model: "Tacoma", amount: 4, price: 24320 },
+//     { make: "Ford", model: "F-150", amount: 11, price: 27110 },
+//     { make: "Ford", model: "Fusion", amount: 13, price: 22120 },
+//     { make: "Ford", model: "Explorer", amount: 6, price: 31660 }
+// ];
+
+
+// const filterByPrice = (arr, num) => arr.filter(item => item.price <= num);
+
+// const threshold = 25000;
+
+// console.log(filterByPrice(allCars, threshold));
+
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА U-10
