@@ -1499,3 +1499,37 @@
 //  console.log(filterByMake(cars, "Ford"));
 
  
+// .............................
+// .............................
+
+
+// ЗАДАЧА U-11   Метод find()
+// Метод find(callback)  -  дозволяє знайти і повернути перший відповідний елемент, 
+// що задовольняє умову, після чого перебирання масиву припиняється. Тобто він, на відміну 
+// від методу filter(callback), шукає до першого збігу.
+
+// Шукаємо машину за моделлю
+
+// const cars = [
+//   { make: "Honda", model: "CR-V", type: "suv", price: 24045 },
+//   { make: "Honda", model: "Accord", type: "sedan", price: 22455 },
+//   { make: "Mazda", model: "Mazda 6", type: "sedan", price: 24195 },
+//   { make: "Mazda", model: "CX-9", type: "suv", price: 31520 },
+//   { make: "Toyota", model: "4Runner", type: "suv", price: 34210 },
+//   { make: "Toyota", model: "Sequoia", type: "suv", price: 45560 },
+//   { make: "Toyota", model: "Tacoma", type: "truck", price: 24320 },
+//   { make: "Ford", model: "F-150", type: "truck", price: 27110 },
+//   { make: "Ford", model: "Fusion", type: "sedan", price: 22120 },
+//   { make: "Ford", model: "Explorer", type: "suv", price: 31660 }
+// ];
+
+// const getByModel = (arr, getModel) => arr.find(item => item.model === getModel);
+
+//  console.log(getByModel(cars, "Tacoma"));
+  
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА U-12
