@@ -1564,32 +1564,55 @@
 
 //  Рахуемо загальну зарплату
  
-const salary = {
-    mango: 100,
-    poly: 50,
-    ajax: 150,
-};
+// const salary = {
+//     mango: 100,
+//     poly: 50,
+//     ajax: 150,
+// };
 
-const arr = Object.values(salary);
-console.log(arr);
+// const arr = Object.values(salary);
+// console.log(arr);
 
-const result = arr.reduce(((prev, item) => prev + item), 0);
-console.log(result);
+// const result = arr.reduce(((prev, item) => prev + item), 0);
+// console.log(result);
 
 
-// ...............
+// // або ланцюжок методів і без початкового значення акумулятора "0":
+// const arr2 = Object.values(salary).reduce((prev, item) => prev + item);
+// console.log(arr2);
 
-// Метод map() для порівняння :
-const arr2 = Object.values(salary);
-console.log(arr);
+// // ...............
 
-let sum = 0;
-const result2 = arr2.map(item => sum += item);
-console.log(sum);
+// // Метод map() для порівняння :
+// const arr3 = Object.values(salary);
+// console.log(arr);
+
+// let sum = 0;
+// const result2 = arr3.map(item => sum += item);
+// console.log(sum);
 
 
 // .............................
 // .............................
 
 
-// ЗАДАЧА U-14
+// ЗАДАЧА U-14    Порахувати загальну кількімть годин "timePlayed", 
+// яку гравці програли в ігрі :
+
+// const players = [
+//     { id: "player-1", name: "Mango", timePlayed: 310, online: false },
+//     { id: "player-2", name: "Poly", timePlayed: 470, online: true },
+//     { id: "player-3", name: "Kiwi", timePlayed: 230, online: true },
+//     { id: "player-4", name: "Ajax", timePlayed: 150, online: false },
+//     { id: "player-5", name: "Chelsey", timePlayed: 80, online: true }
+// ];
+
+// const result = players.reduce((prev, item) => prev + item.timePlayed, 0);
+// console.log(result);
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА U-15
