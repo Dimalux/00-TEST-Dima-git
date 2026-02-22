@@ -1571,10 +1571,10 @@
 // };
 
 // const arr = Object.values(salary);
-// console.log(arr);
+// console.log(arr);    //   [100, 50, 150]
 
 // const result = arr.reduce(((prev, item) => prev + item), 0);
-// console.log(result);
+// console.log(result);  //   840
 
 
 // // або ланцюжок методів і без початкового значення акумулятора "0":
@@ -1615,4 +1615,21 @@
 // .............................
 
 
-// ЗАДАЧА U-15
+// ЗАДАЧА U-15   Рахуємо загальну суму товарів кошика :
+ 
+// const cart = [
+//     { label: "Apples", price: 100, quantity: 2 },
+//     { label: "Bananas", price: 120, quantity: 3 },
+//     { label: "Lemons", price: 70, quantity: 4 },
+// ];
+
+// const sum = cart.reduce((prev, item) => prev + item.price * item.quantity, 0);
+// console.log(sum);    //   840
+
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА U-16
