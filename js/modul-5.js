@@ -1716,9 +1716,10 @@
 
 // const numbers2 = [5, 2, 65, 1, 12, 8];
 
-// const arr = numbers2.filter(item => item > 6)     //  [65, 12, 8]
-// .map(item => item * 3)                            //  [195, 36, 24]
-// .toSorted((x, y) => x - y);                       //  [24, 36, 195]
+// const arr = numbers2
+// .filter(item => item > 6)           //  [65, 12, 8]
+// .map(item => item * 3)              //  [195, 36, 24]
+// .toSorted((x, y) => x - y);         //  [24, 36, 195]
 
 // console.log(arr);
 
@@ -1727,4 +1728,34 @@
 // .............................
 
 
-// ЗАДАЧА U-18
+// ЗАДАЧА U-18     ЛАНЦЮЖКИ МЕТОДІВ :
+
+//  Нехай функція "getModelsOnSale" повертає масив моделей автомобілів,
+//  але тільки тих, які зараз на розпродажі "onSale" :
+
+// const allCars = [
+//   { make: "Honda", model: "CR-V", type: "suv", amount: 14, price: 24000, onSale: true },
+//   { make: "Honda", model: "Accord", type: "sedan", amount: 2, price: 20000, onSale: true },
+//   { make: "Mazda", model: "Mazda 6", type: "sedan", amount: 8, price: 15000, onSale: false },
+//   { make: "Mazda", model: "CX-9", type: "suv", amount: 7, price: 31500, onSale: true },
+//   { make: "Toyota", model: "4Runner", type: "suv", amount: 19, price: 42000, onSale: false },
+//   { make: "Toyota", model: "Sequoia", type: "suv", amount: 16, price: 55000, onSale: false },
+//   { make: "Toyota", model: "Tacoma", type: "truck", amount: 4, price: 35000, onSale: true },
+//   { make: "Ford", model: "F-150", type: "truck", amount: 11, price: 38000, onSale: true },
+//   { make: "Ford", model: "Fusion", type: "sedan", amount: 13, price: 18000, onSale: true },
+//   { make: "Ford", model: "Explorer", type: "suv", amount: 6, price: 32000, onSale: false },
+// ];
+
+// const getModelsOnSale = (arr) => 
+// arr
+// .filter(item => item.onSale)
+// .map(item => item.model);
+
+// console.log(getModelsOnSale(allCars));
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА U-19     ЛАНЦЮЖКИ МЕТОДІВ :
