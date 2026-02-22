@@ -1632,4 +1632,40 @@
 // .............................
 
 
-// ЗАДАЧА U-16
+// ЗАДАЧА U-16   Метод  -  toSorted((a, b) => a - b) / toSorted((a, b) => b - a)
+
+// Сортування масиву об'єктів за ігровим часом "timePlayed" :
+
+const players = [
+  { id: "player-1", name: "Mango", timePlayed: 310, online: false },
+  { id: "player-2", name: "Poly", timePlayed: 470, online: true },
+  { id: "player-3", name: "Aiwi", timePlayed: 230, online: true },
+  { id: "player-4", name: "Ajax", timePlayed: 150, online: false },
+  { id: "player-5", name: "Chelsey", timePlayed: 80, online: true },
+];
+
+const sortedByTime = players.map(item => item.timePlayed);
+console.log(sortedByTime);
+
+console.log(sortedByTime.toSorted((a, b) => a - b));
+console.log(sortedByTime.toSorted((a, b) => b - a));
+
+console.log("");
+
+// ...........
+
+// або метод ланцюжків :
+const sortedByTime1 = players.map(item => item.timePlayed)
+.toSorted((a, b) => a - b);
+console.log(sortedByTime1);
+
+const sortedByTime2 = players.map(item => item.timePlayed)
+.toSorted((a, b) => b - a);
+console.log(sortedByTime2);
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА U-17
