@@ -1634,38 +1634,97 @@
 
 // ЗАДАЧА U-16   Метод  -  toSorted((a, b) => a - b) / toSorted((a, b) => b - a)
 
-// Сортування масиву об'єктів за ігровим часом "timePlayed" :
+// Сортування МАСИВУ ОБ'ЄКТІВ за ігровим часом "timePlayed" :
 
-const players = [
-  { id: "player-1", name: "Mango", timePlayed: 310, online: false },
-  { id: "player-2", name: "Poly", timePlayed: 470, online: true },
-  { id: "player-3", name: "Aiwi", timePlayed: 230, online: true },
-  { id: "player-4", name: "Ajax", timePlayed: 150, online: false },
-  { id: "player-5", name: "Chelsey", timePlayed: 80, online: true },
-];
+// Варіант  МІЙ (зробив сортування МАСИВУ ЦИФР):
 
-const sortedByTime = players.map(item => item.timePlayed);
-console.log(sortedByTime);
+// const players = [
+//   { id: "player-1", name: "Mango", timePlayed: 310, online: false },
+//   { id: "player-2", name: "Poly", timePlayed: 470, online: true },
+//   { id: "player-3", name: "Aiwi", timePlayed: 230, online: true },
+//   { id: "player-4", name: "Ajax", timePlayed: 150, online: false },
+//   { id: "player-5", name: "Chelsey", timePlayed: 80, online: true },
+// ];
 
-console.log(sortedByTime.toSorted((a, b) => a - b));
-console.log(sortedByTime.toSorted((a, b) => b - a));
+// const sortedByTime = players.map(item => item.timePlayed);
+// console.log(sortedByTime);  //   [310, 470, 230, 150, 80]
 
-console.log("");
+// console.log(sortedByTime.toSorted((a, b) => a - b));  //   [80, 150, 230, 310, 470]
+// console.log(sortedByTime.toSorted((a, b) => b - a));  //   [470, 310, 230, 150, 80]
 
-// ...........
+// console.log("");
 
-// або метод ланцюжків :
-const sortedByTime1 = players.map(item => item.timePlayed)
-.toSorted((a, b) => a - b);
-console.log(sortedByTime1);
+// // ...........
 
-const sortedByTime2 = players.map(item => item.timePlayed)
-.toSorted((a, b) => b - a);
-console.log(sortedByTime2);
+// // або метод ланцюжків :
+// const sortedByTime1 = players.map(item => item.timePlayed)
+// .toSorted((a, b) => a - b);
+// console.log(sortedByTime1);
+
+// const sortedByTime2 = players.map(item => item.timePlayed)
+// .toSorted((a, b) => b - a);
+// console.log(sortedByTime2);
+
+
+
+// Варіант  Ментор :
+
+// const players = [
+//   { id: "player-1", name: "Mango", timePlayed: 310, online: false },
+//   { id: "player-2", name: "Poly", timePlayed: 470, online: true },
+//   { id: "player-3", name: "Aiwi", timePlayed: 230, online: true },
+//   { id: "player-4", name: "Ajax", timePlayed: 150, online: false },
+//   { id: "player-5", name: "Chelsey", timePlayed: 80, online: true },
+// ];
+
+// const sortedByBestTime1 = players.toSorted((x, y) => x.timePlayed - y.timePlayed)  //  за ЗРОСТАННЯМ
+
+// console.log(sortedByBestTime1);
+// console.table(sortedByBestTime1);
+
+// console.log("");
+
+// const sortedByBestTime2 = players.toSorted((x, y) => y.timePlayed - x.timePlayed)  //  за СПАДАННЯМ
+
+// console.log(sortedByBestTime2);
+// console.table(sortedByBestTime2);
 
 
 // .............................
 // .............................
 
 
-// ЗАДАЧА U-17
+// ЗАДАЧА U-17   Ланцюжки методів :
+
+
+// const numbers = [5, 2, 65, 1, 12, 8];
+
+// const arr1 = numbers.filter(item => item > 6);
+// console.log(arr1);                              //  [65, 12, 8]
+
+
+// const arr2 = arr1.map(item => item * 3);
+// console.log(arr2);                              //  [195, 36, 24]
+
+
+// const arr3 = arr2.toSorted((x, y) => x - y);    //  [24, 36, 195]
+// console.log(arr3);
+
+// ........
+
+// Те саме, тільки використовуємо  ЛАНЦЮЖКИ МЕТОДІВ :
+
+// const numbers2 = [5, 2, 65, 1, 12, 8];
+
+// const arr = numbers2.filter(item => item > 6)     //  [65, 12, 8]
+// .map(item => item * 3)                            //  [195, 36, 24]
+// .toSorted((x, y) => x - y);                       //  [24, 36, 195]
+
+// console.log(arr);
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА U-18
