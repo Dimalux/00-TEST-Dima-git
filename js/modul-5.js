@@ -1532,7 +1532,8 @@
 // .............................
 
 
-// ЗАДАЧА U-12     Нехай функція getCarsWithType повертає масив автомобілів тип яких
+// ЗАДАЧА U-12   Метод filter() :
+// Нехай функція getCarsWithType повертає масив автомобілів тип яких
 //  збігається зі значенням параметра type.
  
 
@@ -1559,4 +1560,36 @@
 // .............................
 
 
-// ЗАДАЧА U-13
+// ЗАДАЧА U-13   Метод reduce()
+
+//  Рахуемо загальну зарплату
+ 
+const salary = {
+    mango: 100,
+    poly: 50,
+    ajax: 150,
+};
+
+const arr = Object.values(salary);
+console.log(arr);
+
+const result = arr.reduce(((prev, item) => prev + item), 0);
+console.log(result);
+
+
+// ...............
+
+// Метод map() для порівняння :
+const arr2 = Object.values(salary);
+console.log(arr);
+
+let sum = 0;
+const result2 = arr2.map(item => sum += item);
+console.log(sum);
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА U-14
