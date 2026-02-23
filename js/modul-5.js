@@ -1801,6 +1801,7 @@
 
 // Створення об'єкта за допомогою Метода reduce() де ключем має бути назва фрукту, а значенням іконка :
 
+// Мій варіант :
 // const arr = ["apple, 🍎", "orange, 🍊", "banana, 🍌", "lemon, 🍋"];
 
 // const obj = arr.reduce((prev, item) => {
@@ -1809,6 +1810,33 @@
 //  prev[item.slice(0, ind)] = item[item.length - 1];
 //  return prev;
 
+// }, {}
+// )
+    
+// console.log(obj);
+
+// ...........
+
+// Варіант  Ментор :
+
+
+// const arr = ["apple, 🍎", "orange, 🍊", "banana, 🍌", "lemon, 🍋"];
+
+// const obj = arr.reduce((prev, item) => {
+// const arrNew = item.split(",");
+// console.log(arrNew);
+
+// Мій варіант :
+// prev[arrNew[0]] = arrNew[1];
+// console.log(prev);
+
+// Ментор
+// const key = arrNew[0];
+// const value = arrNew[1];
+// prev[key] = value;
+// console.log(key, value);
+
+// return prev;
 // }, {}
 // )
     
