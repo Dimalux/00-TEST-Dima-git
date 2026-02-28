@@ -41,32 +41,32 @@
 // ПОЯСНЕННЯ-1-1 
 // Як правильно за допомогою методу call викликати функцію showName в контексті об’єкта user?
 
-function showName() {
-	console.log(this.name);
-}
+// function showName() {
+// 	console.log(this.name);
+// }
 
-const user = {
-  name: "Alice",
-};
+// const user = {
+//   name: "Alice",
+// };
 
-showName.call(user);
+// showName.call(user);
 
 
 // ............
 
 // Яким буде результат, якщо викликати код вище?
 
-function greet(name) {
-  console.log(`Hello, ${name}! I am ${this.person}`);
-}
+// function greet(name) {
+//   console.log(`Hello, ${name}! I am ${this.person}`);
+// }
 
-const person = "John";   //  НЕ буде враховуватися
+// const person = "John";   //  НЕ буде враховуватися
 
-const context = {
-  person: "Alice"
-};
+// const context = {
+//   person: "Alice"
+// };
 
-greet.call(context, "Bob");   //   Hello, Bob! I am Alice
+// greet.call(context, "Bob");   //   Hello, Bob! I am Alice
 
 
 
@@ -75,3 +75,37 @@ greet.call(context, "Bob");   //   Hello, Bob! I am Alice
 
 
 // ПОЯСНЕННЯ-2  Метод apply()
+
+// Метод apply є аналогом методу call. Відмінність у тому, що в методі apply() синтаксис передачі аргументів вимагає МАСИВУ, навіть якщо аргументи функції — це окремі значення.
+// foo.apply(thisArg, [arg1, arg2, ...]) де
+// thisArg — об'єкт, який ми хочемо встановити як контекст (значення this) для функції.
+// arg1, arg2, ... — необов'язкові аргументи, які будуть передані функції.
+
+// Тобто різниця між call і apply полягає лише у формі передачі аргументів. Вибір між call і apply залежить від того, як саме ти хочеш передавати аргументи до функції в конкретній ситуації. У всіх інших аспектах вони працюють ідентично: викликають функцію в контексті зазначеного об'єкта і передають їй аргументи.
+
+
+// Приклад, де використаємо раніше оголошену нами функцію greet. Цього разу викликаємо її, використовуючи метод apply замість call.
+
+// function greet(str) {
+//   console.log(`${str}, ${this.username}, your room is ${this.room}!`);
+// }
+
+// const mango = {
+//   username: "Mango",
+// 	room: 27
+// };
+
+// const poly = {
+//   username: "Poly",
+// 	room: 191
+// };
+
+// greet.apply(mango, ["Welcome"]); // "Welcome, Mango, your room is 27!"
+// greet.apply(poly, ["Aloha"]); // "Aloha, Poly, your room is 191!"
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-3  Метод bind() і втрата контексту
