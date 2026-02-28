@@ -38,4 +38,40 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-2  
+// ПОЯСНЕННЯ-1-1 
+// Як правильно за допомогою методу call викликати функцію showName в контексті об’єкта user?
+
+function showName() {
+	console.log(this.name);
+}
+
+const user = {
+  name: "Alice",
+};
+
+showName.call(user);
+
+
+// ............
+
+// Яким буде результат, якщо викликати код вище?
+
+function greet(name) {
+  console.log(`Hello, ${name}! I am ${this.person}`);
+}
+
+const person = "John";   //  НЕ буде враховуватися
+
+const context = {
+  person: "Alice"
+};
+
+greet.call(context, "Bob");   //   Hello, Bob! I am Alice
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-2  Метод apply()
