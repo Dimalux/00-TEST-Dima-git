@@ -33,7 +33,6 @@
 // greet.call(poly, "Aloha");      // "Aloha, Poly, your room is 191!"
 
 
-
 // .............................
 // .............................
 
@@ -133,3 +132,52 @@
 // sayHelloToAnna("Доброго ранку"); // "Доброго ранку, Анна!"
 // sayHelloToAnna("Привіт");        // "Привіт, Анна!"
 
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-3-1    Метод bind() - коли функція як МЕТОД ОБёЄКТА :
+
+// const customer = {
+//   username: "Jacob",
+// 	sayHello() {
+// 		console.log(`Hello, ${this.username}!`);
+//   }
+// };
+
+// customer.sayHello(); // "Hello, Jacob!"
+
+// const greet = customer.sayHello.bind(customer);
+
+// greet(); // "Hello, Jacob!"
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-4  Метод bind() і колбеки :
+
+// const customer = {
+//   firstName: "Jacob",
+//   lastName: "Mercer",
+//   getFullName() {
+//     return `${this.firstName} ${this.lastName}`;
+//   },
+// };
+
+// function makeMessage(callback) {
+// 	const username = callback();
+// 	console.log(`Processing an application from ${username}`);
+// }
+
+// makeMessage(customer.getFullName.bind(customer)); // "Processing an application from Jacob Mercer"
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-5
