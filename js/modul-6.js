@@ -353,4 +353,21 @@
 
 // ...............
 
+// ПОЯСНЕННЯ-9-1    Перебір власних властивостей - цикл for...in + метод "obj.hasOwnProperty(key)" :
+// Для вибору саме власних властивостей під час перебору циклом for...in необхідно на кожній ітерації додати перевірку на власну властивість методом "obj.hasOwnProperty(key)". Цей метод повертає true, якщо властивість з іменем key належить об'єкту obj, а не його прототипу, в іншому разі — false.
 
+// const animal = { legs: 4 };
+// const dog = Object.create(animal);
+// dog.name = "Mango";
+
+// for (const key in dog) {
+// 	if(dog.hasOwnProperty(key)) {
+// 		console.log(key);    // "name"
+// 	}
+// }
+
+
+// ...............
+
+
+// ПОЯСНЕННЯ-9-2    Перебір власних властивостей - методи Object.keys(obj) і Object.values(obj)
