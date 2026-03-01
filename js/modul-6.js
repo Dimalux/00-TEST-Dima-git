@@ -278,4 +278,32 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-8
+// // ПОЯСНЕННЯ-8   Перевірка прототипу :
+// Якщо в коді потрібно перевірити, чи є об'єкт прототипом іншого об'єкта, використовується метод isPrototypeOf().
+
+// objA.isPrototypeOf(objB)
+
+// Метод перевіряє, чи є об'єкт objA прототипом для об’єкта objB
+// Якщо так, повертає true, в іншому разі повертає false
+
+
+// const customer = {
+// 	username: "Jacob"
+// };
+
+// const animal = { 
+// 	legs: 4 
+// };
+
+// const dog = Object.create(animal);
+// dog.name = "Mango";
+
+// console.log(dog); // { name: "Mango", [[Prototype]]: animal }
+
+// console.log(animal.isPrototypeOf(dog)); // true
+// console.log(dog.isPrototypeOf(animal)); // false
+// console.log(customer.isPrototypeOf(dog)); // false
+
+
+
+
