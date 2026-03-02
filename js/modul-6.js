@@ -370,4 +370,32 @@
 // ...............
 
 
-// ПОЯСНЕННЯ-9-2    Перебір власних властивостей - методи Object.keys(obj) і Object.values(obj)
+// ПОЯСНЕННЯ-9-2    Перебір власних властивостей - методи Object.keys(obj) і Object.values(obj) із циклом for...of.
+//  замість цикла for...in + метод "obj.hasOwnProperty(key)"
+
+
+// const animal = { 
+// legs: 4,
+// rating: 5,
+// onLine: true
+//  };
+// const dog = Object.create(animal);
+// dog.name = "Mango";
+// dog.color = "blak";
+
+
+// console.log(Object.keys(animal));     // (3) ['legs', 'rating', 'onLine']
+// console.log(Object.values(animal));   // (3) [4, 5, true]
+
+// console.log(Object.keys(dog));       // (2) ['name', 'color']
+// console.log(Object.values(dog));     // ['Mango', 'blak']
+
+// for(const key of Object.keys(dog)) {
+// 	console.log(key); // "name" "color"
+// }
+
+
+// ...............
+
+
+// ПОЯСНЕННЯ-10
