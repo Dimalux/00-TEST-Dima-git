@@ -403,4 +403,23 @@
 // ...............
 
 
-// ПОЯСНЕННЯ-10
+// ПОЯСНЕННЯ-10  Ланцюжки прототипів - Об'єкт, який виступає прототипом для іншого об'єкта, також може мати свій прототип. Отже, існують ланцюжки прототипів :
+
+// const objA = { a: "objC prop" };
+
+// const objB = Object.create(objA);
+// objB.b = "objB prop";
+
+// const objC = Object.create(objB);
+// objC.c = "objC prop";
+
+// console.log(objA); // { a: "objA prop", [[Prototype]]: Object }
+// console.log(objB); // { b: "objB prop", [[Prototype]]: objA }
+// console.log(objC); // { c: "objC prop", [[Prototype]]: objB }
+
+
+
+// ...............
+
+
+// ПОЯСНЕННЯ-11
