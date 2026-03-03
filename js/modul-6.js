@@ -315,13 +315,18 @@
 
 // const animal = {
 //   legs: 4,
+//   color: "red"
 // };
 // const dog = Object.create(animal);
 // dog.name = "Mango";
+// dog.rating = 7;
 
 // console.log(dog); // {name: "Mango", [[Prototype]]: animal}
 // console.log(dog.name); // "Mango"
 // console.log(dog.legs); // 4
+
+// console.log(animal.hasOwnProperty("name"));
+// console.log(animal.hasOwnProperty("color"));
 
 
 // Властивість name належить об'єкту dog, тому називається власною властивістю об'єкта dog.
