@@ -575,19 +575,19 @@
 // // ВАРІАНТ-1  методи changeEmail() і #validateEmail() :
 
 //   // ПУБЛІЧНИЙ метод для зміни електронної пошти
-//   changeEmail(newEmail) {
-//     if (this.#validateEmail(newEmail)) {
-//       this.#email = newEmail;
-//     } else {
-//       console.log('Invalid email format');
-//     }
-//   }
+//   // changeEmail(newEmail) {
+//   //   if (this.#validateEmail(newEmail)) {
+//   //     this.#email = newEmail;
+//   //   } else {
+//   //     console.log('Invalid email format');
+//   //   }
+//   // }
 
 //   // ПРИВАТНИЙ метод для валідації електронної пошти
-//   #validateEmail(email) {
-//     return email.includes('@');
-//   }
-// }
+// //   #validateEmail(email) {
+// //     return email.includes('@');
+// //   }
+// // }
 
 // // ВАРІАНТ-2  один метод метод changeEmail() замість 2-х -  changeEmail() + #validateEmail() :
 
@@ -599,6 +599,16 @@
 // // return `email "${newEmail}" - invalid !!!`
 // // }
 
+
+// // ВАРІАНТ-3  один метод метод changeEmail() замість 2-х - ТЕРНАРНИЙ оператор :
+
+// // changeEmail(newEmail) {
+// // return newEmail.includes("@") ? this.#email = newEmail : console.log(`email "${newEmail}" - invalid !!!`);
+// // ;
+// // }
+
+// }
+
 // const mango = new User({
 //   name: 'Mango',
 //   email: 'mango@mail.com',
@@ -606,7 +616,7 @@
 
 // // Спробуємо змінити електронну пошту
 // mango.changeEmail('newmail.com'); // "Invalid email format"
-// mango.changeEmail('new@mail.com');
+// // mango.changeEmail('new@mail.com');
 // console.log(mango.getEmail()); // "new@mail.com"
 
 // // Прямий виклик приватного методу ззовні призведе до помилки
@@ -679,4 +689,50 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-17   
+// ПОЯСНЕННЯ-17   Статичні властивості
+
+// Крім публічних і приватних властивостей майбутнього екземпляра, у класі можна оголосити його власні властивості. Властивості, що доступні тільки класові, але не його екземплярам — це статичні властивості. Вони корисні для зберігання інформації, що стосується класу.
+// Статичні властивості оголошуються в тілі класу. Перед ім'ям властивості додається ключове слово "static". Статичні властивості можна використовувати як у методах класу, так і поза класом.
+// У екземпляра немає доступу до статичних властивостей класу.
+
+// ........
+
+// Задача :     Виконай рефакторинг класу Car. Додай публічну статичну властивість maxPrice зі значенням число 50000 - максимально допустима ціна автомобіля.
+// Додай сеттеру price перевірку значення параметра newPrice, що передається. 
+// Якщо воно більше за maxPrice, сеттер нічого не робить, 
+// а якщо менше або дорівнює, то перезаписує ціну автомобіля.
+
+// class Car {
+// static maxPrice = 50000;
+// #price;
+
+//   constructor(params) {
+//     this.#price = params.price;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+//   set price(newPrice) {
+// if(newPrice > Car.maxPrice) {
+//  return; 
+// };    
+//     this.#price = newPrice;
+//   }
+// }
+
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000   ПЕРЕЗАПИСАЛИ
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000   ПЕРЕЗАПИСАЛИ
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000   НЕ ПЕРЕЗАПИСАЛИ  (51000 > 49000)
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-18  
