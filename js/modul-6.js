@@ -520,19 +520,19 @@
 
 
 // class User {
-//   name;    // Необов'язкове оголошення публічної властивості
-//   #email;  // Обов'язкове оголошення приватної властивості
+//   name;    // Необов'язкове оголошення ПУБЛІЧНОЇ властивості
+//   #email;  // Обов'язкове оголошення ПРИВАТНОЇ властивості
 
 //   constructor(params) {
 //     this.name = params.name;
 //     this.#email = params.email;
 //   }
 
-//   getEmail() {                      //   ПУБЛІЧНИЙ метод для отримання електронної пошти
+//   getEmail() {                //   ПУБЛІЧНИЙ метод для отримання електронної пошти
 //     return this.#email;
 //   }
 
-//   changeEmail(newEmail) {           //   ПУБЛІЧНИЙ метод для зміни електронної пошти
+//   changeEmail(newEmail) {     //   ПУБЛІЧНИЙ метод для зміни електронної пошти
 //     this.#email = newEmail;
 //   }
 // }
@@ -547,7 +547,6 @@
 // console.log(mango.getEmail()); // "mango@supermail.com"
 
 
-
 // .............................
 // .............................
 
@@ -558,44 +557,44 @@
 // Скажімо, кожен раз, коли електронна пошта змінюється, потрібно валідувати її формат.
 // Це можна зробити за допомогою ПРИВАТНИХ МЕТОДІВ. Додаючи до назви методу на початку символ #, ми робимо його приватним.
 
-class User {
-  name;
-  #email;
+// class User {
+//   name;
+//   #email;
 
-  constructor(params) {
-    this.name = params.name;
-    this.#email = params.email;
-  }
+//   constructor(params) {
+//     this.name = params.name;
+//     this.#email = params.email;
+//   }
 
-  // Публічний метод для отримання електронної пошти
-  getEmail() {
-    return this.#email;
-  }
+//   // ПУБЛІЧНИЙ метод для отримання електронної пошти
+//   getEmail() {
+//     return this.#email;
+//   }
 
-  // Публічний метод для зміни електронної пошти
-  changeEmail(newEmail) {
-    if (this.#validateEmail(newEmail)) {
-      this.#email = newEmail;
-    } else {
-      console.log('Invalid email format');
-    }
-  }
+//   // ПУБЛІЧНИЙ метод для зміни електронної пошти
+//   changeEmail(newEmail) {
+//     if (this.#validateEmail(newEmail)) {
+//       this.#email = newEmail;
+//     } else {
+//       console.log('Invalid email format');
+//     }
+//   }
 
-  // Приватний метод для валідації електронної пошти
-  #validateEmail(email) {
-    return email.includes('@');
-  }
-}
+//   // ПРИВАТНИЙ метод для валідації електронної пошти
+//   #validateEmail(email) {
+//     return email.includes('@');
+//   }
+// }
 
-const mango = new User({
-  name: 'Mango',
-  email: 'mango@mail.com',
-});
+// const mango = new User({
+//   name: 'Mango',
+//   email: 'mango@mail.com',
+// });
 
-// Спробуємо змінити електронну пошту
-mango.changeEmail('newmail.com'); // "Invalid email format"
-mango.changeEmail('new@mail.com');
-console.log(mango.getEmail()); // "new@mail.com"
+// // Спробуємо змінити електронну пошту
+// mango.changeEmail('newmail.com'); // "Invalid email format"
+// mango.changeEmail('new@mail.com');
+// console.log(mango.getEmail()); // "new@mail.com"
 
 // Прямий виклик приватного методу ззовні призведе до помилки
 // mango.#validateEmail('test'); // Помилка
@@ -606,6 +605,60 @@ console.log(mango.getEmail()); // "new@mail.com"
 // .............................
 
 
-// ПОЯСНЕННЯ-16
+// ПОЯСНЕННЯ-16   Геттери і сеттери
+
+// Геттери і сеттери — це спеціальний синтаксис оголошення методів для взаємодії з властивостями. Геттер і сеттер імітують звичайну публічну властивість класу, але дозволяють взаємодіяти з іншими властивостями зручнішим способом.
+
+// Також вважається гарною практикою називати геттери і сеттери так само, як і властивість, з якою вони працюють. 
+// Геттер і сеттер повинні називатися однаково. 
+// Краще називати геттери і сеттери так само, як і властивість, з якою вони працюють. Геттер може існувати без сеттера, так само як і сеттер без геттера.
 
 
+// class User {
+//   #email;
+
+//   constructor(params) {
+//     this.name = params.name;
+//     this.#email = params.email;
+//   }
+
+//   // Геттер email
+//   get email() {
+//     return this.#email;
+//   }
+
+//   // Сеттер email   ВАРІАНТ-1 :
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+
+// // Сеттер email   ВАРІАНТ-2 (з додатковою перевіркою) :
+//   // set email(newEmail) {
+//   //   if(newEmail === "") {
+//   //     console.log("Помилка! Пошта не може бути порожнім рядком!");
+//   //     return;
+//   //   }  
+//   //   this.#email = newEmail;
+//   // }
+
+//   }
+
+// const mango = new User({ 
+// 	name: "Mango", 
+// 	email: "mango@mail.com" 
+// });
+
+// console.log(mango.email); // mango@mail.com
+
+// mango.email = "mango@supermail.com";
+
+// console.log(mango.email); // mango@supermail.com
+
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-17
