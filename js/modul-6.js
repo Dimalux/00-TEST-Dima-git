@@ -768,3 +768,47 @@
 
 
 
+
+// // Задача-2 :   Додамо у клас User:
+// - статичну властивість "takenEmails" (список зайнятих поштових адресів) для зберігання зайнятих (доступних) пошт користувачів
+// - статичний метод "isEmailTaken", який перевіряє, чи доступна (true) пошта
+
+// Під час ініціалізації екземпляра в конструкторі класу будемо додавати пошту до масиву "takenEmails" зайнятих (доступних true).
+
+
+// class User {
+
+//     #email;
+//     static #takenEmails = [];
+
+//     static isEmailTaken(emailTest) {
+
+//         return this.#takenEmails.includes(emailTest);
+        
+//     }
+
+//     constructor(params) {
+
+//         this.#email = params.email;
+//         User.#takenEmails.push(this.#email)
+//     }
+
+// }
+
+// const mango = new User({email: "mango-1@ghj.hj"});
+// const mango2 = new User({email: "mango-2@ghj.hj"});
+
+
+// console.log(User.isEmailTaken("mango-1@ghj.hj"));     //  true
+// console.log(User.isEmailTaken("mango-NEW@ghj.hj"));   //   false
+
+// console.log(User.isEmailTaken("mango-2@ghj.hj"));     //   true
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-19
+
+
