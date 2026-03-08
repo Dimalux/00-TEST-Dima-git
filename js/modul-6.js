@@ -767,6 +767,7 @@
 // console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
 
 
+// ................
 
 
 // // Задача-2 :   Додамо у клас User:
@@ -809,6 +810,49 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-19
+// ПОЯСНЕННЯ-19   Наслідування класів  extends :
+// "extends" дозволяє реалізувати наслідування класів, коли один клас (дочірній, похідний) наслідує властивості й методи іншого класу (батьківського).
+
+// Задача :   У застосунку потрібен адміністратор з можливістю додавати пошти користувачів у чорний список.
+// Оголоси клас Admin, який наслідує від класу User
+// Додай класу Admin публічну статичну властивість role (рівень доступу), значення якої — це об'єкт {BASIC: "basic", SUPERUSER: "superuser"}
 
 
+// class User {
+// #email;
+
+//   constructor(email) {
+//     this.#email = email;
+//   }
+
+//   get email() {
+//     return this.#email;
+//   }
+
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
+
+// class Admin extends User {
+// static role = {BASIC: "basic", SUPERUSER: "superuser"};
+// }
+
+// const admin = new Admin("admin@example.com");
+// console.log(admin.email); // "admin@example.com"
+
+// admin.email = "newadmin@example.com";
+// console.log(admin.email); // "newadmin@example.com"
+
+// console.log(Admin.role.BASIC); // "basic"
+// console.log(Admin.role.SUPERUSER); // "superuser"
+
+// // Спробуємо прямий доступ до приватного поля:
+// // console.log(admin.#email); // ПОМИЛКА! Приватне поле не доступне ззовні
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-20   
