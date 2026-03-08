@@ -855,4 +855,52 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-20   
+// ПОЯСНЕННЯ-20   Конструктор дочірнього класу
+
+// У конструкторі дочірнього класу необхідно викликати спеціальну функцію super(args) — це псевдонім конструктора батьківського класу.
+// В іншому випадку при спробі звернутися до this у конструкторі дочірнього класу виникне помилка.
+// Під час виклику конструктора батьківського класу передаємо необхідні йому аргументи для ініціалізації властивостей.
+
+
+// class User {
+//   #email;
+
+//   constructor(email) {
+//     this.#email = email;
+//   }
+
+//   get email() {
+//     return this.#email;
+//   }
+
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
+
+// class ContentEditor extends User {
+//   constructor(params) {
+    
+//     super(params.email);        // Виклик конструктора батьківського класу "User", щоб заповнити "email"
+
+//     this.posts = params.posts;  // Додаємо до дочірнього класу "ContentEditor" специфічну властивість  "posts"
+//   }
+// }
+
+// // editor — це ОДИН об'єкт, який містить:
+// // - email (від User)
+// // - posts (від ContentEditor)
+// const editor = new ContentEditor({ 
+// 	email: "mango@mail.com", 
+// 	posts: [] 
+// });
+// console.log(editor); // { #email: "mango@mail.com", posts: [] }
+// console.log(editor.email); // "mango@mail.com"
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-21
