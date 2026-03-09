@@ -1013,5 +1013,61 @@
 // console.log(editor.posts); // ['post-1', 'post-2']
 
 
-// .............................
-// .............................
+// У прикладі бачимо, що ContentEditor успадковує клас User.
+// User — це базовий клас, який має приватну властивість #email.
+// ContentEditor розширює клас User і має власну властивість posts. Клас ContentEditor також має метод addPost, який дозволяє додавати нові повідомлення до posts.
+// Метод addPost — це метод дочірнього класу ContentEditor . Він буде доступний тільки екземплярам ContentEditor.
+
+
+// ...............
+
+
+
+// Задача-1 :     Додай до дочірнього класу Admin метод "constructor", який приймає один параметр "params" - об'єкт налаштувань з двома властивостями "email" і "access". Додай класу "Admin" публічну властивість "access", значення якої буде передаватися під час виклику конструктора.
+
+
+// class User {
+//   email;
+
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+
+
+// // Оголошений дочірній клас Admin
+// // Клас Admin наслідує від класу User
+// // Клас Admin містить публічну статичну властивість role
+// // Клас Admin містить метод constructor з параметром params
+// // В класі Admin в конструкторі для властивості email використовується звернення до конструктора батьківського класу
+// // Звернення до Admin.role.BASIC повертає рядок "basic"
+// // Звернення до Admin.role.SUPERUSER повертає рядок "superuser"
+
+// class Admin extends User {
+//  static role = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
+
+// access;   // Можна просто прибрати цей рядок. Властивість все одно створиться "this.access = params.access"
+// constructor(params) {
+// super(params.email);
+// this.access = params.access;
+// }
+// }
+
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   access: Admin.role.SUPERUSER,
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.access); // "superuser"
