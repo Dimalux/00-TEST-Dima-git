@@ -971,6 +971,47 @@
 // Дочірній клас може використовувати методи та властивості батьківського класу. Крім цього, у дочірньому класі можна оголошувати методи, які будуть доступні тільки його екземплярам.
 
 
+// class User {
+//   #email;
+
+//   constructor(email) {
+//     this.#email = email;
+//   }
+
+//   get email() {
+//     return this.#email;
+//   }
+
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
 
 
+// class ContentEditor extends User {
 
+// constructor(params) {           //   Конструктор дочірнього класу
+//     super(params.email);
+//     this.posts = params.posts;
+// }
+
+// addPost(post) {                //   Метод дочірнього класу
+//     this.posts.push(post);
+// }
+// }
+
+// const editor = new ContentEditor (      //  Створюємо екземпляр класу "ContentEditor"
+// {email: "mango@mail.com",  posts: []}
+// );
+
+
+// console.log(editor);   // { #email: "mango@mail.com", posts: [], addPost: f }
+
+// //   Викликаємо метод "addPost" дочірнього класу "ContentEditor" :
+// editor.addPost("post-1");
+// editor.addPost("post-2");
+// console.log(editor.posts); // ['post-1', 'post-2']
+
+
+// .............................
+// .............................
