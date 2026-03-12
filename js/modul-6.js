@@ -1083,24 +1083,24 @@
 // Операція "...spread" дозволяє створити копію об'єкта (або масиву) :
 
 // ВАРІАНТ-1    копія посилання на об'єкт :
-const obj1 = {
-name: "Dima",
-color: "red",
-rating: 10
-};
+// const obj1 = {
+// name: "Dima",
+// color: "red",
+// rating: 10
+// };
 
-const obj2 = obj1;
+// const obj2 = obj1;
 
-console.log(obj2 === obj1);   // true
+// console.log(obj2 === obj1);   // true
 
-// ......
+// // ......
 
 
-// ВАРІАНТ-2    копія об'єкта - новий об'єкт (різні посилання) :
+// // ВАРІАНТ-2    копія об'єкта - новий об'єкт (різні посилання) :
 
-const obj3 = {...obj1};
+// const obj3 = {...obj1};
 
-console.log(obj3 === obj1);   // false
+// console.log(obj3 === obj1);   // false
 
 
 
