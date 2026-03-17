@@ -1135,3 +1135,31 @@
 
 // ПОЯСНЕННЯ-25 
 
+
+// const user = {
+//     userName: "Alice",
+//     showThis() {
+//     console.log(this);
+//     },
+//     showName() {
+//     console.log(this.userName)
+//     }
+// }
+
+// // user.showThis()
+
+// const foo = user.showThis;
+// foo();  //  "undefined"   (тому що "use strict")
+
+// const foo1 = user.showName;
+// foo1();   //  помилка ("use strict"), без "use strict" буде "undefined" (тому що в об'єкті "window" властивості user.showName НЕ МАЄ)
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-26
+
+
