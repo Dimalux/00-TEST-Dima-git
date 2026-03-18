@@ -1298,7 +1298,7 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-29    Метод "apply".
+// ПОЯСНЕННЯ-29    Метод "call" i "apply".
 // Задача-1   Написати функцію, яка буде змінювати кольор в об'єктах :
 
 
@@ -1321,7 +1321,7 @@
 // console.log(hat); // { color: "red" }
 
 // console.log(sweater); // { color: "blue" }
-// changeColor.call(sweater, "white");
+// changeColor.apply(sweater, ["white"]);
 // console.log(sweater); // { color: "white" }
 
 
@@ -1329,6 +1329,35 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-30    Метод "apply".
-// Задача-1   
+// ПОЯСНЕННЯ-30    Метод "bind".
 
+
+// const hat = {
+//     color: "black"
+// }
+
+// function changeColor(newColor) {
+//     this.color = newColor;
+// }
+
+// // ДВА  ВАРІАНТИ передачі параметра :
+
+// // ВАРІАНТ-1  як параметр метода "bind" :
+
+// // const changeHatColor = changeColor.bind(hat, "red");
+// // changeHatColor();
+
+// // ВАРІАНТ-2  як аргумент при виклику функції " changeSweaterColor("green")" :
+
+// const changeSweaterColor = changeColor.bind(hat);
+
+// changeSweaterColor("green");
+// console.log(hat);
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-31
