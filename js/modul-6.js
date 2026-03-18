@@ -1298,4 +1298,37 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-29    Метод "apply" :
+// ПОЯСНЕННЯ-29    Метод "apply".
+// Задача-1   Написати функцію, яка буде змінювати кольор в об'єктах :
+
+
+// const hat = {
+//     color: "black"
+// }
+
+// const sweater = {
+//     color: "blue",
+// }
+
+// // Функція для зміни кольору. Увага - підкреслення "changeColor" !!! але якщо закоментувати "// this.color = newColor", підкреслення букви "с" ЗНИКАЄ ??!
+// // Напевно this.color не бачить цієї властивості... Якщо написати просто "this = newColor" - то все добре ?!
+// function changeColor(newColor) {
+//     this.color = newColor;
+// }
+
+// console.log(hat); // { color: "black" }
+// changeColor.call(hat, "red");
+// console.log(hat); // { color: "red" }
+
+// console.log(sweater); // { color: "blue" }
+// changeColor.call(sweater, "white");
+// console.log(sweater); // { color: "white" }
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-30    Метод "apply".
+// Задача-1   
+
