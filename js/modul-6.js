@@ -1166,7 +1166,7 @@
 // розраховує та повертає загальну вартість каменів з таким ім'ям, ціною та
 // кількістю з властивості stones.
 
-// Варіант (МІЙ) :
+// Варіант-1  (МІЙ) :
 
 // const chopShop = {
 //     stones: [
@@ -1199,7 +1199,7 @@
 // .............
 
 
-// Варіант (чат GPT) :
+// Варіант-2  (чат GPT) :
 
 // const chopShop = {
 //     stones: [
@@ -1215,6 +1215,37 @@
 // }
 
 // };
+
+// console.log(chopShop.calcTotalPrice("Ruby"));      // 1600
+// console.log(chopShop.calcTotalPrice("Emerald"));   // 5200
+// console.log(chopShop.calcTotalPrice("Sapphire"));  // 9800
+// console.log(chopShop.calcTotalPrice("Diamond"));   // 8100
+
+
+// .............
+
+
+// Варіант-3  (Урок-частина 1   Модуль 6. ООП. Класи  1:27:00) :
+
+// const chopShop = {
+//     stones: [
+//     { name: "Emerald", price: 1300, quantity: 4 },
+//     { name: "Diamond", price: 2700, quantity: 3 },
+//     { name: "Sapphire", price: 1400, quantity: 7 },
+//     { name: "Ruby", price: 800, quantity: 2 },
+//     ],
+
+// calcTotalPrice(stoneName) {
+   
+// const stone = this.stones.find(item => item.name === stoneName)
+// if(!stone) {
+// return `${stoneName} - not found!`;
+// } 
+// return stone.price * stone.quantity;
+// }
+// }
+
+// console.log(chopShop.calcTotalPrice("Аmber"));    //  Аmber - not found!
 
 // console.log(chopShop.calcTotalPrice("Ruby"));      // 1600
 // console.log(chopShop.calcTotalPrice("Emerald"));   // 5200
