@@ -1337,6 +1337,7 @@
 // }
 
 // function changeColor(newColor) {
+//     console.log("color before:", this.color);    
 //     this.color = newColor;
 // }
 
@@ -1351,9 +1352,9 @@
 
 // const changeSweaterColor = changeColor.bind(hat);
 
+// // console.log(hat);
 // changeSweaterColor("green");
-// console.log(hat);
-
+// console.log("color after:", hat.color);
 
 
 // .............................
