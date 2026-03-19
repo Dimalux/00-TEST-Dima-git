@@ -1361,4 +1361,37 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-31
+// ПОЯСНЕННЯ-31     Метод "bind" і callback :
+
+// const counter = {
+
+//     value: 0,
+
+//     increment(num) {
+// console.log("increment:", this.value);
+// this.value += num;
+//     }, 
+
+//     decrement(num) {
+// console.log("decrement:", this.value);
+// this.value -= num;
+//     }, 
+// }
+
+// function foo(number, callback) {
+// callback(number);
+// }
+
+// foo(10, counter.increment.bind(counter));
+// console.log(counter.value);
+
+// foo(5, counter.decrement.bind(counter));
+// console.log(counter.value);
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-32
+
