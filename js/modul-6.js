@@ -1393,5 +1393,52 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-32
+// ПОЯСНЕННЯ-32   Прототип об'єкта (додаткове сховище певних властивостей і методів)
+
+
+// const animal = {
+// legs: 4,
+// }
+
+// const dog = Object.create(animal);
+
+// dog.color = "red";
+// dog.name = "Reks";
+// console.log(dog);
+// console.log(dog.legs);
+
+
+// // Для того щоб подивитись чи є властивісь "color" для oб'єкта "dog" власною чи це властивість прототипа, застосовуємо метод "hasOwnProperty()" :
+
+// // console.log(dog.hasOwnProperty("color"));  //  true
+// // console.log(dog.hasOwnProperty("legs"));   //  false
+
+
+// // Якщо використати цикл по об'єкту "for...in" - ми отримаємо і власні властивості і не власні :
+
+
+// // Доступ до властивостей через квадратні дужки — це синтаксис objectName["key"] (4. Mодуль 4. Об'єкти / Об'єкти) :
+// // for(const key in dog) {
+// // console.log(dog[key]);      //   red , Reks,  4
+// // }
+
+// // для того щоб отримати тільки власні властивості використаємо метод "hasOwnProperty()" :
+// // for(const key in dog) {
+// // if(dog.hasOwnProperty(key)) {
+// // console.log(dog[key]);           //   red , Reks
+// // }
+// // }
+
+// // На відміну від "for...in" (який отримує власні і не власні властивості) метод Object.values() отримує ТІЛЬКИ  ВЛАСНІ властивості :
+
+// const keys = Object.values(dog);
+// console.log(keys);   //     ['red', 'Reks']
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-33
+
 
