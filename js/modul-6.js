@@ -1463,18 +1463,48 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-34    Прототип об'єкта :
-
-// Задача-1 :  Написати програмне забеспечення для автомобіля, а саме натискання кнопки набору та зниження швидкості в системі круїз контролю. 
+// ПОЯСНЕННЯ-34    Задача-1 :  
+// // 
+// Написати програмне забеспечення для автомобіля, а саме натискання кнопки набору та зниження швидкості в системі круїз контролю. 
 // Створити об'єкт "cruiseControl" з методами "accelerate" та "decrease", властивостями "speed" та "brand".
 
-const cruiseControl = {
+// const cruiseControl = {
 
-speed,
-brand,
+// speed: 0,
+// brand: "Peugeot",
 
-accelerate() {},
+// accelerate() {      
+//     this.speed += 10;
+//     console.log(`Автомобіль ${this.brand} прискорюється !!!  Швидкість: ${this.speed} км/год`); 
+// },
 
-decrease() {}
+// decrease() {    
+//     if(this.speed <= 0) {
+//         console.log(`Авто ЗУПИНИЛОСЬ !`);
+//         return;
+//     }
+//     this.speed -= 10;
+//    console.log(`Автомобіль ${this.brand} пригальмовує !!!  Швидкість: ${this.speed} км/год`); 
+// }
+// }
 
-}
+// cruiseControl.accelerate();
+// console.log("");
+// cruiseControl.decrease();
+// console.log("");
+// cruiseControl.accelerate();
+// cruiseControl.accelerate();
+// console.log("");
+// cruiseControl.decrease();
+// console.log("");
+// cruiseControl.decrease();
+// console.log("");
+// cruiseControl.decrease();
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-35    Задача-1 :  
