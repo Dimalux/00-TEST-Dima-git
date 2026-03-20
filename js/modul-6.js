@@ -1451,9 +1451,12 @@
 // const objA = Object.create(objB);
 // objA.a = "objA";
 
-// console.log(objA);
-// console.log(objB);
-// console.log(objC);
+// console.log(objA);      //   {a: 'objA'}
+// console.log(objB);      //   {b: 'objB'}
+// console.log(objC);      //   {c: 'objC'}
+
+// console.log(objC.c);    //   objC
+// console.log(objC.d);    //   undefined
 
 
 // .............................
