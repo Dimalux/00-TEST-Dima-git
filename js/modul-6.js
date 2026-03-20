@@ -1439,6 +1439,25 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-33
+// ПОЯСНЕННЯ-33    Прототип об'єкта :
+
+// const objC = {
+// c: "objC"
+// }
+
+// const objB = Object.create(objC);
+// objB.b = "objB";
+
+// const objA = Object.create(objB);
+// objA.a = "objA";
+
+// console.log(objA);
+// console.log(objB);
+// console.log(objC);
 
 
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-34    Прототип об'єкта :
