@@ -1535,3 +1535,35 @@
 // speedSensor.call(peugeot, maxSpeed);
 
 // ......
+
+
+// Варіант  (Ментор) :
+
+// const maxSpeed = 60;
+
+// const bmw = {
+//     brand: "BMW",
+//     speed: 50
+// };
+
+// const peugeot = {
+//     brand: "Peugeot",
+//     speed: 70
+// };
+
+// function speedSensor(maxSpeed) {
+// if(this.speed <= maxSpeed) {
+// return console.log(`Автомобіль ${this.brand} рухається з безпечною швикістю`);
+// }
+// return console.log(`Автомобіль ${this.brand} перевищує максимальну швидкість !!!`);
+// }
+
+// speedSensor.call(bmw, maxSpeed);
+// speedSensor.call(peugeot, maxSpeed);
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-36
