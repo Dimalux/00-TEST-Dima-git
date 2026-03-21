@@ -1558,8 +1558,21 @@
 // return console.log(`Автомобіль ${this.brand} перевищує максимальну швидкість !!!`);
 // }
 
-// speedSensor.call(bmw, maxSpeed);
-// speedSensor.call(peugeot, maxSpeed);
+// // Метод call :
+// speedSensor.call(bmw, maxSpeed);           //    Автомобіль BMW рухається з безпечною швикістю
+
+// // Метод apply :
+// speedSensor.apply(peugeot, [maxSpeed]);    //    Автомобіль Peugeot перевищує максимальну швидкість !!!
+
+// console.log("");
+
+// // Метод bind :
+// const sensorBmw = speedSensor.bind(bmw, maxSpeed);
+// sensorBmw();
+
+// const sensorPeugeot = speedSensor.bind(peugeot, maxSpeed);
+// sensorPeugeot();
+
 
 
 // .............................
