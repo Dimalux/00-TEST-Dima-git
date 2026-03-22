@@ -1759,6 +1759,54 @@
 // console.log(peugeot);
 
 
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-38-2   КЛАСИ: Геттери і сеттери (575 : // ВАРІАНТ-1  методи changeEmail() і #validateEmail() :
+// ). (1:01:00).
+
+// Отримати доступ до ПРИВАТНОЇ властивості можно :
+// ВАРІАНТ-4 :  через  ВАЛІДАЦІЮ :
+
+
+// class Car {
+
+// #price;
+
+//     constructor(params) {
+//         this.brand = params.brand       
+//         this.#price = params.price
+//     }
+
+// // Геттер price :
+// get price() {
+// return this.#price;
+// }
+
+// // Сеттер price :
+// set price(newPrice) {
+// typeof newPrice === "number" ? this.#price = newPrice : console.log(`${newPrice} - не число !!!`);
+// }
+// }
+
+// const peugeot = new Car({brand: "peugeot", price: 100000});
+
+// console.log(peugeot);
+
+// // Працюємо з геттерами і сеттерами, як з звичайними властивостіми (без фігурних дужок) :
+// // Геттер price :
+// console.log(peugeot.price);
+
+// // Сеттер price :
+// peugeot.price = "gold";     //   gold - не число !!!
+// peugeot.price = "120000";   //   120000 - не число !!!
+// peugeot.price = 120000;     
+
+// // Геттер price :
+// console.log(peugeot.price);
+
+// console.log(peugeot);
 
 
 
