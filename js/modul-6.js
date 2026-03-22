@@ -1624,5 +1624,53 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-37   КЛАСИ:  Методи класу.
+// ПОЯСНЕННЯ-37   КЛАСИ:  Методи класу.  Прототип екземпляру.  (42:00:00).
+
+
+// class Car {
+//     constructor(params) {
+//         this.brand = params.brand
+//         this.model = params.model
+//         this.price = params.price
+//     }
+
+// getModel() {
+//     return this.model;
+// }
+
+// changeModel(newModel) {
+// this.model = newModel;
+// }
+// }
+
+
+// // МЕТОДИ класа при "console.log("bmw:", bmw)" ВІДСУТНІ !!!  Всі вони знаходяться в ПРОТОТИПІ (в class Car) !!!
+
+// const bmw = new Car({brand: "bmw", model: "X5", price: 50000})
+// console.log("bmw:", bmw);   //    bmw: Car {brand: 'bmw', model: 'X5', price: 50000}
+
+// console.log("");
+
+// const peugeot = new Car({brand: "peugeot", model: "301", price: 70000})
+// console.log("peugeot:", peugeot);     //    peugeot: Car {brand: 'peugeot', model: '301', price: 70000}
+
+// console.log("");
+
+// console.log(bmw.getModel());
+// console.log(peugeot.getModel());
+
+// console.log("");
+
+// bmw.changeModel("X7");
+// peugeot.changeModel("3008");
+
+// console.log(bmw.getModel());
+// console.log(peugeot.getModel());
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-38   КЛАСИ:  Приватні властивості. (48:00:00).
 
