@@ -1833,11 +1833,12 @@
 
 // // Сеттер price :
 // set price(newPrice) {
-// this.checkType(newPrice, "number") ? this.#price = newPrice : console.log(`${newPrice} - не число !!!`);
+// this.#checkType(newPrice, "number") ? this.#price = newPrice : console.log(`${newPrice} - не число !!!`);
 // }
 
+// // (554 :  ПОЯСНЕННЯ-15  Приватні методи). 
 // // Якщо тип вхідних даних не дорівнює вхідному типу (типу "type", який ми отримали в нашу функцію як параметр) - повернемо false, в іншому випадку true :
-// checkType(data, type) {
+// #checkType(data, type) {
 // if(typeof data === type) {
     
 //     return true;
@@ -1862,7 +1863,40 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-39   КЛАСИ: Статичні властивості  (692 : // ПОЯСНЕННЯ-17 Статичні властивості), (1:01:00).
+// ПОЯСНЕННЯ-39   КЛАСИ: Статичні властивості  (692 :  ПОЯСНЕННЯ-17   Статичні властивості), (1:12:00).
+// Наприклад, мені, як виробнику, цікаво знати: скільки автомобілів я ЗРОБИВ, або скільки автомобілів я ПРОДАВ
+
+// class Car {
+
+// static quantity = 0;
+// static increment() {
+    
+// //     Варіант 1: this.quantity. Найкраща практика — використовувати this.
+// //     Плюси:
+// // Коротше і чистіше;
+// // Працює в статичних методах (this вказує на клас);
+// // Краще для наслідування.
+
+// // Мінуси:
+// // Може заплутати новачків (this в статичному методі).
+
+//     this.quantity += 1;
+//     // Car.quantity += 1;
+// }
+
+//     constructor(params) {
+//         this.brand = params.brand       
+//         this.price = params.price
+//     }
+
+// }
+
+
+// Car.increment();
+// Car.increment();
+
+// console.log(Car.quantity);  //  2
+
 
 
 
