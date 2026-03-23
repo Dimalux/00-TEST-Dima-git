@@ -898,6 +898,7 @@
 // // editor — це ОДИН об'єкт, який містить:
 // // - email (від User)
 // // - posts (від ContentEditor)
+
 // const editor = new ContentEditor({ 
 // 	email: "mango@mail.com", 
 // 	posts: [] 
@@ -1045,9 +1046,9 @@
 
 // // Оголошений дочірній клас Admin
 // // Клас Admin наслідує від класу User
-// // Клас Admin містить публічну статичну властивість role
-// // Клас Admin містить метод constructor з параметром params
-// // В класі Admin в конструкторі для властивості email використовується звернення до конструктора батьківського класу
+// // Клас Admin містить публічну СТАТИЧНУ властивість "role"
+// // Клас Admin містить метод constructor з параметром "params"
+// // В класі Admin в конструкторі для властивості "email" використовується звернення до конструктора батьківського класу
 // // Звернення до Admin.role.BASIC повертає рядок "basic"
 // // Звернення до Admin.role.SUPERUSER повертає рядок "superuser"
 
@@ -1932,14 +1933,66 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-40   КЛАСИ: Статичні властивості  (813 :  ПОЯСНЕННЯ-19   Наслідування класів  (extends)), (1:35:00).
+// ПОЯСНЕННЯ-40   КЛАСИ: Наслідування класів  (813 :  ПОЯСНЕННЯ-19   Наслідування класів  (extends)), (1:35:00).
 // (858 :  ПОЯСНЕННЯ-20   Конструктор дочірнього класу).
-// У конструкторі дочірнього класу необхідно викликати спеціальну функцію super(args) — це псевдонім конструктора батьківського класу.
+// У конструкторі дочірнього класу необхідно викликати спеціальну функцію "super(args)" — це псевдонім конструктора батьківського класу.
 // Правило просте:
-// Немає constructor() у дочірньому класі → super() викликається автоматично
-// Є constructor() у дочірньому класі → super() має бути викликаний вручну, навіть якщо ви не використовуєте this
-
+// Якщо у дочірньому класі НЕмає "constructor()", то "super()" викликається автоматично.
+// Є "constructor()" у дочірньому класі - "super()" МАЄ БУТИ викликаний вручну, навіть якщо ви не використовуєте "this".
 
 // "extends" дозволяє реалізувати наслідування класів, коли один клас (дочірній, похідний) наслідує властивості й методи іншого класу (батьківського).
+
+
+// class Hero {
+//     constructor(obj) {
+//     this.name = obj.name;
+//     this.xp = obj.xp;
+//     }
+
+//     gainXp(amount) {
+//     console.log(`${this.name} received ${amount} xp`);
+//     this.xp += amount;
+//     }
+// }
+
+// class Warrior extends Hero {
+//     constructor(params) {
+//     super(params);
+//     this.weapon = params.weapon;
+//     }
+
+//     attack() {
+//         console.log(`${this.name} attack with ${this.weapon}`);
+//     }
+// }
+
+// const arthas = new Warrior({ name: "Arthas", xp: 1000, weapon: "sword" });
+
+// arthas.attack();      //   Arthas attack with sword
+// arthas.gainXp(200);   //   Arthas received 200 xp
+
+// console.log(arthas);  //   Object { name: "Arthas", xp: 1200, weapon: "sword" }
+
+// console.log("");
+
+
+// // Створимо ще один клас  "Mage" :
+// class Mage extends Hero {
+// constructor(params) {
+//    super(params);
+//    this.spells = params.spells;
+// }
+// cast() {
+//     console.log(`${this.name} is casting a spell`);
+// }
+// }
+
+// const khadgar = new Mage({ name: "Khadgar", xp: 500, spells: ["fireball"]});
+
+// khadgar.cast();       //   Khadgar is casting a spell
+// khadgar.gainXp(300);   //  Khadgar received 300 xp
+
+// console.log(khadgar);  //  Object { name: "Khadgar", xp: 800, spells: ["fireball"] }
+
 
 
