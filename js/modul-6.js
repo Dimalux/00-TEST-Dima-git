@@ -1996,3 +1996,69 @@
 
 
 
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-41   КЛАСИ: (1:58:00).
+
+// Задача-1     Напиши клас "Blogger" для створення об'єкта блогера з наступними властивостями:
+// - email - пошта, рядок
+// - age - вік, число
+// - numberOfPosts - кількість постів, число
+// - topics - масив тем на яких спеціалізується блогер
+
+// Клас чекає один параметр - об'єкт налаштувань "params" з однойменними властивостями.
+
+// - Додай метод getInfo(), який повертає рядок:
+//   User ${email} is ${age} years old and has ${numPosts} posts.
+
+// - Додай метод updatePostCount(value), який у параметрі "value" приймає кількість постів, які потрібно додати користувачеві.
+
+
+// class Blogger {
+
+// constructor(params) {
+//    this.email = params.email;
+//    this.age = params.age;
+//    this.numberOfPosts = params.numberOfPosts;
+//    this.topics = params.topics;   
+// }
+
+// getInfo() {
+//     return `User ${this.email} is ${this.age} years old and has ${this.numberOfPosts} posts.`
+// }
+
+// updatePostCount(value) {
+//     this.numberOfPosts += value;
+// }
+// }
+
+
+// // 1) створюємо першого блогера - petya :
+// const petya = new Blogger({email: "astrall@jk.jh", age: 25, numberOfPosts: 4, topics: ["color", "tema", "rating", "resume"]});
+
+// console.log(petya);  //   { email: "astrall@jk.jh", age: 25, numberOfPosts: 4, topics: ["color", "tema", "rating", "resume"] }
+
+// console.log(petya.getInfo());  //  User astrall@jk.jh is 25 years old and has 4 posts.
+
+// petya.updatePostCount(6);
+
+// console.log(petya);  //   { email: "astrall@jk.jh", age: 25, numberOfPosts: 10, topics: ["color", "tema", "rating", "resume"] }
+// console.log(petya.getInfo());  //  User astrall@jk.jh is 25 years old and has 10 posts.
+
+// console.log("");
+
+
+// // 2) створюємо другого блогера - ivan :
+// const ivan = new Blogger({email: "ivanD@jk.jh", age: 18, numberOfPosts: 5, topics: ["drink", "travel", "weather"]});
+
+// console.log(ivan);  //   { email: "ivanD@jk.jh", age: 18, numberOfPosts: 5, topics: ["drink", "travel", "weather"] }
+
+// console.log(ivan.getInfo());  //  User ivanD@jk.jh is 18 years old and has 5 posts.
+
+// ivan.updatePostCount(6);
+
+// console.log(ivan);  //   { email: "ivanD@jk.jh", age: 18, numberOfPosts: 11, topics: ["color", "tema", "rating", "resume"] }
+// console.log(ivan.getInfo());  //  User ivanD@jk.jh is 18 years old and has 11 posts.
+
