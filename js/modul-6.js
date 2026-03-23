@@ -1995,6 +1995,48 @@
 // console.log(khadgar);  //  Object { name: "Khadgar", xp: 800, spells: ["fireball"] }
 
 
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-40-1   КЛАСИ: приклад з ДЕСТРУКТУРИЗАЦІЄЮ, (2:35:00).
+
+
+// class Hero {
+//     constructor(obj) {
+//     this.name = obj.name;
+//     this.xp = obj.xp;
+//     }
+
+//     gainXp(amount) {
+//     console.log(`${this.name} received ${amount} xp`);
+//     this.xp += amount;
+//     }
+// }
+
+
+// // Якщо в конструкторі класу об'єкт "params", ми можемо його ДЕСТРУКТУРУВАТИ - замість "params" написати { name, xp, weapon }. 
+// // Крім того можна написати constructor({ weapon, ...rest }), тобто з нашого об'єкта ми дістанемо одне значення "weapon", а решту 2-а значення покладемо до об'єкту
+
+// class Warrior extends Hero {
+//     // constructor({name, xp, weapon}) {
+//     // super(params);
+
+//     constructor({ weapon, ...rest }) {
+//         console.log(rest);        //    {name: 'Arthas', xp: 1000}        
+//     super(rest);
+
+//     this.weapon = weapon;
+//     }
+
+//     attack() {
+//         console.log(`${this.name} attack with ${this.weapon}`);
+//     }
+// }
+
+//  const arthas = new Warrior({ name: "Arthas", xp: 1000, weapon: "sword" });
+
+
 
 // .............................
 // .............................
