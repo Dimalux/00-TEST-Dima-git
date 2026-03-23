@@ -2062,3 +2062,51 @@
 // console.log(ivan);  //   { email: "ivanD@jk.jh", age: 18, numberOfPosts: 11, topics: ["color", "tema", "rating", "resume"] }
 // console.log(ivan.getInfo());  //  User ivanD@jk.jh is 18 years old and has 11 posts.
 
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-42   КЛАСИ: (2:07:00).
+
+// Задача-2     Напиши клас User який створює об'єкт із властивостями login та email.
+// Оголоси приватні властивості #login та #email, доступ до яких зроблено через геттер та сеттер login та email.
+
+
+// class User {
+
+//     #login;
+//     #email;
+
+// constructor(params) {
+// this.#login = params.login;
+// this.#email = params.email;
+// }
+
+// get login() {
+//     return this.#login;
+// }
+
+// set login(newLogin) {
+//     this.#login = newLogin;
+// }
+
+// get email() {
+//     return this.#email;
+// }
+
+// set email(newEmail) {
+//     this.#email = newEmail;
+// }
+// }
+
+// const admin = new User({login: "astrall", email: "astrall@kl.gh"});
+// console.log(admin.login);
+// console.log(admin.email);
+
+// admin.login = "astra777";
+// admin.email = "astra777@kl.gh";
+// console.log("");
+
+// console.log(admin.login);
+// console.log(admin.email);
