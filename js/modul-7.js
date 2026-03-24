@@ -23,3 +23,25 @@
 
 //..................
 
+// Значення атрибутів можна змінювати, перевизначивши їм нове значення прямо з JavaScript коду, і під час виконання скрипта значення в HTML, тобто в DOM-дереві, зміниться :
+
+// const image = document.querySelector(".image");
+// console.log(image.src); // https://picsum.photos/id/9/320/240
+// console.log(image.alt); // A laptop
+
+// image.src = "https://picsum.photos/id/13/640/480";
+// image.alt = "River bank";
+
+// console.log(image.src); // https://picsum.photos/id/13/640/480
+// console.log(image.alt); // River bank
+
+// // У живому прикладі ми працюємо із зображенням і змінюємо значення його атрибутів src і alt, щоб зі скрипта підмінити картинку та її опис.
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-2   Властивість textContent
+
