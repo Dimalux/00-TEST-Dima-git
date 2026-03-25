@@ -63,7 +63,7 @@
 
 // ПОЯСНЕННЯ-1   Доступ до властивостей
 
-// Під час побудови DOM-дерева деякі стандартні HTML-атрибути стають властивостями елементів, тобто властивостями DOM-об’єктів.
+// Під час побудови DOM-дерева деякі стандартні HTML-атрибути стають властивостями елементів, тобто властивостями DOM-об`єктів.
 
 // Якщо в HTML (файл index.html) є тег посилання:
 
@@ -152,5 +152,26 @@
 // .............................
 
 
-// ПОЯСНЕННЯ-2   Властивість textContent
+// ПОЯСНЕННЯ-2   Властивість textContent. Властивість textContent повертає весь текстовий контент усередині елементів (власних і вкладених елементів).
+// Як textContent "бачить" вкладений текст
+// Ключове розуміння: textContent збирає текст з усіх дочірніх вузлів, включаючи вкладені елементи.
+
+// HTML
+
+{/* <article class="article">
+  <h2 class="article-title">Welcome to Hawaii!</h2>
+  <p class="article-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+</article>
+
+
+// JavaScript
+
+const titleEl = document.querySelector(".article-title");
+titleEl.textContent = 'Welcome to Italy!';
+
+const textEl = document.querySelector(".article-text");
+console.log(textEl.textContent);   // Lorem ipsum dolor sit amet consectetur adipisicing elit.
+textEl.textContent = 'HELLO  Dima!';
+console.log(textEl.textContent);   // HELLO  Dima! */}
+
 
