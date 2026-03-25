@@ -115,6 +115,37 @@
 // console.log(texst);
 
 
+// ..............
+
+
+
+// HTML є тег посилання,
+
+// <a class="link" href="https://goit.global">GoIT</a>
+
+// В  DOM цей тег <a></a> буде об'єктом, а його атрибути class і href стануть властивостями.  У JavaScript, коли ми отримуємо посилання на DOM-елемент, його атрибути стають властивостями об`єкта, до яких можна звертатися та змінювати їх.
+
+// Ось приклади роботи з тегом <a>:
+// Отримання елемента та доступ до властивостей
+
+// <a class="link" href="https://goit.global">GoIT</a>
+// javascript
+// // Отримуємо посилання на елемент
+// const link = document.querySelector('.link');
+
+// // Читаємо значення властивостей
+// console.log(link.href);     // "https://goit.global"
+// console.log(link.className); // "link" (class перетворюється на className)  !!!
+// console.log(link.textContent); // "GoIT"
+
+// // Змінюємо властивості
+// link.href = "https://google.com";
+// link.className = "new-link active";
+// link.textContent = "Google";
+
+// // Після змін HTML виглядатиме так:
+// // <a class="new-link active" href="https://google.com">Google</a>
+
 
 
 // .............................
