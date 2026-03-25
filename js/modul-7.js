@@ -99,6 +99,23 @@
 // // У живому прикладі ми працюємо із зображенням і змінюємо значення його атрибутів src і alt, щоб зі скрипта підмінити картинку та її опис.
 
 
+// .............................
+
+// Приклад з  index.html :
+
+// <p class="item">
+// GOOD DAY !
+//     </p>
+
+
+// const texst = document.querySelector(".item");
+
+// texst.style.textTransform = 'lowercase';
+// texst.style.fontSize = '34px';
+// console.log(texst);
+
+
+
 
 // .............................
 // .............................
