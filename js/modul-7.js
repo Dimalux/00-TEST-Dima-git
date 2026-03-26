@@ -253,7 +253,99 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // console.log(link.classList);     // ["link", "special", length: 2, value: "link special"]
 
 
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-3-4   Властивість classList. 
+//                 Метод classList.toggle(className)
+
+// Метод працює як перемикач:
+// Якщо клас className відсутній, то додає його в кінець списку класів.
+// Якщо клас className присутній — видаляє його.
+
+// const link = document.querySelector(".link");
+
+// console.log(link.classList);     //   DOMTokenList(2) ['link', 'is-active', value: 'link is-active']
+// link.classList.add("special");
+// console.log(link.classList);     //   DOMTokenList(3) ['link', 'is-active', 'special', value: 'link is-active special']
+
+// // клас className ВІДСУТНІЙ,  додаємо його В КІНЕЦЬ СПИСКУ класів :
+// link.classList.toggle("start");
+// console.log(link.classList);       // DOMTokenList(4) ['link', 'is-active', 'special', 'start', value: 'link is-active special start']
+
+// // клас className ПРИСУТНІЙ — видаляємо його :
+// link.classList.toggle("is-active");
+// console.log(link.classList);       // DOMTokenList(3) ['link', 'special', 'start', value: 'link special start']
 
 
 
 
+
+
+
+
+
+
+//  <a class="link is-active" href="https://goit.global">GoIT</a>
+
+
+const link = document.querySelector(".link");
+
+ // Читаємо значення властивостей :
+
+// Властивість class - className :
+console.log(link.className);   //   link is-active
+
+
+// Властивість href :
+console.log(link.href);        //   https://goit.global/
+
+
+// Властивість textContent :
+console.log(link.textContent);  //  GoIT
+
+
+// Властивість classList :
+console.log(link.classList);    //  DOMTokenList(2) ['link', 'is-active', value: 'link is-active']
+// DOMTokenList — це спеціальний об'єкт у JavaScript, який представляє список класів елемента (або інших токенів). Токен (token) у контексті DOMTokenList — це окремий рядок без пробілів, який є елементом списку. 
+// Слово "токен" тут означає один елемент у списку класів, розділений пробілами.
+// <!-- HTML атрибут class містить токени (класи) -->
+// <div class="link is-active special"></div>
+// Тут токени: "link", "is-active", "special"
+// Чому називається "токен":
+// У програмуванні токен — це мінімальна одиниця даних, яка має значення.
+// В атрибутах HTML — це окремі слова/значення, розділені пробілами.
+// У DOMTokenList — кожен клас є окремим токеном.
+
+// Властивість classList.  Метод classList.contains(className) :
+console.log(link.classList.contains("link"));         //  true
+console.log(link.classList.contains("is-active"));    //  true
+console.log(link.classList.contains("active"));       //  false
+
+
+// Властивість classList.  Метод classList.add(className) :
+link.classList.add("special");
+
+// Метод add() змінює об'єкт, але нічого не повертає
+console.log(link.classList.add("special"));         //  undefined  - тому що робиться додавання. Тому що метод classList.add() не повертає ніякого значення. Це типова поведінка для методів, які змінюють стан об'єкта, але не потребують повертати результат своєї роботи.
+console.log(link.classList);    //  DOMTokenList(3) ['link', 'is-active', 'special', value: 'link is-active special']
+
+
+// Властивість classList.  Метод classList.remove(className) :
+link.classList.remove("is-active");
+console.log(link.classList);    //  DOMTokenList(2) ['link', 'special', value: 'link special']
+
+
+// Властивість classList.  Метод classList.toggle(className) :
+
+// клас className ВІДСУТНІЙ,  додаємо його В КІНЕЦЬ СПИСКУ класів :
+link.classList.toggle("is-active");
+console.log(link.classList);    //  DOMTokenList(3) ['link', 'special', 'is-active', value: 'link special is-active']
+
+link.classList.toggle("start");
+console.log(link.classList);    //  DOMTokenList(4) ['link', 'special', 'is-active', 'start', value: 'link special is-active start']
+
+// клас className ПРИСУТНІЙ — видаляємо його :
+link.classList.toggle("start");
+console.log(link.classList);    //  DOMTokenList(3) ['link', 'special', 'is-active', value: 'link special is-active']
