@@ -239,4 +239,21 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-3-3   Властивість classList. 
+//                 Метод classList.remove(className)
+
+// Метод очікує аргументом рядок з іменем класу та видаляє клас className зі списку класів елемента. 
+// Якщо спробувати видалити клас, якого не існує на елементі, то це не викличе помилку. Просто нічого не видалиться.
+
+// link.classList.remove("is-active");
+// console.log(link.classList);     // ["link", "special", length: 2, value: "link special"]
+
+
+
+
+
 
