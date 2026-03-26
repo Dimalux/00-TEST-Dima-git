@@ -200,7 +200,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // .............................
 
 
-// ПОЯСНЕННЯ-4-1   Властивість classList. 
+// ПОЯСНЕННЯ-3-1   Властивість classList. 
 //                 Метод classList.contains(className)
 
 // Метод очікує аргументом рядок з іменем класу та повертає true або false, залежно від наявності класу className в елемента.
@@ -209,8 +209,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // <a class="link is-active" href="https://goit.global">GoIT</a>
 
 // const link = document.querySelector(".link");
-// console.log(link.classList); 
-// // ["link", "is-active", length: 2, value: "link is-active"]
+// console.log(link.classList);     //   ["link", "is-active", length: 2, value: "link is-active"]
 
 // const hasActiveClass = link.classList.contains("is-active"); // true
 // const hasActiveClass = link.classList.contains("title"); // false
@@ -221,5 +220,23 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // .............................
 
 
-// ПОЯСНЕННЯ-4-2   Властивість classList. 
+// ПОЯСНЕННЯ-3-2   Властивість classList. 
 //                 Метод classList.add(className)
+
+// Метод очікує аргументом рядок з іменем класу та додає клас className до списку класів елемента.
+// Можна додавати більше одного класу, вказавши кілька аргументів через кому.
+
+// метод classList.add() не повертає ніякого значення. Це типова поведінка для методів, які змінюють стан об'єкта, але не потребують повертати результат своєї роботи.
+
+// link.classList.add("special");
+// console.log(link.classList);    // ["link", "is-active", "special", length: 3, value: "link is-active special"]
+ 
+// Якщо спробувати ПОВТОРНО добадати вже існуючє ім'я класу - дублікати автоматично ігноруються (новий дублікат НЕ ДОДАЄТЬСЯ. Існуючий клас залишається без змін. Ніякої помилки не виникає. Просто метод нічого не робить) :
+
+// link.classList.add("link");        //   дублікат автоматично ігнорується !!!
+// link.classList.add("is-active");   //   дублікат автоматично ігнорується !!!
+// link.classList.add("special");     //   дублікат автоматично ігнорується !!!
+
+
+
+
