@@ -186,45 +186,22 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 // <a class="link is-active" href="https://goit.global">GoIT</a>
 
-// Властивість classList — це спеціальний тип об’єкта, який подібний до масиву. Зверни увагу, що він схожий, але не є нативним JavaScript-масивом, який ми вивчали раніше. Він зберігає в собі весь перелік класів DOM-елемента, властивість length і властивість value.
+// Властивість classList — це спеціальний тип об'єкта, який подібний до масиву. Зверни увагу, що він схожий, але не є нативним JavaScript-масивом, який ми вивчали раніше. Він зберігає в собі весь перелік класів DOM-елемента, властивість length і властивість value.
 // властивість value містить точне значення атрибута class
 // властивість length — кількість класів в елемента
 
 // Але самі по собі value та length майже не використовуються, тому що для операцій з класами (додавання, видалення тощо) є спеціальні методи.
 
 // const link = document.querySelector(".link");
-// console.log(link.classList); 
-// // ["link", "is-active", length: 2, value: "link is-active"]
+// console.log(link.classList);    //   ["link", "is-active", length: 2, value: "link is-active"]
 
 
 // .............................
 // .............................
 
 
-// ПОЯСНЕННЯ-4   Властивість classList
-
-// Приклад:
-// <a class="link is-active" href="https://goit.global">GoIT</a>
-
-// Властивість classList — це спеціальний тип об’єкта, який подібний до масиву. Зверни увагу, що він схожий, але не є нативним JavaScript-масивом, який ми вивчали раніше. Він зберігає в собі весь перелік класів DOM-елемента, властивість length і властивість value.
-
-// властивість value містить точне значення атрибута class
-// властивість length — кількість класів в елемента
-
-
-// Але самі по собі value та length майже не використовуються, тому що для операцій з класами (додавання, видалення тощо) є спеціальні методи.
-
-// const link = document.querySelector(".link");
-// console.log(link.classList); 
-// // ["link", "is-active", length: 2, value: "link is-active"]
-
-
-// .............................
-// .............................
-
-
-// ПОЯСНЕННЯ-5   Властивість classList. 
-//               Метод classList.contains(className)
+// ПОЯСНЕННЯ-4-1   Властивість classList. 
+//                 Метод classList.contains(className)
 
 // Метод очікує аргументом рядок з іменем класу та повертає true або false, залежно від наявності класу className в елемента.
 // Зверни увагу, що className передаємо як рядок без крапки (без селектора класу).
@@ -244,5 +221,5 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // .............................
 
 
-// ПОЯСНЕННЯ-6   Властивість classList. 
-//               Метод classList.add(className)
+// ПОЯСНЕННЯ-4-2   Властивість classList. 
+//                 Метод classList.add(className)
