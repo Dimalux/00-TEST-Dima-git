@@ -226,4 +226,23 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // ПОЯСНЕННЯ-5   Властивість classList. 
 //               Метод classList.contains(className)
 
+// Метод очікує аргументом рядок з іменем класу та повертає true або false, залежно від наявності класу className в елемента.
+// Зверни увагу, що className передаємо як рядок без крапки (без селектора класу).
 
+// <a class="link is-active" href="https://goit.global">GoIT</a>
+
+// const link = document.querySelector(".link");
+// console.log(link.classList); 
+// // ["link", "is-active", length: 2, value: "link is-active"]
+
+// const hasActiveClass = link.classList.contains("is-active"); // true
+// const hasActiveClass = link.classList.contains("title"); // false
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-6   Властивість classList. 
+//               Метод classList.add(className)
