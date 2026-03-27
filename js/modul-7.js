@@ -521,7 +521,8 @@ if (user.dataset.userRole === "admin") {
 // .............................
 
 
-// ПОЯСНЕННЯ-10   Власні атрибути (data-атрибути). Отримання значень - властивість "dataset".
+// ПОЯСНЕННЯ-10   Власні атрибути (data-атрибути). 
+//                ОТРИМАННЯ значень - властивість "dataset".
 
 // Отримання значень :
 // Для отримання значення data-атрибута використовується властивість dataset, після якої через крапку пишеться ім'я атрибута БЕЗ data-. 
@@ -538,3 +539,33 @@ if (user.dataset.userRole === "admin") {
 // console.log(buttonMy2.dataset.action);  //  close
 
 
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-11   Власні атрибути (data-атрибути). 
+//                ЗМІНА значень - властивість "dataset".
+
+// Змінити значення існуючого data-атрибута або додати новий можна так само, як і будь-якої іншої властивості об'єкта в JavaScript. Щоб це зробити, треба отримати доступ до DOM-елемента, а потім змінити/задати значення властивості в об'єкті dataset.
+    
+{/* <button type="button" data-action="save">Save text</button>
+<button type="button" data-action="close">Close editor</button> */}
+
+// const buttonUse = document.querySelector('.item button[data-action="close"]');
+
+// // Змінюємо значення data-action для кнопки "buttonUse" :
+// console.log(buttonUse.dataset.action);    //   close
+// buttonUse.dataset.action = "update";      //   ЗМІНА значення  "close" на "update"
+// console.log(buttonUse.dataset.action);    //   update
+
+// // Додаємо новий data-атрибут data-role
+// buttonUse.dataset.role = "admin";
+// console.log(buttonUse.dataset.role);    //   admin
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-12   Створення та видалення елементів.
