@@ -469,5 +469,8 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // ПОЯСНЕННЯ-7   Доступ до атрибутів. 
 //               Метод element.setAttribute(nameAttribute, value)
 
+// Метод приймає два аргументи: рядок "nameAttribute" з іменем атрибута, який потрібно встановити або змінити, та "value" зі значенням, яке цьому атрибуту треба присвоїти. Метод встановлює або змінює значення зазначеного атрибута для вказаного HTML-елемента element.
 
-
+// const image = document.querySelector(".image");
+// image.setAttribute("alt", "Amazing nature");
+// console.log(image.getAttribute("alt")); // Amazing nature
