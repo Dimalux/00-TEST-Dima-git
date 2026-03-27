@@ -522,3 +522,19 @@ if (user.dataset.userRole === "admin") {
 
 
 // ПОЯСНЕННЯ-10   Власні атрибути (data-атрибути). Отримання значень - властивість "dataset".
+
+// Отримання значень :
+// Для отримання значення data-атрибута використовується властивість dataset, після якої через крапку пишеться ім'я атрибута БЕЗ data-. 
+// Тобто data- відкидається, а інша частина імені записується як ім'я властивості об'єкта.
+       
+    
+// // <button type="button" data-action="save">Save text</button>
+// // <button type="button" data-action="close">Close editor</button>
+
+// const buttonMy1 = document.querySelector('button[data-action="save"]');
+// const buttonMy2 = document.querySelector('button[data-action="close"]');
+
+// console.log(buttonMy1.dataset.action);  //  save
+// console.log(buttonMy2.dataset.action);  //  close
+
+
