@@ -456,3 +456,18 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // ПОЯСНЕННЯ-6   Доступ до атрибутів. 
 //               Метод element.hasAttribute(nameAttribute)
 
+// Метод отримує один аргумент — рядок "nameAttribute" з іменем атрибута, і повертає значення цього атрибута для вказаного HTML-елемента element. Якщо атрибут не знайдено, метод повертає "null".
+
+// const image = document.querySelector(".image");
+// console.log(image.getAttribute("alt"));          // "A laptop"
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-7   Доступ до атрибутів. 
+//               Метод element.setAttribute(nameAttribute, value)
+
+
+
