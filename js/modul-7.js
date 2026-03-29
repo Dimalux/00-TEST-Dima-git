@@ -25,7 +25,6 @@
 // Чат GPT :
 // Ваша аналогія добра для початкового розуміння, але технічно точніше сказати, що браузер не викликає конструктори в JS-розумінні, а створює об'єкти у внутрішній пам'яті за зразками (класами), які потім відображаються у JS як готові об'єкти з методами.
 
-
 // Читаючи певний тег, браузер вже знає, який клас використовувати, він запускає спеціальний внутрішній метод (схожий на конструктор), параметром якого буде об'єкт заздалегідь визначених властивостей, витягнутих з атрибутів тега. Додатково додаються (визначені класом) методи та інші властивості.
 
 
@@ -143,6 +142,7 @@
 // Отримання елемента та доступ до властивостей
 
 // <a class="link" href="https://goit.global">GoIT</a>
+
 // javascript
 // // Отримуємо посилання на елемент
 // const link = document.querySelector('.link');
@@ -650,15 +650,15 @@ if (user.dataset.userRole === "admin") {
 //                  Додавання елементів
 
 
-const heading = document.createElement("h2");
+// const heading = document.createElement("h2");
 
-// Метод ".classList.add()" додає клас "class" до списку класів елемента
-heading.classList.add("class");
-console.log(heading.classList);     //   DOMTokenList ['class', value: 'class']
+// // Метод ".classList.add()" додає клас "class" зі значенням "title" до списку класів елемента :
+// heading.classList.add("title");
+// console.log(heading.classList);     //   DOMTokenList ['class', value: 'class']
 
-// Перевіряємо, чи є у елемента вказаний атрибут. Повертає true - якщо атрибут існує, false - якщо атрибута немає
-console.log( heading.hasAttribute("class"));   //     true
+// // Перевіряємо, чи є у елемента вказаний атрибут. Повертає true - якщо атрибут існує, false - якщо атрибута немає
+// console.log( heading.hasAttribute("class"));   //     true
 
-// Метод element.setAttribute(nameAttribute, value) встановлюємо значення зазначеного атрибута для вказаного HTML-елемента element.
-heading.setAttribute("class", "title");
-console.log(heading.classList);   //     
+// // Метод element.setAttribute(nameAttribute, value) встановлюємо значення зазначеного атрибута для вказаного HTML-елемента element.
+// heading.setAttribute("class", "title2");
+// console.log(heading.classList);   //     
