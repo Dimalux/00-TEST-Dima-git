@@ -633,7 +633,7 @@ if (user.dataset.userRole === "admin") {
 
 
 // ПОЯСНЕННЯ-12-1   Створення та видалення елементів.
-//                  Створення елементів
+//                  Створення елементів   "document.createElement()"
 
 // DOM API (Document Object Model Application Programming Interface) має широкий функціонал. За його допомогою можна:
 // вибирати або змінювати вже існуючі елементи
@@ -710,7 +710,7 @@ if (user.dataset.userRole === "admin") {
 
 
 // ПОЯСНЕННЯ-12-2-2   Створення та видалення елементів.
-//                    Додавання елементів
+//                    Додавання елементів  "element.append()"  /  "element.prepend()"
 
 // Щоб створений елемент відображався на сторінці, його необхідно додати до вже існуючого елемента в DOM-дереві. Припустимо, що додаємо до певного елемента elem, для цього існують такі методи.
 
@@ -760,4 +760,44 @@ if (user.dataset.userRole === "admin") {
 
 
 // ПОЯСНЕННЯ-12-3   Створення та видалення елементів.
-//                  Видалення елементів
+//                  Видалення елементів "element.remove()"
+
+// Для того щоб видалити елемент, використовується метод element.remove().
+
+// <p class="text">Random text content</p>
+
+// Він викликається на елементі element, який необхідно видалити.
+
+// const text = document.querySelector(".text")
+// text.remove();
+
+
+
+// Приклад :  видаляємо почергово елементи "<h2>", "<p>", "<a>" зі статті :
+
+{/* <article class="article">
+  <h2 class="title">Article title</h2>
+  <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, ipsa quibusdam! Praesentium accusantium fugiat distinctio quidem minima fugit eos, veniam, nam laboriosam deleniti nisi qui neque explicabo perspiciatis, consectetur non.</p>
+<a class="link" href="">Read more</a>
+</article> */}
+
+// const heading = document.querySelector(".title");
+// heading.remove();
+
+// const text = document.querySelector('.text');
+// text.remove();
+
+// const link = document.querySelector(".link");
+// link.remove();
+
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-12-4   Створення та видалення елементів.
+//                  Властивість innerHTML
+
+
