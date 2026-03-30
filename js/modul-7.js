@@ -705,10 +705,6 @@ if (user.dataset.userRole === "admin") {
 // console.log(text1);
 
 
-
-
-
-
 // .............................
 // .............................
 
@@ -716,11 +712,52 @@ if (user.dataset.userRole === "admin") {
 // ПОЯСНЕННЯ-12-2-2   Створення та видалення елементів.
 //                    Додавання елементів
 
+// Щоб створений елемент відображався на сторінці, його необхідно додати до вже існуючого елемента в DOM-дереві. Припустимо, що додаємо до певного елемента elem, для цього існують такі методи.
+
+// elem.append(el1, el2, ...) — додає один або декілька елементів після всіх дітей елемента elem.
+// elem.prepend(el1, el2, ...) — додає один або декілька елементів перед усіма дітьми елемента elem.
+
+//   !!!!!
+// Зверни увагу! Якщо елемент для додавання вже знаходиться в DOM, то він видаляється зі свого старого місця й додається у нове. Отже, є правило: один і той самий елемент не може бути одночасно у двох місцях.
+//   !!!!!
+
+// Приклад :  додати до існуючого списку три елемента (два - додати на початок списку, третій - в кінець списку) :
+
+{/* <h1>Usernames</h1>
+  <ul class="usernames">
+    <li>Mango</li>
+  </ul> */}
 
 
+// const listUser = document.querySelector(".usernames");
+
+// const link1 = document.createElement("li");
+// const link2 = document.createElement("li");
+// const link3 = document.createElement("li")
+// link1.textContent = "Dima";
+// link2.textContent = "Katja";
+// link3.textContent = "Nastja";
+
+// console.log(link1);
+// console.log(link1.textContent);
+
+// console.log(link2);
+// console.log(link2.textContent);
+
+// console.log(link3);
+// console.log(link3.textContent);
+
+// listUser.prepend(link1, link2);
+// listUser.append(link3);
+
+// console.log(listUser.textContent);
+
+// console.log(listUser);
 
 
+// .............................
+// .............................
 
 
-
-
+// ПОЯСНЕННЯ-12-3   Створення та видалення елементів.
+//                  Видалення елементів
