@@ -674,8 +674,8 @@ if (user.dataset.userRole === "admin") {
 // .............................
 
 
-// ПОЯСНЕННЯ-12-2   Створення та видалення елементів.
-//                  Додавання елементів
+// ПОЯСНЕННЯ-12-2-1   Створення та видалення елементів.
+//                    Додавання елементів
 
 
 // const heading = document.createElement("h2");
@@ -690,3 +690,37 @@ if (user.dataset.userRole === "admin") {
 // // Метод element.setAttribute(nameAttribute, value) встановлюємо значення зазначеного атрибута для вказаного HTML-елемента element.
 // heading.setAttribute("class", "title2");
 // console.log(heading.classList);   //     
+
+//..........................
+
+//  МІЙ приклад :
+
+// const text1 = document.createElement("p");
+
+// text1.classList.add("link");
+// text1.setAttribute("data-use", "save");
+// text1.textContent = "HELLO, DIMA!";
+
+// console.dir(text1.textContent);
+// console.log(text1);
+
+
+
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-12-2-2   Створення та видалення елементів.
+//                    Додавання елементів
+
+
+
+
+
+
+
+
+
