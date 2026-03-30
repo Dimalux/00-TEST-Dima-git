@@ -840,3 +840,20 @@ if (user.dataset.userRole === "admin") {
 // ПОЯСНЕННЯ-12-4-2   Створення та видалення елементів.
 //                    Властивість innerHTML
 //                    Зміна
+
+// Приклад :  змінюємо текст в заголовку h2 з "Article title" на "New and improved title" :
+
+{/* <article class="article">
+  <h2 class="title">Article title</h2>
+  <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, ipsa quibusdam! <strong>Praesentium</strong> accusantium fugiat distinctio quidem minima fugit eos, veniam, nam laboriosam deleniti nisi qui neque explicabo perspiciatis, consectetur non.</p>
+  <a class="link" href="">Read more</a>
+</article>
+
+
+const title = document.querySelector(".article .title");
+console.log(title);
+console.log(title.textContent);
+
+title.innerHTML = 'New and <span class="accent">improved</span> title';
+console.log(title);
+console.log(title.textContent); */}
