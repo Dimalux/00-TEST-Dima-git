@@ -426,18 +426,22 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // Способи додавання inline-стилів
-// 1. Через атрибут style в HTML
+
+// 1. Через атрибут style в HTML :
 // html
 // <div style="color: red;"></div>
-// 2. Через властивість style в JavaScript
+
+// 2. Через властивість style в JavaScript :
 // javascript
 // const div = document.createElement("div");
 // div.style.color = "red";        // це inline-стиль
 // div.style.backgroundColor = "blue";
+
 // 3. Через метод setAttribute()
 // javascript
 // div.setAttribute("style", "color: red; background-color: blue;");
 // // Це також inline-стиль
+
 // Результат однаковий
 // В усіх трьох випадках в HTML-структурі з'явиться атрибут style
 
@@ -448,6 +452,12 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 // Підсумок
 // Так, жива розмітка (DOM після JS) — це і є динамічний HTML-код. Статичний HTML залишається незмінним на сервері, але в пам'яті браузера існує його динамічна версія (DOM), яка постійно оновлюється під час виконання скриптів.
+
+// "DOM зберігається в пам'яті браузера" — це означає, що DOM знаходиться в тій ділянці RAM, яку браузер отримав від комп'ютера, а точніше — в ділянці тієї конкретної вкладки, де відкрито сайт.
+// Коли відкриваємо браузер, він звертається до комп'ютера і каже:
+//     "Дай мені шматок робочого столу (RAM), я буду на ньому працювати"
+// Комп'ютер виділяє браузеру певну ділянку столу. Цю ділянку ми називаємо "пам'ять браузера".
+
 
 
 // .............................
@@ -468,10 +478,28 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // .............................
 
 
-// ПОЯСНЕННЯ-6   Доступ до атрибутів. 
+// ПОЯСНЕННЯ   Доступ до атрибутів. 
 //               Метод element.hasAttribute(nameAttribute)
 
-// Метод отримує один аргумент — рядок "nameAttribute" з іменем атрибута, і повертає значення цього атрибута для вказаного HTML-елемента element. Якщо атрибут не знайдено, метод повертає "null".
+// Метод приймає один аргумент — рядок nameAttribute, який містить ім'я атрибута для перевірки та повертає результат перевірки його наявності на елементі element — "true" чи "false".
+
+ // <img class="image" src="https://picsum.photos/id/9/320/240" alt="A laptop" width="300" />
+
+// const image = document.querySelector(".image");
+// console.log(image.hasAttribute("src")); // true
+// console.log(image.hasAttribute("href")); // false
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-6   Доступ до атрибутів. 
+//               Метод element.getAttribute(nameAttribute)
+
+// Метод отримує один аргумент — рядок nameAttribute з іменем атрибута, і повертає значення цього атрибута для вказаного HTML-елемента element. Якщо атрибут не знайдено, метод повертає null.
+
+ // <img class="image" src="https://picsum.photos/id/9/320/240" alt="A laptop" width="300" />
 
 // const image = document.querySelector(".image");
 // console.log(image.getAttribute("alt"));          // "A laptop"
