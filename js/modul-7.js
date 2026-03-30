@@ -800,4 +800,43 @@ if (user.dataset.userRole === "admin") {
 // ПОЯСНЕННЯ-12-4   Створення та видалення елементів.
 //                  Властивість innerHTML
 
+// Існує ще один спосіб створити DOM-елементи і помістити їх у DOM-дерево.
+// Для цього треба використати рядки з тегами і дозволити браузеру зробити всю важку роботу. У такого підходу є свої плюси та мінуси.
 
+ // .............................
+
+
+// ПОЯСНЕННЯ-12-4-1   Створення та видалення елементів.
+//                    Властивість innerHTML
+//                    Читання
+
+
+//  1)  <h2 class="title">Article title</h2>
+
+// const title = document.querySelector(".title");
+// console.log(title.innerHTML);   //   "Article title"
+
+
+// 2)  <article class="article">
+//   <h2 class="title">Article title</h2>
+//   <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, ipsa quibusdam! <strong>Praesentium</strong> accusantium fugiat distinctio quidem minima fugit eos, veniam, nam laboriosam deleniti nisi qui neque explicabo perspiciatis, consectetur non.</p>
+//   <a class="link" href="">Read more</a>
+// </article>
+
+
+// const article = document.querySelector(".article");
+// console.log(article.innerHTML);                            
+
+// // В консоль буде виведено:
+// //    <h2 class='title'>Article title</h2>
+//   // <p class='text'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, ipsa quibusdam! <strong>Praesentium</strong> accusantium fugiat distinctio quidem minima fugit eos, veniam, nam laboriosam deleniti nisi qui neque explicabo perspiciatis, consectetur non.</p>
+//   // <a class='link' href=''>Read more</a>
+
+
+
+ // .............................
+
+
+// ПОЯСНЕННЯ-12-4-2   Створення та видалення елементів.
+//                    Властивість innerHTML
+//                    Зміна
