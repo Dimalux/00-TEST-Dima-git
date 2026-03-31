@@ -532,8 +532,10 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // image.removeAttribute("alt");
 // console.log(image.hasAttribute("alt")); // false
 
-// Отримати доступ або змінити значення деяких атрибутів елемента можна безпосередньо, звернувшись до них як до властивостей DOM-об'єкта. Це буде менш затратно за кількістю коду.
-// А ось видалити або перевірити наявність буде зручніше, використовуючи відповідний метод.
+// !!!!!
+// Отримати доступ або ЗМІНИТИ ЗНАЧЕННЯ деяких атрибутів елемента можна безпосередньо, звернувшись до них як до властивостей DOM-об'єкта. Це буде менш затратно за кількістю коду.
+// А ось ВИДАЛИТИ або ПЕРЕВІРИТИ НАЯВНІСТЬ буде зручніше, використовуючи відповідний метод.
+// !!!!!
 
 
 // .............................
@@ -549,15 +551,16 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // Що JavaScript може робити з data-атрибутами?
 // Наприклад, під час виконання коду JavaScript приймати рішення :
 
-{/* <div data-user-role="admin">Панель керування</div>
-<div data-user-role="guest">Гостьовий доступ</div>
-javascript
-const user = document.querySelector("div");
-if (user.dataset.userRole === "admin") {
-  showAdminPanel();    // Показуємо адмін-панель
-} else {
-  showGuestPanel();    // Показуємо гостеву версію
-} */}
+//  <div data-user-role="admin">Панель керування</div>
+//  <div data-user-role="guest">Гостьовий доступ</div>
+
+// javascript
+// const user = document.querySelector("div");
+// if (user.dataset.userRole === "admin") {
+//   showAdminPanel();    // Показуємо адмін-панель
+// } else {
+//   showGuestPanel();    // Показуємо гостеву версію
+// } 
 
 
 // .............................
@@ -568,14 +571,14 @@ if (user.dataset.userRole === "admin") {
 //                ОТРИМАННЯ значень - властивість "dataset".
 
 // Отримання значень :
-// Для отримання значення data-атрибута використовується властивість dataset, після якої через крапку пишеться ім'я атрибута БЕЗ data-. 
-// Тобто data- відкидається, а інша частина імені записується як ім'я властивості об'єкта.
+// Для отримання значення data-атрибута використовується властивість "dataset", після якої через крапку пишеться ім'я атрибута БЕЗ data-. 
+// Тобто "data-" відкидається, а інша частина імені записується як ім'я властивості об'єкта.
        
     
-// // <button type="button" data-action="save">Save text</button>
-// // <button type="button" data-action="close">Close editor</button>
+  // // <button type="button" data-action="save">Save text</button>
+  // // <button type="button" data-action="close">Close editor</button>
 
-// const buttonMy1 = document.querySelector('button[data-action="save"]');
+  // const buttonMy1 = document.querySelector('button[data-action="save"]');
 // const buttonMy2 = document.querySelector('button[data-action="close"]');
 
 // console.log(buttonMy1.dataset.action);  //  save
@@ -747,11 +750,14 @@ if (user.dataset.userRole === "admin") {
 // console.log(link3);
 // console.log(link3.textContent);
 
+
+// Два елементи додаємо на початок списку :
 // listUser.prepend(link1, link2);
+
+// Третій елемент додаємо в кінець списку :
 // listUser.append(link3);
 
 // console.log(listUser.textContent);
-
 // console.log(listUser);
 
 
@@ -791,14 +797,19 @@ if (user.dataset.userRole === "admin") {
 // link.remove();
 
 
-
-
 // .............................
 // .............................
 
 
 // ПОЯСНЕННЯ-12-4   Створення та видалення елементів.
 //                  Властивість innerHTML
+
+// innerHTML — це властивість DOM-елемента :
+// HTML-тег → стає DOM-елементом,
+// DOM-елемент → має властивості,
+// innerHTML → одна з цих властивостей.
+
+// ✔ Тобто innerHTML — властивість DOM-елемента.
 
 // Існує ще один спосіб створити DOM-елементи і помістити їх у DOM-дерево.
 // Для цього треба використати рядки з тегами і дозволити браузеру зробити всю важку роботу. У такого підходу є свої плюси та мінуси.
@@ -813,8 +824,11 @@ if (user.dataset.userRole === "admin") {
 
 //  1)  <h2 class="title">Article title</h2>
 
-// const title = document.querySelector(".title");
-// console.log(title.innerHTML);   //   "Article title"
+// const heading = document.querySelector(".title");
+// console.log(heading.innerHTML);    //    Article title
+
+// heading.innerHTML = "Goodbye Article title";
+// console.log(heading.innerHTML);    //   Goodbye Article title
 
 
 // 2)  <article class="article">
@@ -833,13 +847,15 @@ if (user.dataset.userRole === "admin") {
 //   // <a class='link' href=''>Read more</a>
 
 
-
  // .............................
 
 
 // ПОЯСНЕННЯ-12-4-2   Створення та видалення елементів.
 //                    Властивість innerHTML
 //                    Зміна
+//  !!!!
+// Якщо у властивість innerHTML записати ПОРОЖНІЙ РЯДОК, то вміст елемента буде очищено. Це простий і швидкий спосіб видалення всього вмісту.
+//  !!!!
 
 // Приклад :  змінюємо текст в заголовку h2 з "Article title" на "New and improved title" :
 
@@ -857,3 +873,7 @@ console.log(title.textContent);
 title.innerHTML = 'New and <span class="accent">improved</span> title';
 console.log(title);
 console.log(title.textContent); */}
+
+
+
+
