@@ -854,7 +854,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 //                    Властивість innerHTML
 //                    Зміна
 //  !!!!
-// Якщо у властивість innerHTML записати ПОРОЖНІЙ РЯДОК, то вміст елемента буде очищено. Це простий і швидкий спосіб видалення всього вмісту.
+// Якщо у властивість innerHTML записати ПОРОЖНІЙ РЯДОК, то ВМІСТ ЕЛЕМЕНТА буде ОЧИЩЕНО !!!  Це простий і швидкий спосіб видалення всього вмісту. Для очищення вмісту використовується саме порожній рядок "", а НЕ ПРОБІЛ " ".
 //  !!!!
 
 // Приклад :  змінюємо текст в заголовку h2 з "Article title" на "New and improved title" :
@@ -873,6 +873,8 @@ console.log(title.textContent);
 title.innerHTML = 'New and <span class="accent">improved</span> title';
 console.log(title);
 console.log(title.textContent); */}
+
+
 
 
  // .............................
@@ -908,6 +910,31 @@ console.log(title.textContent); */}
 
 
 
+ // .............................
+
+
+// ПОЯСНЕННЯ-12-4-4   Створення та видалення елементів.
+//                    Властивість innerHTML
+//                    КОНКАТЕНАЦІЯ (додавання) вмісту всередині елемента ".innerHTML += htmlString;"
+
+// Важливі наслідки !!!
+// Хоча візуально здається, що ми просто додаємо новий вміст, насправді:
+// Весь HTML всередині article повністю перепаровується (парситься заново);
+// Будь-які раніше прив'язані обробники подій до дочірніх елементів будуть втрачені;
+// Посилання на існуючі DOM-вузли, які ви зберегли в змінних, стануть недійсними.
+
+
+// Приклад :  додавання (НЕ ПКРЕЗАПИСАТИ) до елемннту "article" ще 2-х дочірних шаблонних рядків "<p>" і "<a>" :
+
+// // <article class="article">
+// //   <h2>Article title</h2>
+// // </article>
+
+// const article = document.querySelector(".article");
+// const htmlString = `<p class="article-text">Nullam quis ante. Vestibulum dapibus nunc ac augue. In consectetuer turpis ut velit.</p>
+//    <a class="link" href="#">Read more...</a>`;
+
+// article.innerHTML += htmlString;
 
 
 
