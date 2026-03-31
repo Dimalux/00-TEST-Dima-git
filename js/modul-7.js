@@ -875,5 +875,40 @@ console.log(title);
 console.log(title.textContent); */}
 
 
+ // .............................
+
+
+// ПОЯСНЕННЯ-12-4-3   Створення та видалення елементів.
+//                    Властивість innerHTML
+//                    Однотипна (шаблонна) розмітка створюється із масиву даних :
+
+// Прийом полягає в перебиранні цього масиву та створенні одного рядка з HTML-тегами, який потім записуємо в innerHTML елемента. Якщо ти будеш це робити за допомогою методу map(), не забудь, що він повертає масив. Отже, перед тим як додавати розмітку в DOM, цей масив треба привести до рядка за допомогою методу join()
+
+{/* <section>
+  <h2>Popular technologies</h2>
+  <ul class="list"></ul>
+</section> */}
+
+
+// const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
+
+// const list = document.querySelector(".list");
+
+// // 1-й ВАРІАНТ :
+// // list.innerHTML = technologies.map(technologie => `<li>${technologie}</li>`).join("");
+
+// // 2-й ВАРІАНТ :
+// // list.innerHTML = technologies.reduce((prev, tech) => prev + `<li>${tech}</li>`, "");
+
+// // 3-й ВАРІАНТ :
+// // Для того щоб код виглядав читабельніше у innerHTML, можна додати ПЕРЕВЕДЕННЯ РЯДКА "\n" :
+// list.innerHTML = technologies.reduce((prev, tech) => prev + `<li>${tech}</li>\n`, "");
+
+// console.log(list.innerHTML);
+
+
+
+
+
 
 
