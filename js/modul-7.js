@@ -726,10 +726,10 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 // Приклад :  додати до існуючого списку три елемента (два - додати на початок списку, третій - в кінець списку) :
 
-{/* <h1>Usernames</h1>
-  <ul class="usernames">
-    <li>Mango</li>
-  </ul> */}
+// <h1>Usernames</h1>
+//   <ul class="usernames">
+//     <li>Mango</li>
+//   </ul>
 
 
 // const listUser = document.querySelector(".usernames");
@@ -802,7 +802,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-12-4   Створення та видалення елементів.
-//                  Властивість innerHTML
+//                  Властивість innerHTML   (встановлює або отримує HTML-вміст елемента)
 
 // innerHTML — це властивість DOM-елемента :
 // HTML-тег → стає DOM-елементом,
@@ -818,9 +818,8 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-12-4-1   Створення та видалення елементів.
-//                    Властивість innerHTML
-//                    Читання
-
+//                    Властивість innerHTML   (встановлює або отримує HTML-вміст елемента)
+//                    Читання (Серіалізація (element.innerHTML) — весь поточний вміст element перетворюється на рядок. Читання element.innerHTML — браузер серіалізує поточні DOM-вузли в рядок HTML)
 
 //  1)  <h2 class="title">Article title</h2>
 
@@ -851,7 +850,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-12-4-2   Створення та видалення елементів.
-//                    Властивість innerHTML
+//                    Властивість innerHTML   (встановлює або отримує HTML-вміст елемента)
 //                    Зміна
 //  !!!!
 // Якщо у властивість innerHTML записати ПОРОЖНІЙ РЯДОК, то ВМІСТ ЕЛЕМЕНТА буде ОЧИЩЕНО !!!  Це простий і швидкий спосіб видалення всього вмісту. Для очищення вмісту використовується саме порожній рядок "", а НЕ ПРОБІЛ " ".
@@ -881,20 +880,20 @@ console.log(title.textContent); */}
 
 
 // ПОЯСНЕННЯ-12-4-3   Створення та видалення елементів.
-//                    Властивість innerHTML
+//                    Властивість innerHTML   (встановлює або отримує HTML-вміст елемента)
 //                    Однотипна (шаблонна) розмітка створюється із масиву даних :
 
 // Прийом полягає в перебиранні цього масиву та створенні одного рядка з HTML-тегами, який потім записуємо в innerHTML елемента. Якщо ти будеш це робити за допомогою методу map(), не забудь, що він повертає масив. Отже, перед тим як додавати розмітку в DOM, цей масив треба привести до рядка за допомогою методу join()
 
 {/* <section>
-  <h2>Popular technologies</h2>
-  <ul class="list"></ul>
+  <h2>Popular technologies 1</h2>
+  <ul class="list1"></ul>
 </section> */}
 
 
 // const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
 
-// const list = document.querySelector(".list");
+// const list = document.querySelector(".list1");
 
 // // 1-й ВАРІАНТ :
 // // list.innerHTML = technologies.map(technologie => `<li>${technologie}</li>`).join("");
@@ -914,7 +913,7 @@ console.log(title.textContent); */}
 
 
 // ПОЯСНЕННЯ-12-4-4   Створення та видалення елементів.
-//                    Властивість innerHTML
+//                    Властивість innerHTML   (встановлює або отримує HTML-вміст елемента)
 //                    КОНКАТЕНАЦІЯ (додавання) вмісту всередині елемента ".innerHTML += htmlString;"
 
 // Важливі наслідки !!!
@@ -938,4 +937,43 @@ console.log(title.textContent); */}
 
 
 
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-12-5   Створення та видалення елементів.
+//                  Метод insertAdjacentHTML()
+
+// Метод insertAdjacentHTML() — це сучасний метод для додавання рядка з HTML-тегами перед, після або всередину елемента. Він вирішує проблему innerHTML з повторною серіалізацією вмісту елемента під час додавання розмітки до вже існуючої.
+
+// element.insertAdjacentHTML(position, string)
+
+// Аргумент "position" — це рядок, який визначає позицію щодо елемента "element". Він приймає одне з чотирьох значень.
+
+// "beforebegin" — перед element
+// "afterbegin" — всередині element, перед усіма дітьми
+// "beforeend" — всередині element, після усіх дітей
+// "afterend" — після element
+
+// Значення "beforebegin" і "afterend" працюють тільки тоді, коли element вже знаходиться в DOM-дереві. Обмеження зумовлене тим, що неможливо дізнатися, куди вставляти розмітку, доти, доки елемент не буде перебувати в DOM-дереві.
+
+// Приклад :  в HTML є список із трьох елементів. 
+// 1) Додати три елемента "React", "TypeScript", "Node.js" з масиву "newTechnologies" в КІНЕЦЬ СПИСКУ через JavaScript, використовуючи метод insertAdjacentHTML, 
+// 2) Додати заголовок h2 "Popular technologies 2" ПЕРЕД СПИСКОМ  через JavaScript, використовуючи метод insertAdjacentHTML.
+
+// <ul class="list2">
+//   <li class="list-item">HTML</li>
+//   <li class="list-item">CSS</li>
+//   <li class="list-item">JavaScript</li>
+// </ul>
+
+
+// const list = document.querySelector(".list2");
+
+// const newTechnologies = ["React", "TypeScript", "Node.js"];
+// const markup = newTechnologies.map(technology => `<li class="list-item">${technology}</li>`).join("");
+
+// list.insertAdjacentHTML("beforeend", markup);
+
+// list.insertAdjacentHTML("beforebegin", "<h2>Popular technologies 2</h2>")
 
