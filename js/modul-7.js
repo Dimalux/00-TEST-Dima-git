@@ -1008,7 +1008,7 @@ console.log(title.textContent); */}
 // <button class="my-button">Next</button>
 
 // Щоб галерея горталась, потрібно в JavaScript коді отримати посилання на елемент кнопки й додати на нього слухача події кліку.
-// У виклик addEventListener() першим аргументом ми передали ім'я події "click" , другим — функцію-обробник подій (event handler) — () => {console.log("...")}. 
+// У виклик addEventListener() першим аргументом ми передали ім'я події "click", другим — функцію-обробник подій (event handler) — () => {console.log("...")}. 
 // Кожного разу, коли на елементі button відбуватиметься подія "click", ця колбек-функція буде виконуватися й виводити в консоль повідомлення "The button was pressed and now the next image will appear".
 
  // ...........
@@ -1038,7 +1038,52 @@ console.log(title.textContent); */}
 // .............................
 
 
-// ПОЯСНЕННЯ-12-6   Події
+// ПОЯСНЕННЯ-12-7   Події
 //                  Метод removeEventListener()  видаляє слухача події з елемента.
 
 // Для того щоб мати можливість видаляти слухача події з елемента через removeEventListener, важливо використовувати ту саму функцію-обробник, яка була призначена в addEventListener. З цієї причини рекомендовано для обробників подій використовувати іменовані функції, які можна легко передавати як аргументи.
+
+
+ // .............................
+
+
+// Приклад :   на кнопку з текстом "Click me" 
+// або ДОДАЄТЬСЯ слухач події (при кліку на кнопку "Add Listener"),
+// або ВИДАЛЯЄТЬСЯ слухач події (при кліку на кнопку "Remove Listener").
+
+
+// <button class="btn js-add">Add Listener</button>
+// <button class="btn js-remove">Remove Listener</button>
+// <hr>
+// <button class="btn target-btn">Click me</button>
+
+
+// const addListenerBtn = document.querySelector('.js-add');
+// const removeListenerBtn = document.querySelector('.js-remove');
+// const btn = document.querySelector(".target-btn");
+
+// const handleClick = () => {
+//   console.log("click event listener callback");
+// };
+
+// addListenerBtn.addEventListener("click", () => {
+//   btn.addEventListener("click", handleClick);
+//   console.log("click event listener was added to btn");
+// });
+
+// removeListenerBtn.addEventListener("click", () => {
+//   btn.removeEventListener("click", handleClick);
+//   console.log("click event listener was removed from btn");
+// });
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-12-8   Події
+//                  Об'єкт події.
+
+// Для обробки події недостатньо знати, що подія — це клік або натискання клавіші. Розробнику можуть знадобитися інші деталі, а саме: елемент, на якому відбулася подія, його поточне значення текстового поля, вбудовані методи тощо.
+// Кожна подія — це об'єкт, який містить інформацію про деталі події та автоматично передається першим аргументом в обробник події. Усі події відбуваються з базового класу Event.
