@@ -1119,15 +1119,41 @@ console.log(title.textContent); */}
 // }
 
 // // Коли ви натискаєте кнопку, браузер робить приблизно так:
-// const clickEvent = new Event("click", button);  // 🎂 створює екземпляр (об'єкт події)
+// const clickEvent = new Event("click", button);  //  створює екземпляр (об'єкт події)
 
 // // І передає цей об'єкт у ваш колбек:
 // handleClick(clickEvent);
 
 
+// ............
+
+
+// Приклад з Об'єктом події :
+
+
+// // <button class="btn target-btn">Click me</button>
+
+// const button = document.querySelector(".target-btn");
+
+// const handleClick = event => {
+// console.log("event:", event);         //   event: PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
+// console.log("event type:", event.type);   //   event type: click
+// console.log("currentTarget:", event.currentTarget);    //    currentTarget: <button class="btn target-btn">Click me</button>
+// };
+
+// button.addEventListener("click", handleClick);
+
+
 
 // .............................
 // .............................
+
+
+// ПОЯСНЕННЯ-12-9   Події
+//                  Події клавіатури.
+
+
+
 
 
 // ПОЯСНЕННЯ-12-9   Події
