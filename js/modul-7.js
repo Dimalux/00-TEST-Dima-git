@@ -70,6 +70,47 @@
 // .............................
 // .............................
 
+// ДОСТУП до ЕЛЕМЕНТІВ в DOM :
+
+
+// <button type="button" id="btn" class="magic">
+//     Magic button
+//     <span class="icon"></span>
+// </button>
+
+// 1) самий СУЧАСНИЙ метод - "querySelector()" :
+
+// document.querySelector(".magic")     //  через "." (крапку) -  доступ за селектором по класу
+// document.querySelector("#btn")       //  через "#" (хештег) - доступ за селектором по id
+// document.querySelector("button")     //  доступ за ім'ям тегу (використовується рідко, тому що подібних тегів м/б дуже багато)
+
+
+//  Є три елемента списку з однаковими класами:
+// <ul class="list2">
+//   <li class="list-item">HTML</li>
+//   <li class="list-item">CSS</li>
+//   <li class="list-item">JavaScript</li>
+// </ul>
+
+// const links = document.querySelectorAll(".list-item")   //  отримуємо псевдомасив з 3-х елементів
+
+// щоб отримати потрібний нам елемент, трба до нього звернутись за індексом, наприклад :
+
+// links[1]
+
+
+// // 2)  СТАРИЙ метод "getElementsByClassName()" - ТРЕБА переписувати на СУЧАСНИЙ  "querySelector()"
+
+// document.getElementsByClassName("magic")   //  отримує елемент відразу за класом (НЕ ТРЕБА ".")  
+
+
+// // 3)  СТАРИЙ метод "getElementById()" - ТРЕБА переписувати на СУЧАСНИЙ  "querySelector()"
+
+// document.getElementById("btn")   //  отримує елемент відразу за через id  (НЕ ТРЕБА "#" хештег)  
+
+
+// .............................
+
 
 // ПОЯСНЕННЯ-1   Доступ до властивостей
 
