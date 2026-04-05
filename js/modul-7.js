@@ -1237,4 +1237,42 @@ console.log(title.textContent); */}
 // });
 
 
+// .............................
 
+
+// Приклад :   Подію submit можна застосувати для валідації (наприклад, для перевірки чи всі поля заповненні - (login === "" ||  password === "")) форми перед відправленням, оскільки на об'єкті події існує багато корисних властивостей, пов'язаних з елементами форми.
+
+
+// // <form class="form" autocomplete="off">
+// //   <input type="text" name="login" placeholder="Login">
+// //   <input type="password" name="password" placeholder="Password">
+// //   <button class="btn" type="submit">Register</button>
+// // </form>
+
+// const registerForm = document.querySelector(".form");
+
+// registerForm.addEventListener("submit", handleSubmit);
+
+// function handleSubmit(event) {
+
+// event.preventDefault();  //  скасувати вбудовану дію браузера ЗА ЗАМОВЧУВАННЯМ при submit — перезавантаження сторінки 
+
+// const form = event.target;
+// const login = form.elements.login.value;
+// const password = form.elements.password.value;
+
+// if(login === "" ||  password === "") {
+//  return console.log("Please fill in all the fields!")  
+// };
+// console.log(`Login: ${login}, Password: ${password}`);
+//   form.reset();
+// }
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-13-2   Події елементів форм
+//                  Подія change :
