@@ -1173,6 +1173,17 @@ console.log(title.textContent); */}
 
 // Приклад з Об'єктом події :
 
+// !!! ЗВЕРНИ УВАГУ !!!  РІЗНИЦЯ між "event.currentTarget" і "event.target" :
+
+// event.currentTarget	Елемент, на якому висить обробник події (той, до якого ми додали addEventListener). currentTarget — поточний обробник (те, що реагує) наприклад слухач на "ul" в коді - 
+// <ul id="list">
+// <li>Пункт 1</li>
+// <li>Пункт 2</li>
+// <li>Пункт 3</li>
+// </ul>;
+
+// event.target	Елемент, на якому реально сталася подія (куди саме клікнув користувач). target — ціль (те, у що влучили) наприклад "li".
+
 
 // // <button class="btn target-btn">Click me</button>
 
