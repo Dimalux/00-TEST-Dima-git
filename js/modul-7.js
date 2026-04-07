@@ -1444,3 +1444,55 @@ console.log(title.textContent); */}
 //   output.textContent = event.currentTarget.value;
 // });
 
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-13-4   Події елементів форм
+//                  Подія focus і blur :
+
+// Елемент отримує фокус під час кліку миші або переходу клавішею Tab.
+
+// Момент отримання і втрати фокусу дуже важливий. Отримуючи фокус, ми можемо завантажити дані для автозаповнення, почати відстежувати зміни тощо.
+// Під час втрати фокусу — перевірити введені дані.
+
+// подія "focus" відбувається під час фокусування на елементі
+// подія "blur" відбувається при втраті фокусу, наприклад, користувач клікає в іншому місці екрана
+
+// Активувати або скасувати фокус можна програмно. Для цього треба викликати в коді для елемента однойменні методи "focus()" і "blur()".
+
+
+// Приклад :   реалізація події focus та blur
+
+// <button type="button" data-action="set">Set focus to input</button>
+// <button type="button" data-action="remove">Remove focus from input</button>
+// <br><br>
+// <input type="text" class="text-input" />
+
+
+// const textInput = document.querySelector(".text-input-2");
+// const setFocusBtn = document.querySelector('[data-action="set"]');
+// const removeFocusBtn = document.querySelector('[data-action="remove"]');
+
+// setFocusBtn.addEventListener("click", () => {
+//   textInput.focus();
+// });
+
+// removeFocusBtn.addEventListener("click", () => {
+//   textInput.blur();
+// });
+
+// textInput.addEventListener("focus", () => {
+//   textInput.value = "This input has focus";
+// });
+
+// textInput.addEventListener("blur", () => {
+//   textInput.value = "";
+// });
+
+
+
+// .............................
+// .............................
