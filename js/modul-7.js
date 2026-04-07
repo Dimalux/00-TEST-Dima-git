@@ -1418,3 +1418,29 @@ console.log(title.textContent); */}
 //   valueOutput.textContent = selectedOptionValue;
 // }
 
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-13-3   Події елементів форм
+//                  Подія input :
+
+// Подія "input" відбувається тільки на "текстових полях" і "textarea".
+
+// Вона створюється щоразу при зміні значення елемента, не чекаючи втрати фокусу. На практиці "input" — це найголовніша подія для роботи з текстовими полями форми.
+
+
+// Приклад :  Подія input відбувається при кожній зміні значення (при введенні або видаленні) і не залежить від втрати фокусу
+
+// <input type="text" class="text-input" />
+// <p>Text field value: <span class="output"></span></p>
+
+
+// const textInput = document.querySelector(".text-input");
+// const output = document.querySelector(".output");
+
+// textInput.addEventListener("input", (event) => {
+//   output.textContent = event.currentTarget.value;
+// });
+
