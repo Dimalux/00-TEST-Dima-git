@@ -1376,3 +1376,45 @@ console.log(title.textContent); */}
 
 // ПОЯСНЕННЯ-13-2   Події елементів форм
 //                  Подія change :
+
+// 1)  Подія "change" для елемента форми :
+// Подія "change" відбувається після зміни елемента форми.
+// Для текстових полів або "textarea" подія відбудеться не на кожному введенні символу, а після втрати фокусу. Це не завжди зручно. Уяви, що користувач набирає щось у текстовому полі — подія відсутня. Щойно фокус пропав, відбудеться подія "change".
+
+// 2)  Подія "change" для елементів "select", "чекбоксів" і "радіокнопок" :
+// Для елементів, наприклад, "select", "чекбоксів" і "радіокнопок", подія "change" спрацьовує відразу під час вибору значення.
+
+
+// Приклад події "change" для елементів "select" :
+
+// <p>
+//   Selected option text: <span class="text-output">none</span>
+// <p>
+// <p>
+//   Selected option value: <span class="value-output">none</span>
+// <p>
+
+//   <select class="pizza-select">
+//     <option value="four_meats">Four Meats</option>
+//     <option value="royal_cheese">Royal Cheese</option>
+//     <option value="vegetarian">Vegetarian</option>
+//     <option value="smoked_salmon">Smoked Salmon</option>
+//   </select>
+
+
+// const select = document.querySelector(".pizza-select");
+// const textOutput = document.querySelector(".text-output");
+// const valueOutput = document.querySelector(".value-output");
+
+// select.addEventListener("change", setOutput);
+
+// function setOutput(event) {
+//   const selectedOptionValue = event.currentTarget.value;
+//   const selectedOptionIndex = event.currentTarget.selectedIndex;
+//   const selectedOptionText =
+//     event.currentTarget.options[selectedOptionIndex].text;
+
+//   textOutput.textContent = selectedOptionText;
+//   valueOutput.textContent = selectedOptionValue;
+// }
+
