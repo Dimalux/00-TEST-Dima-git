@@ -1,5 +1,17 @@
 'use strict';
 
+//...............
+
+// Що робити, коли Git блокує операцію "git pull", щоб не втратити незбережені (незакомічені) локальні зміни.
+// "Please commit your changes or stash them before you merge.
+// Aborting"  //    "Будь ласка, зафіксуйте зміни або збережіть їх перед об'єднанням.
+// Переривання"
+
+// git stash
+// git pull
+// git stash pop
+
+//...............
 
 // Що таке DOM-дерево?
 
@@ -1048,7 +1060,9 @@ console.log(title.textContent); */}
 
 // <button class="my-button">Next</button>
 
-// Щоб галерея горталась, потрібно в JavaScript коді отримати посилання на елемент кнопки й додати на нього слухача події кліку.
+// Щоб галерея горталась, потрібно в JavaScript коді :
+// 1) отримати посилання на елемент кнопки;
+// 2) додати на нього слухача події кліку.
 // У виклик addEventListener() першим аргументом ми передали ім'я події "click", другим — функцію-обробник подій (event handler) — () => {console.log("...")}. 
 // Кожного разу, коли на елементі button відбуватиметься подія "click", ця колбек-функція буде виконуватися й виводити в консоль повідомлення "The button was pressed and now the next image will appear".
 
@@ -1056,10 +1070,13 @@ console.log(title.textContent); */}
 
 // ВАРІАНТ-1 :  колбек
 
+
 // <button class="my-button">Next</button>
 
+// // 1) Отримуємо посилання на елемент кнопки
 // const button = document.querySelector(".my-button");
 
+// // 2) Додаємо на елемент кнопки слухача події кліку
 // button.addEventListener("click", () => console.log("The button was pressed and now the next image will appear"));
 
  // ...........
@@ -1134,14 +1151,14 @@ console.log(title.textContent); */}
 // button.addEventListener("click", handleClick);
 
 
-// Параметр event — це і є об'єкт події, який автоматично передається першим аргументом під час виклику колбек-функції. Ми можемо називати його як завгодно, але, як правило, його оголошують як e, evt або event.
+// Параметр event — це і є об'єкт події, який автоматично передається першим аргументом під час виклику колбек-функції. Його оголошують як e, evt або event.
 // Деякі властивості об'єкта події :
 
     // event.type — тип події.
-    // event.currentTarget — елемент, на якому виконується обробник події.
+    // event.currentTarget — елемент, на якому виконується обробник події (той, до якого ви прив'язали слухач).
+    // event.target — елемент, на якому подія виникла реально (той, по якому клікнули/навели/тощо).    
 
-
-//   Є клас Event, а екземпляр класу - це об'єкт події, який передається колбеку в якості аргумента.      
+//   Є клас "Event", а екземпляр класу - це об'єкт події "event", який передається колбеку в якості аргумента.      
 // Клас Event — це як креслення або форма. Він описує, які властивості та методи будуть у всіх подій (наприклад, type, target, timestamp, метод preventDefault()).    
 // Усі події мають спільну основу — будь то клік, наведення миші, натискання клавіші чи завантаження сторінки. Всі вони є екземплярами класу Event.
 // Коли користувач клікає по кнопці, браузер бере клас Event і створює новий екземпляр (новий об'єкт), який містить дані саме про цей клік :
@@ -1175,14 +1192,15 @@ console.log(title.textContent); */}
 
 // !!! ЗВЕРНИ УВАГУ !!!  РІЗНИЦЯ між "event.currentTarget" і "event.target" :
 
-// event.currentTarget	Елемент, на якому висить обробник події (той, до якого ми додали addEventListener). currentTarget — поточний обробник (те, що реагує) наприклад слухач на "ul" в коді - 
+// "event.currentTarget" - елемент, на якому висить обробник події (той, до якого ми додали addEventListener), поточний обробник (те, що реагує) наприклад слухач на "ul" в коді :
+
 // <ul id="list">
 // <li>Пункт 1</li>
 // <li>Пункт 2</li>
 // <li>Пункт 3</li>
 // </ul>;
 
-// event.target	Елемент, на якому реально сталася подія (куди саме клікнув користувач). target — ціль (те, у що влучили) наприклад "li".
+// "event.target"	- елемент, на якому реально сталася подія (куди саме клікнув користувач), "target" — ціль (те, у що влучили) наприклад "li".
 
 
 // // <button class="btn target-btn">Click me</button>
@@ -1311,6 +1329,34 @@ console.log(title.textContent); */}
 
 // event.preventDefault();  //  скасувати вбудовану дію браузера ЗА ЗАМОВЧУВАННЯМ при submit — перезавантаження сторінки 
 
+
+// Властивість "elements" DOM-елемента форми містить об'єкт з посиланнями на всі її елементи, які мають атрибут "name". Тільки елементи з "name" потрапляють у "elements". Поля без "name" — ігноруються. Якщо є кілька однакових "name" — утворюється колекція (псевдомасив) :
+
+// <input name="hobby" value="music">
+// <input name="hobby" value="sport">
+
+// form.elements.hobby[0].value; // "music"
+// form.elements.hobby[1].value; // "sport"
+
+// Саме тому в прикладі ми отримуємо значення полів, звертаючись до "event.target.elements.login.value" і "event.target.elements.password.value".
+
+// Щось на кшталт такої структури :
+// const form = {
+//  // ... інші властивості форми
+// elements: {
+// login: (посилання на елемент input з ім'ям name="login"),
+// password: (посилання на елемент input з ім'ям name="password"),
+//    // ... всі елементи з атрибутом name
+// }
+//  // ... інші властивості форми
+// }
+
+
+// Варіант-1 (довгий, але явний):
+// const login = event.target.elements.login.value;
+// const password = event.target.elements.password.value;
+
+// Варіант-2 ("const form = event.target" - чому так роблять? Економія місця — не треба писати "event.target" щоразу, читабельність — код стає чистішим:) :
 // const form = event.target;
 // const login = form.elements.login.value;
 // const password = form.elements.password.value;
