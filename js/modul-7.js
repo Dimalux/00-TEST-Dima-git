@@ -1570,6 +1570,7 @@ console.log(title.textContent); */}
 // element.classList.replace(oldClassName, newClassName) - замінює клас oldClassName на newClassName в списку класів елемента element.
 
 
+
 // Створення та видалення DOM-елементів :
 
 // document.createElement(tagName) - створює новий HTML-елемент з вказаним ім'ям тегу tagName.
