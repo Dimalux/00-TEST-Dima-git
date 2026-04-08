@@ -1595,3 +1595,78 @@ console.log(title.textContent); */}
 
 // .............................
 // .............................
+
+
+// УРОК-1  M-01-1.  Властивості "навігації" по DOM елементам (вузлах) :
+
+
+// <ul class="list2">
+//   <li class="list-item">HTML</li>
+//   <li class="list-item">CSS</li>
+//   <li class="list-item">JavaScript</li>
+// </ul>
+
+const list = document.querySelector(".list2");
+console.log(list);    //   HTML-представлення елемента
+
+
+// У посиланні на наш елемент "list" є багато властивостей, які дають нам можливість робити по цьому елементу навігацію :
+
+console.dir(list);    //   JavaScript-об'єкт елемента з усіма властивостями та методами. Можна дослідити всі властивості об'єкта (методи, події, атрибути)
+
+
+// 1)  Можна подивитись колекцію "дітей" - елементів, які вкладені до нашего списку (тегі "li" з класом "list-item", якій в них є) :
+
+console.log(list.children);   //   TMLCollection { 0: li.list-item, 1: li.list-item, 2: li.list-item, length: 3 }
+
+
+// 2)  Властивість "firstElementChild" дає можливість отримати доступ до першого елемента в нашій колекції :
+
+console.log(list.firstElementChild);   //   ...textContent: "HTML"
+
+// Використовуємо конкретні властивості:
+console.log(list.firstElementChild.tagName);     // "LI"
+console.log(list.firstElementChild.textContent); // "HTML"
+console.log(list.firstElementChild.className);   // "list-item"
+
+
+// 3)  Властивість "lastElementChild" дає можливість отримати доступ до останнього елемента в нашій колекції :
+
+console.log(list.lastElementChild);  //   ...textContent: "JavaScript"
+
+
+
+// 4)  Можна подивитись вузли вкладених елементів і текстові вузли в нашему списку :
+console.log(list.childNodes);
+
+
+// 5)  Навігація відносно якогось дочірнього елемента :
+
+// Звернемось до другого елементу з нашего списку :
+const itemList1 = list.children[1]
+console.log(itemList1);   //   ...textContent: "CSS"
+
+// Відносно цього елемента також можна робити "навігацію" :
+
+// Отримуєм наступний елемент з нашего списку :
+console.log(itemList1.nextElementSibling);   //   ...tagName: "LI" ...textContent: "JavaScript"
+
+// Отримуєм попередній елемент з нашего списку :
+console.log(itemList1.previousElementSibling);   //   ...tagName: "LI" ...textContent: "HTML"
+
+
+// Отримуєм батьківський елемент (тобто кому наш елемент належить) :
+console.log(itemList1.parentNode);   //   ...tagName: "UL" ...textContent: "\n  HTML\n  CSS\n  JavaScript\n"
+
+
+// 6)  Також можна отримати доступ до всіх вкладених елементів, якщо звернутись безпосередньо до списку "ul", а не тільки до "document" :
+
+console.log(list.querySelectorAll(".list-item"));
+
+
+
+// .............................
+// .............................
+
+
+// УРОК-1  M-02.  Властивості "навігації" по DOM елементам (вузлах) :
