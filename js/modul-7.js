@@ -1793,3 +1793,40 @@ console.log(title.textContent); */}
 
 
 // УРОК-1  M-04.  Data-атрибути (дивись рядок 598) :
+
+// Data-атрибути дають нам можливість навішувати на наші тегі якусь додаткову службову, корисну для нас, інформацію.
+
+// <div class="actions">
+//     <button type="button" data-action="add">Create</button>
+//     <button type="button" data-action="remove">Delete</button>
+//     <button type="button" data-action="edit">Edit</button>
+// </div>
+
+
+// Знаходимо всі кнопки "button", які знаходяться всередині елемента з класом "actions" (.actions - знайти елемент з класом "actions";  button	- знайти всі теги "button" всередині) :
+
+// const buttons = document.querySelectorAll(".actions button");
+
+// console.log(buttons);   //   [button, button, button]
+
+// // Отримання значень :
+// // Для отримання значення data-атрибута використовується властивість "dataset", після якої через крапку пишеться ім'я атрибута БЕЗ data-. 
+// // Тобто "data-" відкидається, а інша частина імені записується як ім'я властивості об'єкта.
+
+// // Наприклад, отримуємо значення атрибута "data-action" другої кнопки :
+// console.log(buttons[1].dataset.action);    //   remove
+
+
+// // Можна перезаписати значення атрибута цієї кнопки :
+
+// buttons[1].dataset.action = "new remove"; 
+// console.log(buttons[1].dataset.action);    //   new remove
+
+
+
+
+// .............................
+// .............................
+
+
+// УРОК-1  M-05.  Властивість classList  (дивись рядок 251) :
