@@ -289,7 +289,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-3-2   Властивість classList. 
-//                 Метод classList.add(className)
+//                 ДОДАВАННЯ класу (можна більше одного, через кому) - Метод classList.add(className)
 
 // Метод очікує аргументом рядок з іменем класу та додає клас className до списку класів елемента.
 // Можна додавати більше одного класу, вказавши кілька аргументів через кому.
@@ -312,7 +312,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-3-3   Властивість classList. 
-//                 Метод classList.remove(className)
+//                 ВИДАЛЕННЯ класу - Метод classList.remove(className)
 
 // Метод очікує аргументом рядок з іменем класу та видаляє клас className зі списку класів елемента. 
 // Якщо спробувати видалити клас, якого не існує на елементі, то це не викличе помилку. Просто нічого не видалиться.
@@ -1862,7 +1862,7 @@ console.log(title.textContent); */}
 // .............................
 
 
-//      УРОК-1  M-05-01.     Властивість classList.    Додати клас : 
+//      УРОК-1  M-05-01.     Властивість classList.    ДОДАТИ клас : 
 //                                                     Метод classList.add(className)    (дивись рядок 291)
 
 // <a href="/contact" class="site-nav__link">Contacts</a>
@@ -1878,5 +1878,22 @@ console.log(title.textContent); */}
 // .............................
 
 
-//      УРОК-1  M-05-02.     Властивість classList.    Додати клас : 
-//                                                     Метод classList.add(className)    (дивись рядок 291)
+//      УРОК-1  M-05-02.     Властивість classList.    ВИДАЛИТИ клас : 
+//                                                     Метод classList.remove(className)    (дивись рядок 314)
+
+
+// <a href="/contact" class="site-nav__link">Contacts</a>
+
+// const linkEl = document.querySelector(".site-nav__link[href='/contact']");
+// console.log(linkEl);     //    a.site-nav__link               <a href="/contact" class="site-nav__link">Contacts</a>
+
+// // ДОДАЛИ клас "user-link" :
+// linkEl.classList.add("user-link");
+// console.log(linkEl);     //    a.site-nav__link.user-link     <a href="/contact" class="site-nav__link user-link">Contacts</a>
+
+// // ВИДАЛИЛИ клас "user-link" :
+// linkEl.classList.remove("user-link");
+// console.log(linkEl);     //    a.site-nav__link               <a href="/contact" class="site-nav__link">Contacts</a>
+
+
+
