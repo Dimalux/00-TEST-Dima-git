@@ -517,7 +517,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // .............................
 
 
-// ПОЯСНЕННЯ-5   Доступ до атрибутів.
+// ПОЯСНЕННЯ-5   Доступ до атрибутів через МЕТОДИ.
 
 // DOM-елементам відповідають HTML-теги, які містять текстові атрибути.
 // Доступ до атрибутів здійснюється за допомогою стандартних методів. 
@@ -1681,7 +1681,7 @@ console.log(title.textContent); */}
 // console.log(imgEl);
 
 
-// // 1)  Отримуєм значення, яке зберігається в атрібуті "src" :
+// // 1)  Отримуєм значення, яке зберігається в атрибуті "src" :
 
 // console.log(imgEl.src);   //   https://picsum.photos/id/9/320/240
 
@@ -1708,4 +1708,88 @@ console.log(title.textContent); */}
 // .............................
 
 
-// УРОК-1  M-03.  Методи елементів :
+// УРОК-1  M-03.  Методи елементів (дивись рядок 520).
+
+// 1)  За допомогою методів також можна ОТРИМУВАТИ "getAttribute()" значення атрибута :
+
+// <img class="image" src="https://picsum.photos/id/9/320/240" alt="A laptop" width="300" />
+
+// const imgEl = document.querySelector(".image");
+// console.log(imgEl);
+
+// console.log(imgEl.getAttribute("src"));  //  https://picsum.photos/id/9/320/240
+// // так само, як раніше, я звертався через властивість :
+// console.log(imgEl.src);                  //  https://picsum.photos/id/9/320/240
+
+
+// 2)  За допомогою методів також можна ЗМІНЮВАТИ "setAttribute()" значання атрибута, наприклад, атрибута "alt" :
+
+// console.log(imgEl.alt);                         //  A laptop
+// imgEl.setAttribute("alt", "A new laptop");
+// console.log(imgEl.alt);                         //  A new laptop
+// // так само, як раніше, я звертався через властивість :
+// imgEl.alt = "A old laptop";
+// console.log(imgEl.alt);   
+
+
+// ....................
+
+// Для стандартних атрибутів (як-от src, href, id, class, alt) обидва способи працюють. Але різниця стає критично важливою, коли ви працюєте з нестандартними атрибутами або динамічними даними.
+
+// Ось головні причини, чому методи getAttribute / setAttribute все щі потрібні:
+
+
+// 1. Робота з нестандартними атрибутами (data-* та інші)
+
+// Це найважливіша причина. Властивість об'єкта (imgEl.src) існує тільки для стандартних атрибутів. Якщо ви створите свій атрибут, він не з'явиться як властивість.
+// html
+
+// <img class="image" src="photo.jpg" data-user-id="12345" data-role="admin" custom-info="secret">
+
+// javascript
+
+// const imgEl = document.querySelector(".image");
+
+// // ❌ Через властивість — НЕ ПРАЦЮЄ
+// console.log(imgEl.dataUserId);     // undefined
+// console.log(imgEl.customInfo);     // undefined
+
+// // ✅ Через метод — ПРАЦЮЄ
+// console.log(imgEl.getAttribute("data-user-id"));  // "12345"
+// console.log(imgEl.getAttribute("custom-info"));   // "secret"
+
+// Де це корисно? У сучасному фронтенді для зберігання додаткових даних у розмітці (наприклад, ID запису з бази даних).
+
+
+// 2. Видалення атрибута
+
+// Властивість не можна видалити, можна лише присвоїти null або порожній рядок. А метод removeAttribute повністю прибирає атрибут з елемента.
+
+// ....................
+
+
+// 3)  За допомогою методів також можна ВИДАЛЯТИ "removeAttribute()" атрибут :
+
+// <img class="image" src="https://picsum.photos/id/9/320/240" alt="A laptop" width="300" />
+
+// const imgEl = document.querySelector(".image");
+// console.log(imgEl);      //    <img class="image" src="https://picsum.photos/id/9/320/240" alt="A laptop" width="300">
+
+// // Видалемо атрибут "width" :
+// imgEl.removeAttribute("width");
+// console.log(imgEl);      //   <img class="image" src="https://picsum.photos/id/9/320/240" alt="A laptop">
+
+
+// // 3)  За допомогою методів також можна перевірити НАЯВНІСТЬ "hasAttribute()" атрибута в нашому елементі :
+
+// console.log(imgEl.hasAttribute("width"));  //   false
+// console.log(imgEl.hasAttribute("src"));  //   true
+// console.log(imgEl.hasAttribute("alt"));  //   true
+
+
+
+// .............................
+// .............................
+
+
+// УРОК-1  M-04.  Data-атрибути (дивись рядок 598) :
