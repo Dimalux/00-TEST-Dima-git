@@ -1927,3 +1927,29 @@ console.log(title.textContent); */}
 // console.log(linkEl);     //    a.site-nav__link      <a href="/contact" class="site-nav__link user-link">Contacts</a>
 
 
+
+// .............................
+// .............................
+
+
+//      УРОК-1  M-05-04.     Властивість classList.    ЗАМІНИТИ існуючий клас на новий ВКАЗАНИЙ : 
+//                                                     Метод classList.replace(oldClassName, newClassName)    (дивись рядок 355)
+
+// Метод очікує 2 аргументи рядка (перший — стара назва класу, другий — нова назва класу) та замінює існуючий клас oldClassName на вказаний newClassName.
+// Якщо спробувати поміняти клас, якого не існує на елементі, то це не викличе помилку. Просто нічого не поміняється.
+
+
+// // <a href="/contact" class="site-nav__link">Contacts</a>
+
+// const linkEl = document.querySelector(".site-nav__link[href='/contact']");
+// console.log(linkEl);     //    a.site-nav__link               <a href="/contact" class="site-nav__link">Contacts</a>
+
+// // ДОДАЛИ клас "user-link" :
+// linkEl.classList.add("user-link");
+// console.log(linkEl);     //    a.site-nav__link.user-link     <a href="/contact" class="site-nav__link user-link">Contacts</a>
+
+// // ЗАМІНЮЄМО існуючий клас "user-link" на новий "user-newLink" :  :
+// linkEl.classList.replace("user-link", "user-newLink");
+// console.log(linkEl);     //    a.site-nav__link.user-newLink      <a href="/contact" class="site-nav__link user-newLink">Contacts</a>
+
+
