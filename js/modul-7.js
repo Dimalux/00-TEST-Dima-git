@@ -1858,5 +1858,25 @@ console.log(title.textContent); */}
 // console.log(linkEl);
 
 
+// .............................
+// .............................
+
+
 //      УРОК-1  M-05-01.     Властивість classList.    Додати клас : 
-//                                                     Метод classList.add(className)
+//                                                     Метод classList.add(className)    (дивись рядок 291)
+
+// <a href="/contact" class="site-nav__link">Contacts</a>
+
+// const linkEl = document.querySelector(".site-nav__link[href='/contact']");
+// console.log(linkEl);     //    a.site-nav__link               <a href="/contact" class="site-nav__link">Contacts</a>
+
+// linkEl.classList.add("user-link");
+// console.log(linkEl);     //    a.site-nav__link.user-link     <a href="/contact" class="site-nav__link user-link">Contacts</a>
+
+
+// .............................
+// .............................
+
+
+//      УРОК-1  M-05-02.     Властивість classList.    Додати клас : 
+//                                                     Метод classList.add(className)    (дивись рядок 291)
