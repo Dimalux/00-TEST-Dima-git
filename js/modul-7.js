@@ -1606,62 +1606,63 @@ console.log(title.textContent); */}
 //   <li class="list-item">JavaScript</li>
 // </ul>
 
-const list = document.querySelector(".list2");
-console.log(list);    //   HTML-представлення елемента
+// const list = document.querySelector(".list2");
+// console.log(list);    //   HTML-представлення елемента
 
 
-// У посиланні на наш елемент "list" є багато властивостей, які дають нам можливість робити по цьому елементу навігацію :
+// // У посиланні на наш елемент "list" є багато властивостей, які дають нам можливість робити по цьому елементу навігацію :
 
-console.dir(list);    //   JavaScript-об'єкт елемента з усіма властивостями та методами. Можна дослідити всі властивості об'єкта (методи, події, атрибути)
-
-
-// 1)  Можна подивитись колекцію "дітей" - елементів, які вкладені до нашего списку (тегі "li" з класом "list-item", якій в них є) :
-
-console.log(list.children);   //   TMLCollection { 0: li.list-item, 1: li.list-item, 2: li.list-item, length: 3 }
+// // console.dir(list);    //   JavaScript-об'єкт елемента з усіма властивостями та методами. Можна дослідити всі властивості об'єкта (методи, події, атрибути)
 
 
-// 2)  Властивість "firstElementChild" дає можливість отримати доступ до першого елемента в нашій колекції :
+// // 1)  Можна подивитись колекцію "дітей" - елементів, які вкладені до нашего списку (тегі "li" з класом "list-item", якій в них є) :
 
-console.log(list.firstElementChild);   //   ...textContent: "HTML"
-
-// Використовуємо конкретні властивості:
-console.log(list.firstElementChild.tagName);     // "LI"
-console.log(list.firstElementChild.textContent); // "HTML"
-console.log(list.firstElementChild.className);   // "list-item"
+// console.log(list.children);   //   TMLCollection { 0: li.list-item, 1: li.list-item, 2: li.list-item, length: 3 }
 
 
-// 3)  Властивість "lastElementChild" дає можливість отримати доступ до останнього елемента в нашій колекції :
+// // 2)  Властивість "firstElementChild" дає можливість отримати доступ до першого елемента в нашій колекції :
 
-console.log(list.lastElementChild);  //   ...textContent: "JavaScript"
+// console.log(list.firstElementChild);   //   ...innerHTML: "HTML"  або  ...textContent: "HTML" 
 
-
-
-// 4)  Можна подивитись вузли вкладених елементів і текстові вузли в нашему списку :
-console.log(list.childNodes);
-
-
-// 5)  Навігація відносно якогось дочірнього елемента :
-
-// Звернемось до другого елементу з нашего списку :
-const itemList1 = list.children[1]
-console.log(itemList1);   //   ...textContent: "CSS"
-
-// Відносно цього елемента також можна робити "навігацію" :
-
-// Отримуєм наступний елемент з нашего списку :
-console.log(itemList1.nextElementSibling);   //   ...tagName: "LI" ...textContent: "JavaScript"
-
-// Отримуєм попередній елемент з нашего списку :
-console.log(itemList1.previousElementSibling);   //   ...tagName: "LI" ...textContent: "HTML"
+// // Використовуємо конкретні властивості:
+// console.log(list.firstElementChild.tagName);     // "LI"
+// console.log(list.firstElementChild.textContent); // "HTML"
+// console.log(list.firstElementChild.className);   // "list-item"
 
 
-// Отримуєм батьківський елемент (тобто кому наш елемент належить) :
-console.log(itemList1.parentNode);   //   ...tagName: "UL" ...textContent: "\n  HTML\n  CSS\n  JavaScript\n"
+// // 3)  Властивість "lastElementChild" дає можливість отримати доступ до останнього елемента в нашій колекції :
+
+// console.log(list.firstElementChild);   //   ...innerHTML: "HTML"  або  ...textContent: "HTML" 
+// console.log(list.lastElementChild);  //  innerHTML: "JavaScript"   ...textContent: "JavaScript"
 
 
-// 6)  Також можна отримати доступ до всіх вкладених елементів, якщо звернутись безпосередньо до списку "ul", а не тільки до "document" :
 
-console.log(list.querySelectorAll(".list-item"));
+// // 4)  Можна подивитись вузли вкладених елементів і текстові вузли в нашему списку :
+// console.log(list.childNodes);
+
+
+// // 5)  Навігація відносно якогось дочірнього елемента :
+
+// // Звернемось до другого елементу з нашего списку :
+// const itemList1 = list.children[1]
+// console.log(itemList1);   //   ...textContent: "CSS"
+
+// // Відносно цього елемента також можна робити "навігацію" :
+
+// // Отримуєм наступний елемент з нашего списку :
+// console.log(itemList1.nextElementSibling);   //   ...tagName: "LI" ...textContent: "JavaScript"
+
+// // Отримуєм попередній елемент з нашего списку :
+// console.log(itemList1.previousElementSibling);   //   ...tagName: "LI" ...textContent: "HTML"
+
+
+// // Отримуєм батьківський елемент (тобто кому наш елемент належить) :
+// console.log(itemList1.parentNode);   //   ...tagName: "UL" ...textContent: "\n  HTML\n  CSS\n  JavaScript\n"
+
+
+// // 6)  Також можна отримати доступ до всіх вкладених елементів, якщо звернутись безпосередньо до списку "ul", а не тільки до "document" :
+
+// console.log(list.querySelectorAll(".list-item"));
 
 
 
@@ -1669,4 +1670,42 @@ console.log(list.querySelectorAll(".list-item"));
 // .............................
 
 
-// УРОК-1  M-02.  Властивості "навігації" по DOM елементам (вузлах) :
+// УРОК-1  M-02.  Властивості елементів :
+
+// - зображення;
+// - текст та "textContent";
+
+// <img class="image" src="https://picsum.photos/id/9/320/240" alt="A laptop" width="300" />
+
+// const imgEl = document.querySelector(".image");
+// console.log(imgEl);
+
+
+// // 1)  Отримуєм значення, яке зберігається в атрібуті "src" :
+
+// console.log(imgEl.src);   //   https://picsum.photos/id/9/320/240
+
+// // можемо перезаписати на нове значення :
+
+// imgEl.src = "https://picsum.photos/id/12/640/480";
+// console.log(imgEl.src); 
+
+
+// // 2) Отримуємо контент з "h1" :
+
+// // <h1 class="bag">HELLO Dima!</h1>
+
+// const titleEl = document.querySelector(".bag");
+// console.log(titleEl);
+// console.log(titleEl.textContent);   //    HELLO Dima!
+
+// titleEl.textContent = "HELLO Dimalux!";
+// console.log(titleEl.textContent);   //    HELLO Dimalux!
+
+
+
+// .............................
+// .............................
+
+
+// УРОК-1  M-03.  Методи елементів :
