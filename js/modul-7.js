@@ -326,7 +326,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-3-4   Властивість classList. 
-//                 Метод classList.toggle(className)
+//                 ДОДАТИ або ВИДАЛИТИ клас (перемикач) : Метод classList.toggle(className)
 
 // Метод працює як перемикач:
 // Якщо клас className відсутній, то додає його в кінець списку класів.
@@ -353,7 +353,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-3-5   Властивість classList. 
-//                 Метод classList.replace(oldClassName, newClassName)
+//                 ЗАМІНЮЄ існуючий клас на новий ВКАЗАНИЙ - Метод classList.replace(oldClassName, newClassName)
 
 // Метод очікує 2 аргументи рядка (перший — стара назва класу, другий — нова назва класу) та замінює існуючий клас oldClassName на вказаний newClassName.
 // Якщо спробувати поміняти клас, якого не існує на елементі, то це не викличе помилку. Просто нічого не поміняється.
@@ -1895,5 +1895,35 @@ console.log(title.textContent); */}
 // linkEl.classList.remove("user-link");
 // console.log(linkEl);     //    a.site-nav__link               <a href="/contact" class="site-nav__link">Contacts</a>
 
+
+
+// .............................
+// .............................
+
+
+//      УРОК-1  M-05-03.     Властивість classList.    ДОДАТИ або ВИДАЛИТИ клас (перемикач) : 
+//                                                     Метод classList.toggle(className)    (дивись рядок 328)
+
+// Метод працює як перемикач:
+// Якщо клас className відсутній, то додає його в кінець списку класів.
+// Якщо клас className присутній — видаляє його.
+
+
+// // <a href="/contact" class="site-nav__link">Contacts</a>
+
+// const linkEl = document.querySelector(".site-nav__link[href='/contact']");
+// console.log(linkEl);     //    a.site-nav__link               <a href="/contact" class="site-nav__link">Contacts</a>
+
+// // ДОДАЛИ клас "user-link" :
+// linkEl.classList.add("user-link");
+// console.log(linkEl);     //    a.site-nav__link.user-link     <a href="/contact" class="site-nav__link user-link">Contacts</a>
+
+// // клас "user-link" присутній - метод "toggle" ВИДАЛЯЄ клас "user-link" :
+// linkEl.classList.toggle("user-link");
+// console.log(linkEl);     //    a.site-nav__link      <a href="/contact" class="site-nav__link">Contacts</a>
+
+// // класу "user-link" не має - метод "toggle" ДОДАЄ клас "user-link"  В КІНЕЦЬ СПИСКУ :
+// linkEl.classList.toggle("user-link");
+// console.log(linkEl);     //    a.site-nav__link      <a href="/contact" class="site-nav__link user-link">Contacts</a>
 
 
