@@ -248,7 +248,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // .............................
 
 
-// ПОЯСНЕННЯ-3   Властивість classList. 
+// ПОЯСНЕННЯ-3   Властивість classList.  !!! Зверни увагу, що className передаємо як рядок БЕЗ КРАПКИ (без селектора класу) !!!
 
 // Для того щоб із JavaScript коду прочитати, додати, видалити або перевірити наявність CSS-класу в елемента, у властивості classList зберігається об'єкт із методами для роботи з CSS-класами елемента.
 
@@ -269,7 +269,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-3-1   Властивість classList. 
-//                 Метод classList.contains(className)
+//                 НАЯВНІСТЬ класу в списку - Метод classList.contains(className)   !!! Зверни увагу, що className передаємо як рядок БЕЗ КРАПКИ (без селектора класу) !!!
 
 // Метод очікує аргументом рядок з іменем класу та повертає true або false, залежно від наявності класу className в елемента.
 // Зверни увагу, що className передаємо як рядок без крапки (без селектора класу).
@@ -289,7 +289,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-3-2   Властивість classList. 
-//                 ДОДАВАННЯ класу (можна більше одного, через кому) - Метод classList.add(className)
+//                 ДОДАВАННЯ класу (можна більше одного, через кому) - Метод classList.add(className)   !!! Зверни увагу, що className передаємо як рядок БЕЗ КРАПКИ (без селектора класу) !!!
 
 // Метод очікує аргументом рядок з іменем класу та додає клас className до списку класів елемента.
 // Можна додавати більше одного класу, вказавши кілька аргументів через кому.
@@ -312,7 +312,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-3-3   Властивість classList. 
-//                 ВИДАЛЕННЯ класу - Метод classList.remove(className)
+//                 ВИДАЛЕННЯ класу - Метод classList.remove(className)    !!! Зверни увагу, що className передаємо як рядок БЕЗ КРАПКИ (без селектора класу) !!!
 
 // Метод очікує аргументом рядок з іменем класу та видаляє клас className зі списку класів елемента. 
 // Якщо спробувати видалити клас, якого не існує на елементі, то це не викличе помилку. Просто нічого не видалиться.
@@ -326,7 +326,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-3-4   Властивість classList. 
-//                 ДОДАТИ або ВИДАЛИТИ клас (перемикач) : Метод classList.toggle(className)
+//                 ДОДАТИ або ВИДАЛИТИ клас (перемикач) : Метод classList.toggle(className)   !!! Зверни увагу, що className передаємо як рядок БЕЗ КРАПКИ (без селектора класу) !!!
 
 // Метод працює як перемикач:
 // Якщо клас className відсутній, то додає його в кінець списку класів.
@@ -353,7 +353,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-3-5   Властивість classList. 
-//                 ЗАМІНЮЄ існуючий клас на новий ВКАЗАНИЙ - Метод classList.replace(oldClassName, newClassName)
+//                 ЗАМІНЮЄ існуючий клас на новий ВКАЗАНИЙ - Метод classList.replace(oldClassName, newClassName)    !!! Зверни увагу, що className передаємо як рядок БЕЗ КРАПКИ (без селектора класу) !!!
 
 // Метод очікує 2 аргументи рядка (перший — стара назва класу, другий — нова назва класу) та замінює існуючий клас oldClassName на вказаний newClassName.
 // Якщо спробувати поміняти клас, якого не існує на елементі, то це не викличе помилку. Просто нічого не поміняється.
@@ -1829,6 +1829,7 @@ console.log(title.textContent); */}
 
 // УРОК-1  M-05.  Властивість classList  (дивись рядок 251) :
 
+// !!! Зверни увагу, що className передаємо як рядок БЕЗ КРАПКИ (без селектора класу) !!!
 
 // <ul class="site-nav">
 //   <li class="site-nav__item">
@@ -1948,8 +1949,37 @@ console.log(title.textContent); */}
 // linkEl.classList.add("user-link");
 // console.log(linkEl);     //    a.site-nav__link.user-link     <a href="/contact" class="site-nav__link user-link">Contacts</a>
 
-// // ЗАМІНЮЄМО існуючий клас "user-link" на новий "user-newLink" :  :
+// // ЗАМІНЮЄМО існуючий клас "user-link" на новий "user-newLink" :
 // linkEl.classList.replace("user-link", "user-newLink");
 // console.log(linkEl);     //    a.site-nav__link.user-newLink      <a href="/contact" class="site-nav__link user-newLink">Contacts</a>
+
+
+
+// .............................
+// .............................
+
+
+//      УРОК-1  M-05-05.     Властивість classList.    НАЯВНІСТЬ класу в списку : 
+//                                                     Метод classList.contains(className)    (дивись рядок 271)
+
+// Метод очікує аргументом рядок з іменем класу та повертає true або false, залежно від наявності класу className в елемента.
+
+
+// // <a href="/contact" class="site-nav__link">Contacts</a>
+
+// const linkEl = document.querySelector(".site-nav__link[href='/contact']");
+// console.log(linkEl);     //    a.site-nav__link               <a href="/contact" class="site-nav__link">Contacts</a>
+
+// // ДОДАЛИ клас "user-link" :
+// linkEl.classList.add("user-link");
+// console.log(linkEl);     //    a.site-nav__link.user-link     <a href="/contact" class="site-nav__link user-link">Contacts</a>
+
+
+// // перевіряємо НАЯВНІСТЬ класу в списку класів :
+
+// console.log(linkEl.classList.contains("user-link"));      //   true
+// console.log(linkEl.classList.contains("user-newLink"));   //   false
+
+
 
 
