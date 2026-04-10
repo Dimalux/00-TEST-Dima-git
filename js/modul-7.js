@@ -1823,10 +1823,40 @@ console.log(title.textContent); */}
 // console.log(buttons[1].dataset.action);    //   new remove
 
 
-
-
 // .............................
 // .............................
 
 
 // УРОК-1  M-05.  Властивість classList  (дивись рядок 251) :
+
+
+// <ul class="site-nav">
+//   <li class="site-nav__item">
+//     <a href="/about" class="site-nav__link">About</a>
+//   </li>
+//   <li class="site-nav__item">
+//     <a href="/portfolio" class="site-nav__link">Portfolio</a>
+//   </li>
+//   <li class="site-nav__item">
+//     <a href="/contact" class="site-nav__link">Contacts</a>
+//   </li>
+// </ul>
+
+// const linkEl = document.querySelectorAll(".site-nav__link");
+// console.log(linkEl);
+
+// Для того щоб отримати конкретну кнопку, наприклад, "Contacts" можна додати? як додатковий критерій, пошук по атрибуту "href" зі значенням ="/contact" :
+// const linkEl = document.querySelector(".site-nav__link[href='/contact']");
+// console.log(linkEl);
+
+
+// Можна шматок коду '/contact' присвоїти в змінну:
+
+// const currentPageUrl = "/contact";
+
+// const linkEl = document.querySelector(`.site-nav__link[href="${currentPageUrl}"]`);
+// console.log(linkEl);
+
+
+//      УРОК-1  M-05-01.     Властивість classList.    Додати клас : 
+//                                                     Метод classList.add(className)
