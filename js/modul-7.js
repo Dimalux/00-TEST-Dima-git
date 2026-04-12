@@ -779,7 +779,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 // Приклад :  додати до існуючого списку три елемента (два - додати на початок списку, третій - в кінець списку) :
 
-// <h1>Usernames</h1>
+// <h2>Usernames</h2>
 //   <ul class="usernames">
 //     <li>Mango</li>
 //   </ul>
@@ -2001,13 +2001,13 @@ console.log(title.textContent); */}
 // titleEl.classList.add("page-title");
 // console.log(titleEl);
 
-// // 4)  Елемент попадає в DOM тільки в момент виклику одного з методів додавання (дивись рядок 768) :
+// // 4)  Відображаємо елемент на сторінці. Елемент попадає в DOM тільки в момент виклику одного з методів додавання (дивись рядок 768) :
 // // .append(el1, el2, ...) — додає один або декілька елементів після всіх дітей 
 // // .prepend(el1, el2, ...) — додає один або декілька елементів перед усіма дітьми
 
 // //   Додамо елемент в "body" :
 
-// document.body.prepend(titleEl);   //   На рочаток сторінки (початок "body")
+// document.body.prepend(titleEl);   //   НА ПОЧАТОК сторінки (початок "body")
  
 //   !!!!!
 // Зверни увагу! Тепер браузер додає посилання на елемент, тобто посилання на область в RAM пам'яті - у DOM-дерево. 
@@ -2038,5 +2038,41 @@ console.log(title.textContent); */}
 // 5. Paint (малювання на екрані)
 // Важливо: Якщо ви створите елемент через document.createElement() і додасте його в DOM, але в CSSOM немає правил для нього — він все одно з'явиться в Render Tree (з браузерними стилями за замовчуванням).
 
-// ............ 
+
+// .............................
+// .............................
+
+
+//      УРОК-1  M-06-02.     Створення та видалення елементів.
+//                           СТВОРЕННЯ ЗОБРАЖЕННЯ - Метод "document.createElement()"   (дивись рядок 691)
+
+
+// 1) Створюємо зображення :
+// const imgEl = document.createElement("img");
+
+// // 2) Додаємо атрибути :
+// imgEl.src = "https://cdn.pixabay.com/photo/2018/07/26/07/45/valais-3562988_1280.jpg";
+// imgEl.alt = "valais-alpine-mountains-glacier";
+// imgEl.width = 320;
+
+// console.log(imgEl);
+
+// // 2) Додаємо зображеня до "<section class="user-list"></section>" :
+
+//  const sectionUser = document.querySelector(".user-list");
+//  sectionUser.prepend(imgEl);
+
+// // 3) Додаємо зображеня до "<section class="user-list"></section>"  і додамо (перемістимо) вже існуючий в DOM заголовок "<h2>Usernames</h2>"  (дивись рядок 777) :
+
+//  const heading2 = document.querySelector(".super-hend");
+//  sectionUser.prepend(imgEl, heading2);
+
+
+
+// .............................
+// .............................
+
+
+//      УРОК-1  M-06-03.     Створення та видалення елементів.
+//                           СТВОРЕННЯ ЗОБРАЖЕННЯ - Метод "document.createElement()"   (дивись рядок 691)
 
