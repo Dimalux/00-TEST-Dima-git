@@ -2074,5 +2074,48 @@ console.log(title.textContent); */}
 
 
 //      УРОК-1  M-06-03.     Створення та видалення елементів.
-//                           СТВОРЕННЯ ЗОБРАЖЕННЯ - Метод "document.createElement()"   (дивись рядок 691)
+//                           СТВОРЕННЯ та ДОДАВАННЯ нового пункту меню   (дивись рядок 691)
 
+// <ul class="site-nav">
+//   <li class="site-nav__item">
+//     <a href="/about" class="site-nav__link">About</a>
+//   </li>
+//   <li class="site-nav__item">
+//     <a href="/portfolio" class="site-nav__link">Portfolio</a>
+//   </li>
+//   <li class="site-nav__item">
+//     <a href="/contact" class="site-nav__link">Contacts</a>
+//   </li>
+// </ul>
+
+
+// // 1) СТВОРЮЄМО елемент "li" :
+// const navItemEl = document.createElement("li");
+// navItemEl.classList.add("site-nav__item");
+
+// // 2) СТВОРЮЄМО елемент "a" :
+// const linkEl = document.createElement("a");
+// linkEl.classList.add("site-nav__link");
+// linkEl.href = "/address";
+// linkEl.textContent = "Lviv";
+
+// // 3) ДДОДАЄМО до елемента "li" елемент "а" :
+// navItemEl.append(linkEl);
+
+// console.log(navItemEl);
+
+
+// // 4) ДДОДАЄМО до елемента "ul" елемент "li" :
+// const navEl = document.querySelector(".site-nav");
+// navEl.append(navItemEl);
+
+// console.log(navEl);
+
+
+
+// .............................
+// .............................
+
+
+//      УРОК-1  M-06-04.     Створення КОЛЕКЦІЇ елементів.
+//                           СТВОРЕННЯ та ДОДАВАННЯ нового пункту меню   (дивись рядок 691)
