@@ -731,7 +731,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-12-2-1   Створення та видалення елементів.
-//                    Додавання елементів
+//                    СТВОРЕННЯ елементів
 
 
 // const heading = document.createElement("h2");
@@ -766,7 +766,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-12-2-2   Створення та видалення елементів.
-//                    Додавання елементів  "element.append()"  /  "element.prepend()"
+//                    ДОДАВАННЯ елементів  "element.append()"  /  "element.prepend()"
 
 // Щоб створений елемент відображався на сторінці, його необхідно додати до вже існуючого елемента в DOM-дереві. Припустимо, що додаємо до певного елемента elem, для цього існують такі методи.
 
@@ -819,7 +819,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 // ПОЯСНЕННЯ-12-3   Створення та видалення елементів.
-//                  Видалення елементів "element.remove()"
+//                  ВИДАЛЕННЯ елементів "element.remove()" :
 
 // Для того щоб видалити елемент, використовується метод element.remove().
 
@@ -2117,5 +2117,48 @@ console.log(title.textContent); */}
 // .............................
 
 
-//      УРОК-1  M-06-04.     Створення КОЛЕКЦІЇ елементів.
-//                           СТВОРЕННЯ та ДОДАВАННЯ нового пункту меню   (дивись рядок 691)
+//      УРОК-1  M-06-04.     Створення КОЛЕКЦІЇ елементів.   (дивись рядок 857, 873)
+//                           Приклад :
+         
+//   Є масив з об'єктами. Треба на основі цього масиву створити (створити 6-ть КНОПОК) розмітку і вставити її в тег "<div class="color-picker"></div>", що знаходиться в файлі index.html :
+
+// const options = [
+//     { label: 'червоний', color: '#F44336' },
+//     { label: 'зелений', color: '#4CAF50' },
+//     { label: 'синий', color: '#2196F3' },
+//     { label: 'сирий', color: '#607D8B' },
+//     { label: 'рожевий', color: '#E91E63' },
+//     { label: 'индиго', color: '#3F51B5' }
+// ];
+
+// // 1) Отримуємо тег "div"
+// const colorPickerContainerEl = document.querySelector(".color-picker");
+
+// // 2) Отримуємо масив кнопок : 
+// const elements = options.map(option => {
+
+// const buttonEL = document.createElement("button");
+// buttonEL.classList.add("color-picker__option");
+// buttonEL.textContent = option.label;
+
+// // Ще є одна властивість для елемента кнопки :
+// buttonEL.style.backgroundColor = option.color;
+
+// return buttonEL;
+// })
+
+// console.log(elements);
+
+// // 3) ДОДАЄМО кнопки на веб сторінку (в DOM). Для того щоб скористатися методом "elem.append(el1, el2, ...)" або "elem.prepend(el1, el2, ...)" - масив не підходить, треба його розпилити методом "...spread" (оператор розпилення "...spread" перетворює масив на список аргументів) :
+
+// colorPickerContainerEl.append(...elements);
+
+// console.log(colorPickerContainerEl);
+
+
+// .............................
+// .............................
+
+
+//      УРОК-1  M-06-05.     Створення КОЛЕКЦІЇ елементів.   (дивись рядок 857, 873)
+//                           Приклад :
