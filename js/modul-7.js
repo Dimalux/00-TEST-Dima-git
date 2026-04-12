@@ -2156,9 +2156,46 @@ console.log(title.textContent); */}
 // console.log(colorPickerContainerEl);
 
 
+// ......................
+
+
+// Створимо функцію :
+
+// const options = [
+//     { label: 'червоний', color: '#F44336' },
+//     { label: 'зелений', color: '#4CAF50' },
+//     { label: 'синий', color: '#2196F3' },
+//     { label: 'сирий', color: '#607D8B' },
+//     { label: 'рожевий', color: '#E91E63' },
+//     { label: 'индиго', color: '#3F51B5' }
+// ];
+
+// function createMarkup (options) {
+
+// const colorPickerContainerEl = document.querySelector(".color-picker");
+
+// const elements = options.map(option => {
+// const buttonEL = document.createElement("button");
+// buttonEL.classList.add("color-picker__option");
+// buttonEL.textContent = option.label;
+// buttonEL.style.backgroundColor = option.color;
+// return buttonEL;
+// });
+
+// return colorPickerContainerEl.append(...elements);
+// }
+
+// createMarkup(options);
+
+
+
+
 // .............................
 // .............................
 
 
 //      УРОК-1  M-06-05.     Створення КОЛЕКЦІЇ елементів.   (дивись рядок 857, 873)
-//                           Приклад :
+//                           Властивість innerHTML   (встановлює або отримує HTML-вміст елемента)
+
+
+
