@@ -912,7 +912,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // Приклад :  змінюємо текст в заголовку h2 з "Article title" на "New and improved title" :
 
 // <article class="article">
-//   <h2 class="title">Article title</h2>
+//   <h2 class="title2">Article title</h2>
 //   <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, ipsa quibusdam! <strong>Praesentium</strong> accusantium fugiat distinctio quidem minima fugit eos, veniam, nam laboriosam deleniti nisi qui neque explicabo perspiciatis, consectetur non.</p>
 //   <a class="link" href="">Read more</a>
 // </article>
@@ -1002,7 +1002,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 // Аргумент "position" — це рядок, який визначає позицію щодо елемента "element". Він приймає одне з чотирьох значень.
 
-// "beforebegin" — перед element
+// "beforebegin" — перед element (!!! при такому додаванні (перед елементом) елемент ОБОВ'ЯЗКОВО вже має бути на сторінці)
 // "afterbegin" — всередині element, перед усіма дітьми
 // "beforeend" — всередині element, після усіх дітей
 // "afterend" — після element
@@ -2195,17 +2195,146 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // .............................
 
 
-//      УРОК-1  M-06-05.     Створення КОЛЕКЦІЇ елементів.   (дивись рядок 857, 873)
+//      УРОК-1  M-06-05.     Створення та видалення елементів.   (дивись рядок 857, 873)
 //                           Властивість innerHTML   (встановлює або отримує HTML-вміст елемента)
 
 
-//  <h2 class="title1">This is <span>a heading</span></h2>
+// //  <h2 class="title1">This is <span>a heading</span>for book</h2>
 
 // const titleEl = document.querySelector(".title1");
 
-// console.log(titleEl.textContent);  // This is a heading
-// console.log(titleEl.innerHTML);    // This is <span>a heading</span>
+// console.log(titleEl.textContent);  // This is a headingfor book
+// console.log(titleEl.innerHTML);    // This is <span>a heading</span> for book
+
+// ............    ПРИМІТКА :
+
+// Що робить titleEl.innerHTML?
+// innerHTML дозволяє отримувати або встановлювати HTML-розмітку всередині елемента.
+
+// Коли ми пишемо:
+// titleEl.innerHTML = '<a href="/">Hello book!</a>';
+// ми повністю замінюємо весь вміст <h2> на нову HTML-структуру. 
+
+// Браузер:
+// - Видаляє старий вміст (This is <span>a heading</span> for book) ;
+// - Парсить (розбирає) рядок '<a href="/">Hello book!</a>' як HTML ;
+// - Створює новий елемент <a> і додає його всередину <h2>.
+
+
+// ............ 
+
 
 // // Змінемо текст в "h2" на посилання з текстом :
 // titleEl.innerHTML = '<a href="/">Hello book!</a>';
 // console.log(titleEl);  //  <h2 class="title1">
+
+
+// .............................
+// .............................
+
+
+//      УРОК-1  M-06-06.     Створення та видалення елементів.   (дивись рядок 996)
+//                           Метод insertAdjacentHTML()   (додає рядок з HTML-тегами 
+//                           перед, після або всередину елемента)
+
+// Метод insertAdjacentHTML() — це сучасний метод для додавання рядка з HTML-тегами перед, після або всередину елемента. Він вирішує проблему innerHTML з повторною серіалізацією вмісту елемента під час додавання розмітки до вже існуючої.
+
+// element.insertAdjacentHTML(position, string)
+
+// Аргумент "position" — це рядок, який визначає позицію щодо елемента "element". Він приймає одне з чотирьох значень.
+
+// "beforebegin" — перед element (!!! при такому додаванні (перед елементом) елемент ОБОВ'ЯЗКОВО вже має бути на сторінці)
+// "afterbegin" — всередині element, перед усіма дітьми
+// "beforeend" — всередині element, після усіх дітей
+// "afterend" — після element
+
+// Значення "beforebegin" і "afterend" працюють тільки тоді, коли element вже знаходиться в DOM-дереві. Обмеження зумовлене тим, що неможливо дізнатися, куди вставляти розмітку, доти, доки елемент не буде перебувати в DOM-дереві.
+
+
+
+
+// Приклад :   
+
+
+// <table class="transaction-table js-transaction-table">
+//     <thead>
+//         <tr>
+//             <th>ID</th>
+//             <th>Amount</th>
+//             <th>Date</th>
+//             <th>Who</th>
+//             <th>Transaction Type</th>
+//             <th>Account Name</th>
+//             <th>Account Number</th>
+//         </tr>
+//     </thead>   
+// </table>
+
+
+
+const transactionHistory = [
+  {
+    id: '758d5283-358e-4fbb-b222-a17fd04e8916',
+    amount: '179.07',
+    date: '2012-02-01T22:00:00.000Z',
+    business: 'Bogan - DuBuque',
+    name: 'Auto Loan Account 7313',
+    type: 'deposit',
+    account: '19808943',
+  },
+  {
+    id: 'f0463ec4-7104-4adb-a41c-b1c7549055f8',
+    amount: '930.87',
+    date: '2012-02-01T22:00:00.000Z',
+    business: 'Legros, Weimann and Treutel',
+    name: 'Auto Loan Account 0721',
+    type: 'invoice',
+    account: '38277848',
+  },
+
+{
+  id: '6c0e5a78-ad9f-46af-8299-44b77f5099d5',
+  amount: '704.53',
+  date: '2012-02-01T22:00:00.000Z',
+  business: 'Beatty, Wisozk and Koch',
+  name: 'Savings Account 1894',
+  type: 'withdrawal',
+  account: '76727204',
+},
+{
+  id: '16bd2a9d-7b0e-418f-a75c-7076e8ab6175',
+  amount: '656.81',
+  date: '2012-02-01T22:00:00.000Z',
+  business: 'Hane - Bode',
+  name: 'Personal Loan Account 2316',
+  type: 'withdrawal',
+  account: '27462350',
+},
+{
+  id: '247e150a-71ba-4df7-9836-5bb400e012bb',
+  amount: '242.49',
+  date: '2012-02-01T22:00:00.000Z',
+  business: 'Stroman Inc',
+  name: 'Savings Account 1383',
+  type: 'withdrawal',
+  account: '18476423',
+},
+{
+  id: '6224c740-ff23-429d-854a-c7b310f7653b',
+  amount: '770.94',
+  date: '2012-02-01T22:00:00.000Z',
+  business: 'Johns - Pagac',
+  name: 'Auto Loan Account 1392',
+  type: 'invoice',
+  account: '07680863',
+},
+{
+id: '79ccb1dd-6544-47cc-9a40-ea453985a748',
+amount: '788.40',
+date: '2012-02-01T22:00:00.000Z',
+business: 'Ullrich, Shields and Koelpin',
+name: 'Personal Loan Account 8318',
+type: 'invoice',
+account: '07081761',
+},
+];
