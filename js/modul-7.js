@@ -834,11 +834,11 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 // Приклад :  видаляємо почергово елементи "<h2>", "<p>", "<a>" зі статті :
 
-{/* <article class="article">
-  <h2 class="title">Article title</h2>
-  <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, ipsa quibusdam! Praesentium accusantium fugiat distinctio quidem minima fugit eos, veniam, nam laboriosam deleniti nisi qui neque explicabo perspiciatis, consectetur non.</p>
-<a class="link" href="">Read more</a>
-</article> */}
+// <article class="article">
+//   <h2 class="title">Article title</h2>
+//   <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, ipsa quibusdam! Praesentium accusantium fugiat distinctio quidem minima fugit eos, veniam, nam laboriosam deleniti nisi qui neque explicabo perspiciatis, consectetur non.</p>
+// <a class="link" href="">Read more</a>
+// </article> 
 
 // const heading = document.querySelector(".title");
 // heading.remove();
@@ -911,20 +911,19 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 // Приклад :  змінюємо текст в заголовку h2 з "Article title" на "New and improved title" :
 
-{/* <article class="article">
-  <h2 class="title">Article title</h2>
-  <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, ipsa quibusdam! <strong>Praesentium</strong> accusantium fugiat distinctio quidem minima fugit eos, veniam, nam laboriosam deleniti nisi qui neque explicabo perspiciatis, consectetur non.</p>
-  <a class="link" href="">Read more</a>
-</article>
+// <article class="article">
+//   <h2 class="title">Article title</h2>
+//   <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, ipsa quibusdam! <strong>Praesentium</strong> accusantium fugiat distinctio quidem minima fugit eos, veniam, nam laboriosam deleniti nisi qui neque explicabo perspiciatis, consectetur non.</p>
+//   <a class="link" href="">Read more</a>
+// </article>
 
 
-const title = document.querySelector(".article .title");
-console.log(title);
-console.log(title.textContent);
+// const title = document.querySelector(".article .title2");
+// console.log(title);       //   <h2 class="title2">
+// console.log(title.textContent);   //   Article title
 
-title.innerHTML = 'New and <span class="accent">improved</span> title';
-console.log(title);
-console.log(title.textContent); */}
+// title.innerHTML = 'New and <span class="accent">improved</span> title';
+// console.log(title.textContent);    //   New and improved title
 
 
 
@@ -938,10 +937,10 @@ console.log(title.textContent); */}
 
 // Прийом полягає в перебиранні цього масиву та створенні одного рядка з HTML-тегами, який потім записуємо в innerHTML елемента. Якщо ти будеш це робити за допомогою методу map(), не забудь, що він повертає масив. Отже, перед тим як додавати розмітку в DOM, цей масив треба привести до рядка за допомогою методу join()
 
-{/* <section>
-  <h2>Popular technologies 1</h2>
-  <ul class="list1"></ul>
-</section> */}
+// <section>
+//   <h2>Popular technologies 1</h2>
+//   <ul class="list1"></ul>
+// </section> 
 
 
 // const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
@@ -1990,18 +1989,18 @@ console.log(title.textContent); */}
 //                           СТВОРЕННЯ елементів - Метод "document.createElement()"   (дивись рядок 691)
 
 // 1) Створюємо елемент "h1" :
-//    Елемент створюється в пам'яті у DOM його ще немає. Після створення елемента отримуємо посилання на його об`єкт у пам'яті. З цього моменту можна звертатися до властивостей цього об`єкта і змінювати їх ще до того, як вставимо цей елемент у DOM.
+//    Елемент створюється в пам'яті у DOM його ще НЕМАЄ. Після створення елемента отримуємо посилання на його об`єкт у пам'яті. З цього моменту можна звертатися до властивостей цього об`єкта і змінювати їх ще до того, як вставимо цей елемент у DOM.
 // const titleEl = document.createElement("h1");
 
-// // 2) Додаємо контекст "h1" -  (!!! Елемент В RAM ПАМ'ЯТІ комп'ютера, у DOM (в браузері, на сторінці) його ще немає) :
+// // 2) Додаємо контекст "h1" -  (!!! Елемент В RAM ПАМ'ЯТІ комп'ютера, у DOM (в браузері, на сторінці) його ще НЕМАЄ) :
 // titleEl.textContent = "Hello, Dima!";
 // console.log(titleEl);
 
-// // 3) Додаємо клас до "h1" -  (!!! Елемент В RAM ПАМ'ЯТІ комп'ютера, у DOM (в браузері, на сторінці) його ще немає) :
+// // 3) Додаємо клас до "h1" -  (!!! Елемент В RAM ПАМ'ЯТІ комп'ютера, у DOM (в браузері, на сторінці) його ще НЕМАЄ) :
 // titleEl.classList.add("page-title");
 // console.log(titleEl);
 
-// // 4)  Відображаємо елемент на сторінці. Елемент попадає в DOM тільки в момент виклику одного з методів додавання (дивись рядок 768) :
+// // 4)  ВІДОБРАЖАЄМО елемент на сторінці. Елемент попадає в DOM тільки в момент виклику одного з методів додавання (дивись рядок 768) :
 // // .append(el1, el2, ...) — додає один або декілька елементів після всіх дітей 
 // // .prepend(el1, el2, ...) — додає один або декілька елементів перед усіма дітьми
 
@@ -2122,6 +2121,8 @@ console.log(title.textContent); */}
          
 //   Є масив з об'єктами. Треба на основі цього масиву створити (створити 6-ть КНОПОК) розмітку і вставити її в тег "<div class="color-picker"></div>", що знаходиться в файлі index.html :
 
+// // <div class="color-picker"></div>
+
 // const options = [
 //     { label: 'червоний', color: '#F44336' },
 //     { label: 'зелений', color: '#4CAF50' },
@@ -2198,4 +2199,13 @@ console.log(title.textContent); */}
 //                           Властивість innerHTML   (встановлює або отримує HTML-вміст елемента)
 
 
+//  <h2 class="title1">This is <span>a heading</span></h2>
 
+// const titleEl = document.querySelector(".title1");
+
+// console.log(titleEl.textContent);  // This is a heading
+// console.log(titleEl.innerHTML);    // This is <span>a heading</span>
+
+// // Змінемо текст в "h2" на посилання з текстом :
+// titleEl.innerHTML = '<a href="/">Hello book!</a>';
+// console.log(titleEl);  //  <h2 class="title1">
