@@ -2198,6 +2198,9 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 //      УРОК-1  M-06-05.     Створення та видалення елементів.   (дивись рядок 857, 873)
 //                           Властивість innerHTML   (встановлює або отримує HTML-вміст елемента)
 
+// !!!
+// Для браузера innerHTML - це як додатковий HTML файл, який треба парсити і додовати в  DOM-дерево. innerHTML для браузера — це як маленький HTML-файл.
+// !!!
 
 // //  <h2 class="title1">This is <span>a heading</span>for book</h2>
 
