@@ -2251,90 +2251,117 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // Значення "beforebegin" і "afterend" працюють тільки тоді, коли element вже знаходиться в DOM-дереві. Обмеження зумовлене тим, що неможливо дізнатися, куди вставляти розмітку, доти, доки елемент не буде перебувати в DOM-дереві.
 
 
+// ...............
+
+// Приклад :   Є заголовок таблиці. Є масив з об'єктами, кожен об'єкт представляє собою рядок таблиці. Треба створити на основі ціх рядків таблицю і відобразити її на сторінці.
 
 
-// Приклад :   
-
-
-// <table class="transaction-table js-transaction-table">
-//     <thead>
-//         <tr>
-//             <th>ID</th>
-//             <th>Amount</th>
-//             <th>Date</th>
-//             <th>Who</th>
-//             <th>Transaction Type</th>
-//             <th>Account Name</th>
-//             <th>Account Number</th>
-//         </tr>
-//     </thead>   
-// </table>
+// // <table class="transaction-table js-transaction-table">
+// //     <thead>
+// //         <tr>
+// //             <th>ID</th>
+// //             <th>Amount</th>
+// //             <th>Date</th>
+// //             <th>Who</th>
+// //             <th>Transaction Type</th>
+// //             <th>Account Name</th>
+// //             <th>Account Number</th>
+// //         </tr>
+// //     </thead>   
+// // </table>
 
 
 
-const transactionHistory = [
-  {
-    id: '758d5283-358e-4fbb-b222-a17fd04e8916',
-    amount: '179.07',
-    date: '2012-02-01T22:00:00.000Z',
-    business: 'Bogan - DuBuque',
-    name: 'Auto Loan Account 7313',
-    type: 'deposit',
-    account: '19808943',
-  },
-  {
-    id: 'f0463ec4-7104-4adb-a41c-b1c7549055f8',
-    amount: '930.87',
-    date: '2012-02-01T22:00:00.000Z',
-    business: 'Legros, Weimann and Treutel',
-    name: 'Auto Loan Account 0721',
-    type: 'invoice',
-    account: '38277848',
-  },
+// const transactionHistory = [
+//   {
+//     id: '758d5283-358e-4fbb-b222-a17fd04e8916',
+//     amount: '179.07',
+//     date: '2012-02-01T22:00:00.000Z',
+//     business: 'Bogan - DuBuque',
+//     name: 'Auto Loan Account 7313',
+//     type: 'deposit',
+//     account: '19808943',
+//   },
+//   {
+//     id: 'f0463ec4-7104-4adb-a41c-b1c7549055f8',
+//     amount: '930.87',
+//     date: '2012-02-01T22:00:00.000Z',
+//     business: 'Legros, Weimann and Treutel',
+//     name: 'Auto Loan Account 0721',
+//     type: 'invoice',
+//     account: '38277848',
+//   },
 
-{
-  id: '6c0e5a78-ad9f-46af-8299-44b77f5099d5',
-  amount: '704.53',
-  date: '2012-02-01T22:00:00.000Z',
-  business: 'Beatty, Wisozk and Koch',
-  name: 'Savings Account 1894',
-  type: 'withdrawal',
-  account: '76727204',
-},
-{
-  id: '16bd2a9d-7b0e-418f-a75c-7076e8ab6175',
-  amount: '656.81',
-  date: '2012-02-01T22:00:00.000Z',
-  business: 'Hane - Bode',
-  name: 'Personal Loan Account 2316',
-  type: 'withdrawal',
-  account: '27462350',
-},
-{
-  id: '247e150a-71ba-4df7-9836-5bb400e012bb',
-  amount: '242.49',
-  date: '2012-02-01T22:00:00.000Z',
-  business: 'Stroman Inc',
-  name: 'Savings Account 1383',
-  type: 'withdrawal',
-  account: '18476423',
-},
-{
-  id: '6224c740-ff23-429d-854a-c7b310f7653b',
-  amount: '770.94',
-  date: '2012-02-01T22:00:00.000Z',
-  business: 'Johns - Pagac',
-  name: 'Auto Loan Account 1392',
-  type: 'invoice',
-  account: '07680863',
-},
-{
-id: '79ccb1dd-6544-47cc-9a40-ea453985a748',
-amount: '788.40',
-date: '2012-02-01T22:00:00.000Z',
-business: 'Ullrich, Shields and Koelpin',
-name: 'Personal Loan Account 8318',
-type: 'invoice',
-account: '07081761',
-},
-];
+// {
+//   id: '6c0e5a78-ad9f-46af-8299-44b77f5099d5',
+//   amount: '704.53',
+//   date: '2012-02-01T22:00:00.000Z',
+//   business: 'Beatty, Wisozk and Koch',
+//   name: 'Savings Account 1894',
+//   type: 'withdrawal',
+//   account: '76727204',
+// },
+// {
+//   id: '16bd2a9d-7b0e-418f-a75c-7076e8ab6175',
+//   amount: '656.81',
+//   date: '2012-02-01T22:00:00.000Z',
+//   business: 'Hane - Bode',
+//   name: 'Personal Loan Account 2316',
+//   type: 'withdrawal',
+//   account: '27462350',
+// },
+// {
+//   id: '247e150a-71ba-4df7-9836-5bb400e012bb',
+//   amount: '242.49',
+//   date: '2012-02-01T22:00:00.000Z',
+//   business: 'Stroman Inc',
+//   name: 'Savings Account 1383',
+//   type: 'withdrawal',
+//   account: '18476423',
+// },
+// {
+//   id: '6224c740-ff23-429d-854a-c7b310f7653b',
+//   amount: '770.94',
+//   date: '2012-02-01T22:00:00.000Z',
+//   business: 'Johns - Pagac',
+//   name: 'Auto Loan Account 1392',
+//   type: 'invoice',
+//   account: '07680863',
+// },
+// {
+// id: '79ccb1dd-6544-47cc-9a40-ea453985a748',
+// amount: '788.40',
+// date: '2012-02-01T22:00:00.000Z',
+// business: 'Ullrich, Shields and Koelpin',
+// name: 'Personal Loan Account 8318',
+// type: 'invoice',
+// account: '07081761',
+// },
+// ];
+
+
+// const tableEl = document.querySelector(".js-transaction-table");
+
+// const arr = transactionHistory.map(item => {
+//   return `<tr>
+//   <td>${item.id}</td>
+//   <td>${item.amount}</td>
+//   <td>${item.date}</td>
+//   <td>${item.business}</td>
+//   <td>${item.type}</td>
+//   <td>${item.name}</td>
+//   <td>${item.account}</td>
+//   </tr>`
+// });
+
+// console.log(arr);
+
+
+// const arrTablet = arr.join("");
+// console.log(arrTablet);
+
+
+// tableEl.insertAdjacentHTML("beforeend", arrTablet)
+
+
+// ...............

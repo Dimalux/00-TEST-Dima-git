@@ -9,3 +9,37 @@
 body {
   margin: 8px;
 }
+
+
+/* Стилі для таблиці транзакцій - чітка сітка */
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+/* Додаємо рамки ВСІМ коміркам */
+.transaction-table th,
+.transaction-table td {
+  border: 1px solid #333;  /* ТЕМНО-СІРІ лінії (добре видно) */
+  padding: 10px 12px;
+  text-align: left;
+}
+
+/* Заголовки - сірий фон */
+.transaction-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+/* Колонка Amount - вирівнювання вправо */
+.transaction-table td:nth-child(2),
+.transaction-table th:nth-child(2) {
+  text-align: right;
+}
+
+/* Рядки при наведенні */
+.transaction-table tbody tr:hover {
+  background-color: #f0f0f0;
+}
