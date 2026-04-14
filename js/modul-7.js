@@ -2189,6 +2189,39 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // createMarkup(options);
 
 
+// ......................
+
+
+// // ВАРІАНТ  МІЙ :
+
+// // // <div class="color-picker"></div>
+
+// const options = [
+//     { label: 'червоний', color: '#F44336' },
+//     { label: 'зелений', color: '#4CAF50' },
+//     { label: 'синий', color: '#2196F3' },
+//     { label: 'сирий', color: '#607D8B' },
+//     { label: 'рожевий', color: '#E91E63' },
+//     { label: 'индиго', color: '#3F51B5' }
+// ];
+
+
+// const colorPickerContainerEl = document.querySelector(".color-picker");
+
+
+
+// const elements = options.map(option => {
+// return `<button style="background-color: ${option.color};" type="button">${option.label}</batton>`
+// })
+// .join("");
+
+// // Варіант-1 :
+// colorPickerContainerEl.innerHTML = elements;
+
+// // Варіант-2 :
+// colorPickerContainerEl.insertAdjacentHTML("beforebegin", elements);
+
+// console.log(elements);
 
 
 // .............................
