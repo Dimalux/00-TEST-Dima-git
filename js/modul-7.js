@@ -2505,16 +2505,67 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // .............................
 
 
-//      УРОК-2  M-07-01.     Задача-1 (Урок-частина 2   Модуль 7. Події. Метод addEventListener()  0:26:00) :
+//      УРОК-2  M-07-01.     Задача-1 (Урок-частина 2   Модуль 7. Події. Метод addEventListener()  0:26:00) :  
+//                           (дивись рядок 1038)
 
-// <button class="js-click">Click me</button>
-// <div class="js-box box"></div>
+// // <button class="js-click">Click me</button>
+// // <div class="js-box box"></div>
 
-const btn = document.querySelector(".js-click");
-const box = document.querySelector(".js-box");
+// const btn = document.querySelector(".js-click");
+// const box = document.querySelector(".js-box");
 
-btn.addEventListener("click", hanler);
+// //..............
 
-function hanler () {
-  console.log("Hello, Dima !");  
-}
+// // 1) Напишемо код, щоб при натисканні на кнопку "Click me" в консоль виводилось "Hello, Dima !" :
+
+// // handler — колбек-функція, яка буде викликана під час настання події
+// // addEventListener сам викликає цю функцію "hanler()" в потрібний момент (коли стається клік) :
+
+// btn.addEventListener("click", handler);
+
+// // function hanler () {
+// //   console.log("Hello, Dima !");  
+// // }
+
+// //..............
+
+// // 2) Напишемо код, щоб при натисканні на кнопку "Click me" значення змінної "step" збільшувалось би на 10 :
+
+// // let step = 0;
+
+// // function handler () {
+// //   step += 10;
+// //   console.log(step);
+// // }
+
+// //..............
+
+// // 3) Напишемо код, щоб при натисканні на кнопку "Click me" - червоний квадрат перміщувався б праворуч і до низу на значення змінної "step" :
+
+// let step = 0;
+
+// function handler () {
+//   step += 10;
+//   box.style.marginTop = `${step}px`;
+//   box.style.marginLeft = `${step}px`;
+// }
+
+// //..............
+
+// // 4) Напишемо код, щоб при натисканні і на кнопку "Click me" і на сам квадратик - червоний квадрат рухався б праворуч і до низу на значення змінної "step" :
+
+// box.addEventListener("click", handler);
+
+
+
+// .............................
+// .............................
+
+
+//      УРОК-2  M-07-02.     Задача-1 (Урок-частина 2   Модуль 7. Подія "input". Метод addEventListener()  0:34:35) :  
+//                           (дивись рядок 1425)
+
+
+// Подія input відбувається тільки на текстових полях і textarea.
+// Вона створюється щоразу при зміні значення елемента, не чекаючи втрати фокусу. На практиці input — це найголовніша подія для роботи з текстовими полями форми. Подія input відбувається при кожній зміні значення (при введенні або видаленні)
+// не залежить від втрати фокусу
