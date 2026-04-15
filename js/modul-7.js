@@ -2208,8 +2208,6 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 // const colorPickerContainerEl = document.querySelector(".color-picker");
 
-
-
 // const elements = options.map(option => {
 // return `<button style="background-color: ${option.color};" type="button">${option.label}</batton>`
 // })
@@ -2501,3 +2499,22 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 // ...............
 
+
+
+// .............................
+// .............................
+
+
+//      УРОК-2  M-07-01.     Задача-1 (Урок-частина 2   Модуль 7. Події. Метод addEventListener()  0:26:00) :
+
+// <button class="js-click">Click me</button>
+// <div class="js-box box"></div>
+
+const btn = document.querySelector(".js-click");
+const box = document.querySelector(".js-box");
+
+btn.addEventListener("click", hanler);
+
+function hanler () {
+  console.log("Hello, Dima !");  
+}
