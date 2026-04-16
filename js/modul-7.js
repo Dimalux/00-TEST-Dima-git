@@ -2573,13 +2573,13 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 // <input type="text" class="js-user-name" />
 
-const userName = document.querySelector(".js-user-name");
+// const userName = document.querySelector(".js-user-name");
 
 // 1) Використаємо подію "change" (дивись рядок 1376):
 
 // Подія change відбувається після зміни елемента форми і втрати фокусу (якщо в поле нічого на писали і втратили фокус - НІЧОГО не відбудеться).
 // Для текстових полів або textarea подія "change" відбудеться після втрати фокусу. Це не завжди зручно. Уяви, що користувач набирає щось у текстовому полі — подія відсутня. Щойно фокус пропав, відбудеться подія change.
-// Для інших елементів, наприклад, select, чекбоксів і радіокнопок, подія change спрацьовує відразу під час вибору значення.
+// Для інших елементів, наприклад, "select", "чекбоксів" і "радіокнопок", подія change спрацьовує відразу під час вибору значення.
 
 // userName.addEventListener("change", handler)
 
@@ -2590,10 +2590,35 @@ const userName = document.querySelector(".js-user-name");
 
 // 2) Використаємо подію "input" (дивись рядок 1425) :
 
-userName.addEventListener("input", handler)
+// userName.addEventListener("input", handler)
 
-function handler() {
-console.log("HELLO !");
-}
+// function handler() {
+// console.log("HELLO !");
+// }
 
 
+// 3) Отримуємо актуальні дані з інтерактивного поля за допомогою властивості "event.target.value" :
+
+// userName.addEventListener("input", handler)
+
+// function handler() {
+// console.log(event.target.value);
+// }
+
+
+// 4) Користувач вводить в input своє ім'я після втрати фокусу (подія "blur") отримує alert з повідомленням-привітанням :
+
+// Варіант-1 (КОРЕКТНИЙ):  параметр event (об'єкт подій) передається автоматично. Пишемо "event" явно  :
+// userName.addEventListener("blur", (event) => {
+//     const name = event.target.value;
+
+//     alert(`Hello ${name}`)
+// });
+
+// Варіант-2 (НЕКОРЕКТНИЙ):  БЕЗ параметра event (об'єкта подій). Код працює, навіть якщо event не переданий. "event" є глобальною змінною у браузерах. Коли відбувається подія, браузер автоматично створює глобальну змінну event (як властивість window). Навіть якщо ви не передаєте її в колбек, вона все одно існує глобально. АЛЕ глобальний event — це застаріла особливість браузерів, на яку не варто покладатися (Глобальний event може бути перезаписаний; при вкладених подіях може вказувати не на ту подію; не працює в Node.js та деяких середовищах) :
+
+// userName.addEventListener("blur", () => {
+//     const name = event.target.value;
+
+//     alert(`Hello ${name}`)
+// });
