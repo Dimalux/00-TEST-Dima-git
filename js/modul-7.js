@@ -2705,8 +2705,15 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 //                           Властивості key та code        (1:22:40) :
 
 
+// Слухач подій вішається на весь наш "document" :
 
+// 1)  Подія клавіатури  "keypress". При натисканні на певні символи - вони будуть відображатись в консолі. Спецсимволи (Ctrl, Alt, Shift) НЕ відображаються.
 
+document.addEventListener("keypress", henleKeyPress);
+
+function henleKeyPress(event) {
+console.log("Ok");
+}
 
 
 
