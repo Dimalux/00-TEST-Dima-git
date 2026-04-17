@@ -2625,18 +2625,16 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 
-
-
 // .............................
 // .............................
 
 
-//      УРОК-2  M-07-03.     Події елементів форм  0:55:20) :  
+//      УРОК-2  M-07-03.     Події елементів форм  (0:55:20) :  
 //                           (дивись рядок 1281)
 
-// - Подия submit
+// - Подія submit
 // - Дії браузера за замовчуванням
-// - Властивість elements
+// - Властивість "elements"
 
 // Задача :  Оброби форму та збери відгук користувача в об'єкт :
 
@@ -2666,28 +2664,49 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 
-const form = document.querySelector(".js-form");
+// const form = document.querySelector(".js-form");
 
-// Подію відправлення форми "submit" ми завжди вішаємо на ФОРМУ, а НЕ на кнопку "Submit" на яку ми натискаємо, щоб відправити форму :
+// // Подію відправлення форми "submit" ми завжди вішаємо на ФОРМУ, а НЕ на кнопку "Submit" на яку ми натискаємо, щоб відправити форму :
 
-form.addEventListener("submit", handleSubmit);
+// form.addEventListener("submit", handleSubmit);
 
-function handleSubmit(event) {
+// function handleSubmit(event) {
 
-  // Для того щоб сторінка НЕ ПЕРЕЗАВАНТАЖУВАЛАСЬ після відправлення форми (натисканні кнопки "Submit") використовуємо метод "event.preventDefault()", якій і припиняє цю дефолтну поведінку боаузера :
-event.preventDefault();
+//   // Для того щоб сторінка НЕ ПЕРЕЗАВАНТАЖУВАЛАСЬ після відправлення форми (натисканні кнопки "Submit") використовуємо метод "event.preventDefault()", якій і припиняє цю дефолтну поведінку боаузера :
+// event.preventDefault();
+
+// // Подивимось в консолі на об'єкт "event" :
+// console.log(event);
+
+// // В властивості "target" є дуже цікава властивість "elements" (event.target.elements), в якій є посилання на наші перщий input (знаходиться під ключем "email"), другий input (знаходиться під клбчем "password"), textarea (знаходиться під клбчем "comment") - тобто в нашій формі ми можемо отримати доступ до вкладених текстових полів. Доступ до цих полів отримується завдяки атрибутам в нашій формі :
+// // - name="email" (перщий input), 
+// // - name="password" (другий input), 
+// // - name="comment" (textarea).
+
+// // !!! якщо в тегу НЕ буде атрибута name="..." - НЕ буде доступу до текстового полю (наприклад, якщо не буде name="email" (перщий input) - в event.target.elements зникне ключ "email") і ми не зможемо з ним взаємодіяти !!!
+
+// console.log(event.target.elements.email.value);
+// console.log(event.target.elements.password.value);
+// console.log(event.target.elements.comment.value);
+
+// // Після відправлення форми (подія "submit"), треба її очистити за допомогою методу "reset()" :
+// event.target.reset();
+
+// }
 
 
-// Подивимось в консолі на об'єкт "event" :
-console.log(event);
 
-// В властивості "target" є дуже цікава властивість "elements" (event.target.elements), в якій є посилання на наші перщий input (знаходиться під ключем "email"), другий input (знаходиться під клбчем "password"), textarea (знаходиться під клбчем "comment") - тобто в нашій формі ми можемо отримати доступ до вкладених текстових полів. Доступ до цих полів отримується завдяки атрибутам в нашій формі :
-// - name="email" (перщий input), 
-// - name="password" (другий input), 
-// - name="comment" (textarea).
-
-// !!! якщо в тегу НЕ буде атрибута name="..." - НЕ буде доступу до текстового полю (наприклад, якщо не буде name="email" (перщий input) - в event.target.elements зникне ключ "email") і ми не зможемо з ним взаємодіяти !!!
+// .............................
+// .............................
 
 
+//      УРОК-2  M-07-04.     Події клавіатури: keypress, keydown, keyup    (дивись рядок 1223)
+//                           Обмеження keypress
+//                           Властивості key та code        (1:22:40) :
 
-}
+
+
+
+
+
+
