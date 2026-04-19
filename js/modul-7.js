@@ -2824,6 +2824,10 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 //                             - mouseover і mouseout;
 //                             - mousemove (chatty event - балакуча подія). 
 
+// ....................
+
+// Події миші  (1:23:00) :      mouseenter і mouseleave (це ховер). 
+// Ці події НЕ РЕАГУЮТЬ на ВКЛАДЕНІ елементи (в данному випадку на жовтий квадрат). Тобто заходимо курсором в синій і також можна зайти в жовтий - все рівно спрацює тільки одна подія при заході миші на синій квадрат - подія "mouseenter"  ;
 
 // // Квадрат(жовтий) в квадраті(в синєму)
 // <div class="box js-box">    //  синій квадрат
@@ -2835,10 +2839,10 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // box.addEventListener("mouseenter", onMouseEnter);
 // box.addEventListener("mouseleave", onMouseLeave);
 
-// ...........
+// //...........
 
-// Варіант-1 :
-// Якщо курсором заїхати ззовні на синій квадрат відпрацоьвує подія "mouseenter" (тобто якщо мишкою навести на синій квадрат) :
+// // Варіант-1 :
+// // Якщо курсором заїхати ззовні на синій квадрат відпрацоьвує подія "mouseenter" (тобто якщо мишкою навести на синій квадрат) :
 // function onMouseEnter() {
 // console.log("mouseenter");
 // }
@@ -2852,7 +2856,13 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 // Варіант-2 : Додатково навішуємо новий клас на синій квадрат :
 
-// Якщо курсором заїхати ззовні на синій квадрат відпрацоьвує подія "mouseenter" і змінить кольор за новим стилєм на зелений :
+
+// const box = document.querySelector(".js-box2");
+
+// box.addEventListener("mouseenter", onMouseEnter);
+// box.addEventListener("mouseleave", onMouseLeave);
+
+// // Якщо курсором заїхати ззовні на синій квадрат відпрацоьвує подія "mouseenter" і змінить кольор за новим стилєм на зелений :
 // function onMouseEnter() {
 // console.log("mouseenter");
 // box.classList.add("box--active");
@@ -2867,5 +2877,27 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 // .............................
 
-// Події миші  (1:42:00) :       mouseover і mouseout;
+// Події миші  (1:44:00) :       mouseover і mouseout;
 
+// 1) mouseover :
+// // Коли курсор заїжджає на синій квадрат ззовні, спрацьовує подія "mouseover". При цьому курсор залишається тільки на синєму квадраті й не заходить на внутрішній жовтий квадрат;
+
+// 2) mouseout :
+// // Якщо курсором виїхати назовні з синього квадрату відпрацоьвує подія "mouseout" (тобто повернутись назад);
+
+// 3) mouseover і mouseout :
+// // Якщо курсором заїхати з синього квадрата на жовтий квадрат, спрацьовуть 2-і події - "mouseout" і "mouseover". Якщо курсором виїхати назовні з жовтого квадрата назад до синього квадрату - знову спрацьовуть 2-і події - "mouseout" і "mouseover".
+
+
+// const box = document.querySelector(".js-box2");
+
+// box.addEventListener("mouseover", onMouseEnter);
+// box.addEventListener("mouseout", onMouseLeave);
+
+// function onMouseEnter() {
+// console.log("mouseover");
+// }
+
+// function onMouseLeave(event) {
+// console.log("mouseout");
+// }
