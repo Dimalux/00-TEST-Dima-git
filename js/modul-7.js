@@ -2932,4 +2932,87 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 
 //      УРОК-2  M-07-06.       (1:49:50) : 
-//                            
+           
+// Задача :  Майстерня пошук.       
+
+// Реалізуй пошук автомобілів по сайту. Користувач потрапляє на сайт і одразу бачить форму для пошуку і картки всіх автомобілів (масив cars). Користувач може ввести в форму назву Марки або Моделі авто і в тегу селект обрати що він ввів Марку або Модель (https://prnt.sc/). Після натискання кнопки пошуку (самбіт форми) відмалюй авто які збираються з критеріями пошуку.
+
+
+// <form action="submit" class="js-form car-search">
+//     <div class="car-group">
+//     <input type="text" name="query" class="car-input" placeholder />
+//     </div>
+//     <div class="car-group">
+//     <select name="options" class="car-select">
+//     <option value="car">Марка</option>
+//     <option value="type">Модель</option>
+//     </select>
+//     </div>
+//     <button type="submit" class="car-button">Пошук</button>
+// </form>
+// <ul class="js-list car-list"></ul>
+
+
+const cars = [
+    {
+    id: 1,
+    car: "Audi",
+    type: "A6",
+    price: 30000,
+    img: "https://static.wixstatic.com/media/90aeac_387e937e295a4f.jpg",
+    },
+    {
+    id: 2,
+    car: "Honda",
+    type: "Civic",
+    price: 12000,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTJ...",
+    },
+{
+id: 3,
+car: "Audi",
+type: "Q7",
+price: 40000,
+img: "https://upload.wikimedia.org/wikipedia/commons/8/8b/2017.jpg",
+},
+{
+id: 4,
+car: "BMW",
+type: "5 siries",
+price: 9000,
+img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:And9GcSUyJg...",
+},
+{
+  id: 5,
+  car: "Honda",
+  type: "Accord",
+  price: 20000,
+  img: "https://upload.wikimedia.org/wikipedia/commons/7/76/2021.jpg",
+},
+{
+  id: 6,
+  car: "Volvo",
+  type: "XC60",
+  price: 7000,
+  img: "https://www.volvocars.com/media/shared-assets/master/image.jpg"
+}
+];
+
+
+
+const form = document.querySelector(".js-form");
+
+const container = document.querySelector(".js-list");
+
+// Створимо функцію, яка буде робити розміткую. Ця функція буде приймати масив об'єктів, створювати масив рядочків розмітки і з цього масиву рядочків робити один великий рядок :
+
+function createMarkup(arr) {
+  return arr.map(car => `
+    <li class="car-card" data-id=${car.id}>    
+    <img src="${car.img}" alt="${car.car} class="car-image"/>
+    <h1 class="car-title">${car.type}</h1>
+    <h3 class="car-type">${car.type}</h3>
+    <span class="car-price">${car.price} $</span>    
+    </li>`).join("")
+}
+

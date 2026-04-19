@@ -135,3 +135,73 @@ body {
 }
 
 /* ....................... */
+
+/* Задача :  Майстерня пошук */
+
+/* Загальні стилі для форми */
+.car-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Стилі для групи полів (за потреби) */
+.car-group {
+    margin: 0;
+}
+
+/* Поле вводу "Пошук" */
+.car-input {
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    font-size: 16px;
+    width: 180px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.car-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Випадаючий список "Марка" */
+.car-select {
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.car-select:focus {
+    border-color: #007bff;
+}
+
+/* Кнопка "Пошук" */
+.car-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.car-button:hover {
+    background-color: #0056b3;
+}
+
+/* ....................... */
+
