@@ -2958,43 +2958,44 @@ const cars = [
     id: 1,
     car: "Audi",
     type: "A6",
-    price: 30000,
-    img: "https://static.wixstatic.com/media/90aeac_387e937e295a4f.jpg",
+    price: 30000,    
+    img: "https://plc.ua/wp-content/uploads/2023/05/4i1jpgsb-450x312.jpg.webp",
     },
     {
     id: 2,
     car: "Honda",
     type: "Civic",
     price: 12000,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTJ...",
+    img: "https://plc.ua/wp-content/uploads/2023/05/1640790005357_-450x301.jpg.webp",
+
     },
 {
 id: 3,
 car: "Audi",
 type: "Q7",
 price: 40000,
-img: "https://upload.wikimedia.org/wikipedia/commons/8/8b/2017.jpg",
+img: "https://plc.ua/wp-content/uploads/2023/05/1920x-450x300.jpg.webp",
 },
 {
 id: 4,
 car: "BMW",
 type: "5 siries",
 price: 9000,
-img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:And9GcSUyJg...",
+img: "https://plc.ua/wp-content/uploads/2023/05/bmw_8-series_1055359-450x338.jpg.webp",
 },
 {
   id: 5,
   car: "Honda",
   type: "Accord",
   price: 20000,
-  img: "https://upload.wikimedia.org/wikipedia/commons/7/76/2021.jpg",
+  img: "https://plc.ua/wp-content/uploads/2023/05/1920x-1-450x324.jpg.webp",
 },
 {
   id: 6,
   car: "Volvo",
   type: "XC60",
   price: 7000,
-  img: "https://www.volvocars.com/media/shared-assets/master/image.jpg"
+  img: "https://plc.ua/wp-content/uploads/2023/05/article_169654_860_575-450x301.jpg.webp"
 }
 ];
 
@@ -3004,7 +3005,7 @@ const form = document.querySelector(".js-form");
 
 const container = document.querySelector(".js-list");
 
-// Створимо функцію, яка буде робити розміткую. Ця функція буде приймати масив об'єктів, створювати масив рядочків розмітки і з цього масиву рядочків робити один великий рядок :
+// Створимо функцію, яка буде робити розмітку. Ця функція буде приймати масив об'єктів, створювати масив рядочків розмітки і з цього масиву рядочків робити один великий рядок :
 
 function createMarkup(arr) {
   return arr.map(car => `
@@ -3016,3 +3017,40 @@ function createMarkup(arr) {
     </li>`).join("")
 }
 
+
+// Напишемо стиль (просто для практики) для списка. Зробимо з "container" Flexbox :
+
+container.style.display = "flex";      // вмикаємо flexbox
+container.style.flexWrap = "wrap";     // дозволяємо перенесення
+container.style.gap = "20px";  //  робимо відстань між усіма внутрішніми елементами контейнера 20 пікселів"
+
+
+
+// Робимо розмітку (дивись рядок 997) :
+
+container.insertAdjacentHTML("beforeend", createMarkup(cars));
+
+
+// Працюєм з формою :
+
+form.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+
+event.preventDefault()
+
+const query = event.target.elements.query.value;
+
+const options = event.target.elements.options.value;
+// Для  є ТІЛЬКИ два варіанти value - або "car", або "type" згідно коду html (Назви цих значень "car", або "type" співпадають з ім'ям ключів в наших об'єктах масиву "cars". За допомогою цих рядочків ми можеемо розуміти, що потрібно користувачу - або він шукає за моделью авто, або за трендом) :
+// <option value="car">Марка</option>
+// <option value="type">Модель</option>
+
+// В змінній "const options = event.target.elements.options.value" буде зберігатися ім'я ключа - або "car", або "type"
+
+}
+
+
+
+
+// (2:12:00)
