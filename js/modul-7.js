@@ -2940,7 +2940,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 // <form action="submit" class="js-form car-search">
 //     <div class="car-group">
-//     <input type="text" name="query" class="car-input" placeholder />
+//     <input type="text" name="query" class="car-input" placeholder="Пошук" />
 //     </div>
 //     <div class="car-group">
 //     <select name="options" class="car-select">
@@ -3000,20 +3000,19 @@ img: "https://plc.ua/wp-content/uploads/2023/05/bmw_8-series_1055359-450x338.jpg
 ];
 
 
-
-const form = document.querySelector(".js-form");
+const form = document.querySelector(".js-form-2");
 
 const container = document.querySelector(".js-list");
 
-// Створимо функцію, яка буде робити розмітку. Ця функція буде приймати масив об'єктів, створювати масив рядочків розмітки і з цього масиву рядочків робити один великий рядок :
+// Створимо функцію, яка буде робити розміткую. Ця функція буде приймати масив об'єктів, створювати масив рядочків розмітки і з цього масиву рядочків робити один великий рядок :
 
 function createMarkup(arr) {
-  return arr.map(car => `
-    <li class="car-card" data-id=${car.id}>    
-    <img src="${car.img}" alt="${car.car} class="car-image"/>
-    <h1 class="car-title">${car.type}</h1>
-    <h3 class="car-type">${car.type}</h3>
-    <span class="car-price">${car.price} $</span>    
+  return arr.map(item => `
+    <li class="car-card" data-id="${item.id}">
+    <img src="${item.img}" alt="${item.car}" class="car-image"/>
+    <h1 class="car-title">${item.car}</h1>
+    <h3 class="car-type">${item.type}</h3>
+    <span class="car-price">${item.price} $</span>    
     </li>`).join("")
 }
 
@@ -3022,8 +3021,8 @@ function createMarkup(arr) {
 
 container.style.display = "flex";      // вмикаємо flexbox
 container.style.flexWrap = "wrap";     // дозволяємо перенесення
-container.style.gap = "20px";  //  робимо відстань між усіма внутрішніми елементами контейнера 20 пікселів"
-
+container.style.gap = "20px";  //  робимо відстань між усіма внутрішніми елементами контейнера 20 пікселів
+container.style.listStyleType = "none";  //  прибираємо маркери (крапки, квадратики тощо) у списку ul
 
 
 // Робимо розмітку (дивись рядок 997) :
@@ -3037,20 +3036,57 @@ form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
 
-event.preventDefault()
+event.preventDefault();
 
 const query = event.target.elements.query.value;
-
 const options = event.target.elements.options.value;
-// Для  є ТІЛЬКИ два варіанти value - або "car", або "type" згідно коду html (Назви цих значень "car", або "type" співпадають з ім'ям ключів в наших об'єктах масиву "cars". За допомогою цих рядочків ми можеемо розуміти, що потрібно користувачу - або він шукає за моделью авто, або за трендом) :
+
+
+console.log(query);
+console.log(options);
+
+
+
+
+// Для "options" є ТІЛЬКИ два варіанти "value" - або "car", або "type" згідно коду html (Назви цих значень "car", або "type" співпадають з ім'ям ключів в наших об'єктах масиву "cars". За допомогою цих рядочків ми можеемо розуміти, що потрібно користувачу - або він шукає за моделью авто, або за трендом) :
 // <option value="car">Марка</option>
 // <option value="type">Модель</option>
 
-// В змінній "const options = event.target.elements.options.value" буде зберігатися ім'я ключа - або "car", або "type"
+// В змінній "const options = event.target.elements.options.value" буде зберігатися ім'я ключа - або "car", або "type". Для отримання цих значень будем використовувати синтаксис квадратних дужок. 
+// Для прикладу :
+
+// //......................
+
+// // Для того щоб отримати значення "25" властивості з таким ключем (ім'ям) "age", використовується синтаксис квадратних дужок (4. Mодуль 4. Об'єкти  /  Доступ до властивостей через квадратні дужки) :
+
+// // // const key = "age";
+
+// // const obj = {
+// //     name: "Aclie",
+// //     age: 25
+// // }
+
+// // console.log(obj[key]);    //     25
+
+// // }
+
+// //......................
+
+
+// // id: 6,
+// // car: "Volvo",
+// // type: "XC60",
+// // price: 7000,
+// // img: "https://www.volvocars.com/media/shared-assets/master/image.jpg"
+
+
+// Щоб знайти в масиві "cars" елеменнти, які задовільняють умові, використаємо метод "filter(callback)" :
+
+const result = cars.filter(item => console.log(item[options]));
 
 }
 
 
 
 
-// (2:12:00)
+// .............................    
