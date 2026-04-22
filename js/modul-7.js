@@ -2952,134 +2952,208 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // <ul class="js-list car-list"></ul>
 
 
-// const cars = [
-//     {
-//     id: 1,
-//     car: "Audi",
-//     type: "A6",
-//     price: 30000,    
-//     img: "https://plc.ua/wp-content/uploads/2023/05/4i1jpgsb-450x312.jpg.webp",
-//     },
-//     {
-//     id: 2,
-//     car: "Honda",
-//     type: "Civic",
-//     price: 12000,
-//     img: "https://plc.ua/wp-content/uploads/2023/05/1640790005357_-450x301.jpg.webp",
+const cars = [
+    {
+    id: 1,
+    car: "Audi",
+    type: "A6",
+    price: 30000,    
+    img: "https://plc.ua/wp-content/uploads/2023/05/4i1jpgsb-450x312.jpg.webp",
+    },
+    {
+    id: 2,
+    car: "Honda",
+    type: "Civic",
+    price: 12000,
+    img: "https://plc.ua/wp-content/uploads/2023/05/1640790005357_-450x301.jpg.webp",
 
-//     },
-// {
-// id: 3,
-// car: "Audi",
-// type: "Q7",
-// price: 40000,
-// img: "https://plc.ua/wp-content/uploads/2023/05/1920x-450x300.jpg.webp",
-// },
-// {
-// id: 4,
-// car: "BMW",
-// type: "5 siries",
-// price: 9000,
-// img: "https://plc.ua/wp-content/uploads/2023/05/bmw_8-series_1055359-450x338.jpg.webp",
-// },
-// {
-//   id: 5,
-//   car: "Honda",
-//   type: "Accord",
-//   price: 20000,
-//   img: "https://plc.ua/wp-content/uploads/2023/05/1920x-1-450x324.jpg.webp",
-// },
-// {
-//   id: 6,
-//   car: "Volvo",
-//   type: "XC60",
-//   price: 7000,
-//   img: "https://plc.ua/wp-content/uploads/2023/05/article_169654_860_575-450x301.jpg.webp"
-// }
-// ];
-
-
-// //..............................
+    },
+{
+id: 3,
+car: "Audi",
+type: "Q7",
+price: 40000,
+img: "https://plc.ua/wp-content/uploads/2023/05/1920x-450x300.jpg.webp",
+},
+{
+id: 4,
+car: "BMW",
+type: "5 siries",
+price: 9000,
+img: "https://plc.ua/wp-content/uploads/2023/05/bmw_8-series_1055359-450x338.jpg.webp",
+},
+{
+  id: 5,
+  car: "Honda",
+  type: "Accord",
+  price: 20000,
+  img: "https://plc.ua/wp-content/uploads/2023/05/1920x-1-450x324.jpg.webp",
+},
+{
+  id: 6,
+  car: "Volvo",
+  type: "XC60",
+  price: 7000,
+  img: "https://plc.ua/wp-content/uploads/2023/05/article_169654_860_575-450x301.jpg.webp"
+}
+];
 
 
-// const form = document.querySelector(".js-form-2");
-// const container = document.querySelector(".js-list");
-
-// // // Створимо функцію, яка буде робити розміткую. Ця функція буде приймати масив об'єктів, створювати масив рядочків розмітки і з цього масиву рядочків робити один великий рядок :
-// // // Робимо розмітку (дивись рядок 997) :
-// function createMarkup(arr) {
-//   return arr.map(item => `
-//     <li class="car-card" data-id="${item.id}">
-//     <img src="${item.img}" alt="${item.car}" class="car-image"/>
-//     <h1 class="car-title">${item.car}</h1>
-//     <h3 class="car-type">${item.type}</h3>
-//     <span class="car-price">${item.price} $</span>    
-//     </li>`).join("")
-// }
-
-// container.insertAdjacentHTML("afterbegin", createMarkup(cars));
-
-// // // Напишемо стиль (просто для практики) для списка. Зробимо з "container" Flexbox :
-// container.style.display = "flex";      // вмикаємо flexbox
-// container.style.flexWrap = "wrap";     // дозволяємо перенесення
-// container.style.gap = "20px";  //  робимо відстань між усіма внутрішніми елементами контейнера 20 пікселів
-// container.style.listStyleType = "none";  //  прибираємо маркери (крапки, квадратики тощо) у списку ul
-
-// // // Працюєм з формою :
-// form.addEventListener("submit", handleSubmit);
-
-// function handleSubmit(event) {
-// event.preventDefault();
-// console.log("Натиснута кнопка 'ЗНАЙТИ'");
-
-// const query = event.target.elements.query.value;    // Дані з поля "input"
-// const options = event.target.elements.options.value; // Дані з поля "select" (або "car", або "type")
-
-// // // Для "options" є ТІЛЬКИ два варіанти "value" - або "car", або "type" згідно коду html (Назви цих значень "car", або "type" співпадають з ім'ям ключів в наших об'єктах масиву "cars". За допомогою цих рядочків ми можеемо розуміти, що потрібно користувачу - або він шукає за моделью авто, або за трендом) :
-// // // <option value="car">Марка</option>
-// // // <option value="type">Модель</option>
-
-// // // В змінній "const options = event.target.elements.options.value" буде зберігатися ім'я ключа - або "car", або "type". Для отримання цих значень будем використовувати синтаксис квадратних дужок. 
-// // // Для прикладу :
-
-// // // //......................
-
-// // // // Для того щоб отримати значення "25" властивості з таким ключем (ім'ям) "age", використовується синтаксис квадратних дужок (4. Mодуль 4. Об'єкти  /  Доступ до властивостей через квадратні дужки) :
-
-// // // // // const key = "age";
-
-// // // // const obj = {
-// // // //     name: "Aclie",
-// // // //     age: 25
-// // // // }
-
-// // // // console.log(obj[key]);    //     25
-
-// // // // }
-
-// // // //......................
+//..............................
 
 
-// // console.log(query);    // Дані з поля "input"
-// // console.log(options);  // Дані з поля "select" (або "car" або "type")   
+const form = document.querySelector(".js-form-2");
+const container = document.querySelector(".js-list");
+
+// // Створимо функцію, яка буде робити розміткую. Ця функція буде приймати масив об'єктів, створювати масив рядочків розмітки і з цього масиву рядочків робити один великий рядок :
+// // Робимо розмітку (дивись рядок 997) :
+function createMarkup(arr) {
+  return arr.map(item => `
+    <li class="car-card" data-id="${item.id}">
+    <img src="${item.img}" alt="${item.car}" class="car-image"/>
+    <h1 class="car-title">${item.car}</h1>
+    <h3 class="car-type">${item.type}</h3>
+    <span class="car-price">${item.price} $</span>    
+    </li>`).join("")
+}
+
+container.insertAdjacentHTML("afterbegin", createMarkup(cars));
+
+// // Напишемо стиль (просто для практики) для списка. Зробимо з "container" Flexbox :
+container.style.display = "flex";      // вмикаємо flexbox
+container.style.flexWrap = "wrap";     // дозволяємо перенесення
+container.style.gap = "20px";  //  робимо відстань між усіма внутрішніми елементами контейнера 20 пікселів
+container.style.listStyleType = "none";  //  прибираємо маркери (крапки, квадратики тощо) у списку ul
+
+// // Працюєм з формою :
+form.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+event.preventDefault();
+console.log("Натиснута кнопка 'ЗНАЙТИ'");
+
+document.body.style.backgroundColor = "#990";
 
 
-// const result1 = cars.map(item => item[options]);
+const query = event.target.elements.query.value;    // Дані з поля "input"
+const options = event.target.elements.options.value; // Дані з поля "select" (або "car", або "type")
 
-// // // Варіант-1 (ідеальний).  
-// // Щоб знайти в масиві "cars" елеменнти, які задовільняють умові, використаємо метод "filter(callback)" : 
-// // const result2 = cars.filter(item => query === item[options]);
-// // console.log(result2);
+// // Для "options" є ТІЛЬКИ два варіанти "value" - або "car", або "type" згідно коду html (Назви цих значень "car", або "type" співпадають з ім'ям ключів в наших об'єктах масиву "cars". За допомогою цих рядочків ми можеемо розуміти, що потрібно користувачу - або він шукає за моделью авто, або за трендом) :
+// // <option value="car">Марка</option>
+// // <option value="type">Модель</option>
 
-// // // Варіант-2 (користувач вводить в любому регістрі (використовую метод "toLowerCase()") і може написати неповне слово (використовую метод "includes()")) :
-// const result2 = cars.filter(item => item[options].toLowerCase().includes(query.toLowerCase()));
+// // В змінній "const options = event.target.elements.options.value" буде зберігатися ім'я ключа - або "car", або "type". Для отримання цих значень будем використовувати синтаксис квадратних дужок. 
+// // Для прикладу :
+
+// // //......................
+
+// // // Для того щоб отримати значення "25" властивості з таким ключем (ім'ям) "age", використовується синтаксис квадратних дужок (4. Mодуль 4. Об'єкти  /  Доступ до властивостей через квадратні дужки) :
+
+// // // // const key = "age";
+
+// // // const obj = {
+// // //     name: "Aclie",
+// // //     age: 25
+// // // }
+
+// // // console.log(obj[key]);    //     25
+
+// // // }
+
+// // //......................
+
+
+// console.log(query);    // Дані з поля "input"
+// console.log(options);  // Дані з поля "select" (або "car" або "type")   
+
+
+const result1 = cars.map(item => item[options]);
+
+// // Варіант-1 (ідеальний).  
+// Щоб знайти в масиві "cars" елеменнти, які задовільняють умові, використаємо метод "filter(callback)" : 
+// const result2 = cars.filter(item => query === item[options]);
 // console.log(result2);
 
-// // Відмальовуємо на сторінці вибрані зкористувачем машини (перезаписуєио сторінку Властивістю innerHTML(дивись рядок 328)):
-// container.innerHTML = createMarkup(result2);
-// }
+// // Варіант-2 (користувач вводить в любому регістрі (використовую метод "toLowerCase()") і може написати неповне слово (використовую метод "includes()")) :
+const result2 = cars.filter(item => item[options].toLowerCase().includes(query.toLowerCase()));
+console.log(result2);
+
+// Відмальовуємо на сторінці вибрані зкористувачем машини (перезаписуєио сторінку Властивістю innerHTML(дивись рядок 328)):
+container.innerHTML = createMarkup(result2);
+}
 
 
 
 
 //......................   (2:31:30) 
+
+// Як до елемента додати стиль, наприклад backgroundColor, який генерується на ходу :
+
+// document.body.style.backgroundColor = "#990";
+
+
+
+
+
+// "Генерується на ходу" (або динамічно) означає, що значення стилю створюється або обчислюється в момент виконання коду, а не задається заздалегідь у файлі стилів (CSS).
+// Простими словами:
+
+//     Статично (заздалегідь) — ви пишете колір у CSS-файлі, і він не змінюється.
+
+//     На ходу (динамічно) — ви обчислюєте колір за допомогою JavaScript під час роботи сторінки, і він може змінюватись залежно від дій користувача або інших умов.
+
+// Приклади "генерації на ходу":
+// 1. Випадковий колір:
+// javascript
+
+// // Генеруємо випадковий колір "на ходу"
+// const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+// document.body.style.backgroundColor = randomColor;
+
+// 2. Колір залежно від часу:
+// javascript
+
+// // Колір змінюється залежно від часу доби
+// const hour = new Date().getHours();
+// const color = hour < 12 ? "#ffcc00" : "#003366";
+// document.body.style.backgroundColor = color;
+
+// 3. Колір із поля введення:
+// javascript
+
+// // Користувач сам вводить колір
+// const userColor = document.querySelector("#colorInput").value;
+// document.body.style.backgroundColor = userColor;
+
+// 4. Колір залежно від прокрутки сторінки:
+// javascript
+
+// window.addEventListener("scroll", () => {
+//   const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+//   const intensity = Math.floor(scrollPercent * 255);
+//   document.body.style.backgroundColor = `rgb(${intensity}, 100, 150)`;
+// });
+
+// Ваш приклад:
+// javascript
+
+// document.body.style.backgroundColor = "#990";
+
+// Це не зовсім "генерація на ходу", тому що колір #990 заданий жорстко. Але сам процес додавання стилю через JavaScript вважається динамічним, оскільки ви змінюєте стиль після завантаження сторінки.
+
+// Справжня генерація на ходу:
+// javascript
+
+// // Генеруємо випадковий колір щоразу при кліку
+// button.addEventListener("click", () => {
+//   const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+//   document.body.style.backgroundColor = randomColor;
+// });
+
+// Підсумок:
+// "На ходу" означає	Приклад
+// Значення створюється під час виконання	"#" + Math.random()
+// Може змінюватись залежно від умов	різний колір в різний час
+// Результат невідомий до моменту виконання	колір, який ввів користувач
+
+
