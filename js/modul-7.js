@@ -1150,7 +1150,7 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 // button.addEventListener("click", handleClick);
 
 
-// Параметр event — це і є об'єкт події, який автоматично передається першим аргументом під час виклику колбек-функції. Його оголошують як e, evt або event.
+// Параметр event — це і є об'єкт події, який автоматично передається першим аргументом під час виклику колбек-функції. Його оголошують як "e", "evt" або "event".
 // Деякі властивості об'єкта події :
 
     // event.type — тип події.
@@ -1206,14 +1206,13 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 
 // const button = document.querySelector(".target-btn");
 
+// button.addEventListener("click", handleClick);
+
 // const handleClick = event => {
 // console.log("event:", event);         //   event: PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
 // console.log("event type:", event.type);   //   event type: click
 // console.log("currentTarget:", event.currentTarget);    //    currentTarget: <button class="btn target-btn">Click me</button>
 // };
-
-// button.addEventListener("click", handleClick);
-
 
 
 // .............................
@@ -3000,12 +2999,14 @@ img: "https://plc.ua/wp-content/uploads/2023/05/bmw_8-series_1055359-450x338.jpg
 ];
 
 
-const form = document.querySelector(".js-form-2");
+//..............................
 
+
+const form = document.querySelector(".js-form-2");
 const container = document.querySelector(".js-list");
 
-// Створимо функцію, яка буде робити розміткую. Ця функція буде приймати масив об'єктів, створювати масив рядочків розмітки і з цього масиву рядочків робити один великий рядок :
-
+// // Створимо функцію, яка буде робити розміткую. Ця функція буде приймати масив об'єктів, створювати масив рядочків розмітки і з цього масиву рядочків робити один великий рядок :
+// // Робимо розмітку (дивись рядок 997) :
 function createMarkup(arr) {
   return arr.map(item => `
     <li class="car-card" data-id="${item.id}">
@@ -3016,77 +3017,66 @@ function createMarkup(arr) {
     </li>`).join("")
 }
 
+container.insertAdjacentHTML("afterbegin", createMarkup(cars));
 
-// Напишемо стиль (просто для практики) для списка. Зробимо з "container" Flexbox :
-
+// // Напишемо стиль (просто для практики) для списка. Зробимо з "container" Flexbox :
 container.style.display = "flex";      // вмикаємо flexbox
 container.style.flexWrap = "wrap";     // дозволяємо перенесення
 container.style.gap = "20px";  //  робимо відстань між усіма внутрішніми елементами контейнера 20 пікселів
 container.style.listStyleType = "none";  //  прибираємо маркери (крапки, квадратики тощо) у списку ul
 
-
-// Робимо розмітку (дивись рядок 997) :
-
-container.insertAdjacentHTML("beforeend", createMarkup(cars));
-
-
-// Працюєм з формою :
-
+// // Працюєм з формою :
 form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
-
 event.preventDefault();
+console.log("Натиснута кнопка 'ЗНАЙТИ'");
 
-const query = event.target.elements.query.value;
-const options = event.target.elements.options.value;
+const query = event.target.elements.query.value;    // Дані з поля "input"
+const options = event.target.elements.options.value; // Дані з поля "select" (або "car", або "type")
 
+// // Для "options" є ТІЛЬКИ два варіанти "value" - або "car", або "type" згідно коду html (Назви цих значень "car", або "type" співпадають з ім'ям ключів в наших об'єктах масиву "cars". За допомогою цих рядочків ми можеемо розуміти, що потрібно користувачу - або він шукає за моделью авто, або за трендом) :
+// // <option value="car">Марка</option>
+// // <option value="type">Модель</option>
 
-console.log(query);
-console.log(options);
+// // В змінній "const options = event.target.elements.options.value" буде зберігатися ім'я ключа - або "car", або "type". Для отримання цих значень будем використовувати синтаксис квадратних дужок. 
+// // Для прикладу :
 
+// // //......................
 
+// // // Для того щоб отримати значення "25" властивості з таким ключем (ім'ям) "age", використовується синтаксис квадратних дужок (4. Mодуль 4. Об'єкти  /  Доступ до властивостей через квадратні дужки) :
 
+// // // // const key = "age";
 
-// Для "options" є ТІЛЬКИ два варіанти "value" - або "car", або "type" згідно коду html (Назви цих значень "car", або "type" співпадають з ім'ям ключів в наших об'єктах масиву "cars". За допомогою цих рядочків ми можеемо розуміти, що потрібно користувачу - або він шукає за моделью авто, або за трендом) :
-// <option value="car">Марка</option>
-// <option value="type">Модель</option>
+// // // const obj = {
+// // //     name: "Aclie",
+// // //     age: 25
+// // // }
 
-// В змінній "const options = event.target.elements.options.value" буде зберігатися ім'я ключа - або "car", або "type". Для отримання цих значень будем використовувати синтаксис квадратних дужок. 
-// Для прикладу :
+// // // console.log(obj[key]);    //     25
 
-// //......................
+// // // }
 
-// // Для того щоб отримати значення "25" властивості з таким ключем (ім'ям) "age", використовується синтаксис квадратних дужок (4. Mодуль 4. Об'єкти  /  Доступ до властивостей через квадратні дужки) :
-
-// // // const key = "age";
-
-// // const obj = {
-// //     name: "Aclie",
-// //     age: 25
-// // }
-
-// // console.log(obj[key]);    //     25
-
-// // }
-
-// //......................
+// // //......................
 
 
-// // id: 6,
-// // car: "Volvo",
-// // type: "XC60",
-// // price: 7000,
-// // img: "https://www.volvocars.com/media/shared-assets/master/image.jpg"
+// console.log(query);    // Дані з поля "input"
+// console.log(options);  // Дані з поля "select" (або "car" або "type")   
 
 
-// Щоб знайти в масиві "cars" елеменнти, які задовільняють умові, використаємо метод "filter(callback)" :
+const result1 = cars.map(item => item[options]);
 
-const result = cars.filter(item => console.log(item[options]));
+// // Варіант-1 (ідеальний).  
+// Щоб знайти в масиві "cars" елеменнти, які задовільняють умові, використаємо метод "filter(callback)" : 
+// const result2 = cars.filter(item => query === item[options]);
+// console.log(result2);
 
+// // Варіант-2 (користувач вводить в любому регістрі (використовую метод "toLowerCase()") і може написати неповне слово (використовую метод "includes()")) :
+const result2 = cars.filter(item => item[options].toLowerCase().includes(query.toLowerCase()));
+console.log(result2);
+
+// Відмальовуємо на сторінці вибрані зкористувачем машини (перезаписуєио сторінку Властивістю innerHTML(дивись рядок 328)):
+container.innerHTML = createMarkup(result2);
 }
 
 
-
-
-// .............................    
