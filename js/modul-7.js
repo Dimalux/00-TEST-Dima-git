@@ -104,9 +104,9 @@
 //   <li class="list-item">JavaScript</li>
 // </ul>
 
-// const links = document.querySelectorAll(".list-item")   //  отримуємо псевдомасив з 3-х елементів
+// const links = document.querySelectorAll(".list-item")   //  отримуємо псевдоМАСИВ з 3-х елементів
 
-// щоб отримати потрібний нам елемент, трба до нього звернутись за індексом, наприклад :
+// щоб отримати потрібний нам елемент, треба до нього звернутись за індексом, наприклад :
 
 // links[1]
 
@@ -143,7 +143,7 @@
 // console.log(link.href);        // https://goit.global
 
 
-//   !!!  У DOM-елементів НЕМАЄ поля class. Це поширена помилка початківців, які думають, що атрибут class у HTML напряму відображається як властивість ".class "у JavaScript. 
+//   !!!  У DOM-елементів НЕМАЄ поля class. Це поширена помилка початківців, які думають, що атрибут class у HTML напряму відображається як властивість ".class" у JavaScript. 
 // Як правильно:  ".className" — повертає рядок з усіма класами
 
 
@@ -227,21 +227,21 @@
 
 // HTML
 
-{/* <article class="article">
-  <h2 class="article-title">Welcome to Hawaii!</h2>
-  <p class="article-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-</article>
+//  <article class="article">
+//   <h2 class="article-title">Welcome to Hawaii!</h2>
+//   <p class="article-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+// </article>
 
 
-// JavaScript
+// // JavaScript
 
-const titleEl = document.querySelector(".article-title");
-titleEl.textContent = 'Welcome to Italy!';
+// const titleEl = document.querySelector(".article-title");
+// titleEl.textContent = 'Welcome to Italy!';
 
-const textEl = document.querySelector(".article-text");
-console.log(textEl.textContent);   // Lorem ipsum dolor sit amet consectetur adipisicing elit.
-textEl.textContent = 'HELLO  Dima!';
-console.log(textEl.textContent);   // HELLO  Dima! */}
+// const textEl = document.querySelector(".article-text");
+// console.log(textEl.textContent);   // Lorem ipsum dolor sit amet consectetur adipisicing elit.
+// textEl.textContent = 'HELLO  Dima!';
+// console.log(textEl.textContent);   // HELLO  Dima! 
 
 
 // .............................
@@ -3168,3 +3168,75 @@ console.log(textEl.textContent);   // HELLO  Dima! */}
 //......................   (2:31:30)   
 // (дивись рядок 3032 - Варіант-1 (ДИНАМІЧНИЙ backgroundColor) - при кліку на КНОПКУ) 
 // (дивись рядок 3053 - Варіант-2 (ДИНАМІЧНИЙ backgroundColor) - при відправленні ФОРМИ)
+
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА DZ-1
+// Задача 1. З використанням властивостей і методів DOM-елементів, напиши скрипт, який:
+
+// Порахує й виведе в консоль кількість категорій в ul#categories, тобто елементів li.item.
+// Для кожного елемента li.item у списку ul#categories знайде й виведе в консоль текст заголовка елемента (тегу <h2>) і кількість елементів у категорії (усіх <li>, вкладених у нього).
+
+
+// <ul id="categories">
+//   <li class="item-m7">
+//     <h2>Animals</h2>
+//     <ul>
+//       <li>Cat</li>
+//       <li>Hamster</li>
+//       <li>Horse</li>
+//       <li>Parrot</li>
+//     </ul>
+//   </li>
+//   <li class="item-m7">
+//     <h2>Products</h2>
+//     <ul>
+//       <li>Bread</li>
+//       <li>Parsley</li>
+//       <li>Cheese</li>
+//     </ul>
+//   </li>
+//   <li class="item-m7">
+//     <h2>Technologies</h2>
+//     <ul>
+//       <li>HTML</li>
+//       <li>CSS</li>
+//       <li>JavaScript</li>
+//       <li>React</li>
+//       <li>Node.js</li>
+//     </ul>
+//   </li>
+// </ul>
+
+
+
+const categoriesName = document.querySelectorAll(".item-m7");
+console.log(categoriesName);  //   NodeList(3) [li.item-m7, li.item-m7, li.item-m7]
+
+
+// 1)   Порахуємо й виведе в консоль кількість категорій в "ul#categories", тобто елементів "li.item-m7" :
+
+console.log(`Number of categories: ${categoriesName.length}`);  //  Number of categories: 3
+
+
+// 2)  Для кожного елемента "li.item-m7" у списку "ul#categories" знайде й виведе в консоль текст заголовка елемента (тегу <h2>) і кількість елементів у категорії (усіх <li>, вкладених у нього) :
+
+categoriesName.forEach(function (item, index) {
+
+console.log(`Category: ${item.querySelector("h2").textContent}`);  //   Category: Animals ...
+console.log(`Elements: ${item.querySelectorAll("li").length}`);    //   Elements: 4  ...
+
+})
+
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА DZ-2
+// Задача 2.  Напиши скрипт для створення галереї зображень на основі масиву даних. HTML містить список ul.gallery.
