@@ -745,7 +745,7 @@
 
 // // Метод element.setAttribute(nameAttribute, value) встановлюємо значення зазначеного атрибута для вказаного HTML-елемента element.
 // heading.setAttribute("class", "title2");
-// console.log(heading.classList);   //     
+// console.log(heading.classList);   //   DOMTokenList ['title2', value: 'title2']
 
 //..........................
 
@@ -757,8 +757,8 @@
 // text1.setAttribute("data-use", "save");
 // text1.textContent = "HELLO, DIMA!";
 
-// console.dir(text1.textContent);
-// console.log(text1);
+// console.log(text1);               //   p.link
+// console.log(text1.textContent);   //  HELLO, DIMA!
 
 
 // .............................
@@ -768,7 +768,7 @@
 // ПОЯСНЕННЯ-12-2-2   Створення та видалення елементів.
 //                    ДОДАВАННЯ елементів  "element.append()"  /  "element.prepend()"
 
-// Щоб створений елемент відображався на сторінці, його необхідно додати до вже існуючого елемента в DOM-дереві. Припустимо, що додаємо до певного елемента elem, для цього існують такі методи.
+// Щоб створений елемент відображався на сторінці, його необхідно додати до вже існуючого елемента в DOM-дереві. Припустимо, що додаємо до певного елемента "elem", для цього існують такі методи.
 
 // elem.append(el1, el2, ...) — додає один або декілька елементів після всіх дітей елемента elem (В КІНЕЦЬ списку).
 // elem.prepend(el1, el2, ...) — додає один або декілька елементів перед усіма дітьми елемента elem (НА ПОЧАТОК списку).
@@ -777,7 +777,7 @@
 // Зверни увагу! Якщо елемент для додавання вже знаходиться в DOM, то він видаляється зі свого старого місця й додається у нове. Отже, є правило: один і той самий елемент не може бути одночасно у двох місцях.  В нас є в коді HTML-тег <h1 class="bag">HELLO Dima!</h1>. Треба перемістити його, наприклад, В КІНЕЦЬ сторінки :
   // const heading = document.querySelector("h1");   document.body.append(heading);
 
-// Приклад :  додати до існуючого списку три елемента (два - додати на початок списку, третій - в кінець списку) :
+// Приклад :  додати до існуючого списку три елемента (ДВА (link1, link2) - додати НА ПОЧАТОК списку, ТРЕТІЙ (link3) - В КІНЕЦЬ списку) :
 
 // <h2>Usernames</h2>
 //   <ul class="usernames">
@@ -804,10 +804,10 @@
 // console.log(link3.textContent);
 
 
-// Два елементи додаємо на початок списку :
+// Два елементи (link1, link2) додаємо НА ПОЧАТОК списку :
 // listUser.prepend(link1, link2);
 
-// Третій елемент додаємо в кінець списку :
+// Третій елемент (link3) додаємо в кінець списку :
 // listUser.append(link3);
 
 // console.log(listUser.textContent);
@@ -830,7 +830,7 @@
 // const text = document.querySelector(".text")
 // text.remove();
 
-
+// ..............
 
 // Приклад :  видаляємо почергово елементи "<h2>", "<p>", "<a>" зі статті :
 
@@ -840,12 +840,15 @@
 // <a class="link" href="">Read more</a>
 // </article> 
 
+// //  Елемент "<h2>" :
 // const heading = document.querySelector(".title");
 // heading.remove();
 
+// //  Елемент "<p>" :
 // const text = document.querySelector('.text');
 // text.remove();
 
+// //  Елемент "<a>" :
 // const link = document.querySelector(".link");
 // link.remove();
 
@@ -926,8 +929,6 @@
 // console.log(title.textContent);    //   New and improved title
 
 
-
-
  // .............................
 
 
@@ -969,7 +970,7 @@
 //                    КОНКАТЕНАЦІЯ (додавання) вмісту всередині елемента ".innerHTML += htmlString;"
 
 // Важливі наслідки !!!
-// Хоча візуально здається, що ми просто додаємо новий вміст, насправді:
+// Хоча візуально здається, що ми просто ДОДАЄМО НОВИЙ ВМІСТ, насправді:
 // - весь HTML всередині article повністю перепаровується (парситься заново);
 // - будь-які раніше прив'язані обробники подій до дочірніх елементів будуть втрачені;
 // - посилання на існуючі DOM-вузли, які ви зберегли в змінних, стануть недійсними.
@@ -1010,8 +1011,8 @@
 // Значення "beforebegin" і "afterend" працюють тільки тоді, коли element вже знаходиться в DOM-дереві. Обмеження зумовлене тим, що неможливо дізнатися, куди вставляти розмітку, доти, доки елемент не буде перебувати в DOM-дереві.
 
 // Приклад :  в HTML є список із трьох елементів. 
-// 1) Додати три елемента "React", "TypeScript", "Node.js" з масиву "newTechnologies" в КІНЕЦЬ СПИСКУ через JavaScript, використовуючи метод insertAdjacentHTML, 
-// 2) Додати заголовок h2 "Popular technologies 2" ПЕРЕД СПИСКОМ  через JavaScript, використовуючи метод insertAdjacentHTML.
+// 1) ДОДАТИ три елемента "React", "TypeScript", "Node.js" з масиву "newTechnologies" в КІНЕЦЬ СПИСКУ через JavaScript, використовуючи метод insertAdjacentHTML, 
+// 2) ДОДАТИ заголовок h2 "Popular technologies 2" ПЕРЕД СПИСКОМ  через JavaScript, використовуючи метод insertAdjacentHTML.
 
 // <ul class="list2">
 //   <li class="list-item">HTML</li>
@@ -1025,8 +1026,10 @@
 // const newTechnologies = ["React", "TypeScript", "Node.js"];
 // const markup = newTechnologies.map(technology => `<li class="list-item">${technology}</li>`).join("");
 
+// // ДОДАЄМО рядок з HTML-тегами "<li>" (три елемента "React", "TypeScript", "Node.js") в КІНЕЦЬ СПИСКУ :
 // list.insertAdjacentHTML("beforeend", markup);
 
+// // ДОДАЄМО рядок з HTML-тегом "<h2>" (заголовок "Popular technologies 2") ПЕРЕД СПИСКОМ :
 // list.insertAdjacentHTML("beforebegin", "<h2>Popular technologies 2</h2>")
 
 
@@ -3285,6 +3288,21 @@ const images = [
 
 // Варіант-1   Створюємо й додаємо HTML-елементи, використовуючи 
 // 1) document.createElement() і elem.append() :
+
+
+//...............
+
+// !!!  СХЕМА додавання :
+
+// 1) Метод document.createElement(tagName)  -  створює елемент з ім'ям tagName і повертає посилання на його об`єкт як результат свого виконання.
+// 1) Властивість innerHTML (встановлює або отримує HTML-вміст елемента)
+
+// 2) elem.append(el1, el2, ...) — додає один або декілька елементів після всіх дітей елемента elem (В КІНЕЦЬ списку).
+// // elem.prepend(el1, el2, ...) — додає один або декілька елементів перед усіма дітьми елемента elem (НА ПОЧАТОК списку).
+
+
+// ..............
+
 
 // <ul class="gallery"></ul>
 const gallery = document.querySelector(".gallery");
