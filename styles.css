@@ -240,3 +240,30 @@ body {
 
 
   /* ....................... */
+
+/* ЗАДАЧА DZ-2 :  галерея зображень */
+
+  .gallery {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-image {
+  width: 300px;        /* невеликий розмір */
+  height: auto;        /* зберігає пропорції */
+  max-width: 100%;     /* адаптивність */
+  object-fit: cover;   /* красиве обрізання */
+  border-radius: 8px;  /* заокруглені кути (опціонально) */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* легка тінь (опціонально) */
+  display: block;      /* прибирає зайві відступи */
+  margin: 0 auto;      /* центрування всередині li */
+}
+
+
+  /* ....................... */

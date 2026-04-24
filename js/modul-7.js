@@ -3304,29 +3304,38 @@ const images = [
 // ..............
 
 
-// <ul class="gallery"></ul>
-const gallery = document.querySelector(".gallery");
+// // <ul class="gallery"></ul>
+// const gallery = document.querySelector(".gallery");
 
+// // Створюємо документ-фрагмент або масив для накопичення елементів :
+// const elements = [];
 
-images.map(image => {
-
-  const listGallery = document.createElement("li");
-  
-
-  // images.forEach(image => {
-  //   const li = document.createElement("li");
-  //   li.classList.add("gallery-item");
+//     images.forEach(image => {
     
-  //   const img = document.createElement("img");
-  //   img.classList.add("gallery-image");
-  //   img.src = image.url;
-  //   img.alt = image.alt;
+//     const li = document.createElement("li");
+      
+//     const img = document.createElement("img");
+//     img.classList.add("gallery-image");
+//     img.src = image.url;
+//     img.alt = image.alt;
     
-  //   li.appendChild(img);
-  //   fragment.appendChild(li);
-  // });
+//     li.append(img);
+
+//     elements.push(li);  // Додаємо в масив, а не в DOM
+   
+//   });
+
+// //  ЯК вимагає ТЗ :   Усі елементи галереї повинні додаватися в DOM за одну операцію додавання !!!
+// // ОДНА операція додавання всіх елементів :    
+// gallery.append(...elements);
+
+// Тобто використовуємо "Spread оператор ...". Він "розгортає" масив "elements" на окремі аргументи.
+// gallery.append(...elements);  
+// // ✅ Те саме, що:
+// gallery.append(li1, li2, li3, li4, li5, li6);
 
 
-})
+//..............................
 
-console.log(gallery);
+
+// ..............
