@@ -3214,23 +3214,23 @@
 
 
 
-const categoriesName = document.querySelectorAll(".item-m7");
-console.log(categoriesName);  //   NodeList(3) [li.item-m7, li.item-m7, li.item-m7]
+// const categoriesName = document.querySelectorAll(".item-m7");
+// console.log(categoriesName);  //   NodeList(3) [li.item-m7, li.item-m7, li.item-m7]
 
 
-// 1)   Порахуємо й виведе в консоль кількість категорій в "ul#categories", тобто елементів "li.item-m7" :
+// // 1)   Порахуємо й виведе в консоль кількість категорій в "ul#categories", тобто елементів "li.item-m7" :
 
-console.log(`Number of categories: ${categoriesName.length}`);  //  Number of categories: 3
+// console.log(`Number of categories: ${categoriesName.length}`);  //  Number of categories: 3
 
 
-// 2)  Для кожного елемента "li.item-m7" у списку "ul#categories" знайде й виведе в консоль текст заголовка елемента (тегу <h2>) і кількість елементів у категорії (усіх <li>, вкладених у нього) :
+// // 2)  Для кожного елемента "li.item-m7" у списку "ul#categories" знайдемо й виведемо в консоль текст заголовка елемента (тегу <h2>) і кількість елементів у категорії (усіх <li>, вкладених у нього) :
 
-categoriesName.forEach(function (item, index) {
+// categoriesName.forEach(function (item, index) {
 
-console.log(`Category: ${item.querySelector("h2").textContent}`);  //   Category: Animals ...
-console.log(`Elements: ${item.querySelectorAll("li").length}`);    //   Elements: 4  ...
+// console.log(`Category: ${item.querySelector("h2").textContent}`);  //   Category: Animals ...
+// console.log(`Elements: ${item.querySelectorAll("li").length}`);    //   Elements: 4  ...
 
-})
+// })
 
 
 
