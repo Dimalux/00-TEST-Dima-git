@@ -3450,6 +3450,51 @@
 // Під час відправлення форми сторінка не повинна перезавантажуватися.
 // Якщо при сабміті у формі є незаповнені поля, виводь "alert" з попередженням про те, що 'All form fields must be filled in'. 
 // Не додавай на інпути атрибут required, валідація має відбуватися саме через JS.
+
+// ........... !!!!!
+// ПРИМІТКА (про "required") :
+// Якщо на інпуті є required, то браузер не дозволить відправити форму, поки це поле не буде заповнене.
+
+// Приклад:
+// html
+// <form>
+//   <input type="text" name="username" required />
+//   <input type="email" name="email" required />
+//   <button type="submit">Відправити</button>
+// </form>
+
+// Як це працює:
+// Поля порожні, натиснути "Відправити"	❌ Форма не відправляється, з'являється підказка
+// Заповнити хоч одне поле	❌ Все одно не відправляється (потрібні всі required поля)
+// Заповнити ВСІ required поля	✅ Форма відправляється
+
+// Візуально:
+// Браузер сам показує підказку, наприклад:
+// Chrome/Edge: "Заповніть це поле"
+// Firefox: "Будь ласка, заповніть це поле"
+
+// Важливі нюанси:
+// 1. Працює тільки в тегах <form>
+// html
+// <!-- ✅ Працює -->
+// <form>
+//   <input required />
+// </form>
+
+// <!-- ❌ Не працює (без форми) -->
+// <input required />
+
+// 2. Можна використовувати на різних типах інпутів:
+// html
+// <input type="text" required />
+// <input type="email" required />
+// <input type="password" required />
+// <input type="checkbox" required />  <!-- має бути відмічений -->
+// <select required>...</select>
+
+// ........... !!!!!
+
+
 // Якщо користувач заповнив усі поля і відправив форму, збери значення полів в об'єкт з двома властивостями, де ключ — це ім'я інпутів, а значення — відповідні значення цих інпутів, очищені від пробілів по краях. Для доступу до елементів форми використовуй властивість "elements".
 // При сабміті форми виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
 
@@ -3467,4 +3512,59 @@
 // </form>
 
 
+// const form = document.querySelector(".login-form");
 
+// const handler = (event) => {
+
+// event.preventDefault();
+
+// const email = event.target.elements.email.value.trim();
+// const password = event.target.elements.password.value.trim();
+
+// console.log(email);
+// console.log(password);
+
+// // якщо незаповнені поля :
+// if(email === "" || password === "") {
+// return alert("All form fields must be filled in");
+// }
+
+// const objUser = {
+// email: email,
+// password: password,
+
+// // Або ще коротше - використовуємо Синтаксис коротких властивостей (shorthand properties - синтаксис ES6) коли ім'я змінної як ім'я властивості, а її значення як значення властивості (4. Mодуль 4. Об'єкти / Об'єкти / Короткі властивості):
+// // const objUser = { email, password };
+
+// };
+// console.log(objUser);
+
+// form.reset();
+// }
+
+// form.addEventListener("submit", handler);
+
+
+
+// .............................
+// .............................
+
+
+// ЗАДАЧА DZ-5
+// Задача 5.  Напиши скрипт, який змінює колір фону елемента <body> через інлайн-стиль по кліку на button.change-color і задає це значення кольору текстовим вмістом для span.color.
+
+// <div class="widget">
+//   <p>Background color: <span class="color">-</span></p>
+//   <button type="button" class="change-color">Change color</button>
+// </div>
+
+
+// Для генерування випадкового кольору використовуй функцію getRandomHexColor().
+
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215)
+//     .toString(16)
+//     .padStart(6, 0)}`;
+// }
+
+// Зверни увагу, що функція getRandomHexColor() повертає колір у hex-форматі, в той час, як колір фону на <body> буде у форматі rgb. Це нормально й не потребує якихось правок.
