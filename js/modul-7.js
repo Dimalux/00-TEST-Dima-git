@@ -3597,4 +3597,34 @@
 //     .padStart(6, 0)}`;
 // }
 
-// Зверни увагу, що функція getRandomHexColor() повертає колір у hex-форматі, в той час, як колір фону на <body> буде у форматі rgb. Це нормально й не потребує якихось правок.
+// Зверни увагу, що функція getRandomHexColor() повертає колір у hex-форматі, в той час, як колір фону на <body> буде у форматі rgb. Це нормально й не потребує якихось правок. 
+
+
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215)
+//     .toString(16)
+//     .padStart(6, 0)}`;
+// }
+
+// const nameColor = document.querySelector(".widget .color");
+
+// const button = document.querySelector(".widget .change-color");
+
+// console.log(nameColor);
+// console.log(button);
+
+// button.addEventListener("click", handler);
+
+// function handler(event) {
+// const bodyNewColor = getRandomHexColor();
+
+// nameColor.textContent = bodyNewColor;
+
+// //  (дивись рядок 3162)
+// // document.body.style.background = bodyNewColor;
+
+// // Більш точний варіант (чат GPT):
+// document.body.style.backgroundColor = bodyNewColor;
+// }
+
+
