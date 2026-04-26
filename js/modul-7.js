@@ -3364,18 +3364,26 @@
 // <input type="text" id="name-input" placeholder="Please enter your name" />
 // <h1>Hello, <span id="name-output">Anonymous</span>!</h1> 
 
-const nameInput = document.querySelector("#name-input");
-const textNameUser = document.querySelector("#name-output");
+// const nameInput = document.querySelector("#name-input");
+// const textNameUser = document.querySelector("#name-output");
 
-console.log(nameInput);
-console.log(textNameUser);
+// console.log(nameInput);
+// console.log(textNameUser);
 
-// (дивись рядок 1427)
-nameInput.addEventListener("input", handler);
+// // (дивись рядок 1427)
+// nameInput.addEventListener("input", handler);
 
-function handler(event) {
-textNameUser.textContent = event.target.value;
-}
+// // 1)  Варіант-1 - коли в інпут все записано коректно :
+// function handler(event) {
+// textNameUser.textContent = event.target.value;
+
+// // Щоб побачити пробіли в інпуті - на початку і в кінці :
+// // console.log(textNameUser.textContent);
+
+
+// }
+
+
 
 //...........................
 
@@ -3402,3 +3410,61 @@ textNameUser.textContent = event.target.value;
 // └── event.target.elements.name.value → значення конкретного інпута ✅
 
 //...........................
+
+
+// 2)  Варіант-1 (УМОВА ТЗ) - Обов'язково очищай значення в інпуті по краях від пробілів. Якщо інпут порожній або містить лише пробіли, то замість імені у спан має підставлятися рядок "Anonymous" :
+
+// function handler(event) {
+
+//   // очищаємо значення в інпуті по краях від пробілів :
+// const valueName = event.target.value.trim();
+
+// // Якщо інпут порожній або містить лише пробіли, то замість імені у спан має підставлятися рядок "Anonymous" :
+// if(valueName === "") {
+// return textNameUser.textContent = "Anonymous";
+// }
+// return textNameUser.textContent = valueName;
+// }
+
+
+// Або так без return :
+// if(valueName === "") {
+//   textNameUser.textContent = "Anonymous";
+// } else {
+//   textNameUser.textContent = valueName;
+// }
+
+// Або так з тернарним оператором return :
+// textNameUser.textContent = valueName === "" ? "Anonymous" : userNameAdd;
+
+
+      
+// .............................
+// .............................
+
+
+// ЗАДАЧА DZ-4
+// Задача 4.  Напиши скрипт управління формою логіна.
+
+// відправлення форми "form.login-form" повинна відбуватися за подією "submit".
+// Під час відправлення форми сторінка не повинна перезавантажуватися.
+// Якщо при сабміті у формі є незаповнені поля, виводь "alert" з попередженням про те, що 'All form fields must be filled in'. 
+// Не додавай на інпути атрибут required, валідація має відбуватися саме через JS.
+// Якщо користувач заповнив усі поля і відправив форму, збери значення полів в об'єкт з двома властивостями, де ключ — це ім'я інпутів, а значення — відповідні значення цих інпутів, очищені від пробілів по краях. Для доступу до елементів форми використовуй властивість "elements".
+// При сабміті форми виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
+
+
+// <form class="login-form">
+//   <label>
+//     Email
+//     <input type="email" name="email" />
+//   </label>
+//   <label>
+//     Password
+//     <input type="password" name="password" />
+//   </label>
+//   <button type="submit">Log in</button>
+// </form>
+
+
+
