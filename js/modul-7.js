@@ -3620,10 +3620,32 @@
 
 // nameColor.textContent = bodyNewColor;
 
-// //  (дивись рядок 3162)
+
+//................
+
+// ПРИМІТКА  ("background" чи "backgroundColor") :
+
+// //    "background" - працює з УСІМА фоновими властивостями (колір, зображення, позиція, повторення тощо). Наприклад :
+// document.body.style.background = "red url(image.jpg)";
+// "Колір + зображення" - Браузер отримує команду:    
+// -  Залити фон червоним кольором (red);
+// -  Поверх червоного фону накласти зображення (url(image.jpg)).
+
+// Але якщо написати :
+// document.body.style.backgroundColor = "red url(image.jpg)";   !!!  НЕ ПРАВИЛЬНР  !!!
+// "backgroundColor" не розуміє нічого, крім кольору. Рядок "red url(image.jpg)" для нього некоректний, тому браузер проігнорує це значення.
+// Що станеться:
+// document.body.style.backgroundColor = "red url(image.jpg)";
+// // ❌ Зображення НЕ додасться
+// // ❌ Колір, швидше за все, ТЕЖ НЕ встановиться (або встановиться, але непередбачувано)
+
+//................
+
+
+// Змінює колір фону елемента <body> через інлайн-стиль (дивись рядок 3162) :
 // // document.body.style.background = bodyNewColor;
 
-// // Більш точний варіант (чат GPT):
+// // Більш ТОЧНИЙ ВАРІАНТ (чат GPT), "backgroundColor" працює ТІЛЬКИ з кольором фону:
 // document.body.style.backgroundColor = bodyNewColor;
 // }
 
