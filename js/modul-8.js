@@ -205,7 +205,7 @@
 
 // Спливання дозволяє реалізувати один із найкорисніших прийомів — делегування подій.
 // Уявімо, що є група елементів. Їх події потрібно обробляти однаково. Для цього треба додати обробник до кожного елемента. Але це не зручно.
-// Делегування подій (event delegation) полягає в додаванні одного обробника на спільного предка цих елементів.
+// ДЕЛЕГУВАННЯ ПОДІЙ (event delegation) полягає в додаванні одного обробника на спільного предка цих елементів.
 
 // Розглянемо делегування на прикладі:
 // створюємо елемент <div>,
@@ -226,28 +226,34 @@
 
 // .........
 
-// ПРИКЛАД для розуміння :
+// ПРИКЛАД для розуміння, в якому цільовий елемент кліка виводиться в консоль.
+// Спробуй клікнути по кнопках, а також безпосередньо між ними, по div.box, і подивись результат.
 
 // <div class="oneEvent">
 //   <p>ОДИН ОБРОБНИК на 10 подій</p>
-//   <button type="button" class="test-event">Кнопка №1</button>
-//   <button type="button" class="test-event">Кнопка №2</button>
-//   <button type="button" class="test-event">Кнопка №3</button>
-//   <button type="button" class="test-event">Кнопка №4</button>
-//   <button type="button" class="test-event">Кнопка №5</button>
-//   <button type="button" class="test-event">Кнопка №6</button>
-//   <button type="button" class="test-event">Кнопка №7</button>
-//   <button type="button" class="test-event">Кнопка №8</button>
-//   <button type="button" class="test-event">Кнопка №9</button>
-//   <button type="button" class="test-event">Кнопка №10</button>  
+//   <button type="button" class="test-event">Кнопка 1</button>
+//   <button type="button" class="test-event">Кнопка 2</button>
+//   <button type="button" class="test-event">Кнопка 3</button>
+//   <button type="button" class="test-event">Кнопка 4</button>
+//   <button type="button" class="test-event">Кнопка 5</button>
+//   <button type="button" class="test-event">Кнопка 6</button>
+//   <button type="button" class="test-event">Кнопка 7</button>
+//   <button type="button" class="test-event">Кнопка 8</button>
+//   <button type="button" class="test-event">Кнопка 9</button>
+//   <button type="button" class="test-event">Кнопка 10</button>  
 // </div>
 
 
 // const boxGlobal = document.querySelector(".oneEvent");
 
 // boxGlobal.addEventListener("click", function (event) {
-// 	console.log(event.target);                              // Елемент (тег <button>), на якому відбулась подія click
+// 	console.log(event.target);                              // Елемент (тег <button>), на якому відбулась подія click :  
+//                                                             // "<button type="button" class="test-event">Кнопка 6</button>"
 // });
+
+// Якщо клікнути на заголовку :   в консоль виведе  "<p>ОДИН ОБРОБНИК на 10 подій</p>"
+
+// Якщо клікнути між кнопками  (тобто в середині  <div class="oneEvent">):   в консоль виведе  <div class="oneEvent">...</div>
 
 
 
