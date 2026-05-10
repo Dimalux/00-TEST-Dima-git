@@ -23,6 +23,16 @@
 
 // "event.currentTarget" — це посилання на поточний елемент, до якого прив'язаний поточний обробник події, і до якого в результаті спливання дійшла прослуховувана подія.
 
+
+// Коротке правило (ШПАРГАЛКА) :
+// Якщо вам потрібно...	
+// Дізнатися, на чому реально клікнули (навіть на внутрішньому span, img, тексті)	   - використовуємо  "event.target";
+// Дізнатися, який елемент має цей обробник (той, на кому викликали addEventListener)  - використовуємо "event.currentTarget";
+// У делегуванні подій — дістати самого батька-слухача	                               - використовуємо "event.currentTarget";
+// Перевірити, чи клікнули прямо на батьку, а не на дитині           -    використовуємо "event.target === event.currentTarget";
+
+
+
 // ..........
 
 // ПРИКЛАД-1 для розуміння :
@@ -263,3 +273,55 @@
 
 // ПОЯСНЕННЯ-4   Делегування подій.
 //               ПЕРЕВІРКА ЦІЛЬОВОГО ЕЛЕМЕНТА події :
+
+
+// ПРИКЛАД для розуміння  - створити палітру кольорів. Палітра дає можливість вибрати колір по кліку і відображає обраний колір в заголовку <p>.
+// Кожен клік на елементі палітри — це подія, яка змінює колір і вміст заголовка. Елементів дуже багато. Замість призначення обробника кожному елементу палітри, повісимо один слухач на загального предка div.color-palette.
+
+// <p class="output">Selected color: -</p>
+// <div class="color-palette"></div>
+
+const output = document.querySelector(".output");
+const colorPalette = document.querySelector(".color-palette");
+
+colorPalette.addEventListener("click", selectColor);
+
+// Обов'язково перевіряємо цільовий елемент події click. Це точно має бути кнопка, в іншому разі ми випадково можемо обробити клік, коли користувач клікне між кнопками, що може викликати помилку. Для перевірки типу елемента використовуємо властивість "nodeName".
+function selectColor(event) {
+  if (event.target.nodeName !== "BUTTON") {
+    return;
+  }
+
+  const selectedColor = event.target.dataset.color;
+  output.textContent = `Selected color: ${selectedColor}`;
+  output.style.color = selectedColor;
+}
+
+
+// Some helper functions to render palette items
+createPaletteItems();
+
+function createPaletteItems() {
+  const items = [];
+  for (let i = 0; i < 60; i++) {
+    const color = getRandomHexColor();
+    const item = document.createElement("button");
+    item.type = "button";
+    item.dataset.color = color;
+    item.style.backgroundColor = color;
+    item.classList.add("item");
+    items.push(item);
+  }
+  colorPalette.append(...items);
+}
+
+function getRandomHexColor() {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+
+  return color;
+}
