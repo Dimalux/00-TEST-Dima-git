@@ -648,8 +648,8 @@
 
 // Змінити значення існуючого data-атрибута або додати новий можна так само, як і будь-якої іншої властивості об'єкта в JavaScript. Щоб це зробити, треба отримати доступ до DOM-елемента, а потім змінити/задати значення властивості в об'єкті dataset.
     
-{/* <button type="button" data-action="save">Save text</button>
-<button type="button" data-action="close">Close editor</button> */}
+// <button type="button" data-action="save">Save text</button>
+// <button type="button" data-action="close">Close editor</button> 
 
 // const buttonUse = document.querySelector('.item button[data-action="close"]');
 

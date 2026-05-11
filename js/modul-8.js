@@ -281,13 +281,14 @@
 // <p class="output">Selected color: -</p>
 // <div class="color-palette"></div>
 
-const output = document.querySelector(".output");
+const output = document.querySelector(".output-palette");
 const colorPalette = document.querySelector(".color-palette");
 
 colorPalette.addEventListener("click", selectColor);
 
 // Обов'язково перевіряємо цільовий елемент події click. Це точно має бути кнопка, в іншому разі ми випадково можемо обробити клік, коли користувач клікне між кнопками, що може викликати помилку. Для перевірки типу елемента використовуємо властивість "nodeName".
 function selectColor(event) {
+
   if (event.target.nodeName !== "BUTTON") {
     return;
   }
