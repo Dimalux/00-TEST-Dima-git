@@ -17,7 +17,7 @@
 // ПОЯСНЕННЯ-1   Делегування подій.
 //               ЦІЛЬОВИЙ ЕЛЕМЕНТ ("event.target") :
 
-// Елемент, на якому відбулася подія, називається цільовим, або вихідним. Це завжди найглибший елемент, з якого починається спливання. Він доступний як "event.target".
+// Елемент, на якому відбулася подія, називається  ЦІЛЬОВИМ, або вихідним. Це завжди найглибший елемент, з якого починається спливання. Він доступний як "event.target".
 
 // "event.target" — це посилання на вихідний елемент, на якому відбулася подія. У процесі спливання (bubbling) подія рухається від найглибшого елемента вгору до батьківських елементів. ПОСИЛАННЯ на вихідний елемент (event.target) — НЕЗМІННЕ. Незмінна — саме властивість event.target (посилання на вихідний елемент) - це завжди вихідний (і найглибший) елемент, на якому був клік;
 
@@ -213,7 +213,7 @@
 // ПОЯСНЕННЯ-3   Делегування подій.
 //               ДЕЛЕГУВАННЯ ПОДІЙ :
 
-// Спливання дозволяє реалізувати один із найкорисніших прийомів — делегування подій.
+// СПЛИВАННЯ дозволяє реалізувати один із найкорисніших прийомів — ДЕЛЕГУВАННЯ ПОДІЙ.
 // Уявімо, що є група елементів. Їх події потрібно обробляти однаково. Для цього треба додати обробник до кожного елемента. Але це не зручно.
 // ДЕЛЕГУВАННЯ ПОДІЙ (event delegation) полягає в додаванні одного обробника на спільного предка цих елементів.
 
@@ -223,7 +223,7 @@
 // реєструємо на кожній кнопці слухача події кліку з обробником handleButtonClick.
 // Проблема в тому, що в нас є 10 слухачів подій. Усі вони вказують на один і той самий обробник слухача, але слухачів 10.
 
-// Завдяки тому, що події спливають, ми можемо відловити їх на спільному предку — елементі <div>.
+// Завдяки тому, що ПОДІЇ СПЛИВАЮТЬ, ми можемо відловити їх на СПІЛЬНОМУ ПРЕДКУ — елементі <div>.
 // Тепер є тільки один слухач події кліку з обробником handleButtonClick і браузеру не потрібно зберігати в пам'яті 100 різних слухачів.
 
 // Отже, делегування реалізується у три прості кроки.
@@ -258,7 +258,7 @@
 
 // boxGlobal.addEventListener("click", function (event) {
 // 	console.log(event.target);                              // Елемент (тег <button>), на якому відбулась подія click :  
-//                                                             // "<button type="button" class="test-event">Кнопка 6</button>"
+//                                                             // "<button type="button" class="test-event">Кнопка *****</button>"
 // });
 
 // Якщо клікнути на заголовку :   в консоль виведе  "<p>ОДИН ОБРОБНИК на 10 подій</p>"
@@ -278,51 +278,73 @@
 // ПРИКЛАД для розуміння  - створити палітру кольорів. Палітра дає можливість вибрати колір по кліку і відображає обраний колір в заголовку <p>.
 // Кожен клік на елементі палітри — це подія, яка змінює колір і вміст заголовка. Елементів дуже багато. Замість призначення обробника кожному елементу палітри, повісимо один слухач на загального предка div.color-palette.
 
-// <p class="output">Selected color: -</p>
-// <div class="color-palette"></div>
+// // <p class="output">Selected color: -</p>
+// // <div class="color-palette"></div>
 
-const output = document.querySelector(".output-palette");
-const colorPalette = document.querySelector(".color-palette");
+// const output = document.querySelector(".output-palette");
+// const colorPalette = document.querySelector(".color-palette");
 
-colorPalette.addEventListener("click", selectColor);
+// colorPalette.addEventListener("click", selectColor);
 
-// Обов'язково перевіряємо цільовий елемент події click. Це точно має бути кнопка, в іншому разі ми випадково можемо обробити клік, коли користувач клікне між кнопками, що може викликати помилку. Для перевірки типу елемента використовуємо властивість "nodeName".
-function selectColor(event) {
+// // Обов'язково перевіряємо цільовий елемент події click. Це точно має бути кнопка, в іншому разі ми випадково можемо обробити клік, коли користувач клікне між кнопками, що може викликати помилку. Для перевірки типу елемента використовуємо властивість "nodeName".
+// function selectColor(event) {
 
-  if (event.target.nodeName !== "BUTTON") {
-    return;
-  }
+//   if (event.target.nodeName !== "BUTTON") {
+//     return;
+//   }
 
-  const selectedColor = event.target.dataset.color;
-  output.textContent = `Selected color: ${selectedColor}`;
-  output.style.color = selectedColor;
-}
+//   const selectedColor = event.target.dataset.color;
+//   output.textContent = `Selected color: ${selectedColor}`;
+//   output.style.color = selectedColor;
+// }
+
+// // .........
+
+// // ПРИМІТКА :  "event.target.nodeName" - це властивість, яка повертає назву тегу HTML елемента, на якому стався клік.
+// // Простими словами:
+// // Це спосіб дізнатися, на якому саме елементі клікнув користувач: на кнопці, на div, на span тощо.
+
+// // Значення nodeName для різних елементів:
+// // html
+// // <button>Кнопка</button>      → nodeName = "BUTTON"
+// // <div>Блок</div>              → nodeName = "DIV"
+// // <p>Параграф</p>              → nodeName = "P"
+// // <span>Текст</span>           → nodeName = "SPAN"
+// // <a href="#">Посилання</a>    → nodeName = "A"
+// // <img src="photo.jpg">        → nodeName = "IMG"
+// // <ul><li>Список</li></ul>     → nodeName = "LI"
+
+// // .........
+
+// // Функція "createPaletteItems()" динамічно створює 60 кольорових кнопок і додає КНОПКИ ПАЛІТРИ КОЛЬОРІВ на сторінку :
+// createPaletteItems();
+
+// function createPaletteItems() {
+//   const items = [];
+//   for (let i = 0; i < 60; i++) {
+//     const color = getRandomHexColor();
+//     const item = document.createElement("button");        //  Створюємо в пам'яті нову кнопку (поки не на сторінці).
+//     item.type = "button";                                 // тип кнопки
+//     item.dataset.color = color;                           // зберігає колір в data-color
+//     item.style.backgroundColor = color;                   // фарбує кнопку в цей колір
+//     item.classList.add("item");                           // додає CSS клас "item"
+
+//     items.push(item);                                     // Додаємо кнопку в масив
+//   }
+//   colorPalette.append(...items);      //   "...items" - розгортаємо масив і додаємо всі 60 кнопок всередину colorPalette  ("<div class="color-palette"></div>")
+// }
+
+// // Функція getRandomHexColor() - генерує випадковий HEX колір (шістнадцятковий формат HEX). HEX колір - це спосіб запису кольору через # і 6 символів (0-9, A-F). Наприклад #FF0000 - червоний, #00FF00 - зелений... :
+// function getRandomHexColor() {
+//   const letters = "0123456789ABCDEF";
+//   let color = "#";
+
+//   for (let i = 0; i < 6; i++) {
+//     color += letters[Math.floor(Math.random() * 16)];
+//   }
+
+//   return color;
+// }
 
 
-// Some helper functions to render palette items
-createPaletteItems();
 
-function createPaletteItems() {
-  const items = [];
-  for (let i = 0; i < 60; i++) {
-    const color = getRandomHexColor();
-    const item = document.createElement("button");
-    item.type = "button";
-    item.dataset.color = color;
-    item.style.backgroundColor = color;
-    item.classList.add("item");
-    items.push(item);
-  }
-  colorPalette.append(...items);
-}
-
-function getRandomHexColor() {
-  const letters = "0123456789ABCDEF";
-  let color = "#";
-
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-
-  return color;
-}
