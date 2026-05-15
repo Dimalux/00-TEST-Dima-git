@@ -358,6 +358,8 @@
 // Підключення скрипта бібліотеки має бути до підключення твого основного файлу скриптів.
 // Не забудь додати тегу script бібліотеки атрибут async. Це потрібно для того, щоб файл бібліотеки завантажувався якомога швидше.
 
+
+// ПІДКЛЮЧЕННЯ бібліотеки  "Lodash" через CDN   (дивись файл "index.html" рядок 10 ) :
 //  <!-- Додаємо посилання на скрипт бібліотеки Lodash  -->
 //     <script src="https://cdn.jsdelivr.net/npm/lodash@4.18.1/lodash.min.js" defer></script>
 
@@ -394,7 +396,33 @@
 
 
 // .............................
+// .............................
 
 
 // ПОЯСНЕННЯ-5   Підключення бібліотеки.
 //               Підключимо до проєкту бібліотеку "basicLightbox" :
+
+
+// ПІДКЛЮЧЕННЯ бібліотеки  "basicLightbox" через CDN   (дивись файл "index.html" рядок 13 ) :
+
+//  <!-- Додаємо посилання на скрипт бібліотеки "basicLightbox"  -->
+// <script src="
+// https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js
+// " defer></script>
+// <link href="
+// https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css
+// " rel="stylesheet"></link>
+
+
+// const instance = basicLightbox.create(`
+// 	<h1>Not closable</h1>
+// 	<p>It's not possible to close this lightbox with a click.</p>
+// `, {
+// 	closable: false
+// })
+
+// // Наприклад, виклик методу instance.show() покаже модальне вікно, а instance.close() — навпаки його сховає :
+
+// instance.show();    //  ВІДКРИВАЄМО модальне вікно
+// instance.close();   //  і відразу ЗАКРИВАЄМО модальне вікно
+
