@@ -426,3 +426,51 @@
 // instance.show();    //  ВІДКРИВАЄМО модальне вікно
 // instance.close();   //  і відразу ЗАКРИВАЄМО модальне вікно
 
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-6   Деструктуризація.
+
+// ДЕСТРУКТУРИЗАЦІЯ (Destructuring) — це особливий синтаксис, що дозволяє витягти значення зі складних типів даних (об'єктів або масивів) і присвоїти їх локальним змінним. Це зручний спосіб дістати потрібні дані зі складних структур і використовувати їх у коді.
+  
+// // ПРИКЛАД-1 для ОБ'ЄКТІВ :
+//   const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   isPublic: true,
+//   rating: 8.38,
+// };
+
+// // Деструктуризація ОБ'ЄКТУ (порядок НЕ МАЄ значення!). Деструктуризуємо (const або let). Використовуємо let, якщо хочемо пізніше змінити значення змінної :
+// const { title, author, isPublic, rating } = book;
+
+// // Використовуємо
+// const accessType = isPublic ? "public" : "private";
+// const message = `Book ${title} by author ${author} with rating ${rating} is in ${accessType} access!`;
+
+
+// //...................
+
+// // ПРИКЛАД-2 для МАСИВІВ :
+
+// const genres = ["historical prose", "adventure"];
+
+// // Деструктуризація МАСИВУ (порядок МАЄ значення!)
+// const [firstGenre, secondGenre] = genres;
+
+// console.log(firstGenre);  // "historical prose"
+// console.log(secondGenre); // "adventure"
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-7   Деструктуризація.
+//               Деструктуризація неіснуючих властивостей :
