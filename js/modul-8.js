@@ -523,11 +523,39 @@
 // console.log(coverImage); // "https://via.placeholder.com/640/480"
 
 
-
-
 // .............................
 // .............................
 
 
 // ПОЯСНЕННЯ-8   Деструктуризація.
 //               Перейменування змінної :
+
+// ПІД ЧАС деструктуризації можна ПЕРЕЙМЕНУВАТИ змінну, в яку розпаковується значення властивості, використовуючи ":" :
+// Для цього пишемо :
+// - ім'я властивості, з якої хочемо отримати значення ;
+// - ставимо двокрапку ":" ;
+// - пишемо ім'я змінної, в яку необхідно помістити значення цієї властивості.
+
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   isPublic: true,
+//   rating: 8.38,
+// };
+
+// // Деструктуризуємо
+// const { title, author: bookAuthor, isPublic, rating: bookRating } = book;
+// console.log(title); // "The Last Kingdom"
+// console.log(bookAuthor); // "Bernard Cornwell"
+// console.log(isPublic); // true
+// console.log(bookRating); // 8.38
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-9   Деструктуризація.
+//               Значення за замовчуванням :
