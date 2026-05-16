@@ -474,3 +474,60 @@
 
 // ПОЯСНЕННЯ-7   Деструктуризація.
 //               Деструктуризація неіснуючих властивостей :
+
+// У випадку, якщо ім'я змінної та ім'я властивості збігаються, то відбувається ПРИСВОЄННЯ.
+// Коли в об'єкті немає властивості з таким ім'ям, змінній буде присвоєно "undefined".
+
+
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   isPublic: true,
+//   rating: 8.38,
+// };
+
+// // Деструктуризуємо
+// const { title, bookTitle, coverImage, bookRating } = book;
+// console.log(title); // "The Last Kingdom"
+// console.log(bookTitle); // undefined
+// console.log(coverImage); // undefined
+// console.log(bookRating); // undefined
+
+//...........
+
+// З метою уникнення присвоєння "undefined" під час деструктуризації неіснуючих властивостей, можна задати змінним ЗНАЧЕННЯ ЗА ЗАМОВЧУВАННЯМ (використовується тільки коли === "undefined"), використовуючи знак "=". 
+
+// ВАЖЛИВИЙ НЮАНС :
+// Значення за замовчуванням застосовується лише тоді, коли властивість в об'єкті :
+// - відсутня (undefined);
+// - АБО має значення undefined.
+
+// !!! Це значення буде присвоєно тільки у випадку, коли в об'єкті відсутня властивість із таким ім'ям.
+// !!! Якщо в об'єкті є властивість із таким ім'ям, перепресвоєння НЕ БУДЕ !!! :
+
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+// };
+
+// // Додамо зображення обкладинки, якщо вона відсутня в об'єкті книги
+// const {
+//   title,
+//   author = "Astrallux",
+//   coverImage = "https://via.placeholder.com/640/480"
+// } = book;
+
+// console.log(title); // "The Last Kingdom"
+// console.log(author); // "Bernard Cornwell"
+// console.log(coverImage); // "https://via.placeholder.com/640/480"
+
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-8   Деструктуризація.
+//               Перейменування змінної :
