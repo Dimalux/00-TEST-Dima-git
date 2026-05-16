@@ -590,3 +590,54 @@
 // ПОЯСНЕННЯ-10   Деструктуризація.
 //                Деструктуризація в циклах :
 
+// Під час ітерації по масиву об'єктів циклом "for...of" відбуваються багаторазові звернення до властивостей об'єкта :
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+// ];
+
+// for (const book of books) {
+//   console.log(book.title);
+//   console.log(book.author);
+//   console.log(book.rating);
+// }
+
+
+// // ВАРІАНТ-1  Для того щоб скоротити кількість повторень, можна ДЕСТРУКТУРИЗУВАТИ ВЛАСТИВОСТІ ОБ'ЄКТА в локальні змінні В ТІЛІ ЦИКЛУ :
+
+// for (const book of books) {
+//   const { title, author, rating } = book;
+
+//   console.log(title);
+//   console.log(author);
+//   console.log(rating);
+// }
+
+// //..............
+
+// // ВАРІАНТ-2  Якщо об'єкт містить небагато властивостей, ДЕСТРУКТУРИЗАЦІЮ деструктуризацію можна виконати безпосередньо В МІСЦІ ОГОЛОШЕННЯ ЗМІННОЇ "book" :
+
+// for (const { title, author, rating } of books) {
+//   console.log(title);
+//   console.log(author);
+//   console.log(rating);
+// }
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-11   Деструктуризація.
+//                Деструктуризація параметрів :
+
