@@ -751,4 +751,100 @@
 
 
 // ПОЯСНЕННЯ-13   Деструктуризація.
-//                Глибока деструктуризація :
+//                ГЛИБОКА ДЕСТРУКТУРИЗАЦІЯ :
+
+// Найчастіше дані будуть представлені об'єктами з більш ніж одним рівнем вкладеності.
+
+// ПРИКЛАД для розуміння -  об'єкт, що описує користувача соцмережі :
+
+// const user = {
+//   name: "Jacques Gluke",
+//   tag: "jgluke",
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+
+
+// Для деструктуризації властивостей вкладених об'єктів використовуються ті самі принципи. 
+// Для початку напишемо код деструктуризації властивостей об'єкта користувача :
+
+// const user = {
+//   name: "Jacques Gluke",
+//   tag: "jgluke",
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+
+// const { name, tag, stats } = user;
+
+// console.log(name); // Jacques Gluke
+// console.log(tag); // jgluke
+// console.log(stats); // { followers: 5603, views: 4827, likes: 1308 }
+
+
+
+// Тепер додамо глибоку деструктуризацію властивостей об'єкта "stats".
+// Для цього в деструктуризації після імені властивості ставимо двокрапку ":" та починаємо деструктуризацію об'єкта для цієї властивості :
+
+// const user = {
+//   name: "Jacques Gluke",
+//   tag: "jgluke",
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+
+// const {
+//   name,
+//   tag,
+//   stats: { followers, views, likes },
+// } = user;
+
+// console.log(name); // Jacques Gluke
+// console.log(tag); // jgluke
+// console.log(followers); // 5603
+// console.log(views); // 4827
+// console.log(likes); // 1308
+
+
+
+// Під час ГЛИБОКОЇ ДЕСТРУКТУРИЗАЦІЇ також можна ЗМІНЮВАТИ імена змінних і ПРИСВОЮВАТИ ЗНАЧЕННЯ за замовчуванням :
+
+// const user = {
+//   name: "Jacques Gluke",
+//   tag: "jgluke",
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+
+// const {
+//   name,
+//   tag,
+//   stats: { followers = 0, views: userViews = 0, likes: userLikes = 0 },
+// } = user;
+
+// console.log(name); // Jacques Gluke
+// console.log(tag); // jgluke
+// console.log(followers); // 5603
+// console.log(userViews); // 4827
+// console.log(userLikes); // 1308
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-14   ДЕСТРУКТУРИЗАЦІЯ МАСИВІВ.
+//                Синтаксис :
