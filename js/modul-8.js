@@ -944,3 +944,67 @@
 
 // ПОЯСНЕННЯ-17   ДЕСТРУКТУРИЗАЦІЯ МАСИВІВ.
 //                Деструктуризація параметрів :
+
+// Під час передачі масиву у функцію, можна деструктуризувати його елементи.
+
+// // Без деструктуризації :
+
+// function printFruits(fruits) {
+//   console.log(fruits[0], fruits[1], fruits[2]);
+// }
+
+// printFruits(["apple", "banana", "orange"]); // "apple banana orange"
+
+
+// // Із деструктуризацією в місці оголошення параметрів :
+
+// function printFruits([firstFruit, secondFruit, thirdFruit]) {
+//   console.log(firstFruit, secondFruit, thirdFruit);
+// }
+
+// printFruits(["apple", "banana", "orange"]); // "apple banana orange"
+
+
+// // В цьому конкретному прикладі дійсно немає великого ефекту. 
+
+// // Коли деструктуризація параметрів ДІЙСНО корисна?
+
+// // 1. Коли масив великий, а потрібні окремі елементи багато разів:
+
+// // Без деструктуризації (багато повторів "fruits[x]").
+
+// // З деструктуризацією — код чистіший і коротший :
+
+// function processUser([id, name, email, age, city, country]) {
+//   fetch(`/api/${id}`);
+//   logToFile(name, email);
+//   sendEmail(email, age);
+//   validateAddress(city, country);
+// }
+
+
+// // 2. Коли у функції є значення за замовчуванням :
+
+// function drawChart([width, height, color = "blue"]) {
+//   console.log(width, height, color);
+// }
+
+// drawChart([400, 300]);    // 400 300 blue
+// drawChart([400, 300, "red"]); // 400 300 red
+
+
+// // 3. Коли потрібні лише перші кілька елементів (пропускаючи решту) :
+
+// function logFirstTwo([first, second]) {
+//   console.log(first, second);
+//   // третій і всі наступні ігноруються
+// }
+
+
+// .............................
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-18   ДЕСТРУКТУРИЗАЦІЯ ОБ'ЄКТІВ і МАСИВІВ.
+//                Переваги деструктуризації :
