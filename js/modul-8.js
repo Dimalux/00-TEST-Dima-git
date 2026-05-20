@@ -59,21 +59,22 @@
 
 // ПРИКЛАД-2 для розуміння :
 
-// // html
-// <div id="parent">
-//   Parent
-//   <div id="child">
-//     Child
-//     <div id="descendant">Descendant</div>
-//   </div>
-// </div>
+// // <div id="parent">
+// //   Parent
+// //   <div id="child">
+// //     Child
+// //     <div id="descendant">Descendant</div>
+// //   </div>
+// // </div>
 
+// const parent = document.querySelector("#parent");
+// const child = document.querySelector("#child");
+// const descendant = document.querySelector("#descendant");
 
-// // javascript
 // parent.addEventListener("click", (event) => {
 //   console.log("Parent - currentTarget:", event.currentTarget.id);
 //   console.log("Parent - target:", event.target.id);
-// });
+// }); 
 
 // child.addEventListener("click", (event) => {
 //   console.log("Child - currentTarget:", event.currentTarget.id);
@@ -1003,7 +1004,7 @@
 
 // .............................
 // .............................
-// .............................
+
 
 
 // ПОЯСНЕННЯ-18   ДЕСТРУКТУРИЗАЦІЯ ОБ'ЄКТІВ і МАСИВІВ.
@@ -1016,3 +1017,17 @@
 // 3)  Параметри функцій: При передачі об'єктів у функції, можна деструктуризувати об'єкти, щоб отримати доступ до потрібних даних. Це дозволяє явно вказати, які поля об'єкта використовуються у функції;
 
 // 4)  Робота з функціями, що повертають об'єкти: Якщо функція повертає об'єкт, можна відразу деструктуризувати цей об'єкт, щоб витягти з нього значення.
+
+
+
+// .............................
+// .............................
+
+
+// УРОК-1  M-08-1.  Урок Модуль 8. Події та бібліотеки :
+
+// Варіант-3  (Урок-частина 1   Модуль 8. Події та бібліотеки  1:27:00) :
+
+// ПОЯСНЕННЯ-34    Задача-1 (Урок-частина 1   Модуль 6. ООП. Класи  2:22:00) : 
+
+// (дивись рядок 60).
