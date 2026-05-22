@@ -1160,9 +1160,9 @@
 // console.log(city);  //  помилка    ReferenceError
 
 // -  Деструктуризація: { city: userCity }
-// -  Це перейменування — значення user.city потрапляє у змінну userCity
-// -  Змінна city НЕ створюється
-// -  Потім виклик console.log(city) — змінна city не існує → ReferenceError
+// -  Це перейменування — значення "user.city" потрапляє у змінну "userCity".
+// -  Змінна "city" НЕ створюється, а створюється тільки змінна "name", "age", "userCity" (зі значенням з властивості city).
+// -  Потім виклик console.log(city) — змінна "city" не існує → ReferenceError.
 
 
 // !!!  ТОБТО :
