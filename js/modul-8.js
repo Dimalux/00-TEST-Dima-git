@@ -1355,12 +1355,12 @@
 // 1)  Що буде виведено у консоль ? 
 
 // function foo({ username })  {
-// console.log(username);       //      TypeError  
+// console.log(username);       //      TypeError  - КОД ЛАМАЄТЬСЯ
 // }  
 
 // foo()
 
-
+// .......
 
 // 2)  Що буде виведено у консоль ? 
 
@@ -1370,24 +1370,33 @@
 
 // foo()
 
-
-
+// .......
 
 // 3) ПОЯСНЕННЯ     замість "{ username }" напишемо "params" :
 
-function foo(params)  {
-console.log(params);       //    undefined  "undefined"
-}  
+// function foo(params)  {
+// console.log(params);       //    undefined  
+// }  
 
-foo()
-
-
+// foo()
 
 
+// .......
+
+// що буде, якщо напишемо. Чи можна з  витянути якусь властивість, наприклад, "name" - НІ !!! : 
+
+// console.log(undefined.name);   //   TypeError  - КОД ЛАМАЄТЬСЯ
+
+// "undefined.name" - таким чином ми звертаємось до об'єктів. Деструкторізація - це якраз витягування з об'єкту властивості :
+
+// // undefined    const username = undefined.username
+// function foo({ username }) {
+//     console.log(username);       //  TypeError  - КОД ЛАМАЄТЬСЯ, тобто НЕможливо з undefined витягнути якись параметр !!!
+// }
+
+// foo()
 
 
 
 
-
-
-// ( 01:06:30) :
+// ( 01:12:30) :
