@@ -1280,5 +1280,71 @@
 
 
 
+// .............................
+// .............................
 
-// ( 00:57:10) :
+
+// УРОК-2 Mодуль-8. Події та бібліотеки (00:57:10) :
+
+// ПОЯСНЕННЯ-25 :   ДЕСТРУКТУРИЗАЦІЯ  ПАРАМЕТРІВ  (дивись рядок 643) :
+
+
+// Завдання: вивести текст "Hello my name is , I know html - , css - and js -"
+
+// const user = {
+//     name: "Petya",
+//     skills: {
+//     html: true,
+//     css: true,
+//     js: false
+//     }
+// }
+
+
+// //  ВАРІАНТ-1  (без ДЕСТРУКТУРИЗАЦІЇ) :
+
+// function foo(obj) {
+// // const {name, skills, html, css, js} = obj;
+// // console.log(name, skills, html, css, js);
+
+// console.log(`Hello my name is ${obj.name}, I know html - ${obj.skills.html}, css - ${obj.skills.css} and js - ${obj.skills.js}`);     //   Hello my name is Petya, I know html - true, css - true and js - false
+// }
+
+// foo(user)
+
+
+// ...........
+
+
+//  ВАРІАНТ-2  (з ДЕСТРУКТУРИЗАЦІЄЮ в тілі функції) :
+
+// function foo(obj) {
+// const {name, skills: {html, css, js}} = obj;
+// console.log(name, html, css, js);
+
+// console.log(`Hello my name is ${name}, I know html - ${html}, css - ${css} and js - ${js}`);     //   Hello my name is Petya, I know html - true, css - true and js - false
+// }
+
+// foo(user)
+
+
+// ...........
+
+
+//  ВАРІАНТ-3  (з ДЕСТРУКТУРИЗАЦІЄЮ параметрів функції) :
+
+// function foo({name, skills: {html, css, js}}) {
+// // const {name, skills: {html, css, js}} = obj;
+// console.log(name, html, css, js);
+
+// console.log(`Hello my name is ${name}, I know html - ${html}, css - ${css} and js - ${js}`);     //   Hello my name is Petya, I know html - true, css - true and js - false
+// }
+
+// foo(user)
+
+
+
+
+
+
+// ( 01:06:30) :
