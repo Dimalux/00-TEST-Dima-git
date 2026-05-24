@@ -1343,6 +1343,49 @@
 // foo(user)
 
 
+// .............................
+// .............................
+
+
+// УРОК-2 Mодуль-8. Події та бібліотеки ( 01:06:30) :
+
+// ПОЯСНЕННЯ-26 :   ДЕСТРУКТУРИЗАЦІЯ  ПАРАМЕТРІВ p "undefined" :
+
+
+// 1)  Що буде виведено у консоль ? 
+
+// function foo({ username })  {
+// console.log(username);       //      TypeError  
+// }  
+
+// foo()
+
+
+
+// 2)  Що буде виведено у консоль ? 
+
+// function foo({ username } = {})  {
+// console.log(username);       //      undefined
+// }  
+
+// foo()
+
+
+
+
+// 3) ПОЯСНЕННЯ     замість "{ username }" напишемо "params" :
+
+function foo(params)  {
+console.log(params);       //    undefined  "undefined"
+}  
+
+foo()
+
+
+
+
+
+
 
 
 
