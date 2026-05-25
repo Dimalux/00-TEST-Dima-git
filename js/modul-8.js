@@ -1383,13 +1383,15 @@
 
 // .......
 
-// що буде, якщо напишемо. Чи можна з  витянути якусь властивість, наприклад, "name" - НІ !!! : 
+// Що буде, якщо напишемо "undefined.name" ?
+// Чи можна з "undefined" витянути якусь властивість, наприклад, "name" - НІ !!! : 
 
 // console.log(undefined.name);   //   TypeError  - КОД ЛАМАЄТЬСЯ
 
 // "undefined.name" - таким чином ми звертаємось до об'єктів. Деструкторізація - це якраз витягування з об'єкту властивості :
 
 // // undefined    const username = undefined.username
+
 // function foo({ username }) {
 //     console.log(username);       //  TypeError  - КОД ЛАМАЄТЬСЯ, тобто НЕможливо з undefined витягнути якись параметр !!!
 // }
@@ -1397,6 +1399,32 @@
 // foo()
 
 
+// .......
+
+// // ( 01:12:25) :
+
+// function foo(obj = {}) {
+//     console.log(obj);       //    {}
+// }
+
+// foo()     //  ми передаємо в функцію як аргумент "undefined"
+
+
+
+// .......
+
+// // ( 01:13:50) :
+
+// // const username = {}.username      //    undefined
+
+// function foo({username} = {}) {
+//     console.log(username);         //    undefined
+// }
+
+// foo()
+
+
+// !!!  тобто значення по замовчуванню "= {}" врятувало нас від TypeError, коли КОД ЛАМАЄТЬСЯ  !!!
 
 
 // ( 01:12:30) :
