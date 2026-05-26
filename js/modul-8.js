@@ -1437,10 +1437,77 @@
 
 
 
+// const users = [{ name: "Kate" }, { name: "Alice" }, { name: "Petya" }];
+
+// Без деструктуризації :
+
+// const names = [];
+
+// for(const user of users) {
+// names.push(user.name);
+// }
+
+// console.log(names);      //   ['Kate', 'Alice', 'Petya']
+
+
+// .........
+
+
+// З деструктуризацією :
+// ВАРІАНТ-1 :
+
+// const users = [{ name: "Kate" }, { name: "Alice" }, { name: "Petya" }];
+
+// const names = [];
+
+// for(const user of users) {
+// const {name} = user;
+// names.push(name);
+// }
+
+// console.log(names);     //   ['Kate', 'Alice', 'Petya']
+
+
+// .........
+
+// З деструктуризацією :
+// ВАРІАНТ-2 :
+
+// const users = [{ name: "Kate" }, { name: "Alice" }, { name: "Petya" }];
+
+// const names = [];
+
+// for(const {name} of users) {
+// names.push(name);
+// }
+
+// console.log(names);     //   ['Kate', 'Alice', 'Petya']
+
+
+// .........
+
+// БЕЗ деструктуризації (метод map):
+// ВАРІАНТ-3 :
+
+// const users = [{ name: "Kate" }, { name: "Alice" }, { name: "Petya" }];
+
+// const names = users.map(item => item.name);
+
+// console.log(names);     //   ['Kate', 'Alice', 'Petya']
+
+
+// .........
+
+// З деструктуризацією (метод map):
+// ВАРІАНТ-4 :
+
+// const users = [{ name: "Kate" }, { name: "Alice" }, { name: "Petya" }];
+
+// const names = users.map(({name}) => name);
+
+// console.log(names);     //   ['Kate', 'Alice', 'Petya']
 
 
 
+// ( 01:38:00) :
 
-
-
-// ( 01:28:00) :
