@@ -1601,12 +1601,34 @@
 
 // УРОК-2 Mодуль-8. Події та бібліотеки ( 01:42:40) :
 
-// ЗАДАЧА-8-3 :   Допиши  :
+// ЗАДАЧА-8-3 :   Необхідно зробити рефакторинг функції `calculateHousePerimeter`, так щоб вона приймала об'єкт з параметрами будинку, включаючи довжини сторін будинку. Функція повинна розрахувати та повернути периметр будинку :
+ 
+// function calculateHousePerimeter(a, b, c, d) {
+//    const perimeter = a + b + c + d;
+//    return perimeter;
+// }
+
+// const perimeter = calculateHousePerimeter(10, 15, 15, 10);   //  ТРЕБА передавати аргументи не переліком а у вигляді ОБ'ЄКТА, для того щоб в параметром функції уникнути вимушенної послідовності прийняття аргументів!!!
 
 
+// РІШЕННЯ :
+
+// function calculateHousePerimeter({a, b, c, d}) {
+//    const perimeter = a + b + c + d;
+//    return perimeter;
+// }
 
 
+// const obj = {
+// a: 10,
+// b: 15,
+// c: 15, 
+// d: 10
+// }
+
+// const perimeter = calculateHousePerimeter(obj);  
+
+// console.log(`Периметр будинку: ${perimeter}`);
 
 
-// ( 01:38:00) :
 
