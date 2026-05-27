@@ -1517,20 +1517,20 @@
 
 // ЗАДАЧА-8-1 :   Деструктуризуй об'єкт таким чином щоб отримати значення name, surname, username :
 
-const user = {
-    id: 1,
-    username: "harry_potter",
-    profile: {
-        name: "Harry",
-        surname: "Potter",
-        age: 25,
-    },
-};
+// const user = {
+//     id: 1,
+//     username: "harry_potter",
+//     profile: {
+//         name: "Harry",
+//         surname: "Potter",
+//         age: 25,
+//     },
+// };
 
 
-const {username, profile: {name, surname}} =  user;
+// const {username, profile: {name, surname}} =  user;
 
-console.log(name, surname, username);     //   Harry   Potter   harry_potter
+// console.log(name, surname, username);     //   Harry   Potter   harry_potter
 
 
 
@@ -1539,9 +1539,69 @@ console.log(name, surname, username);     //   Harry   Potter   harry_potter
 // .............................
 
 
-// УРОК-2 Mодуль-8. Події та бібліотеки ( 01:38:00) :
+// УРОК-2 Mодуль-8. Події та бібліотеки ( 01:40:00) :
 
-// ЗАДАЧА-8-2 :   Деструктуризуй об'єкт ` :
+// ЗАДАЧА-8-2 :   Допиши функцию таким чином щоб кожна властивість об'єкта "product" була незалежним параметром :
+
+// const product = {
+//     name: "Smart TV",
+//     price: 25000,
+//     category: "Electronics",
+//     details: {
+//         brand: "Samsung",
+//         color: "Black",
+//         weight: "15.5",
+//     },
+// };
+
+// ВАРІАНТ-1 :
+// function getProductInfo(product) {
+
+// const {name, price, category, details: {brand, color, weight}} = product;
+
+// console.log(`Назва товару: ${name}`);
+// console.log(`Ціна: ${price} грн`);
+// console.log(`Категорія: ${category}`);
+// console.log("Деталі:");
+// console.log(`- Бренд: ${brand}`);
+// console.log(`- Колір: ${color}`);
+// console.log(`- Вага: ${weight} кг`);
+// }
+
+// getProductInfo(product);
+
+// .......
+
+
+// // ВАРІАНТ-2 :
+// function getProductInfo({
+//     name, 
+//     price, 
+//     category, 
+//     details: {
+//         brand, color, weight
+//     }
+// }) {
+// console.log(`Назва товару: ${name}`);
+// console.log(`Ціна: ${price} грн`);
+// console.log(`Категорія: ${category}`);
+// console.log("Деталі:");
+// console.log(`- Бренд: ${brand}`);
+// console.log(`- Колір: ${color}`);
+// console.log(`- Вага: ${weight} кг`);
+// }
+
+// getProductInfo(product);
+
+
+
+// .............................
+// .............................
+
+
+// УРОК-2 Mодуль-8. Події та бібліотеки ( 01:42:40) :
+
+// ЗАДАЧА-8-3 :   Допиши  :
 
 
 
