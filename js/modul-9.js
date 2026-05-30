@@ -115,5 +115,32 @@
 // ПОЯСНЕННЯ-3   Формат JSON.
 //               Перетворення функцій :
 
+// 1) Не всі JavaScript об'єкти можуть бути перетворені один в один у JSON. Наприклад, якщо в об'єкта є МЕТОДИ, то при перетворенні вони будуть проігноровані та НЕ ПОТРАПЛЯТЬ у JSON :
+
+// const dog = {
+//   name: "Mango",
+//   age: 3,
+//   isGoodBoy: true,
+//   bark() {
+//     console.log("Woof!");
+//   },
+// };
+
+// const json1 = JSON.stringify(dog);
+// console.log(json1);                    // '{"name":"Mango","age":3,"isGoodBoy":true}'
+
+// ..........
+
+// 2) Також при спробі перетворити ФУНКЦІЮ у JSON результатом буде "undefined" :
+
+// const json2 = JSON.stringify(() => console.log("Well, this is awkward")); 
+// console.log(json2);    // undefined
 
 
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-4   Формат JSON.
+//               Парсинг із json :
