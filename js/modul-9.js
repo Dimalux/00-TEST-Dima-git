@@ -324,15 +324,15 @@
 
 
 // ПОЯСНЕННЯ-7   Вебсховище.
-//               Додавання даних :
+//               ДОДАВАННЯ даних (localStorage.setItem()) :
 
 // Додамо пару ключ-значення до локального сховища за допомогою методу setItem(key, value), доступного в об`єкті localStorage:
 
-localStorage.setItem("theme", "light");
+// localStorage.setItem("theme", "light");
 
 // Це встановить новий запис у сховищі з ключем "theme" і значенням "light". Якщо викликати об`єкт localStorage зараз, то побачимо збережені дані :
 
-console.log(localStorage);   //  Storage {theme: 'light', length: 1}
+// console.log(localStorage);   //  Storage {theme: 'light', length: 1}
 
 // Також побачимо у браузері в розділі «Local Storage» в інструментах розробника в таблиці "Ключ"  "Значення" :
 
@@ -340,5 +340,22 @@ console.log(localStorage);   //  Storage {theme: 'light', length: 1}
 
 
 
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-8   Вебсховище.
+//               ОТРИМАННЯ даних (localStorage.getItem()) :
+
+localStorage.setItem("theme2", "light2");
+const savedItem2 = localStorage.getItem("theme2"); 
+console.log(savedItem2);              // light2
+
+// Якщо у сховищі відсутній запис з таким ключем, метод повертає null :
+
+const savedItem3 = localStorage.getItem("theme3"); 
+console.log(savedItem3);              // null
+
+// ..............
 
 
