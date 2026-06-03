@@ -497,3 +497,24 @@
 // ПОЯСНЕННЯ-12   Вебсховище.
 //                Кейс: Форма з повідомленням :
 
+
+// <form class="feedback-form-2">
+//   <textarea name="message"></textarea>
+//   <button type="submit">Send feedback</button>
+// </form>
+
+
+const form = document.querySelector(".feedback-form-2");
+
+form.addEventListener("submit", event => {
+    event.preventDefault();
+    console.log(event.target.elements.message.value); 
+})
+
+
+// ПРОБЛЕМА :
+// Якщо користувач ввів повідомлення в текстове поле і перезавантажив сторінку, не надіславши форму, під час перезавантаження сторінки введене повідомлення пропадає.
+
+// РІШЕННЯ :
+// Зробимо так, щоб при перезавантаженні сторінки зберігалося введене повідомлення.
+// Для цього використовуємо локальне сховище, щоб зберегти поточне значення текстового поля під час введення.
