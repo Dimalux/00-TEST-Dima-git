@@ -339,23 +339,64 @@
 // theme	light
 
 
-
 // .............................
 // .............................
 
 
 // ПОЯСНЕННЯ-8   Вебсховище.
+//               ДОДАВАННЯ СКЛАДНИХ даних (localStorage.setItem("******", JSON.stringify(******));) :
+
+// У вебсховище не записують методи об'єктів або функції, тільки дані, які підтримує JSON формат.
+// Технічно у вебсховище можна записати тільки рядки. Але це не проблема, якщо використовувати методи класу JSON для перетворення складних типів.
+// Якщо необхідно зберегти щось, окрім рядка, наприклад, МАСИВ або ОБ'ЄКТ, необхідно перетворити їх у рядок методом JSON.stringify() :
+
+
+// const settings = {
+//   theme: "dark",
+//   isAuthenticated: true,
+//   options: [1, 2, 3],
+// };
+
+// localStorage.setItem("settings", JSON.stringify(settings));
+
+
+// Видалення даних :
+// localStorage.removeItem("settings");
+// localStorage.clear();
+
+
+
+
+
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-9   Вебсховище.
 //               ОТРИМАННЯ даних (localStorage.getItem()) :
 
-localStorage.setItem("theme2", "light2");
-const savedItem2 = localStorage.getItem("theme2"); 
-console.log(savedItem2);              // light2
+// localStorage.setItem("theme2", "light2");
+// const savedItem2 = localStorage.getItem("theme2"); 
+// console.log(savedItem2);              // light2
 
-// Якщо у сховищі відсутній запис з таким ключем, метод повертає null :
+// // Якщо у сховищі відсутній запис з таким ключем, метод повертає null :
 
-const savedItem3 = localStorage.getItem("theme3"); 
-console.log(savedItem3);              // null
+// const savedItem3 = localStorage.getItem("theme3"); 
+// console.log(savedItem3);              // null
 
 // ..............
+
+
+
+
+
+// localStorage.removeItem("topic");
+// console.log(localStorage.getItem("topic")); // null
+
+// localStorage.removeItem("theme");
+// console.log(localStorage.getItem("theme")); // null
 
 
