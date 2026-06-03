@@ -445,4 +445,55 @@
 
 
 // ПОЯСНЕННЯ-11   Вебсховище.
-//                ВИДСХОВИЩЕ  СЕСІЇ :
+//                ВИДСХОВИЩЕ  СЕСІЇ "sessionStorage" :
+
+// Сховище сесії зберігає дані лише доти, поки відкрита вкладка браузера.
+// Це означає, що кожного разу, коли відкривається нова вкладка або нове вікно браузера, створюється нове сховище сесії. Отже, будь-які дані, які зберігаються в сховищі сесії, автоматично видаляються, коли користувач закриває цю вкладку/вікно.
+
+// Набір методів та їхній функціонал ідентичні методам роботи з локальним сховищем.
+// Єдиний виняток — звертаємося до них через об'єкт "sessionStorage", а не "localStorage" :
+
+
+// console.log(window.sessionStorage); // Storage {length: 0}
+
+
+// // 1)  Методом "setItem(key, value)" можна записувати як рядки, так і складні типи даних :
+
+// sessionStorage.setItem("user-id", "123");
+// sessionStorage.setItem(
+//   "tickets",
+//   JSON.stringify({ from: "Lviv", to: "Kyiv", quantity: 2 })
+// );
+// console.log(sessionStorage);
+// // Storage {user-id: '123', tickets: '{"from":"Lviv","to":"Kyiv","quantity":2}', length: 2}
+
+// // .........
+
+// // 2)  Методом "getItem(key)" можна читати записи, використовуючи збережений ключ :
+
+// const userId = sessionStorage.getItem("user-id");
+// console.log(userId); // "123"
+
+// const tickets = JSON.parse(sessionStorage.getItem("tickets"));
+// console.log(tickets); // { from: "Lviv", to: "Kyiv", quantity: 2 }
+
+// // .........
+
+// // 3)  Видаляти елементи за ключем і очищати сховище цілком методами "removeItem(key)" і "clear()" відповідно :
+
+// sessionStorage.removeItem("tickets");
+// console.log(sessionStorage); // Storage {user-id: '123', length: 1}
+
+// sessionStorage.clear();
+// console.log(sessionStorage); // Storage {length: 0}
+
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-12   Вебсховище.
+//                Кейс: Форма з повідомленням :
+
