@@ -344,7 +344,7 @@
 
 
 // ПОЯСНЕННЯ-8   Вебсховище.
-//               ДОДАВАННЯ СКЛАДНИХ даних (localStorage.setItem("******", JSON.stringify(******));) :
+//               ДОДАВАННЯ СКЛАДНИХ даних (localStorage.setItem("******", JSON.stringify(******)) :
 
 // У вебсховище не записують методи об'єктів або функції, тільки дані, які підтримує JSON формат.
 // Технічно у вебсховище можна записати тільки рядки. Але це не проблема, якщо використовувати методи класу JSON для перетворення складних типів.
@@ -365,12 +365,6 @@
 // localStorage.clear();
 
 
-
-
-
-
-
-
 // .............................
 // .............................
 
@@ -382,13 +376,46 @@
 // const savedItem2 = localStorage.getItem("theme2"); 
 // console.log(savedItem2);              // light2
 
-// // Якщо у сховищі відсутній запис з таким ключем, метод повертає null :
+// // Якщо у сховищі відсутній запис з таким ключем, метод повертає "null" :
 
 // const savedItem3 = localStorage.getItem("theme3"); 
 // console.log(savedItem3);              // null
 
 // ..............
 
+                //  ОТРИМАННЯ СКЛАДНИХ даних  (localStorage.setItem("******", JSON.stringify(******)) :
+
+// Якщо значення є примітивним типом, немає потреби його парсити. Якщо це МАСИВ або ОБ'ЄКТ, необхідно РОЗПАРСИТИ значення методом "JSON.parse()", щоб отримати валідні дані :
+
+// const settings = {
+//   theme: "dark",
+//   isAuthenticated: true,
+//   options: [1, 2, 3],
+// };
+// localStorage.setItem("settings", JSON.stringify(settings));
+
+// const savedSettings = localStorage.getItem("settings");
+// console.log(savedSettings); // A string   -   {"theme":"dark","isAuthenticated":true,"options":[1,2,3]}
+
+// const parsedSettings = JSON.parse(savedSettings);
+// console.log(parsedSettings); // Settings object    -    {theme: 'dark', isAuthenticated: true, options: Array(3)}
+
+
+// Видалення даних :
+// localStorage.removeItem("settings");
+// localStorage.clear();
+
+
+// У змінній savedSettings буде рядок, що представляє ОБ'ЄКТ, тому ми розпарсюємо це значення, і у змінній parsedSettings отримуємо повноцінний ОБ'ЄКТ із властивостями.
+
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-10   Вебсховище.
+//                ВИДАЛЕННЯ даних (localStorage.removeItem()) :
 
 
 
