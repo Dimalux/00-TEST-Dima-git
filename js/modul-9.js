@@ -417,8 +417,7 @@
 // ПОЯСНЕННЯ-10   Вебсховище.
 //                ВИДАЛЕННЯ даних (localStorage.removeItem()) :
 
-
-
+// 1)  Метод "removeItem(key)" видаляє зі сховища існуючий запис з ключем key. В результаті своєї роботи він не повертає значення :
 
 // localStorage.removeItem("topic");
 // console.log(localStorage.getItem("topic")); // null
@@ -427,3 +426,23 @@
 // console.log(localStorage.getItem("theme")); // null
 
 
+// 2)  Щоб повністю очистити сховище, потрібно викликати метод "clear()" :
+
+// localStorage.setItem("theme-3", "light");
+// localStorage.setItem("notif-level-4", "mute");
+
+// console.log(localStorage); 
+// // Storage {notif-level: 'mute', ui-theme: 'light', length: 2}
+
+// // localStorage.clear();
+// // console.log(localStorage); // Storage {length: 0}
+
+// Операція повного очищення сховища є ризикованою. Вона може порушити записи, створені іншими розробниками проєкту. Краще видаляти лише ті записи, які дійсно не потрібні, не покладаючись на повну очистку даних сховища.
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-11   Вебсховище.
+//                ВИДСХОВИЩЕ  СЕСІЇ :
