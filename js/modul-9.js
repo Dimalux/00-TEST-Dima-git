@@ -488,8 +488,6 @@
 // console.log(sessionStorage); // Storage {length: 0}
 
 
-
-
 // .............................
 // .............................
 
@@ -504,12 +502,12 @@
 // </form>
 
 
-const form = document.querySelector(".feedback-form-2");
+// const form = document.querySelector(".feedback-form-2");
 
-form.addEventListener("submit", event => {
-    event.preventDefault();
-    console.log(event.target.elements.message.value); 
-})
+// form.addEventListener("submit", event => {
+//     event.preventDefault();
+//     console.log(event.target.elements.message.value); 
+// })
 
 
 // ПРОБЛЕМА :
@@ -517,4 +515,66 @@ form.addEventListener("submit", event => {
 
 // РІШЕННЯ :
 // Зробимо так, щоб при перезавантаженні сторінки зберігалося введене повідомлення.
-// Для цього використовуємо локальне сховище, щоб зберегти поточне значення текстового поля під час введення.
+
+// 1)  Для цього використовуємо локальне сховище, щоб зберегти поточне значення текстового поля під час введення. Щоразу, коли змінюється значення поля, тобто відбувається подія "input", ми : 
+// -  використовуємо делегування подій;
+// -  ловимо подію на формі;
+// -  використовуємо властивість target для запису поточного значення поля в локальне сховище.
+
+// const form = document.querySelector(".feedback-form-2");
+// const localStorageKey = "messageForm";
+
+// form.addEventListener("input", event => {
+//   localStorage.setItem(localStorageKey, event.target.value);   //    зберігаэмо введене повідомлення
+// });
+
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+// 	console.log(event.target.elements.message.value);
+//   form.reset();
+// });
+
+
+// ...........
+
+
+// 2)  Під час сабміту форми будемо очищати збережене значення методом "removeItem" :
+
+// const form = document.querySelector(".feedback-form");
+// const localStorageKey = "messageForm";
+
+// form.addEventListener("input", (event) => {
+//   localStorage.setItem(localStorageKey, event.target.value);
+// });
+
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+// 	console.log(event.target.elements.message.value);
+//   localStorage.removeItem(localStorageKey);      //   очищаэмо збережене значення в localStorage
+//   form.reset();
+// });
+
+
+// ...........
+
+
+// 2)  Останнім кроком необхідно додати код читання збереженого повідомлення з локального сховища і встановлення його початковим значенням для текстового поля під час завантаження сторінки : 
+
+// const form = document.querySelector(".feedback-form-2");
+// const textarea = form.elements.message;        //  отримаємо збережене повідомлення з локального сховища
+// const localStorageKey = "messageForm";
+
+// textarea.value = localStorage.getItem(localStorageKey) ?? "";    //  вставляємо збережене повідомлення з локального сховища початковим значенням для текстового поля під час завантаження сторінки
+
+// form.addEventListener("input", (event) => {
+//   localStorage.setItem(localStorageKey, event.target.value);
+// });
+
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+// 	console.log(event.target.elements.message.value);
+//   localStorage.removeItem(localStorageKey);
+//   form.reset();
+// });
+
+
