@@ -560,7 +560,7 @@
 // form.addEventListener("submit", (event) => {
 //   event.preventDefault();
 // 	console.log(event.target.elements.message.value);
-//   localStorage.removeItem(localStorageKey);      //   очищаэмо збережене значення в localStorage
+//   localStorage.removeItem(localStorageKey);      //   очищаємо збережене значення в localStorage
 //   form.reset();
 // });
 
@@ -571,7 +571,7 @@
 // 2)  Останнім кроком необхідно додати код читання збереженого повідомлення з локального сховища і встановлення його початковим значенням для текстового поля під час завантаження сторінки : 
 
 // const form = document.querySelector(".feedback-form-2");
-// const textarea = form.elements.message;        //  отримаємо збережене повідомлення з локального сховища
+// const textarea = form.elements.message;        //  отримаємо збережене повідомлення з локального сховища. Властивість elements існує тільки для елемента <form>. form.elements повертає колекцію всіх полів форми: input, textarea, button, select тощо. Ця властивість недоступна для звичайних div, section або інших елементів.
 // const localStorageKey = "messageForm";
 
 // textarea.value = localStorage.getItem(localStorageKey) ?? "";    //  вставляємо збережене повідомлення з локального сховища початковим значенням для текстового поля під час завантаження сторінки
@@ -588,3 +588,11 @@
 // });
 
 
+
+
+// .............................
+// .............................
+
+
+// ПОЯСНЕННЯ-13   Інструменти веброзробки.
+//                Збірка проєкту з Vite :
