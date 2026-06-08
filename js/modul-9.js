@@ -615,7 +615,10 @@
 
 // УРОК-1 Mодуль-9. Модульність коду і bundler Vite (00:25:50) :
 
-// ПОЯСНЕННЯ-13   Інструменти веброзробки.
-//                Збірка проєкту з Vite :
+// ПОЯСНЕННЯ-14   LocalStorage :
 
+const LS_KEY = "Array of names";
+const names = ["Alice", "Kate", "Emma"];
 
+// 1) ДОДАВАННЯ в  localStorage складних типів даних :
+localStorage.setItem(LS_KEY, JSON.stringify(names));
