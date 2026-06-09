@@ -619,6 +619,43 @@
 
 const LS_KEY = "Array of names";
 const names = ["Alice", "Kate", "Emma"];
+// const names2 = ["Alice", "Kate", "Emma", "Dima"];
 
 // 1) ДОДАВАННЯ в  localStorage складних типів даних :
+
+// ВАРІАНТ-1 :
 localStorage.setItem(LS_KEY, JSON.stringify(names));
+
+// ВАРІАНТ-2 :
+localStorage.setItem("Array of names", JSON.stringify(names));
+
+// РЕЗУЛЬТАТ :
+// Другий запис ПЕРЕЗАПИШЕ перший, тому що ключі ідентичні ("Array of names"). У локальному сховищі залишиться лише один запис з цим ключем. Значення буде однаковим в обох випадках (серіалізований масив).
+// СЕРІАЛІЗОВАНИЙ МАСИВ — це масив, перетворений на рядок (string), щоб його можна було зберегти в localStorage.
+
+//........
+
+// Як працює СЕРІАЛІЗАЦІЯ:
+
+const names = ["Alice", "Kate", "Emma"];
+
+// Серіалізація (масив → рядок)
+const serialized = JSON.stringify(names);
+console.log(serialized); // '["Alice","Kate","Emma"]'
+
+// Збереження
+localStorage.setItem("names", serialized);
+
+//........
+
+// ДЕСЕРІАЛІЗАЦІЯ (зворотний процес):
+
+// Отримуємо рядок з localStorage
+const saved = localStorage.getItem("names"); // '["Alice","Kate","Emma"]'
+
+// Десеріалізація (рядок → масив)
+const parsedArray = JSON.parse(saved);
+console.log(parsedArray); // ["Alice", "Kate", "Emma"] - справжній масив!
+console.log(parsedArray[0]); // "Alice" - можна працювати як з масивом
+
+//........
