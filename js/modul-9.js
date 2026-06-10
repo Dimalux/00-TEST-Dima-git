@@ -636,7 +636,7 @@ localStorage.setItem("Array of names", JSON.stringify(names));
 
 //........
 
-// Як працює СЕРІАЛІЗАЦІЯ:
+// Як працює СЕРІАЛІЗАЦІЯ "JSON.stringify()" :
 
 // const names = ["Alice", "Kate", "Emma"];
 
@@ -672,8 +672,17 @@ const user1 = localStorage.getItem(LS_KEY);
 // ВАРІАНТ-2 :
 const user2 = localStorage.getItem("Array of names");
 
-console.log(user1);
+console.log(user1);   //  отримали РЯДОК (якій має літерал масиву), а НЕ МАСИВ - ["Alice","Kate","Emma"]
+console.log(typeof user1);     //    string
+
 console.log(user2);
+
+// Для ОТРИМАННЯ масиву робимо ДЕСЕРІАЛІЗАЦІЮ  "JSON.parse()" (зворотний процес - перетворюємо рядок (string) на масив) :
+
+const user3 = JSON.parse(user1);  
+console.log(user3);                 //  (3) ['Alice', 'Kate', 'Emma']
+console.log(typeof user3);          //   object            
+
 
 //........
 
