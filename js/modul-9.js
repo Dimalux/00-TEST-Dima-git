@@ -637,25 +637,25 @@ localStorage.setItem("Array of names", JSON.stringify(names));
 
 // Як працює СЕРІАЛІЗАЦІЯ:
 
-const names = ["Alice", "Kate", "Emma"];
+// const names = ["Alice", "Kate", "Emma"];
 
-// Серіалізація (масив → рядок)
-const serialized = JSON.stringify(names);
-console.log(serialized); // '["Alice","Kate","Emma"]'
+// // Серіалізація (масив → рядок)
+// const serialized = JSON.stringify(names);
+// console.log(serialized); // '["Alice","Kate","Emma"]'
 
-// Збереження
-localStorage.setItem("names", serialized);
+// // Збереження
+// localStorage.setItem("names", serialized);
 
 //........
 
 // ДЕСЕРІАЛІЗАЦІЯ (зворотний процес):
 
-// Отримуємо рядок з localStorage
-const saved = localStorage.getItem("names"); // '["Alice","Kate","Emma"]'
+// // Отримуємо рядок з localStorage
+// const saved = localStorage.getItem("names"); // '["Alice","Kate","Emma"]'
 
-// Десеріалізація (рядок → масив)
-const parsedArray = JSON.parse(saved);
-console.log(parsedArray); // ["Alice", "Kate", "Emma"] - справжній масив!
-console.log(parsedArray[0]); // "Alice" - можна працювати як з масивом
+// // Десеріалізація (рядок → масив)
+// const parsedArray = JSON.parse(saved);
+// console.log(parsedArray); // ["Alice", "Kate", "Emma"] - справжній масив!
+// console.log(parsedArray[0]); // "Alice" - можна працювати як з масивом
 
 //........
