@@ -617,17 +617,18 @@
 
 // ПОЯСНЕННЯ-14   LocalStorage :
 
-const LS_KEY = "Array of names";
-const names = ["Alice", "Kate", "Emma"];
-// const names2 = ["Alice", "Kate", "Emma", "Dima"];
 
-// 1) ДОДАВАННЯ в  localStorage складних типів даних (СЕРІАЛІЗАЦІЯ) :
+// const LS_KEY = "Array of names";
+// const names = ["Alice", "Kate", "Emma"];
+// // const names2 = ["Alice", "Kate", "Emma", "Dima"];
 
-// ВАРІАНТ-1 :
-localStorage.setItem(LS_KEY, JSON.stringify(names));
+// // 1) ДОДАВАННЯ в  localStorage складних типів даних (СЕРІАЛІЗАЦІЯ) :
 
-// ВАРІАНТ-2 :
-localStorage.setItem("Array of names", JSON.stringify(names));
+// // ВАРІАНТ-1 :
+// localStorage.setItem(LS_KEY, JSON.stringify(names));
+
+// // ВАРІАНТ-2 :
+// localStorage.setItem("Array of names", JSON.stringify(names));
 
 // РЕЗУЛЬТАТ :
 // Другий запис ПЕРЕЗАПИШЕ перший, тому що ключі ідентичні ("Array of names"). У локальному сховищі залишиться лише один запис з цим ключем. Значення буде однаковим в обох випадках (СЕРІАЛІЗОВАНИЙ МАСИВ).
@@ -663,26 +664,76 @@ localStorage.setItem("Array of names", JSON.stringify(names));
 
 
 // 2) ОТРИМАННЯ даних з localStorage :
-// const LS_KEY = "Array of names";
-// const names = ["Alice", "Kate", "Emma"];
+// // const LS_KEY = "Array of names";
+// // const names = ["Alice", "Kate", "Emma"];
 
-// ВАРІАНТ-1 :
-const user1 = localStorage.getItem(LS_KEY);
+// // ВАРІАНТ-1 :
+// const user1 = localStorage.getItem(LS_KEY);
 
-// ВАРІАНТ-2 :
-const user2 = localStorage.getItem("Array of names");
+// // ВАРІАНТ-2 :
+// const user2 = localStorage.getItem("Array of names");
 
-console.log(user1);   //  отримали РЯДОК (якій має літерал масиву), а НЕ МАСИВ - ["Alice","Kate","Emma"]
-console.log(typeof user1);     //    string
+// console.log(user1);   //  отримали РЯДОК (якій має літерал масиву), а НЕ МАСИВ - ["Alice","Kate","Emma"]
+// console.log(typeof user1);     //    string
 
-console.log(user2);
+// console.log(user2);
 
-// Для ОТРИМАННЯ масиву робимо ДЕСЕРІАЛІЗАЦІЮ  "JSON.parse()" (зворотний процес - перетворюємо рядок (string) на масив) :
+// // Для ОТРИМАННЯ масиву робимо ДЕСЕРІАЛІЗАЦІЮ  "JSON.parse()" (зворотний процес - перетворюємо рядок (string) на масив) :
+// // (дивись рядок 156) 
 
-const user3 = JSON.parse(user1);  
-console.log(user3);                 //  (3) ['Alice', 'Kate', 'Emma']
-console.log(typeof user3);          //   object            
+// const user3 = JSON.parse(user1);  
+// console.log(user3);                 //  (3) ['Alice', 'Kate', 'Emma']
+// console.log(typeof user3);          //   object            
+// // або :
+// console.log(Array.isArray(user3));   //   true
 
 
-//........
+// //........
 
+
+// // 3) ВИДАЛЕННЯ даних з localStorage "localStorage.removeItem()"  (Урок-частина 1   0:39:40) :
+// // const LS_KEY = "Array of names";
+// // const names = ["Alice", "Kate", "Emma"];
+
+// // -  Для видалення запису ПІД ПЕВНИМ КЛЮЧЕМ з localStorage :
+// localStorage.removeItem(LS_KEY);
+
+
+// // - Для видалення ВСІХ записів з localStorage :
+
+// localStorage.removeItem(LS_KEY);
+
+
+
+// .............................
+// .............................
+
+
+// УРОК-1 Mодуль-9. Модульність коду і bundler Vite (00:41:50) :
+
+// ПОЯСНЕННЯ-15   LocalStorage НЕ МОЖЕ зберігати ФУНКЦІЮ :
+
+function foo(a, d) {
+    return a + b;
+}
+
+localStorage.setItem("foo", foo);                   //    Key: foo    Value:  function foo(a, d) { return a + b; }
+
+const value = localStorage.getItem("foo");
+console.log(typeof value);                          //   string
+console.log(value(2, 3));                           //   буде ПОМИЛКА:  TypeError: value is not a function !!!
+
+
+ 
+localStorage.setItem("foo", JSON.stringify(foo));   //    Key: foo    Value:  undefined !!!
+
+const value2 = localStorage.getItem("foo"); 
+
+// спробуємо зробити ДЕСЕРІАЛІЗАЦІЮ  "JSON.parse()" :
+
+const foo = JSON.parse(value2);    //   Не можемо розпарсити, бо це звичайний рядок !!!
+console.log(typeof value2);    
+
+// ........
+
+// (00:41:50)  створемо МЕТОД ОБ'ЄКТА : 
