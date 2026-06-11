@@ -749,7 +749,7 @@
 // ПОЯСНЕННЯ-16   Задача :
 
 
-// <form class="feedback-form">
+// <form class="feedback-form-4">
 //     <label>
 //     <b>Name</b>
 //     <input
@@ -766,5 +766,35 @@
 //     <button type="submit">Submit</button>
 // </form>
 
+//  (дивись рядок 3409 modul-7 : ПОДІЯ НА ФОРМІ) 
+// ПОДІЯ НА ФОРМІ
+// ├── event.target → це ФОРМА
+// ├── event.target.elements → це всі поля форми (колекція)
+// └── event.target.elements.name.value → значення конкретного інпута ✅
+
+const form4 = document.querySelector(".feedback-form-4");
+const nameInput = document.querySelector('input[name="name"]')
+
+console.log(form4);
+
+function saveNewText() {
+const nameForm = localStorage.getItem("name");
+    if(nameForm) {
+        nameInput.value = nameForm;
+    }
+}
+
+
+form4.addEventListener("submit", handler4);
+
+function handler4(event) {
+event.preventDefault();
+console.log(event.target.elements.name.value);
+console.log(event.target.elements.message.value);
+
+localStorage.setItem("name", event.target.elements.name.value);
+}
+
+saveNewText();
 
 
