@@ -713,27 +713,58 @@
 
 // ПОЯСНЕННЯ-15   LocalStorage НЕ МОЖЕ зберігати ФУНКЦІЮ :
 
-function foo(a, d) {
-    return a + b;
-}
+// function foo(a, d) {
+//     return a + b;
+// }
 
-localStorage.setItem("foo", foo);                   //    Key: foo    Value:  function foo(a, d) { return a + b; }
+// localStorage.setItem("foo", foo);                   //    Key: foo    Value:  function foo(a, d) { return a + b; }
 
-const value = localStorage.getItem("foo");
-console.log(typeof value);                          //   string
-console.log(value(2, 3));                           //   буде ПОМИЛКА:  TypeError: value is not a function !!!
+// const value = localStorage.getItem("foo");
+// console.log(typeof value);                          //   string
+// console.log(value(2, 3));                           //   буде ПОМИЛКА:  TypeError: value is not a function !!!
 
 
  
-localStorage.setItem("foo", JSON.stringify(foo));   //    Key: foo    Value:  undefined !!!
+// localStorage.setItem("foo", JSON.stringify(foo));   //    Key: foo    Value:  undefined !!!
 
-const value2 = localStorage.getItem("foo"); 
+// const value2 = localStorage.getItem("foo"); 
 
-// спробуємо зробити ДЕСЕРІАЛІЗАЦІЮ  "JSON.parse()" :
+// // спробуємо зробити ДЕСЕРІАЛІЗАЦІЮ  "JSON.parse()" :
 
-const foo = JSON.parse(value2);    //   Не можемо розпарсити, бо це звичайний рядок !!!
-console.log(typeof value2);    
+// const foo = JSON.parse(value2);    //   Не можемо розпарсити, бо це звичайний рядок !!!
+// console.log(typeof value2);    
 
 // ........
 
 // (00:41:50)  створемо МЕТОД ОБ'ЄКТА : 
+
+
+
+// .............................
+// .............................
+
+
+// УРОК-1 Mодуль-9. Модульність коду і bundler Vite (00:47:45) :
+
+// ПОЯСНЕННЯ-16   Задача :
+
+
+// <form class="feedback-form">
+//     <label>
+//     <b>Name</b>
+//     <input
+//     type="text"
+//     name="name"
+//     placeholder="Enter your name"
+//     value="Anonymous"
+//     />
+//     </label>
+//     <label>
+//     <b>Message</b>
+//     <textarea name="message" rows="6"></textarea>
+//     </label>
+//     <button type="submit">Submit</button>
+// </form>
+
+
+
