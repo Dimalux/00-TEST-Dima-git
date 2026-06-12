@@ -744,7 +744,7 @@
 // .............................
 
 
-// УРОК-1 Mодуль-9. Модульність коду і bundler Vite (00:47:45) :
+// УРОК-1 Mодуль-9. Модульність коду і bundler Vite (00:47:35) :
 
 // ПОЯСНЕННЯ-16   Задача :  Треба зробити так, щоб якщо користувач вводив щось в поле "textarea", а потім ПЕРЕЗАВАНТАЖИВ сторінку - ДАНІ ПОВИННІ ЗБЕРЕГТИСЬ.
 
@@ -770,39 +770,12 @@
 // ПОДІЯ НА ФОРМІ
 // ├── event.target → це ФОРМА
 // ├── event.target.elements → це всі поля форми (колекція)
-// └── event.target.elements.name.value → значення конкретного інпута ✅
+// └── event.target.elements.name.value → значення конкретного інпута 
 
-const form4 = document.querySelector(".feedback-form-4");
-const nameInput = document.querySelector('input[name="name"]');
+// const form4 = document.querySelector(".feedback-form-4");
 const messageTextarea = document.querySelector('textarea[name="message2"]')
 
-console.log(messageTextarea);
-
-//...............
-
-// ЗБЕРІГАЄМО дані для поля "input" :
-
-// function saveNewText() {
-// const nameForm = localStorage.getItem("name");
-//     if(nameForm) {
-//         nameInput.value = nameForm;
-//     }
-// }
-
-
-// form4.addEventListener("submit", handler4);
-
-// function handler4(event) {
-// event.preventDefault();
-// console.log(event.target.elements.name.value);
-// console.log(event.target.elements.message.value);
-
-// localStorage.setItem("name", event.target.elements.name.value);
-// }
-
-// saveNewText();
-
-
+messageTextarea.value = localStorage.getItem("textUser");
 
 
 // ЗБЕРІГАЄМО дані для поля "textarea" :
@@ -815,6 +788,11 @@ function handlerTextarea(event) {
 
   localStorage.setItem("textUser", textUser);
 }
+
+
+
+
+
 
 
 // (00:49:00) 
