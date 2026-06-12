@@ -746,7 +746,7 @@
 
 // УРОК-1 Mодуль-9. Модульність коду і bundler Vite (00:47:45) :
 
-// ПОЯСНЕННЯ-16   Задача :
+// ПОЯСНЕННЯ-16   Задача :  Треба зробити так, щоб якщо користувач вводив щось в поле "textarea", а потім ПЕРЕЗАВАНТАЖИВ сторінку - ДАНІ ПОВИННІ ЗБЕРЕГТИСЬ.
 
 
 // <form class="feedback-form-4">
@@ -761,7 +761,7 @@
 //     </label>
 //     <label>
 //     <b>Message</b>
-//     <textarea name="message" rows="6"></textarea>
+//     <textarea name="message2" rows="6"></textarea>
 //     </label>
 //     <button type="submit">Submit</button>
 // </form>
@@ -773,29 +773,48 @@
 // └── event.target.elements.name.value → значення конкретного інпута ✅
 
 const form4 = document.querySelector(".feedback-form-4");
-const nameInput = document.querySelector('input[name="name"]')
+const nameInput = document.querySelector('input[name="name"]');
+const messageTextarea = document.querySelector('textarea[name="message2"]')
 
-console.log(form4);
+console.log(messageTextarea);
 
-function saveNewText() {
-const nameForm = localStorage.getItem("name");
-    if(nameForm) {
-        nameInput.value = nameForm;
-    }
+//...............
+
+// ЗБЕРІГАЄМО дані для поля "input" :
+
+// function saveNewText() {
+// const nameForm = localStorage.getItem("name");
+//     if(nameForm) {
+//         nameInput.value = nameForm;
+//     }
+// }
+
+
+// form4.addEventListener("submit", handler4);
+
+// function handler4(event) {
+// event.preventDefault();
+// console.log(event.target.elements.name.value);
+// console.log(event.target.elements.message.value);
+
+// localStorage.setItem("name", event.target.elements.name.value);
+// }
+
+// saveNewText();
+
+
+
+
+// ЗБЕРІГАЄМО дані для поля "textarea" :
+
+messageTextarea.addEventListener("input", handlerTextarea);
+
+function handlerTextarea(event) {
+  const textUser = event.target.value;
+  console.log(textUser);
+
+  localStorage.setItem("textUser", textUser);
 }
-
-
-form4.addEventListener("submit", handler4);
-
-function handler4(event) {
-event.preventDefault();
-console.log(event.target.elements.name.value);
-console.log(event.target.elements.message.value);
-
-localStorage.setItem("name", event.target.elements.name.value);
-}
-
-saveNewText();
 
 
 // (00:49:00) 
