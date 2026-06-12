@@ -766,11 +766,20 @@
 //     <button type="submit">Submit</button>
 // </form>
 
-//  (дивись рядок 3409 modul-7 : ПОДІЯ НА ФОРМІ) 
+//  (дивись рядок 3409     modul-7 : ПОДІЯ НА ФОРМІ) 
 // ПОДІЯ НА ФОРМІ
 // ├── event.target → це ФОРМА
 // ├── event.target.elements → це всі поля форми (колекція)
 // └── event.target.elements.name.value → значення конкретного інпута 
+
+ 
+// (дивись рядок 99    modul-7 : ДОСТУП до ЕЛЕМЕНТІВ в DOM) :
+// 1. document.querySelector(".magic")                    //  через "." (крапку) -  доступ за селектором по класу
+// 2. document.querySelector("#btn")                      //  через "#" (хештег) - доступ за селектором по id
+// 3. document.querySelector("button")                    //  доступ за ім'ям тегу (використовується рідко, тому що подібних тегів м/б дуже багато)
+// 4. document.querySelector('button[type="button"]')     //  доступ по "тегу + атрибуту" 
+// 5. document.querySelector('[type="button"]')           //  тільки по "атрибуту"
+
 
 // const form4 = document.querySelector(".feedback-form-4");
 const messageTextarea = document.querySelector('textarea[name="message2"]')

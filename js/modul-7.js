@@ -96,10 +96,11 @@
 
 // 1) самий СУЧАСНИЙ метод - "querySelector()" :
 
-// document.querySelector(".magic")     //  через "." (крапку) -  доступ за селектором по класу
-// document.querySelector("#btn")       //  через "#" (хештег) - доступ за селектором по id
-// document.querySelector("button")     //  доступ за ім'ям тегу (використовується рідко, тому що подібних тегів м/б дуже багато)
-
+// 1. document.querySelector(".magic")                    //  через "." (крапку) -  доступ за селектором по класу
+// 2. document.querySelector("#btn")                      //  через "#" (хештег) - доступ за селектором по id
+// 3. document.querySelector("button")                    //  доступ за ім'ям тегу (використовується рідко, тому що подібних тегів м/б дуже багато)
+// 4. document.querySelector('button[type="button"]')     //  доступ по "тегу + атрибуту" 
+// 5. document.querySelector('[type="button"]')           //  тільки по "атрибуту"
 
 //  Є три елемента списку з однаковими класами:
 // <ul class="list2">
