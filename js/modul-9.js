@@ -780,11 +780,33 @@
 // 4. document.querySelector('button[type="button"]')     //  доступ по "тегу + атрибуту" 
 // 5. document.querySelector('[type="button"]')           //  тільки по "атрибуту"
 
+// ..........
 
-// const form4 = document.querySelector(".feedback-form-4");
+// // ВАРІАНТ МІЙ :
+// const messageTextarea = document.querySelector('textarea[name="message2"]')
+
+// messageTextarea.value = localStorage.getItem("textUser");
+
+// // ЗБЕРІГАЄМО дані для поля "textarea" :
+
+// messageTextarea.addEventListener("input", handlerTextarea);
+
+// function handlerTextarea(event) {
+//   const textUser = event.target.value;
+//   console.log(textUser);        //    коли хочете побачити HTML-структуру, клацнути на елементі та подивитись його на сторінці
+//   console.dir(event.target);    //    коли хочете дослідити всі властивості та методи DOM-елемента (значення, атрибути, події, методи типу .focus(), .click())
+
+//   localStorage.setItem("textUser", textUser);
+// }
+
+
+// ..........
+
+// ВАРІАНТ ментор :
+
 const messageTextarea = document.querySelector('textarea[name="message2"]')
 
-messageTextarea.value = localStorage.getItem("textUser");
+populateTextArea();
 
 
 // ЗБЕРІГАЄМО дані для поля "textarea" :
@@ -793,15 +815,23 @@ messageTextarea.addEventListener("input", handlerTextarea);
 
 function handlerTextarea(event) {
   const textUser = event.target.value;
-  console.log(textUser);
 
   localStorage.setItem("textUser", textUser);
 }
+// localStorage.removeItem("textUser");
+
+//  - Отримуємо значення зі сховища
+//  - Якщо там щось було, оновлюємо DOM
+
+function populateTextArea() {
+    const messageLocal = localStorage.getItem("textUser");
+    console.log(messageLocal);    //  якщо нічого ще не було введено в "textarea" (тобто в localStorage не створювали ключ/значення) буде виведено "null"
+
+    if(messageLocal) {
+
+messageTextarea.value = messageLocal;     //   змінна "messageTextarea" і "event.target" - це те саме !
+    }
+}
 
 
-
-
-
-
-
-// (00:49:00) 
+// (00:58:40) 
