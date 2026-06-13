@@ -804,34 +804,90 @@
 
 // ВАРІАНТ ментор :
 
-const messageTextarea = document.querySelector('textarea[name="message2"]')
+// const messageTextarea = document.querySelector('textarea[name="message2"]')
 
-populateTextArea();
-
-
-// ЗБЕРІГАЄМО дані для поля "textarea" :
-
-messageTextarea.addEventListener("input", handlerTextarea);
-
-function handlerTextarea(event) {
-  const textUser = event.target.value;
-
-  localStorage.setItem("textUser", textUser);
-}
-// localStorage.removeItem("textUser");
-
-//  - Отримуємо значення зі сховища
-//  - Якщо там щось було, оновлюємо DOM
-
-function populateTextArea() {
-    const messageLocal = localStorage.getItem("textUser");
-    console.log(messageLocal);    //  якщо нічого ще не було введено в "textarea" (тобто в localStorage не створювали ключ/значення) буде виведено "null"
-
-    if(messageLocal) {
-
-messageTextarea.value = messageLocal;     //   змінна "messageTextarea" і "event.target" - це те саме !
-    }
-}
+// populateTextArea();
 
 
+// // ЗБЕРІГАЄМО дані для поля "textarea" :
+
+// messageTextarea.addEventListener("input", handlerTextarea);
+
+// function handlerTextarea(event) {
+//   const textUser = event.target.value;
+
+//   localStorage.setItem("textUser", textUser);
+// }
+// // localStorage.removeItem("textUser");
+
+// //  - Отримуємо значення зі сховища
+// //  - Якщо там щось було, оновлюємо DOM
+
+// function populateTextArea() {
+//     const messageLocal = localStorage.getItem("textUser");
+//     console.log(messageLocal);    //  якщо нічого ще не було введено в "textarea" (тобто в localStorage не створювали ключ/значення) буде виведено "null"
+
+//     if(messageLocal) {
+
+// messageTextarea.value = messageLocal;     //   змінна "messageTextarea" і "event.target" - це те саме !
+//     }
+// }
+
+
+// ..........
+
+// ВАРІАНТ ментор :
+// Було б добре при відправке форми ОЧИЩАТИ ПОЛЕ "textarea" :
 // (00:58:40) 
+
+
+// const form4 = document.querySelector(".feedback-form-4");
+// console.log(form4);
+
+// const messageTextarea = document.querySelector('textarea[name="message2"]')
+
+// populateTextArea();
+
+
+// // ЗБЕРІГАЄМО дані для поля "textarea" :
+
+// messageTextarea.addEventListener("input", handlerTextarea);
+
+// function handlerTextarea(event) {
+//   const textUser = event.target.value;
+
+//   localStorage.setItem("textUser", textUser);
+// }
+// // localStorage.removeItem("textUser");
+
+// //  - Отримуємо значення зі сховища
+// //  - Якщо там щось було, оновлюємо DOM
+
+// function populateTextArea() {
+//     const messageLocal = localStorage.getItem("textUser");
+//     console.log(messageLocal);    //  якщо нічого ще не було введено в "textarea" (тобто в localStorage не створювали ключ/значення) буде виведено "null"
+
+//     if(messageLocal) {
+
+// messageTextarea.value = messageLocal;     //   змінна "messageTextarea" і "event.target" - це те саме !
+//     }
+// }
+
+
+// form4.addEventListener("submit", handlerForm);
+
+// function handlerForm(event) {
+// event.preventDefault();
+// event.currentTarget.reset();     //   очищаємо поля форми при "submit"
+// localStorage.removeItem("textUser");    //   очищаємо "localStorage"
+// }
+
+
+
+// .............................
+// .............................
+
+
+// УРОК-1 Mодуль-9. Модульність коду і bundler Vite (01:15:30) :
+
+// ПОЯСНЕННЯ-17   Задача :  
