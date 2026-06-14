@@ -890,4 +890,78 @@
 
 // УРОК-1 Mодуль-9. Модульність коду і bundler Vite (01:15:30) :
 
-// ПОЯСНЕННЯ-17   Задача :  
+// ПОЯСНЕННЯ-17   Задача :  В нас є масив товарів в нашому магазині. На основі цих товарів відобразати розмітку. У кожного товару буде кнопочка, при натисканні на яку ми будемо додавати тоао у КОРЗИНУ. Якщо в корзині є товар, ми можемо перейти в корзину і бачити цей товар, або якщо не має жодного товару в корзині - маємо бачити, що корзина пуста.
+
+
+
+const instruments = [
+    {
+    id: 1,
+    img: "https://static.dnipro-m.ua/cache/products/7056/catalog",
+    name: "Шуруповерт",
+    price: 150,
+    description: "Мережевий дриль-шуруповерт TD-30 — надійний по",
+    },
+    {
+    id: 3,
+    img: "https://static.dnipro-m.ua/cache/products/1891/catalog",
+    name: "Шліфмашина",
+    price: 1299,
+    description: "Кутова шліфувальна машина Dnipro-M GS-98 ⚙️ мод",
+    },
+    {
+    id: 4,
+    img: "https://static.dnipro-m.ua/cache/products/5596/catalog",
+    name: "Пила",
+    price: 11049,
+    description: "Мобільна акумуляторна ланцюгова пила DCS-200BC",
+    },
+  {
+id: 5,
+img: "https://static.dnipro-m.ua/cache/products/2023/catalog",
+name: "Рівень",
+price: 897,
+description: "Рівень серії ProVision виробництва DNIPRO-M машин",
+    },
+  {
+id: 6,
+img: "https://static.dnipro-m.ua/cache/products/11482/catalog",
+name: "Тример",
+price: 3699,
+description: "Тример електричний Dnipro-M 110 призначений для..."
+    },
+  {
+id: 7,
+img: "https://static.dnipro-m.ua/cache/products/6483/catalog",
+name: "Мотокоса",
+price: 11049,
+description: "Мотокоса Dnipro-M 43 призначена для покосу трат",
+   },
+    {
+id: 8,
+img: "https://static.dnipro-m.ua/cache/products/4980/catalog",
+name: "Генератор",
+price: 10890,
+description: "Бензиновий генератор GX-25 номінальною потужні",
+}
+];
+
+const LS_KEY = 'basket';
+
+
+const shop = document.querySelector(".js-list");
+
+console.log(shop);
+
+// Створему ф-ію, яка на основі нашого масиву об'єктів буде створювати розмітку :
+
+function createMarkup(arr) {
+
+    // item - це елемент масиву (об'єкт). Одже item можемо відразу ДЕСТРУКТУРУВАТИ
+return arr.map({id, img, name, price, description} => )
+
+}
+
+
+
+// (01:18:30) :
