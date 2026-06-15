@@ -520,8 +520,8 @@
 // // Додамо зображення обкладинки, якщо вона відсутня в об'єкті книги
 // const {
 //   title,
-//   author = "Astrallux",
-//   coverImage = "https://via.placeholder.com/640/480"
+//   author = "Astrallux",     //   в об'єкті Є така властивість із таким ім'ям, тому перепресвоєння НЕ БУДЕ !!!
+//   coverImage = "https://via.placeholder.com/640/480"      //   Це значення буде присвоєно, тому що в об'єкті ВІДСУТНЯ властивість із таким ім'ям
 // } = book;
 
 // console.log(title); // "The Last Kingdom"

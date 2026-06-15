@@ -955,12 +955,12 @@ console.log(shop);
 
 // Створему ф-ію, яка на основі нашого масиву об'єктів буде створювати розмітку :
 
-function createMarkup(arr) {
+// function createMarkup(arr) {
 
-    // item - це елемент масиву (об'єкт). Одже item можемо відразу ДЕСТРУКТУРУВАТИ
-return arr.map({id, img, name, price, description} => )
+//     // item - це елемент масиву (об'єкт). Одже item можемо відразу ДЕСТРУКТУРУВАТИ
+// // return arr.map({id, img, name, price, description} => )
 
-}
+// }
 
 
 
