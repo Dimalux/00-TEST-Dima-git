@@ -949,18 +949,37 @@ description: "Бензиновий генератор GX-25 номінально
 const LS_KEY = 'basket';
 
 
-const shop = document.querySelector(".js-list");
 
-console.log(shop);
+const shopContainer = document.querySelector(".js-list-shop");
+
+console.log(shopContainer);
+
+shopContainer.insertAdjacentHTML("beforeend", createMarkup(instruments));
 
 // Створему ф-ію, яка на основі нашого масиву об'єктів буде створювати розмітку :
 
-// function createMarkup(arr) {
+function createMarkup(arr) {
 
-//     // item - це елемент масиву (об'єкт). Одже item можемо відразу ДЕСТРУКТУРУВАТИ
-// // return arr.map({id, img, name, price, description} => )
+    // item - це елемент масиву (об'єкт). Одже item можемо відразу ДЕСТРУКТУРУВАТИ
+  return arr.map(({ id, img, name, price, description }) => 
+   `<li class="product-card js-product" data-id="${id}">    
+    <h2 class="product-title">${name}</h2>
+    <p class="product-description">${description}</p>
+    <p class="product-price">${price} грн</p>
+    <button class="product-add-btn js-btn">Add to backet</button><hr>
+    </li>`
+    ).join("");
+}
 
-// }
+
+
+
+
+
+
+
+
+
 
 
 
