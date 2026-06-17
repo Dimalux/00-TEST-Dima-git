@@ -956,26 +956,45 @@ console.log(shopContainer);
 
 shopContainer.insertAdjacentHTML("beforeend", createMarkup(instruments));
 
-// Створему ф-ію, яка на основі нашого масиву об'єктів буде створювати розмітку :
+// 1)  Створему ф-ію, яка на основі нашого масиву об'єктів буде створювати розмітку :
 
 function createMarkup(arr) {
 
-    // item - це елемент масиву (об'єкт). Одже item можемо відразу ДЕСТРУКТУРУВАТИ
+    // item - це елемент масиву (об'єкт). Одже item можемо відразу ДЕСТРУКТУРУВАТИ :
+    // arr.map(item => ...)
+//     Хоча в колбек функції тільки ОДИН параметр і неявне повернення (без return і без фігурних дужок) - правило таке:
+// Якщо ви використовуєте ДЕСТРУКТУРІЗАЦІЮ в параметрах, круглі дужки ОБОВ'ЯЗКОВІ, навіть якщо параметр один !!!
+
   return arr.map(({ id, img, name, price, description }) => 
    `<li class="product-card js-product" data-id="${id}">    
     <h2 class="product-title">${name}</h2>
     <p class="product-description">${description}</p>
     <p class="product-price">${price} грн</p>
-    <button class="product-add-btn js-btn">Add to backet</button><hr>
+    <button class="product-add-btn js-btn-shop">Add to backet</button><hr>
     </li>`
     ).join("");
 }
 
 
 
+// 2)  На КНОПКУ  "Add to backet" навішуємо функціонал КЛІКУ :
 
+// const button = document.querySelector(".js-btn-shop");
+// button.addEventListener("click", handlerButtonShop);
+// function handlerButtonShop(event) {............}
 
+// Щоб не вішати обробник подій на кожну кнопку, використаємо принцип ДЕЛЕГУВАННЯ (тобто подію КЛІК будемо вішати на контейнер "shopContainer", де відмамальовані всі картки) :
 
+shopContainer.addEventListener("click", handlerButtonShop);
+function handlerButtonShop(event) {
+  // додаємо в корзину тільки тоді коли клікаємо на КНОПКУ (НЕ на назву, ціну, фото), тобто коли у елемента, на якому відбулася подія є класс "js-btn-shop" :
+  
+  // Коли клік був НЕ "!" на КНОПЦІ (використовуємо знак ЗАПЕРЕЧЕННЯ) :
+ if(!event.target.classList.contains("js-btn-shop")) {
+console.log("OK");
+  }
+  
+}
 
 
 
