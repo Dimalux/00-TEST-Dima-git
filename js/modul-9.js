@@ -975,7 +975,7 @@ function createMarkup(arr) {
     ).join("");
 }
 
-
+//............
 
 // 2)  На КНОПКУ  "Add to backet" навішуємо функціонал КЛІКУ :
 
@@ -1004,7 +1004,11 @@ console.log(parent);
 // Метод "closest()" — це метод JavaScript, який шукає найближчого батьківського предка (або сам елемент), який відповідає вказаному CSS-селектору :
 // 1) Починаємо з елемента, на якому стався event (event.target).
 // 2) Перевіряємо, чи цей елемент має клас "js-product".
-// 3) Якщо так → повертаємо його.
+// 3) Якщо так → повертаємо його :
+// console.log(parent); 
+// Виведе: <div class="js-product" data-id="123">...</div> (якщо знайдено)
+// або: null (якщо не знайдено)
+
 // 4) Якщо ні → піднімаємося вгору по дереву DOM (до батька, потім до дідуся і т.д.).
 // 5) На першому ж елементі з класом "js-product" зупиняємося і повертаємо його.
 // 6) Якщо такого елемента не знайдено аж до самого <html> → повертає null.
@@ -1019,6 +1023,35 @@ console.log(parent);
 // 3. Видалення товару з кошика.
 // 4. Лайк/дизлайк товару.
 
+//............
+
+
+// 3)  Для чого ми отримали елемент, тому що в нього є "data" атрибут і в ньому є унікальний "id" продукту - "data-id="${id}" :
+// const parent = event.target.closest(".js-product");
+// console.log(parent);     //    <li class="product-card js-product" data-id="${id}">
+
+// Витягаємо "id" :
+
+const productId = +parent.dataset.id;
+console.log(productId);
+console.log(typeof productId);   //  string
+
+// // Але в нашому випадку "id" - це ЧИСЛО. А productId = parent.dataset.id - це РЯДОК !!! 
+// // Використовуємо або КОНКАТЕНАЦІЮ, або метод Number :
+// // - КОНКАТЕНАЦІЯ - "+" унарний плюс :
+//  const productId = +dataset.id;
+
+// // - метод Number :
+//  const productId = Number(parent.dataset.id);
+
+
+//............
+
+// 4)  Тепер треба знайти продукт в нашому списку з цим "id". Для цього треба перебрати масив "instruments" і знайти в ньому один елемент (використовуємо метод "find"):
+
+const currentProduct = instruments.find(({ id }) => id === productId);
+console.log(currentProduct);
+
 
 
 
@@ -1030,4 +1063,4 @@ console.log(parent);
 
 
 
-// (01:30:00) :
+// (01:32:45) :
