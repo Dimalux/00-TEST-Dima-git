@@ -1032,7 +1032,7 @@ console.log(parent);
 
 // Витягаємо "id" :
 
-const productId = +parent.dataset.id;
+const productId = +parent.dataset.id;      //   Знайшли   продукту
 console.log(productId);
 console.log(typeof productId);   //  string
 
@@ -1049,9 +1049,30 @@ console.log(typeof productId);   //  string
 
 // 4)  Тепер треба знайти продукт в нашому списку з цим "id". Для цього треба перебрати масив "instruments" і знайти в ньому один елемент (використовуємо метод "find"):
 
-const currentProduct = instruments.find(({ id }) => id === productId);
+const currentProduct = instruments.find(({ id }) => id === productId);     //   Знайшли   продукт, який користувач хоче додати в КОРЗИНУ
 console.log(currentProduct);
 
+
+
+//............
+
+// 5)  При нактисканні на КНОПКУ  "Add to backet" треба відправити товар в КОРЗИНУ. Будемо зберігати мої продукти в "localStorage".
+// Треба отримати КОРЗИНУ :
+// Ім'я ключа в нас вже збережено в змінну -  const LS_KEY = 'basket';
+
+// const products = localStorage.getItem(LS_KEY);   
+// console.log(products);                            //  Якщо в "localStorage" не має ще нічого - отримуємо "null"
+
+// Якщо є, то я отримую рядок і його треба буде розпасити, бо там може бути масив з моїми товарами :
+
+// const products = JSON.parse(localStorage.getItem(LS_KEY));   
+// console.log(products);                            //  Якщо в "localStorage" не має ще нічого - отримуємо "null"
+
+// У випадку якщо там "null" (в булевому виразі - це "false"), або порожній масив "[]" (в булевому виразі - це "true") - ми отримуємо значення правого операнда, тобто порожній масив "[]". Це потрібно тому, що ми зараз будем наповнювати цей масив товарами :
+
+
+const products = JSON.parse(localStorage.getItem(LS_KEY)) || [];  
+console.log(products);                            //  Якщо в "localStorage" не має ще нічого - отримуємо "null"
 
 
 
