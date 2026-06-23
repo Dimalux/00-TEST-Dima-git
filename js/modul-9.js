@@ -999,7 +999,12 @@ return  //  не цікаві випадки коли КЛІКУЄМО не на
   // Треба витягнути з елемента на якому була натиснута кнопка "data-id" За допомогою метода "closest()", який повертає найближчий батьківський елемент з класом "js-product" :
 
 const parent = event.target.closest(".js-product");
-console.log(parent);
+console.log(parent);        //   <li class="product-card js-product" data-id="4">  -  (або якісь іншій)
+//     <h2 class="product-title">Пила</h2>
+//     <p class="product-description">Мобільна акумуляторна ланцюгова пила DCS-200BC</p>
+//     <p class="product-price">11049 грн</p>
+//     <button class="product-add-btn js-btn-shop">Add to backet</button><hr>
+//     </li>
 
 // Метод "closest()" — це метод JavaScript, який шукає найближчого батьківського предка (або сам елемент), який відповідає вказаному CSS-селектору :
 // 1) Починаємо з елемента, на якому стався event (event.target).
@@ -1033,7 +1038,7 @@ console.log(parent);
 // Витягаємо "id" :
 
 const productId = +parent.dataset.id;      //   Знайшли "id" продукту
-console.log(productId);
+console.log(productId);          //   "4"  (або якісь іншій)
 console.log(typeof productId);   //  string
 
 // // Але в нашому випадку "id" - це ЧИСЛО. А productId = parent.dataset.id - це РЯДОК !!! 
@@ -1051,7 +1056,6 @@ console.log(typeof productId);   //  string
 
 const currentProduct = instruments.find(({ id }) => id === productId);     //   Знайшли   продукт, який користувач хоче додати в КОРЗИНУ
 console.log(currentProduct);
-
 
 
 //............
@@ -1104,6 +1108,29 @@ currentProduct.push(currentProduct);   // ВАРІАНТ-1 вперше дода
   products[index].qty += 1;      // ВАРІАНТ-2 якщо продукт вже Є У КОРЗИНІ - збільшуємо кількість
 }
 
+
+//............
+
+// (01:47:15)
+// 7)  Після того як ми додали в КОРЗИНУ новий продукт або додали поаторно той самий продукт (тобто змінили властивість квантиті "products[index].qty += 1") ТРЕБА оновити "localStorage" КОРЗИНУ (масив "products") :
+
+localStorage.setItem(LS_KEY, JSON.stringify(products));    //  перетворюємо МАССИВ "products" у JSON
+
+// (дивись Модуль 9. Модульність коду і bundler Vite) - Додавання складних даних :
+// Технічно у вебсховище можна записати тільки рядки. Але це не проблема, якщо використовувати методи класу JSON для перетворення складних типів (масив або об'єкт). Якщо необхідно зберегти щось, окрім рядка, наприклад, масив або об'єкт, необхідно перетворити їх у рядок методом JSON.stringify().
+// ПРИКЛАД для розуміння :
+
+// const settings = {
+//   theme: "dark",
+//   isAuthenticated: true,
+//   options: [1, 2, 3],
+// };
+
+// localStorage.setItem("settings", JSON.stringify(settings));
+
+
+
+
 }
 
 
@@ -1112,4 +1139,4 @@ currentProduct.push(currentProduct);   // ВАРІАНТ-1 вперше дода
 
 
 
-// (01:47:20) :
+// (01:51:55) :
