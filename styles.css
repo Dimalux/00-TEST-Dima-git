@@ -336,3 +336,17 @@ body {
 }
 
   /* ....................... */
+
+
+/* <!-- МДУЛЬ-9   ПОЯСНЕННЯ-17 -->
+  <!-- ЗАДАЧА DZ-9-2  "МАГАЗИН товарів" --> */
+
+  .nav-link {
+  display: block;
+  padding-bottom: 20px;
+  font-size: 25px;
+
+  width: 150px;
+  height: 40px;
+  margin-bottom: 10px;
+}

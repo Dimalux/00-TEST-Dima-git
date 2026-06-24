@@ -1102,7 +1102,7 @@ console.log(currentProduct);
 
 // Тепер беремо товар "currentProduct" і кладемо в нашу КОРЗИНУ (в масив "products"). Щоб додати товар до корзини (масиву) використовуємо метод "push()" :
 
-currentProduct.push(currentProduct);   // ВАРІАНТ-1 вперше додаємо продукт ДО КОРЗИНИ  - додається ОБ'ЄКТ продукта
+products.push(currentProduct);   // ВАРІАНТ-1 вперше додаємо продукт ДО КОРЗИНИ  - додається ОБ'ЄКТ продукта
 
 } else {
   products[index].qty += 1;      // ВАРІАНТ-2 якщо продукт вже Є У КОРЗИНІ - збільшуємо кількість
@@ -1128,6 +1128,12 @@ localStorage.setItem(LS_KEY, JSON.stringify(products));    //  перетвор�
 
 // localStorage.setItem("settings", JSON.stringify(settings));
 
+
+
+//............
+
+// (01:52:00)
+// 8)  Сторінка з КОРЗИНОЮ 
 
 
 
