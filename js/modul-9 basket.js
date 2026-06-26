@@ -124,9 +124,17 @@ let totalCost;
 if(productsBasket.length) {
 
 clearBtn.hidden = false;  //  відображаємо КНОПКУ, якщо в КОРЗИНІ є товар 
+
+// Присвомо в змінну "totalCost" загальну кількість товарів в КОРЗИНІ (використовуємо метод масиву reduce() - дивись файл "modul-5.js" рядок 516). (КОНСПЕКТ - Модуль 5. Перебираючі методи масивів: Методи every, some і reduce) :
+
+// totalCost = productsBasket.reduce((previousValue, item) => {}, 0) 
+// ДЕСТРУКТУРУЄМО об'єкт "item", тобто витянем данні, які нас цікавлять (ціна і кількість) :
+totalCost = productsBasket.reduce((previousValue, {price, qty}) => previousValue + price * qty, 0) 
+
+
 }
 
 
 
 
-// (01:57:15) :
+// (01:59:00) :
