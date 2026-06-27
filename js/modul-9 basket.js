@@ -93,7 +93,7 @@
 
 const LS_KEY = 'basket';
 
-const totalPrice = document.querySelector(".js-total-price");
+const totalPrice = document.querySelector(".js-total-price");   //  це елемент <h2>
 
 const clearBtn = document.querySelector(".js-clear");
 
@@ -103,7 +103,7 @@ const container = document.querySelector(".js-list");  //  контейнер (�
 
 // Отримуємо дані з localStorage і відразу розпарсимо їх (якщо там нічого НЕ має ми все рівно зможемо перейти на сторінку КОРЗИНИ і побачити порожній масив []):
 
-const productsBasket = JSON.parse(localStorage.getItem(LS_KEY));
+const productsBasket = JSON.parse(localStorage.getItem(LS_KEY)) || [];
 
 console.log(productsBasket);
 
@@ -112,29 +112,36 @@ console.log(productsBasket);
 
 // Створимо змінну, яка буде підраховувати загальну кількість товарів в КОРЗИНІ :
 
-let totalCost;
+let totalCost; 
 
 //.......
 
 
-// Перевіремо чи є в КОРЗИНІ товари (якщо в корзині товарів НЕ МАЄ (масив порожній) "products.length === 0" - ми не потрапим в тіло if() нашої конструкцію).
-// Якщо в корзині товарів НЕ МАЄ, то і КНОПКИ нам не потрібно, а якщо є товар, тоді треба відобразити КНОПКУ :
+// Перевіремо чи є в КОРЗИНІ товари (якщо в корзині товарів НЕ МАЄ (масив порожній) "products.length === 0" - ми не потрапим в тіло "if()" нашої конструкцію). Якщо в корзині товарів НЕ МАЄ, то і КНОПКИ нам не потрібно.
+// А якщо ТОВАР Є, тоді треба відобразити КНОПКУ :
 
 
 if(productsBasket.length) {
 
 clearBtn.hidden = false;  //  відображаємо КНОПКУ, якщо в КОРЗИНІ є товар 
 
-// Присвомо в змінну "totalCost" загальну кількість товарів в КОРЗИНІ (використовуємо метод масиву reduce() - дивись файл "modul-5.js" рядок 516). (КОНСПЕКТ - Модуль 5. Перебираючі методи масивів: Методи every, some і reduce) :
+// Присвомо в змінну "totalCost" загальну кількість товарів в КОРЗИНІ (використовуємо метод масиву reduce() - (дивись файл "modul-5.js" рядок 516). (КОНСПЕКТ - Модуль 5. Перебираючі методи масивів: Методи every, some і reduce) :
 
 // totalCost = productsBasket.reduce((previousValue, item) => {}, 0) 
 // ДЕСТРУКТУРУЄМО об'єкт "item", тобто витянем данні, які нас цікавлять (ціна і кількість) :
 totalCost = productsBasket.reduce((previousValue, {price, qty}) => previousValue + price * qty, 0) 
+console.log(totalCost);
+} 
+
+//.......
+
+// Відобразимо в "totalPrice" (це елемент <h2>) текст.
+// Якщо ми не попадаємо в тіло "if()", то "totalCost" буде "undefined". Скористаємось "тернарним оператором" - якщо в "totalCost" буде якесь значення, то запишемо рядок `totalCost ${totalCost} грн`?якщо в КОРЗИНІ нічого не має, то напишемо "Your basket is empty" :
+
+totalPrice.textContent = totalCost ? `totalCost ${totalCost} грн` : `Your basket is empty`;
+
+// (textContent  -  дивись файл "modul-7.js" рядок 226)
 
 
-}
 
-
-
-
-// (01:59:00) :
+// (02:00:50) :

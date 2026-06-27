@@ -239,10 +239,10 @@
 
 // // JavaScript
 
-// const titleEl = document.querySelector(".article-title");
+// const titleEl = document.querySelector(".article-title");     //    <h2>
 // titleEl.textContent = 'Welcome to Italy!';
 
-// const textEl = document.querySelector(".article-text");
+// const textEl = document.querySelector(".article-text");       //    <p>
 // console.log(textEl.textContent);   // Lorem ipsum dolor sit amet consectetur adipisicing elit.
 // textEl.textContent = 'HELLO  Dima!';
 // console.log(textEl.textContent);   // HELLO  Dima! 
