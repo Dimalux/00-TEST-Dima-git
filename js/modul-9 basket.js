@@ -143,5 +143,27 @@ totalPrice.textContent = totalCost ? `totalCost ${totalCost} грн` : `Your bas
 // (textContent  -  дивись файл "modul-7.js" рядок 226)
 
 
+//.......
 
-// (02:00:50) :
+
+// Відмалюємо розмітку. Створимо функцію, яка на основі наших товарів в КОРЗИНІ буде відмальовувати нашу розмітку :
+
+function createMarkup(arr) {
+
+return arr.map(({ img, name, price, qty }) => `
+    <li class="cart-item"></li>
+  <img src="${img}" alt="${name}"/>
+  <h2>${name}</h2>
+  <p>Quantity: ${qty}</p>
+  <p>Total price: ${qty * price} грн</p>
+    `).join("")
+}
+
+// Тепер звернемось до нашего контейнера "container" (дивись рядок 100) і за допомоги функції "createMarkup()" відмалюємо туда розмітку :
+
+container.insertAdjacentHTML("beforeend", createMarkup(productsBasket));
+
+//.......
+
+
+// (02:06:00) :
