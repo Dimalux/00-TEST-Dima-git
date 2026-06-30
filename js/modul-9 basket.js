@@ -95,8 +95,7 @@ const LS_KEY = 'basket';
 
 const totalPrice = document.querySelector(".js-total-price");   //  це елемент <h2>
 
-const clearBtn = document.querySelector(".js-clear");
-
+const clearBtn = document.querySelector(".js-clear");    //  це кнопка "Clear basket" для очищення корзини
 const container = document.querySelector(".js-list");  //  контейнер (список), куди ми будемо відображати продукти з нашої КОРЗИНИ
 
 //.......
@@ -166,4 +165,32 @@ container.insertAdjacentHTML("beforeend", createMarkup(productsBasket));
 //.......
 
 
-// (02:06:00) :
+// Повісимо функціонал для КНОПКИ "Clear basket" очищення КОРЗИНИ (дивись рядок 98) :
+// //  const clearBtn = document.querySelector(".js-clear");
+// //  const LS_KEY = 'basket';
+
+clearBtn.addEventListener("click", handlerClearBtn);
+
+function handlerClearBtn() {
+
+localStorage.removeItem(LS_KEY);
+
+// Далі можна робити різні речі :
+
+// ВАРІАНТ-1 :
+// При очищенні корзини повертатись (ре-діректити  redirect - перенаправляти) на ГОЛОВНУ сторінку з товарами "index.html" - звернемось до глобаоьного об'єкту "window" до властивості "location", звернемось до її атрибуту "href" і передамо посилання на нашу ГОЛОВНУ сторінку з товарами "index.html" :
+
+// window.location.href = "./index.html";
+
+
+// ВАРІАНТ-2 :
+// Очищувати контейнер "container" :
+
+
+
+
+}
+
+
+
+// (02:08:00) :
