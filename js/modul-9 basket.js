@@ -96,7 +96,7 @@ const LS_KEY = 'basket';
 const totalPrice = document.querySelector(".js-total-price");   //  це елемент <h2>
 
 const clearBtn = document.querySelector(".js-clear");    //  це кнопка "Clear basket" для очищення корзини
-const container = document.querySelector(".js-list");  //  контейнер (список), куди ми будемо відображати продукти з нашої КОРЗИНИ
+const container = document.querySelector(".js-list");  //  контейнер (список <ul>), куди ми будемо відображати продукти з нашої КОРЗИНИ
 
 //.......
 
@@ -158,7 +158,7 @@ return arr.map(({ img, name, price, qty }) => `
     `).join("")
 }
 
-// Тепер звернемось до нашего контейнера "container" (дивись рядок 100) і за допомоги функції "createMarkup()" відмалюємо туда розмітку :
+// Тепер звернемось до нашего контейнера "container" (дивись рядок 99) і за допомоги функції "createMarkup()" відмалюємо туда розмітку :
 
 container.insertAdjacentHTML("beforeend", createMarkup(productsBasket));
 
@@ -184,8 +184,16 @@ localStorage.removeItem(LS_KEY);
 
 
 // ВАРІАНТ-2 :
-// Очищувати контейнер "container" :
+// Очищувати контейнер "container" (список <ul> дивись рядок 99) :
+// (innerHTML - дивись файл "modul-7.js" рядок 863)
 
+
+container.innerHTML = "";
+
+// АЛЕ при цьому залишається текст "totalCost ххххх грн" (дивись рядок 140).
+// //  totalPrice.textContent = totalCost ? `totalCost ${totalCost} грн` : `Your basket is empty`;
+// (textContent - дивись файл "modul-7.js" рядок 226) :
+totalPrice.textContent = "";
 
 
 
@@ -193,4 +201,9 @@ localStorage.removeItem(LS_KEY);
 
 
 
-// (02:08:00) :
+// (02:16:40) :
+
+
+
+// ОПЕРАТОР НУЛЬОВОГО ЗЛИТТЯ  "??" (02:19:43)  (для рядка 105) :
+// //  const productsBasket = JSON.parse(localStorage.getItem(LS_KEY)) || [];
