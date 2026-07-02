@@ -100,14 +100,19 @@ const container = document.querySelector(".js-list");  //  контейнер (�
 
 //.......
 
-// Отримуємо дані з localStorage і відразу розпарсимо їх (якщо там нічого НЕ має ми все рівно зможемо перейти на сторінку КОРЗИНИ і побачити порожній масив []):
+// ОТРИМУЄМО ДАНІ з "localStorage" і відразу розпарсимо їх (якщо там нічого НЕ має ми все рівно зможемо перейти на сторінку КОРЗИНИ і побачити порожній масив []):
 
+// ВАРІАНТ-1 :
 const productsBasket = JSON.parse(localStorage.getItem(LS_KEY)) || [];
-
 console.log(productsBasket);
 
+// ВАРІАНТ-2 :
+// через ОПЕРАТОР НУЛЬОВОГО ЗЛИТТЯ  "??" (02:19:43)  (для рядка 106). Оператор нульового злиття (??) — це логічний оператор, який повертає ПРАВИЙ операнд, якщо ЛІВИЙ операнд є "null" або "undefined", інакше повертає лівий операнд  :
 
-//.......
+// const productsBasket = JSON.parse(localStorage.getItem(LS_KEY)) ?? [];
+// console.log(productsBasket);
+
+//...........
 
 // Створимо змінну, яка буде підраховувати загальну кількість товарів в КОРЗИНІ :
 
@@ -190,7 +195,7 @@ localStorage.removeItem(LS_KEY);
 
 container.innerHTML = "";
 
-// АЛЕ при цьому залишається текст "totalCost ххххх грн" (дивись рядок 140).
+// АЛЕ при цьому залишається текст "totalCost ххххх грн" (дивись рядок 145).
 // //  totalPrice.textContent = totalCost ? `totalCost ${totalCost} грн` : `Your basket is empty`;
 // (textContent - дивись файл "modul-7.js" рядок 226) :
 totalPrice.textContent = "";
@@ -205,5 +210,13 @@ totalPrice.textContent = "";
 
 
 
-// ОПЕРАТОР НУЛЬОВОГО ЗЛИТТЯ  "??" (02:19:43)  (для рядка 105) :
-// //  const productsBasket = JSON.parse(localStorage.getItem(LS_KEY)) || [];
+
+
+
+
+// ЛАЙФХАК   (02:24:30) :
+
+// const arr1 = [{ x: 1 }, { x: 2 }];
+// const arr2 = [...arr1];
+
+// console.log(arr1 === arr2);    //  false
