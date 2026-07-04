@@ -235,7 +235,9 @@ totalPrice.textContent = "";
 // Як СКОПІЮВАТИ ОБ'ЄКТ, а не посилання :
 
 const arr1 = [{ x: 1 }, { x: 2 }];    
-const arr2 = JSON.parse(JSON.stringify(arr1));   //  КОПІЯ, а НЕ ПОСИЛАННЯ на ОБ'ЄКТ
+const arr2 = JSON.parse(JSON.stringify(arr1));   //  КОПІЯ, а НЕ ПОСИЛАННЯ на ОБ'ЄКТ. "JSON.parse(JSON.stringify(arr1))" створює ГЛИБОКУ копію, а не поверхневу. 
+// JSON.stringify(arr1) - перетворює масив у рядок JSON. 
+// JSON.parse(...) - розбирає цей рядок і створює НОВІ об'єкти в пам'яті.
 
 arr1[0].x = 100; 
 
