@@ -1396,10 +1396,32 @@ localStorage.setItem(LS_KEY, JSON.stringify(products));    //  перетвор�
 
 // // ----------------- якщо перейти до файлу index.html    (01:05:14)  -----------------
 
-// Якщо перейти до файлу index.html  
+// Якщо перейти до файлу "index.html" (доречі файл "index.html" опинився на верхньому рівні, а не в папці "src"), то побачимо, що з'явилися якісь незрозумілі тегі :
+//  <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
+//  <load src="./partials/footer.html" />
+
+// <body>
+
+//     <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />     //  забрав код "header" в інше місце
+
+//     <main>
+//     <h1>Lalala</h1>
+//     </main>
+
+// <load src="./partials/footer.html" />     //  забрав код "footer" в інше місце
+
+//     <script type="module" src="./main.js"></script>
+// </body>
 
 
+// // ----------------- Для чого потрібні були всі ці маніпуляції     (01:06:30)  -----------------
 
+// Щоб ми могли наш проект зробити доступним в інтернеті (опублікувати на github pages). 
+
+// Як це зробити - заходимо в Settings / Pages в заголовку Branch вибираємо гілочку "gh-pages", яка була створена github-ом. Натискаємо кнопку "Save".
+
+
+// // ----------------- Запускаємо наш проект     (01:09:00)  -----------------
 
 
 // (00:55:00)
