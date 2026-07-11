@@ -1400,18 +1400,31 @@ localStorage.setItem(LS_KEY, JSON.stringify(products));    //  перетвор�
 //  <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
 //  <load src="./partials/footer.html" />
 
+//  <load>  -  це тег, який з'являється, коли в проєкту Vite був встановлений пакет "jvite-plugin-html-inject": "^1.1.2"  :
+
+//   "dependencies": {
+//     "vite-plugin-full-reload": "^1.2.0",
+//     "jvite-plugin-html-inject": "^1.1.2"
+// }
+
+//..............
+
 // <body>
 
-//     <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />     //  забрав код "header" в інше місце
+//      <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />     //  забрав код "header" в інше місце
 
-//     <main>
-//     <h1>Lalala</h1>
-//     </main>
+//      <main>
+//      <h1>Lalala</h1>
+//      </main>
 
-// <load src="./partials/footer.html" />     //  забрав код "footer" в інше місце
+//  <load src="./partials/footer.html" />     //  забрав код "footer" в інше місце
 
-//     <script type="module" src="./main.js"></script>
-// </body>
+//      <script type="module" src="./main.js"></script>
+//  </body>
+
+// (01:09:00)
+// Для чого нам потрібен тег <load> ?   Якщо ми використовуємо шматки коду на одній сторінці (page.html), на другій (page-2.html), на третій (page-3.html).... header і footer, щоб не дублювати цей код (header і footer) на кожній сторінці - цей код зберігається в папці src/partials/(файли header.html і footer.html). В файлах header.html і footer.html зберігається шматок розмітки, а в тегу <load> буде посилання - шлях до цих файлів 
+
 
 
 // // ----------------- Для чого потрібні були всі ці маніпуляції     (01:06:30)  -----------------
@@ -1423,7 +1436,8 @@ localStorage.setItem(LS_KEY, JSON.stringify(products));    //  перетвор�
 
 // // ----------------- Запускаємо наш проект     (01:09:00)  -----------------
 
+// npm run dev
 
-// (00:55:00)
 
+// (01:12:05)
  
