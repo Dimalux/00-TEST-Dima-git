@@ -325,9 +325,32 @@
 // dog.name = "Mango";
 // dog.rating = 7;
 
+// ..........
+
+// animal (об'єкт-прототип)
+// ├── legs: 4        (власна властивість animal)
+// └── color: "red"   (власна властивість animal)
+
+// dog (об'єкт, створений від animal)
+// ├── name: "Mango"  (власна властивість dog)
+// ├── rating: 7      (власна властивість dog)
+// └── [[Prototype]]: animal (посилання на прототип)
+//     ├── legs: 4    (невласна для dog)
+//     └── color: "red" (невласна для dog)
+
+// ..........
+
 // console.log(dog); // {name: "Mango", [[Prototype]]: animal}
 // console.log(dog.name); // "Mango"
 // console.log(dog.legs); // 4
+
+// console.log(dog.rating ); // 7  (Пояснення: "rating" — це ВЛАСНА властивість "dog", тому доступ до неї безпосередній)
+
+// console.log(dog.color); // "red"
+
+// ПОЯСНЕННЯ: "color" — це НЕВЛАСНА властивість "dog" (вона береться з прототипу "animal").
+// JavaScript спочатку шукає color у "dog", не знаходить → піднімається по ланцюгу прототипів до "animal", знаходить там "color": "red" → повертає значення
+
 
 // console.log(animal.hasOwnProperty("name"));
 // console.log(animal.hasOwnProperty("color"));
