@@ -2043,7 +2043,7 @@
 
 
 // // Якщо в конструкторі класу об'єкт "params", ми можемо його ДЕСТРУКТУРУВАТИ - замість "params" написати { name, xp, weapon }. 
-// // Крім того можна написати constructor({ weapon, ...rest }), тобто з нашого об'єкта ми дістанемо одне значення "weapon", а решту 2-а значення покладемо до об'єкту
+// // Крім того можна написати constructor({ weapon, ...rest }), тобто з нашого об'єкта ми дістанемо одне значення "weapon", а решту 2-а значення покладемо до об'єкту :
 
 // class Warrior extends Hero {
 //     // constructor({name, xp, weapon}) {
@@ -2071,7 +2071,7 @@
 
 // ПОЯСНЕННЯ-41   КЛАСИ: (1:58:00).
 
-// Задача-1     Напиши клас "Blogger" для створення об'єкта блогера з наступними властивостями:
+// Задача-1     Напиши клас "Blogger" для створення об'єкта блогера з наступними властивостями :
 // - email - пошта, рядок
 // - age - вік, число
 // - numberOfPosts - кількість постів, число
@@ -2201,6 +2201,10 @@
 // const dog = Object.create(animal);
 // dog.name = "Mango";
 
+// console.log(dog.legs);   //   4
+// console.log(dog.name);   //   "Mango"
+
+
 // //............
 
 // 2. ВАРІАНТ АВТОМАТИЧНОГО створювання ПРОТОТИПУ :
@@ -2223,6 +2227,14 @@
 // }
 
 // const mango = new User('Mango', 'mango@mail.com');
+
+
+// console.log(mango.name);                 //   "Mango"
+// console.log(mango.email);                //   "mango@mail.com"
+
+// console.log(mango.getEmail());           //   "mango@mail.com"
+// mango.changeEmail("mangoNew@mail.com"); 
+// console.log(mango.getEmail());           //   "mangoNew@mail.com"
 
 
 // Коли ми використовуємо new User(), JavaScript автоматично:
