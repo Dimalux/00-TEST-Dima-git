@@ -340,7 +340,20 @@
 
 // ..........
 
-// console.log(dog); // {name: "Mango", [[Prototype]]: animal}
+// console.log(dog); //  в КОНСОЛЬ буде виведено :
+// {name: "Mango", rating: 7}
+//   [[Prototype]]: Object     -   animal (об'єкт-прототип)
+//     color: "red"
+//     legs: 4
+//     [[Prototype]]: Object   -   це посилання на глобальний об'єкт-прототип "Object.prototype"
+
+// Що таке "Object.prototype" ?
+// Object.prototype — це базовий (кореневий) прототип, від якого успадковуються ВСІ об'єкти в JavaScript. Його особливість:
+// - він знаходиться на вершині ланцюга прототипів;
+// - його власний [[Prototype]] дорівнює null (тобто ланцюг закінчується).
+
+  // ..........  
+
 // console.log(dog.name); // "Mango"
 // console.log(dog.legs); // 4
 
@@ -364,7 +377,6 @@
 
 // console.log(dog.hasOwnProperty("name")); // true
 // console.log(dog.hasOwnProperty("legs")); // false
-
 
 
 // .............................
